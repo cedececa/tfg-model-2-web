@@ -1,11 +1,13 @@
 Dom H1 
 Dom p
 Comp Cabecera { 
+	
 	'Texto A Angular - V0.001' 
 	'Texto A Angular - V0.001'
 }
 
-Comp Footer { p { 'Text A Angular - Footer' } 
+Comp Footer { 'Text A Angular - Footer' 
+	 
 	
 }
 Comp Layout { 
