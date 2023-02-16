@@ -14,7 +14,7 @@ Comp Layout {
 	Footer 
 } 
 Comp HomeContent { 
-	'Bienvenido a la primera version de T2A' 
+	'Bienvenido a la primera version de T2A'  
 }
 Page Home {
 	Layout { 
