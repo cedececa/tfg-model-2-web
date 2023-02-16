@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Automatic-Module-Name: uma.es.angular.t2a
 Bundle-ManifestVersion: 2
 Bundle-Name: uma.es.angular.t2a
-Bundle-Vendor: Cheng Deng
+Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: uma.es.angular.t2a; singleton:=true
 Bundle-ActivationPolicy: lazy
