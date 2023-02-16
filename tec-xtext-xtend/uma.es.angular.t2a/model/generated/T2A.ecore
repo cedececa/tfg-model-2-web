@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="t2A" nsURI="http://www.es.uma/angular/t2a/T2A" nsPrefix="t2A">
+  <eClassifiers xsi:type="ecore:EClass" name="Root">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//Element" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Page" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pageFeatures" upperBound="-1"
+        eType="#//PageFeature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EDOM" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+        eType="#//Feature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DOM" eSuperTypes="#//EDOM"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Comp" eSuperTypes="#//EDOM"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InstanciaEDOM">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instancia" eType="#//EDOM"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="insfeatures" upperBound="-1"
+        eType="#//InstanceEDOMFeature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InstanceEDOMFeature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edoms" eType="#//EDOM"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="string" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PageFeature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instanciaEDOM" eType="#//InstanciaEDOM"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="string" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Feature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instanciaEDOM" eType="#//InstanciaEDOM"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AllowSlot" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="string" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

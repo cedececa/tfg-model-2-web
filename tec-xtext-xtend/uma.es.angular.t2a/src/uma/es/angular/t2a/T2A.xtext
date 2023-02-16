@@ -1,0 +1,51 @@
+grammar uma.es.angular.t2a.T2A with org.eclipse.xtext.common.Terminals
+generate t2A "http://www.es.uma/angular/t2a/T2A"
+
+Root:
+	elements+=Element+;
+
+Element:
+	Page | EDOM;
+
+Page:
+	'Page' name=ID '{'
+	(pageFeatures+=PageFeature)*
+	'}';
+
+EDOM:
+	DOM | Comp;
+
+DOM:
+	'Dom' name=ID
+	('{'
+	(features+=Feature)*
+	'}')?;
+	
+Comp:
+	'Comp' name=ID
+	(
+	'{'
+		(features+=Feature)*
+	'}'	
+	)?;
+	
+InstanciaEDOM: instancia=[EDOM] ('{' (insfeatures+=InstanceEDOMFeature)* '}')?; 
+
+InstanceEDOMFeature: 
+	edoms=[EDOM] | 
+	string=STRING;
+	
+PageFeature: 
+	instanciaEDOM=InstanciaEDOM | 
+	string=STRING
+; 
+
+Feature: 
+	instanciaEDOM=InstanciaEDOM |
+	AllowSlot?='AllowSlot' |
+    string=STRING
+; 
+
+terminal STRING:
+    '"' ( '\\'('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
+    "'" ( '\\'('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'";

@@ -1,0 +1,23 @@
+Dom H1 
+Dom p
+Comp Cabecera { 
+	'Texto A Angular - V0.001' 
+	'Texto A Angular - V0.001'
+}
+
+Comp Footer { p { 'Text A Angular - Footer' } 
+	
+}
+Comp Layout { 
+	Cabecera 
+	AllowSlot 
+	Footer 
+} 
+Comp HomeContent { 
+	'Bienvenido a la primera version de T2A' 
+}
+Page Home {
+	Layout { 
+		HomeContent
+	}
+}  

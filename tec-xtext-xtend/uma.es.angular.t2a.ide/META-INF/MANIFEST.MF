@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: uma.es.angular.t2a.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: uma.es.angular.t2a.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: uma.es.angular.t2a.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: uma.es.angular.t2a,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: uma.es.angular.t2a.ide.contentassist.antlr.internal,
+ uma.es.angular.t2a.ide.contentassist.antlr

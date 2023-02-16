@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: uma.es.angular.t2a
+Bundle-ManifestVersion: 2
+Bundle-Name: uma.es.angular.t2a
+Bundle-Vendor: Cheng Deng
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: uma.es.angular.t2a; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: uma.es.angular.t2a.services,
+ uma.es.angular.t2a.scoping,
+ uma.es.angular.t2a.parser.antlr.internal,
+ uma.es.angular.t2a.parser.antlr,
+ uma.es.angular.t2a.t2A.util,
+ uma.es.angular.t2a,
+ uma.es.angular.t2a.t2A,
+ uma.es.angular.t2a.serializer,
+ uma.es.angular.t2a.t2A.impl,
+ uma.es.angular.t2a.generator,
+ uma.es.angular.t2a.validation
+Import-Package: org.apache.log4j
