@@ -11,6 +11,7 @@ import uma.es.angular.t2a.t2A.Root
 import uma.es.angular.t2a.t2A.Page
 import uma.es.angular.t2a.t2A.Comp
 import uma.es.angular.t2a.t2A.Feature
+import uma.es.angular.t2a.t2A.PageFeature
 
 /**
  * Generates code from your model files on save.
@@ -94,7 +95,7 @@ class T2AGenerator extends AbstractGenerator {
 	def toHTMLCode(Page page) {
 		'''
 			«FOR feature : page.pageFeatures»
-				«var pf = feature as Feature»
+				«var pf = feature as PageFeature»
 				«IF pf.instanciaEDOM !== null && pf.instanciaEDOM.instancia.eClass.name.equals('comp')»
 					<«pf.instanciaEDOM.instancia.name»>
 						«IF pf.instanciaEDOM.instancia.features !== null»

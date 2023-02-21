@@ -181,7 +181,7 @@ public class T2AGenerator extends AbstractGenerator {
     {
       EList<PageFeature> _pageFeatures = page.getPageFeatures();
       for(final PageFeature feature : _pageFeatures) {
-        Feature pf = ((Feature) feature);
+        PageFeature pf = ((PageFeature) feature);
         _builder.newLineIfNotEmpty();
         {
           if (((pf.getInstanciaEDOM() != null) && pf.getInstanciaEDOM().getInstancia().eClass().getName().equals("comp"))) {
