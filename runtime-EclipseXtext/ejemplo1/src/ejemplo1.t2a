@@ -6,8 +6,9 @@ Comp Cabecera {
 	'Texto A Angular - V0.001'
 }
 
-Comp Footer { 'Text A Angular - Footer' 
-	 
+Comp Footer { 
+	
+	'Text A Angular - Footer'  
 	
 }
 Comp Layout { 
