@@ -322,7 +322,7 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
    * @generated
    */
   @Override
-  public EReference getInstanceEDOMFeature_Edoms()
+  public EReference getInstanceEDOMFeature_InstanciaEDOM()
   {
     return (EReference)instanceEDOMFeatureEClass.getEStructuralFeatures().get(0);
   }
@@ -467,7 +467,7 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
     createEReference(instanciaEDOMEClass, INSTANCIA_EDOM__INSFEATURES);
 
     instanceEDOMFeatureEClass = createEClass(INSTANCE_EDOM_FEATURE);
-    createEReference(instanceEDOMFeatureEClass, INSTANCE_EDOM_FEATURE__EDOMS);
+    createEReference(instanceEDOMFeatureEClass, INSTANCE_EDOM_FEATURE__INSTANCIA_EDOM);
     createEAttribute(instanceEDOMFeatureEClass, INSTANCE_EDOM_FEATURE__STRING);
 
     pageFeatureEClass = createEClass(PAGE_FEATURE);
@@ -536,7 +536,7 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
     initEReference(getInstanciaEDOM_Insfeatures(), this.getInstanceEDOMFeature(), null, "insfeatures", null, 0, -1, InstanciaEDOM.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(instanceEDOMFeatureEClass, InstanceEDOMFeature.class, "InstanceEDOMFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInstanceEDOMFeature_Edoms(), this.getEDOM(), null, "edoms", null, 0, 1, InstanceEDOMFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInstanceEDOMFeature_InstanciaEDOM(), this.getInstanciaEDOM(), null, "instanciaEDOM", null, 0, 1, InstanceEDOMFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInstanceEDOMFeature_String(), ecorePackage.getEString(), "string", null, 0, 1, InstanceEDOMFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(pageFeatureEClass, PageFeature.class, "PageFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -354,9 +354,9 @@ rule__InstanceEDOMFeature__Alternatives
 	}
 :
 	(
-		{ before(grammarAccess.getInstanceEDOMFeatureAccess().getEdomsAssignment_0()); }
-		(rule__InstanceEDOMFeature__EdomsAssignment_0)
-		{ after(grammarAccess.getInstanceEDOMFeatureAccess().getEdomsAssignment_0()); }
+		{ before(grammarAccess.getInstanceEDOMFeatureAccess().getInstanciaEDOMAssignment_0()); }
+		(rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0)
+		{ after(grammarAccess.getInstanceEDOMFeatureAccess().getInstanciaEDOMAssignment_0()); }
 	)
 	|
 	(
@@ -1150,19 +1150,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__InstanceEDOMFeature__EdomsAssignment_0
+rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getInstanceEDOMFeatureAccess().getEdomsEDOMCrossReference_0_0()); }
-		(
-			{ before(grammarAccess.getInstanceEDOMFeatureAccess().getEdomsEDOMIDTerminalRuleCall_0_0_1()); }
-			RULE_ID
-			{ after(grammarAccess.getInstanceEDOMFeatureAccess().getEdomsEDOMIDTerminalRuleCall_0_0_1()); }
-		)
-		{ after(grammarAccess.getInstanceEDOMFeatureAccess().getEdomsEDOMCrossReference_0_0()); }
+		{ before(grammarAccess.getInstanceEDOMFeatureAccess().getInstanciaEDOMInstanciaEDOMParserRuleCall_0_0()); }
+		ruleInstanciaEDOM
+		{ after(grammarAccess.getInstanceEDOMFeatureAccess().getInstanciaEDOMInstanciaEDOMParserRuleCall_0_0()); }
 	)
 ;
 finally {

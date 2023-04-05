@@ -1046,13 +1046,13 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InstanceEDOMFeature__Alternatives"
-    // InternalT2A.g:351:1: rule__InstanceEDOMFeature__Alternatives : ( ( ( rule__InstanceEDOMFeature__EdomsAssignment_0 ) ) | ( ( rule__InstanceEDOMFeature__StringAssignment_1 ) ) );
+    // InternalT2A.g:351:1: rule__InstanceEDOMFeature__Alternatives : ( ( ( rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0 ) ) | ( ( rule__InstanceEDOMFeature__StringAssignment_1 ) ) );
     public final void rule__InstanceEDOMFeature__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:355:1: ( ( ( rule__InstanceEDOMFeature__EdomsAssignment_0 ) ) | ( ( rule__InstanceEDOMFeature__StringAssignment_1 ) ) )
+            // InternalT2A.g:355:1: ( ( ( rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0 ) ) | ( ( rule__InstanceEDOMFeature__StringAssignment_1 ) ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1070,24 +1070,24 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalT2A.g:356:2: ( ( rule__InstanceEDOMFeature__EdomsAssignment_0 ) )
+                    // InternalT2A.g:356:2: ( ( rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0 ) )
                     {
-                    // InternalT2A.g:356:2: ( ( rule__InstanceEDOMFeature__EdomsAssignment_0 ) )
-                    // InternalT2A.g:357:3: ( rule__InstanceEDOMFeature__EdomsAssignment_0 )
+                    // InternalT2A.g:356:2: ( ( rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0 ) )
+                    // InternalT2A.g:357:3: ( rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0 )
                     {
-                     before(grammarAccess.getInstanceEDOMFeatureAccess().getEdomsAssignment_0()); 
-                    // InternalT2A.g:358:3: ( rule__InstanceEDOMFeature__EdomsAssignment_0 )
-                    // InternalT2A.g:358:4: rule__InstanceEDOMFeature__EdomsAssignment_0
+                     before(grammarAccess.getInstanceEDOMFeatureAccess().getInstanciaEDOMAssignment_0()); 
+                    // InternalT2A.g:358:3: ( rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0 )
+                    // InternalT2A.g:358:4: rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__InstanceEDOMFeature__EdomsAssignment_0();
+                    rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getInstanceEDOMFeatureAccess().getEdomsAssignment_0()); 
+                     after(grammarAccess.getInstanceEDOMFeatureAccess().getInstanciaEDOMAssignment_0()); 
 
                     }
 
@@ -3543,30 +3543,26 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__InstanciaEDOM__InsfeaturesAssignment_1_1"
 
 
-    // $ANTLR start "rule__InstanceEDOMFeature__EdomsAssignment_0"
-    // InternalT2A.g:1153:1: rule__InstanceEDOMFeature__EdomsAssignment_0 : ( ( RULE_ID ) ) ;
-    public final void rule__InstanceEDOMFeature__EdomsAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0"
+    // InternalT2A.g:1153:1: rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0 : ( ruleInstanciaEDOM ) ;
+    public final void rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1157:1: ( ( ( RULE_ID ) ) )
-            // InternalT2A.g:1158:2: ( ( RULE_ID ) )
+            // InternalT2A.g:1157:1: ( ( ruleInstanciaEDOM ) )
+            // InternalT2A.g:1158:2: ( ruleInstanciaEDOM )
             {
-            // InternalT2A.g:1158:2: ( ( RULE_ID ) )
-            // InternalT2A.g:1159:3: ( RULE_ID )
+            // InternalT2A.g:1158:2: ( ruleInstanciaEDOM )
+            // InternalT2A.g:1159:3: ruleInstanciaEDOM
             {
-             before(grammarAccess.getInstanceEDOMFeatureAccess().getEdomsEDOMCrossReference_0_0()); 
-            // InternalT2A.g:1160:3: ( RULE_ID )
-            // InternalT2A.g:1161:4: RULE_ID
-            {
-             before(grammarAccess.getInstanceEDOMFeatureAccess().getEdomsEDOMIDTerminalRuleCall_0_0_1()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getInstanceEDOMFeatureAccess().getEdomsEDOMIDTerminalRuleCall_0_0_1()); 
+             before(grammarAccess.getInstanceEDOMFeatureAccess().getInstanciaEDOMInstanciaEDOMParserRuleCall_0_0()); 
+            pushFollow(FOLLOW_2);
+            ruleInstanciaEDOM();
 
-            }
+            state._fsp--;
 
-             after(grammarAccess.getInstanceEDOMFeatureAccess().getEdomsEDOMCrossReference_0_0()); 
+             after(grammarAccess.getInstanceEDOMFeatureAccess().getInstanciaEDOMInstanciaEDOMParserRuleCall_0_0()); 
 
             }
 
@@ -3585,21 +3581,21 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InstanceEDOMFeature__EdomsAssignment_0"
+    // $ANTLR end "rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0"
 
 
     // $ANTLR start "rule__InstanceEDOMFeature__StringAssignment_1"
-    // InternalT2A.g:1172:1: rule__InstanceEDOMFeature__StringAssignment_1 : ( RULE_STRING ) ;
+    // InternalT2A.g:1168:1: rule__InstanceEDOMFeature__StringAssignment_1 : ( RULE_STRING ) ;
     public final void rule__InstanceEDOMFeature__StringAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1176:1: ( ( RULE_STRING ) )
-            // InternalT2A.g:1177:2: ( RULE_STRING )
+            // InternalT2A.g:1172:1: ( ( RULE_STRING ) )
+            // InternalT2A.g:1173:2: ( RULE_STRING )
             {
-            // InternalT2A.g:1177:2: ( RULE_STRING )
-            // InternalT2A.g:1178:3: RULE_STRING
+            // InternalT2A.g:1173:2: ( RULE_STRING )
+            // InternalT2A.g:1174:3: RULE_STRING
             {
              before(grammarAccess.getInstanceEDOMFeatureAccess().getStringSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -3626,17 +3622,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PageFeature__InstanciaEDOMAssignment_0"
-    // InternalT2A.g:1187:1: rule__PageFeature__InstanciaEDOMAssignment_0 : ( ruleInstanciaEDOM ) ;
+    // InternalT2A.g:1183:1: rule__PageFeature__InstanciaEDOMAssignment_0 : ( ruleInstanciaEDOM ) ;
     public final void rule__PageFeature__InstanciaEDOMAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1191:1: ( ( ruleInstanciaEDOM ) )
-            // InternalT2A.g:1192:2: ( ruleInstanciaEDOM )
+            // InternalT2A.g:1187:1: ( ( ruleInstanciaEDOM ) )
+            // InternalT2A.g:1188:2: ( ruleInstanciaEDOM )
             {
-            // InternalT2A.g:1192:2: ( ruleInstanciaEDOM )
-            // InternalT2A.g:1193:3: ruleInstanciaEDOM
+            // InternalT2A.g:1188:2: ( ruleInstanciaEDOM )
+            // InternalT2A.g:1189:3: ruleInstanciaEDOM
             {
              before(grammarAccess.getPageFeatureAccess().getInstanciaEDOMInstanciaEDOMParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -3667,17 +3663,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PageFeature__StringAssignment_1"
-    // InternalT2A.g:1202:1: rule__PageFeature__StringAssignment_1 : ( RULE_STRING ) ;
+    // InternalT2A.g:1198:1: rule__PageFeature__StringAssignment_1 : ( RULE_STRING ) ;
     public final void rule__PageFeature__StringAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1206:1: ( ( RULE_STRING ) )
-            // InternalT2A.g:1207:2: ( RULE_STRING )
+            // InternalT2A.g:1202:1: ( ( RULE_STRING ) )
+            // InternalT2A.g:1203:2: ( RULE_STRING )
             {
-            // InternalT2A.g:1207:2: ( RULE_STRING )
-            // InternalT2A.g:1208:3: RULE_STRING
+            // InternalT2A.g:1203:2: ( RULE_STRING )
+            // InternalT2A.g:1204:3: RULE_STRING
             {
              before(grammarAccess.getPageFeatureAccess().getStringSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -3704,17 +3700,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__InstanciaEDOMAssignment_0"
-    // InternalT2A.g:1217:1: rule__Feature__InstanciaEDOMAssignment_0 : ( ruleInstanciaEDOM ) ;
+    // InternalT2A.g:1213:1: rule__Feature__InstanciaEDOMAssignment_0 : ( ruleInstanciaEDOM ) ;
     public final void rule__Feature__InstanciaEDOMAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1221:1: ( ( ruleInstanciaEDOM ) )
-            // InternalT2A.g:1222:2: ( ruleInstanciaEDOM )
+            // InternalT2A.g:1217:1: ( ( ruleInstanciaEDOM ) )
+            // InternalT2A.g:1218:2: ( ruleInstanciaEDOM )
             {
-            // InternalT2A.g:1222:2: ( ruleInstanciaEDOM )
-            // InternalT2A.g:1223:3: ruleInstanciaEDOM
+            // InternalT2A.g:1218:2: ( ruleInstanciaEDOM )
+            // InternalT2A.g:1219:3: ruleInstanciaEDOM
             {
              before(grammarAccess.getFeatureAccess().getInstanciaEDOMInstanciaEDOMParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -3745,21 +3741,21 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__AllowSlotAssignment_1"
-    // InternalT2A.g:1232:1: rule__Feature__AllowSlotAssignment_1 : ( ( 'AllowSlot' ) ) ;
+    // InternalT2A.g:1228:1: rule__Feature__AllowSlotAssignment_1 : ( ( 'AllowSlot' ) ) ;
     public final void rule__Feature__AllowSlotAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1236:1: ( ( ( 'AllowSlot' ) ) )
-            // InternalT2A.g:1237:2: ( ( 'AllowSlot' ) )
+            // InternalT2A.g:1232:1: ( ( ( 'AllowSlot' ) ) )
+            // InternalT2A.g:1233:2: ( ( 'AllowSlot' ) )
             {
-            // InternalT2A.g:1237:2: ( ( 'AllowSlot' ) )
-            // InternalT2A.g:1238:3: ( 'AllowSlot' )
+            // InternalT2A.g:1233:2: ( ( 'AllowSlot' ) )
+            // InternalT2A.g:1234:3: ( 'AllowSlot' )
             {
              before(grammarAccess.getFeatureAccess().getAllowSlotAllowSlotKeyword_1_0()); 
-            // InternalT2A.g:1239:3: ( 'AllowSlot' )
-            // InternalT2A.g:1240:4: 'AllowSlot'
+            // InternalT2A.g:1235:3: ( 'AllowSlot' )
+            // InternalT2A.g:1236:4: 'AllowSlot'
             {
              before(grammarAccess.getFeatureAccess().getAllowSlotAllowSlotKeyword_1_0()); 
             match(input,16,FOLLOW_2); 
@@ -3790,17 +3786,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__StringAssignment_2"
-    // InternalT2A.g:1251:1: rule__Feature__StringAssignment_2 : ( RULE_STRING ) ;
+    // InternalT2A.g:1247:1: rule__Feature__StringAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Feature__StringAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1255:1: ( ( RULE_STRING ) )
-            // InternalT2A.g:1256:2: ( RULE_STRING )
+            // InternalT2A.g:1251:1: ( ( RULE_STRING ) )
+            // InternalT2A.g:1252:2: ( RULE_STRING )
             {
-            // InternalT2A.g:1256:2: ( RULE_STRING )
-            // InternalT2A.g:1257:3: RULE_STRING
+            // InternalT2A.g:1252:2: ( RULE_STRING )
+            // InternalT2A.g:1253:3: RULE_STRING
             {
              before(grammarAccess.getFeatureAccess().getStringSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 

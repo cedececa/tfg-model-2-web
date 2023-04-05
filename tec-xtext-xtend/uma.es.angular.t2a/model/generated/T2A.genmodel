@@ -25,7 +25,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//InstanciaEDOM/insfeatures"/>
     </genClasses>
     <genClasses ecoreClass="T2A.ecore#//InstanceEDOMFeature">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference T2A.ecore#//InstanceEDOMFeature/edoms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//InstanceEDOMFeature/instanciaEDOM"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T2A.ecore#//InstanceEDOMFeature/string"/>
     </genClasses>
     <genClasses ecoreClass="T2A.ecore#//PageFeature">

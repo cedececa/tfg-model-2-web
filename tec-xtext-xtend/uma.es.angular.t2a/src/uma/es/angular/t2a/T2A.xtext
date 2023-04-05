@@ -1,3 +1,4 @@
+
 grammar uma.es.angular.t2a.T2A with org.eclipse.xtext.common.Terminals
 generate t2A "http://www.es.uma/angular/t2a/T2A"
 
@@ -17,7 +18,7 @@ EDOM:
 
 DOM:
 	'Dom' name=ID
-	('{'
+	('{' 
 	(features+=Feature)*
 	'}')?;
 	
@@ -29,11 +30,13 @@ Comp:
 	'}'	
 	)?;
 	
-InstanciaEDOM: instancia=[EDOM] ('{' (insfeatures+=InstanceEDOMFeature)* '}')?; 
+InstanciaEDOM: instancia=[EDOM] ('{' 
+		(insfeatures+=InstanceEDOMFeature)*
+	'}'
+)?; 
 
 InstanceEDOMFeature: 
-	edoms=[EDOM] | 
-	string=STRING;
+	instanciaEDOM= InstanciaEDOM | string=STRING;
 	
 PageFeature: 
 	instanciaEDOM=InstanciaEDOM | 

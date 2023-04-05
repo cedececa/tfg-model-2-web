@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uma.es.angular.t2a.t2A.InstanceEDOMFeature#getEdoms <em>Edoms</em>}</li>
+ *   <li>{@link uma.es.angular.t2a.t2A.InstanceEDOMFeature#getInstanciaEDOM <em>Instancia EDOM</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.InstanceEDOMFeature#getString <em>String</em>}</li>
  * </ul>
  *
@@ -25,26 +25,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface InstanceEDOMFeature extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Edoms</b></em>' reference.
+   * Returns the value of the '<em><b>Instancia EDOM</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Edoms</em>' reference.
-   * @see #setEdoms(EDOM)
-   * @see uma.es.angular.t2a.t2A.T2APackage#getInstanceEDOMFeature_Edoms()
-   * @model
+   * @return the value of the '<em>Instancia EDOM</em>' containment reference.
+   * @see #setInstanciaEDOM(InstanciaEDOM)
+   * @see uma.es.angular.t2a.t2A.T2APackage#getInstanceEDOMFeature_InstanciaEDOM()
+   * @model containment="true"
    * @generated
    */
-  EDOM getEdoms();
+  InstanciaEDOM getInstanciaEDOM();
 
   /**
-   * Sets the value of the '{@link uma.es.angular.t2a.t2A.InstanceEDOMFeature#getEdoms <em>Edoms</em>}' reference.
+   * Sets the value of the '{@link uma.es.angular.t2a.t2A.InstanceEDOMFeature#getInstanciaEDOM <em>Instancia EDOM</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Edoms</em>' reference.
-   * @see #getEdoms()
+   * @param value the new value of the '<em>Instancia EDOM</em>' containment reference.
+   * @see #getInstanciaEDOM()
    * @generated
    */
-  void setEdoms(EDOM value);
+  void setInstanciaEDOM(InstanciaEDOM value);
 
   /**
    * Returns the value of the '<em><b>String</b></em>' attribute.

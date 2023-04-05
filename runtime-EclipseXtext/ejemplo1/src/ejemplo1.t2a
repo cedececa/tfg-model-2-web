@@ -2,30 +2,40 @@ Dom H1
 Dom p
 Dom div
 
-Comp Cabecera { 
-	
+Comp Cabecera { 	
 	'Texto A Angular - V0.001 ' 
-	'Texto A Angular - V0.001'
+	'Texto A Angular - V0.001' 
 	div {
 		'Hss'
 	}  
 }
-
 Comp Footer { 
-	
-	'Text A Angular - Footer'  
+	 
+	'Text A Angular - Footer'     
 	div
 }
 Comp Layout { 
 	Cabecera 
 	AllowSlot 
-	Footer 
+	Footer   
 } 
 Comp HomeContent { 
 	'Bienvenido a la primera version de T2A'  
+	AllowSlot
 }
+
 Page Home {
+	'Hola 1'
 	Layout { 
-		HomeContent
+		'Hola 3'		
+		'Hola 3'	
+		'Hola 3'
+		HomeContent{
+			  Footer{
+			  	
+			  }
+		}
+
 	}
 }  
+

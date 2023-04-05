@@ -4,6 +4,7 @@
 package uma.es.angular.t2a.t2A.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -11,8 +12,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import uma.es.angular.t2a.t2A.EDOM;
 import uma.es.angular.t2a.t2A.InstanceEDOMFeature;
+import uma.es.angular.t2a.t2A.InstanciaEDOM;
 import uma.es.angular.t2a.t2A.T2APackage;
 
 /**
@@ -23,7 +24,7 @@ import uma.es.angular.t2a.t2A.T2APackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uma.es.angular.t2a.t2A.impl.InstanceEDOMFeatureImpl#getEdoms <em>Edoms</em>}</li>
+ *   <li>{@link uma.es.angular.t2a.t2A.impl.InstanceEDOMFeatureImpl#getInstanciaEDOM <em>Instancia EDOM</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.impl.InstanceEDOMFeatureImpl#getString <em>String</em>}</li>
  * </ul>
  *
@@ -32,14 +33,14 @@ import uma.es.angular.t2a.t2A.T2APackage;
 public class InstanceEDOMFeatureImpl extends MinimalEObjectImpl.Container implements InstanceEDOMFeature
 {
   /**
-   * The cached value of the '{@link #getEdoms() <em>Edoms</em>}' reference.
+   * The cached value of the '{@link #getInstanciaEDOM() <em>Instancia EDOM</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEdoms()
+   * @see #getInstanciaEDOM()
    * @generated
    * @ordered
    */
-  protected EDOM edoms;
+  protected InstanciaEDOM instanciaEDOM;
 
   /**
    * The default value of the '{@link #getString() <em>String</em>}' attribute.
@@ -88,19 +89,9 @@ public class InstanceEDOMFeatureImpl extends MinimalEObjectImpl.Container implem
    * @generated
    */
   @Override
-  public EDOM getEdoms()
+  public InstanciaEDOM getInstanciaEDOM()
   {
-    if (edoms != null && edoms.eIsProxy())
-    {
-      InternalEObject oldEdoms = (InternalEObject)edoms;
-      edoms = (EDOM)eResolveProxy(oldEdoms);
-      if (edoms != oldEdoms)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, T2APackage.INSTANCE_EDOM_FEATURE__EDOMS, oldEdoms, edoms));
-      }
-    }
-    return edoms;
+    return instanciaEDOM;
   }
 
   /**
@@ -108,9 +99,16 @@ public class InstanceEDOMFeatureImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public EDOM basicGetEdoms()
+  public NotificationChain basicSetInstanciaEDOM(InstanciaEDOM newInstanciaEDOM, NotificationChain msgs)
   {
-    return edoms;
+    InstanciaEDOM oldInstanciaEDOM = instanciaEDOM;
+    instanciaEDOM = newInstanciaEDOM;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, T2APackage.INSTANCE_EDOM_FEATURE__INSTANCIA_EDOM, oldInstanciaEDOM, newInstanciaEDOM);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -119,12 +117,20 @@ public class InstanceEDOMFeatureImpl extends MinimalEObjectImpl.Container implem
    * @generated
    */
   @Override
-  public void setEdoms(EDOM newEdoms)
+  public void setInstanciaEDOM(InstanciaEDOM newInstanciaEDOM)
   {
-    EDOM oldEdoms = edoms;
-    edoms = newEdoms;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, T2APackage.INSTANCE_EDOM_FEATURE__EDOMS, oldEdoms, edoms));
+    if (newInstanciaEDOM != instanciaEDOM)
+    {
+      NotificationChain msgs = null;
+      if (instanciaEDOM != null)
+        msgs = ((InternalEObject)instanciaEDOM).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - T2APackage.INSTANCE_EDOM_FEATURE__INSTANCIA_EDOM, null, msgs);
+      if (newInstanciaEDOM != null)
+        msgs = ((InternalEObject)newInstanciaEDOM).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - T2APackage.INSTANCE_EDOM_FEATURE__INSTANCIA_EDOM, null, msgs);
+      msgs = basicSetInstanciaEDOM(newInstanciaEDOM, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, T2APackage.INSTANCE_EDOM_FEATURE__INSTANCIA_EDOM, newInstanciaEDOM, newInstanciaEDOM));
   }
 
   /**
@@ -158,13 +164,28 @@ public class InstanceEDOMFeatureImpl extends MinimalEObjectImpl.Container implem
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case T2APackage.INSTANCE_EDOM_FEATURE__INSTANCIA_EDOM:
+        return basicSetInstanciaEDOM(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
-      case T2APackage.INSTANCE_EDOM_FEATURE__EDOMS:
-        if (resolve) return getEdoms();
-        return basicGetEdoms();
+      case T2APackage.INSTANCE_EDOM_FEATURE__INSTANCIA_EDOM:
+        return getInstanciaEDOM();
       case T2APackage.INSTANCE_EDOM_FEATURE__STRING:
         return getString();
     }
@@ -181,8 +202,8 @@ public class InstanceEDOMFeatureImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case T2APackage.INSTANCE_EDOM_FEATURE__EDOMS:
-        setEdoms((EDOM)newValue);
+      case T2APackage.INSTANCE_EDOM_FEATURE__INSTANCIA_EDOM:
+        setInstanciaEDOM((InstanciaEDOM)newValue);
         return;
       case T2APackage.INSTANCE_EDOM_FEATURE__STRING:
         setString((String)newValue);
@@ -201,8 +222,8 @@ public class InstanceEDOMFeatureImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case T2APackage.INSTANCE_EDOM_FEATURE__EDOMS:
-        setEdoms((EDOM)null);
+      case T2APackage.INSTANCE_EDOM_FEATURE__INSTANCIA_EDOM:
+        setInstanciaEDOM((InstanciaEDOM)null);
         return;
       case T2APackage.INSTANCE_EDOM_FEATURE__STRING:
         setString(STRING_EDEFAULT);
@@ -221,8 +242,8 @@ public class InstanceEDOMFeatureImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case T2APackage.INSTANCE_EDOM_FEATURE__EDOMS:
-        return edoms != null;
+      case T2APackage.INSTANCE_EDOM_FEATURE__INSTANCIA_EDOM:
+        return instanciaEDOM != null;
       case T2APackage.INSTANCE_EDOM_FEATURE__STRING:
         return STRING_EDEFAULT == null ? string != null : !STRING_EDEFAULT.equals(string);
     }

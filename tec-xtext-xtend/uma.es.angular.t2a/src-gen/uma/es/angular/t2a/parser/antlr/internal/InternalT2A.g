@@ -456,13 +456,19 @@ ruleInstanceEDOMFeature returns [EObject current=null]
 		(
 			(
 				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getInstanceEDOMFeatureRule());
-					}
+					newCompositeNode(grammarAccess.getInstanceEDOMFeatureAccess().getInstanciaEDOMInstanciaEDOMParserRuleCall_0_0());
 				}
-				otherlv_0=RULE_ID
+				lv_instanciaEDOM_0_0=ruleInstanciaEDOM
 				{
-					newLeafNode(otherlv_0, grammarAccess.getInstanceEDOMFeatureAccess().getEdomsEDOMCrossReference_0_0());
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getInstanceEDOMFeatureRule());
+					}
+					set(
+						$current,
+						"instanciaEDOM",
+						lv_instanciaEDOM_0_0,
+						"uma.es.angular.t2a.T2A.InstanciaEDOM");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)

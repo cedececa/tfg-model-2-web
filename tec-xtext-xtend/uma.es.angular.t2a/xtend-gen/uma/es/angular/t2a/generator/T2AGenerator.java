@@ -12,9 +12,10 @@ import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import uma.es.angular.t2a.t2A.Comp;
-import uma.es.angular.t2a.t2A.EDOM;
 import uma.es.angular.t2a.t2A.Element;
 import uma.es.angular.t2a.t2A.Feature;
+import uma.es.angular.t2a.t2A.InstanceEDOMFeature;
+import uma.es.angular.t2a.t2A.InstanciaEDOM;
 import uma.es.angular.t2a.t2A.Page;
 import uma.es.angular.t2a.t2A.PageFeature;
 import uma.es.angular.t2a.t2A.Root;
@@ -55,8 +56,8 @@ public class T2AGenerator extends AbstractGenerator {
   public void generateClassFile(final Comp comp, final IFileSystemAccess2 fsa) {
     String _name = comp.getName();
     String nameLowercase = new String(_name).toLowerCase();
-    fsa.generateFile((((nameLowercase + "/") + nameLowercase) + ".page.ts"), this.toTSCode(comp));
-    fsa.generateFile((((nameLowercase + "/") + nameLowercase) + ".page.html"), this.toHTMLCode(comp));
+    fsa.generateFile((((nameLowercase + "/") + nameLowercase) + ".comp.ts"), this.toTSCode(comp));
+    fsa.generateFile((((nameLowercase + "/") + nameLowercase) + ".comp.html"), this.toHTMLCode(comp));
   }
   
   public String className(final Resource res) {
@@ -144,7 +145,7 @@ public class T2AGenerator extends AbstractGenerator {
         Feature f = ((Feature) feature);
         _builder.newLineIfNotEmpty();
         {
-          if (((f.getInstanciaEDOM() != null) && f.getInstanciaEDOM().getInstancia().eClass().getName().equals("comp"))) {
+          if (((f.getInstanciaEDOM() != null) && f.getInstanciaEDOM().getInstancia().eClass().getName().equals("Comp"))) {
             _builder.append("<");
             String _name = f.getInstanciaEDOM().getInstancia().getName();
             _builder.append(_name);
@@ -180,31 +181,15 @@ public class T2AGenerator extends AbstractGenerator {
     StringConcatenation _builder = new StringConcatenation();
     {
       EList<PageFeature> _pageFeatures = page.getPageFeatures();
-      for(final PageFeature feature : _pageFeatures) {
-        PageFeature pf = ((PageFeature) feature);
+      for(final PageFeature pageFeature : _pageFeatures) {
+        PageFeature pf = ((PageFeature) pageFeature);
         _builder.newLineIfNotEmpty();
         {
-          if (((pf.getInstanciaEDOM() != null) && pf.getInstanciaEDOM().getInstancia().eClass().getName().equals("comp"))) {
-            _builder.append("<");
-            String _name = pf.getInstanciaEDOM().getInstancia().getName();
-            _builder.append(_name);
-            _builder.append(">");
-            _builder.newLineIfNotEmpty();
-            {
-              EList<Feature> _features = pf.getInstanciaEDOM().getInstancia().getFeatures();
-              boolean _tripleNotEquals = (_features != null);
-              if (_tripleNotEquals) {
-                _builder.append("\t");
-                EDOM _instancia = pf.getInstanciaEDOM().getInstancia();
-                CharSequence _hTMLCode = this.toHTMLCode(((Comp) _instancia));
-                _builder.append(_hTMLCode, "\t");
-                _builder.newLineIfNotEmpty();
-              }
-            }
-            _builder.append("</");
-            String _name_1 = pf.getInstanciaEDOM().getInstancia().getName();
-            _builder.append(_name_1);
-            _builder.append(">");
+          InstanciaEDOM _instanciaEDOM = pf.getInstanciaEDOM();
+          boolean _tripleNotEquals = (_instanciaEDOM != null);
+          if (_tripleNotEquals) {
+            CharSequence _hTMLCodeForInstanciaEDOM = this.toHTMLCodeForInstanciaEDOM(pf.getInstanciaEDOM());
+            _builder.append(_hTMLCodeForInstanciaEDOM);
             _builder.newLineIfNotEmpty();
           }
         }
@@ -219,6 +204,49 @@ public class T2AGenerator extends AbstractGenerator {
         }
       }
     }
+    return _builder;
+  }
+  
+  public CharSequence toHTMLCodeForInstanciaEDOM(final InstanciaEDOM instanciaEDOM) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<");
+    String _name = instanciaEDOM.getInstancia().getName();
+    _builder.append(_name);
+    _builder.append(">");
+    _builder.newLineIfNotEmpty();
+    {
+      EList<InstanceEDOMFeature> _insfeatures = instanciaEDOM.getInsfeatures();
+      for(final InstanceEDOMFeature insfeature : _insfeatures) {
+        _builder.append("\t");
+        InstanceEDOMFeature insf = ((InstanceEDOMFeature) insfeature);
+        _builder.newLineIfNotEmpty();
+        {
+          InstanciaEDOM _instanciaEDOM = insf.getInstanciaEDOM();
+          boolean _tripleNotEquals = (_instanciaEDOM != null);
+          if (_tripleNotEquals) {
+            _builder.append("\t");
+            Object _hTMLCodeForInstanciaEDOM = this.toHTMLCodeForInstanciaEDOM(insf.getInstanciaEDOM());
+            _builder.append(_hTMLCodeForInstanciaEDOM, "\t");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        {
+          String _string = insf.getString();
+          boolean _tripleNotEquals_1 = (_string != null);
+          if (_tripleNotEquals_1) {
+            _builder.append("\t");
+            String _string_1 = insf.getString();
+            _builder.append(_string_1, "\t");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
+    _builder.append("</");
+    String _name_1 = instanciaEDOM.getInstancia().getName();
+    _builder.append(_name_1);
+    _builder.append(">");
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
 }

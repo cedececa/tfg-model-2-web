@@ -309,13 +309,13 @@ public interface T2APackage extends EPackage
   int INSTANCE_EDOM_FEATURE = 7;
 
   /**
-   * The feature id for the '<em><b>Edoms</b></em>' reference.
+   * The feature id for the '<em><b>Instancia EDOM</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INSTANCE_EDOM_FEATURE__EDOMS = 0;
+  int INSTANCE_EDOM_FEATURE__INSTANCIA_EDOM = 0;
 
   /**
    * The feature id for the '<em><b>String</b></em>' attribute.
@@ -566,15 +566,15 @@ public interface T2APackage extends EPackage
   EClass getInstanceEDOMFeature();
 
   /**
-   * Returns the meta object for the reference '{@link uma.es.angular.t2a.t2A.InstanceEDOMFeature#getEdoms <em>Edoms</em>}'.
+   * Returns the meta object for the containment reference '{@link uma.es.angular.t2a.t2A.InstanceEDOMFeature#getInstanciaEDOM <em>Instancia EDOM</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Edoms</em>'.
-   * @see uma.es.angular.t2a.t2A.InstanceEDOMFeature#getEdoms()
+   * @return the meta object for the containment reference '<em>Instancia EDOM</em>'.
+   * @see uma.es.angular.t2a.t2A.InstanceEDOMFeature#getInstanciaEDOM()
    * @see #getInstanceEDOMFeature()
    * @generated
    */
-  EReference getInstanceEDOMFeature_Edoms();
+  EReference getInstanceEDOMFeature_InstanciaEDOM();
 
   /**
    * Returns the meta object for the attribute '{@link uma.es.angular.t2a.t2A.InstanceEDOMFeature#getString <em>String</em>}'.
@@ -814,12 +814,12 @@ public interface T2APackage extends EPackage
     EClass INSTANCE_EDOM_FEATURE = eINSTANCE.getInstanceEDOMFeature();
 
     /**
-     * The meta object literal for the '<em><b>Edoms</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Instancia EDOM</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INSTANCE_EDOM_FEATURE__EDOMS = eINSTANCE.getInstanceEDOMFeature_Edoms();
+    EReference INSTANCE_EDOM_FEATURE__INSTANCIA_EDOM = eINSTANCE.getInstanceEDOMFeature_InstanciaEDOM();
 
     /**
      * The meta object literal for the '<em><b>String</b></em>' attribute feature.

@@ -12,6 +12,8 @@ import uma.es.angular.t2a.t2A.Page
 import uma.es.angular.t2a.t2A.Comp
 import uma.es.angular.t2a.t2A.Feature
 import uma.es.angular.t2a.t2A.PageFeature
+import uma.es.angular.t2a.t2A.InstanciaEDOM
+import uma.es.angular.t2a.t2A.InstanceEDOMFeature
 
 /**
  * Generates code from your model files on save.
@@ -40,8 +42,8 @@ class T2AGenerator extends AbstractGenerator {
 
 	def generateClassFile(Comp comp, IFileSystemAccess2 fsa) {
 		var nameLowercase = (new String(comp.name)).toLowerCase()
-		fsa.generateFile(nameLowercase + '/' + nameLowercase + '.page.ts', toTSCode(comp));
-		fsa.generateFile(nameLowercase + '/' + nameLowercase + '.page.html', toHTMLCode(comp));
+		fsa.generateFile(nameLowercase + '/' + nameLowercase + '.comp.ts', toTSCode(comp));
+		fsa.generateFile(nameLowercase + '/' + nameLowercase + '.comp.html', toHTMLCode(comp));
 	}
 
 	def className(Resource res) {
@@ -79,7 +81,7 @@ class T2AGenerator extends AbstractGenerator {
 		'''
 			«FOR feature : comp.features»
 				«var f = feature as Feature»
-				«IF f.instanciaEDOM !== null && f.instanciaEDOM.instancia.eClass.name.equals('comp')»
+				«IF f.instanciaEDOM !== null && f.instanciaEDOM.instancia.eClass.name.equals('Comp')»
 					<«f.instanciaEDOM.instancia.name»></«f.instanciaEDOM.instancia.name»>
 				«ENDIF»
 				«IF f.isAllowSlot»
@@ -94,19 +96,31 @@ class T2AGenerator extends AbstractGenerator {
 
 	def toHTMLCode(Page page) {
 		'''
-			«FOR feature : page.pageFeatures»
-				«var pf = feature as PageFeature»
-				«IF pf.instanciaEDOM !== null && pf.instanciaEDOM.instancia.eClass.name.equals('comp')»
-					<«pf.instanciaEDOM.instancia.name»>
-						«IF pf.instanciaEDOM.instancia.features !== null»
-							«toHTMLCode(pf.instanciaEDOM.instancia as Comp)»
-						«ENDIF»
-					</«pf.instanciaEDOM.instancia.name»>
+			«FOR pageFeature : page.pageFeatures»
+				«var pf = pageFeature as PageFeature»
+				«IF pf.instanciaEDOM !== null »
+					«toHTMLCodeForInstanciaEDOM(pf.instanciaEDOM)»
 				«ENDIF»	
 				«IF pf.string!==null»
 					«pf.string»
 				«ENDIF»
-				«ENDFOR»
+			«ENDFOR»
 		'''
+	}
+
+	def toHTMLCodeForInstanciaEDOM(InstanciaEDOM instanciaEDOM){
+		''' 
+			<«instanciaEDOM.instancia.name»>
+				«FOR insfeature : instanciaEDOM.insfeatures»
+					«var insf = insfeature as InstanceEDOMFeature»
+					«IF insf.instanciaEDOM !== null»
+							«toHTMLCodeForInstanciaEDOM(insf.instanciaEDOM)»
+					«ENDIF»	
+					«IF insf.string!==null»
+						«insf.string»
+					«ENDIF»
+				«ENDFOR»
+			</«instanciaEDOM.instancia.name»>
+		'''		
 	}
 }

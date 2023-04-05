@@ -118,7 +118,7 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     InstanceEDOMFeature returns InstanceEDOMFeature
 	 *
 	 * Constraint:
-	 *     (edoms=[EDOM|ID] | string=STRING)
+	 *     (instanciaEDOM=InstanciaEDOM | string=STRING)
 	 * </pre>
 	 */
 	protected void sequence_InstanceEDOMFeature(ISerializationContext context, InstanceEDOMFeature semanticObject) {

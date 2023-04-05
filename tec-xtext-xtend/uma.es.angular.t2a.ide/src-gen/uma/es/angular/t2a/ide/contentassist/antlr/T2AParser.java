@@ -52,7 +52,7 @@ public class T2AParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCompAccess().getFeaturesAssignment_2_1(), "rule__Comp__FeaturesAssignment_2_1");
 			builder.put(grammarAccess.getInstanciaEDOMAccess().getInstanciaAssignment_0(), "rule__InstanciaEDOM__InstanciaAssignment_0");
 			builder.put(grammarAccess.getInstanciaEDOMAccess().getInsfeaturesAssignment_1_1(), "rule__InstanciaEDOM__InsfeaturesAssignment_1_1");
-			builder.put(grammarAccess.getInstanceEDOMFeatureAccess().getEdomsAssignment_0(), "rule__InstanceEDOMFeature__EdomsAssignment_0");
+			builder.put(grammarAccess.getInstanceEDOMFeatureAccess().getInstanciaEDOMAssignment_0(), "rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0");
 			builder.put(grammarAccess.getInstanceEDOMFeatureAccess().getStringAssignment_1(), "rule__InstanceEDOMFeature__StringAssignment_1");
 			builder.put(grammarAccess.getPageFeatureAccess().getInstanciaEDOMAssignment_0(), "rule__PageFeature__InstanciaEDOMAssignment_0");
 			builder.put(grammarAccess.getPageFeatureAccess().getStringAssignment_1(), "rule__PageFeature__StringAssignment_1");

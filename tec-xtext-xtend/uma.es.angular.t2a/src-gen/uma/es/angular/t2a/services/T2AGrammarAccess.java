@@ -239,10 +239,16 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cInsfeaturesInstanceEDOMFeatureParserRuleCall_1_1_0 = (RuleCall)cInsfeaturesAssignment_1_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
-		//InstanciaEDOM: instancia=[EDOM] ('{' (insfeatures+=InstanceEDOMFeature)* '}')?;
+		//InstanciaEDOM: instancia=[EDOM] ('{'
+		//        (insfeatures+=InstanceEDOMFeature)*
+		//    '}'
+		//)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//instancia=[EDOM] ('{' (insfeatures+=InstanceEDOMFeature)* '}')?
+		// instancia=[EDOM] ('{'
+		//        (insfeatures+=InstanceEDOMFeature)*
+		//    '}'
+		//)?
 		public Group getGroup() { return cGroup; }
 		
 		//instancia=[EDOM]
@@ -254,7 +260,10 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//ID
 		public RuleCall getInstanciaEDOMIDTerminalRuleCall_0_0_1() { return cInstanciaEDOMIDTerminalRuleCall_0_0_1; }
 		
-		//('{' (insfeatures+=InstanceEDOMFeature)* '}')?
+		// ('{'
+		//        (insfeatures+=InstanceEDOMFeature)*
+		//    '}'
+		//)?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'{'
@@ -272,29 +281,23 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	public class InstanceEDOMFeatureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.InstanceEDOMFeature");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cEdomsAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final CrossReference cEdomsEDOMCrossReference_0_0 = (CrossReference)cEdomsAssignment_0.eContents().get(0);
-		private final RuleCall cEdomsEDOMIDTerminalRuleCall_0_0_1 = (RuleCall)cEdomsEDOMCrossReference_0_0.eContents().get(1);
+		private final Assignment cInstanciaEDOMAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cInstanciaEDOMInstanciaEDOMParserRuleCall_0_0 = (RuleCall)cInstanciaEDOMAssignment_0.eContents().get(0);
 		private final Assignment cStringAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
 		private final RuleCall cStringSTRINGTerminalRuleCall_1_0 = (RuleCall)cStringAssignment_1.eContents().get(0);
 		
 		//InstanceEDOMFeature:
-		//    edoms=[EDOM] |
-		//    string=STRING;
+		//    instanciaEDOM= InstanciaEDOM | string=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//edoms=[EDOM] |
-		//string=STRING
+		//instanciaEDOM= InstanciaEDOM | string=STRING
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//edoms=[EDOM]
-		public Assignment getEdomsAssignment_0() { return cEdomsAssignment_0; }
+		//instanciaEDOM= InstanciaEDOM
+		public Assignment getInstanciaEDOMAssignment_0() { return cInstanciaEDOMAssignment_0; }
 		
-		//[EDOM]
-		public CrossReference getEdomsEDOMCrossReference_0_0() { return cEdomsEDOMCrossReference_0_0; }
-		
-		//ID
-		public RuleCall getEdomsEDOMIDTerminalRuleCall_0_0_1() { return cEdomsEDOMIDTerminalRuleCall_0_0_1; }
+		//InstanciaEDOM
+		public RuleCall getInstanciaEDOMInstanciaEDOMParserRuleCall_0_0() { return cInstanciaEDOMInstanciaEDOMParserRuleCall_0_0; }
 		
 		//string=STRING
 		public Assignment getStringAssignment_1() { return cStringAssignment_1; }
@@ -505,7 +508,10 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getCompAccess().getRule();
 	}
 	
-	//InstanciaEDOM: instancia=[EDOM] ('{' (insfeatures+=InstanceEDOMFeature)* '}')?;
+	//InstanciaEDOM: instancia=[EDOM] ('{'
+	//        (insfeatures+=InstanceEDOMFeature)*
+	//    '}'
+	//)?;
 	public InstanciaEDOMElements getInstanciaEDOMAccess() {
 		return pInstanciaEDOM;
 	}
@@ -515,8 +521,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//InstanceEDOMFeature:
-	//    edoms=[EDOM] |
-	//    string=STRING;
+	//    instanciaEDOM= InstanciaEDOM | string=STRING;
 	public InstanceEDOMFeatureElements getInstanceEDOMFeatureAccess() {
 		return pInstanceEDOMFeature;
 	}

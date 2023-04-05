@@ -24,7 +24,8 @@
         eType="#//InstanceEDOMFeature" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InstanceEDOMFeature">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="edoms" eType="#//EDOM"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instanciaEDOM" eType="#//InstanciaEDOM"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="string" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PageFeature">
