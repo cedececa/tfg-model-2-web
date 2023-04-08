@@ -81,11 +81,12 @@ class T2AGenerator extends AbstractGenerator {
 		'''
 			«FOR feature : comp.features»
 				«var f = feature as Feature»
-				«IF f.instanciaEDOM !== null && f.instanciaEDOM.instancia.eClass.name.equals('Comp')»
-					<«f.instanciaEDOM.instancia.name»></«f.instanciaEDOM.instancia.name»>
-				«ENDIF»
+				«IF f.instanciaEDOM !== null »
+					«toHTMLCodeForInstanciaEDOM(f.instanciaEDOM)»
+				«ENDIF»	
 				«IF f.isAllowSlot»
-					<ng-content></ng-conteng>
+					<ng-content>
+					</ng-content>
 				«ENDIF»
 				«IF f.string!==null»
 					«f.string»
@@ -114,7 +115,7 @@ class T2AGenerator extends AbstractGenerator {
 				«FOR insfeature : instanciaEDOM.insfeatures»
 					«var insf = insfeature as InstanceEDOMFeature»
 					«IF insf.instanciaEDOM !== null»
-							«toHTMLCodeForInstanciaEDOM(insf.instanciaEDOM)»
+						«toHTMLCodeForInstanciaEDOM(insf.instanciaEDOM)»
 					«ENDIF»	
 					«IF insf.string!==null»
 						«insf.string»

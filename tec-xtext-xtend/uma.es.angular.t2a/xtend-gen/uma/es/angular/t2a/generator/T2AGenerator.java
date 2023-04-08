@@ -145,28 +145,27 @@ public class T2AGenerator extends AbstractGenerator {
         Feature f = ((Feature) feature);
         _builder.newLineIfNotEmpty();
         {
-          if (((f.getInstanciaEDOM() != null) && f.getInstanciaEDOM().getInstancia().eClass().getName().equals("Comp"))) {
-            _builder.append("<");
-            String _name = f.getInstanciaEDOM().getInstancia().getName();
-            _builder.append(_name);
-            _builder.append("></");
-            String _name_1 = f.getInstanciaEDOM().getInstancia().getName();
-            _builder.append(_name_1);
-            _builder.append(">");
+          InstanciaEDOM _instanciaEDOM = f.getInstanciaEDOM();
+          boolean _tripleNotEquals = (_instanciaEDOM != null);
+          if (_tripleNotEquals) {
+            CharSequence _hTMLCodeForInstanciaEDOM = this.toHTMLCodeForInstanciaEDOM(f.getInstanciaEDOM());
+            _builder.append(_hTMLCodeForInstanciaEDOM);
             _builder.newLineIfNotEmpty();
           }
         }
         {
           boolean _isAllowSlot = f.isAllowSlot();
           if (_isAllowSlot) {
-            _builder.append("<ng-content></ng-conteng>");
+            _builder.append("<ng-content>");
+            _builder.newLine();
+            _builder.append("</ng-content>");
             _builder.newLine();
           }
         }
         {
           String _string = f.getString();
-          boolean _tripleNotEquals = (_string != null);
-          if (_tripleNotEquals) {
+          boolean _tripleNotEquals_1 = (_string != null);
+          if (_tripleNotEquals_1) {
             String _string_1 = f.getString();
             _builder.append(_string_1);
             _builder.newLineIfNotEmpty();
