@@ -8,11 +8,13 @@ Comp Cabecera {
 		'Hss'
 	}  
 }
+
 Comp Footer { 
 	'Text A Angular - Footer'
 	AllowSlot
 	div
 }
+
 Comp Layout { 
 	Cabecera  
 	AllowSlot 
