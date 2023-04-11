@@ -26,7 +26,6 @@ import org.eclipse.core.resources.ResourcesPlugin
  */
 class T2AGenerator extends AbstractGenerator {
 
-	
 	/*
 	 * For the absolute path of the generated files
 	 */
@@ -83,14 +82,16 @@ class T2AGenerator extends AbstractGenerator {
 
 	def generateClassFile(Page page, IFileSystemAccess2 fsa) {
 		var nameLowercase = (new String(page.name)).toLowerCase()
-		fsa.generateFile(nameLowercase + '/' + nameLowercase + '.page.ts', toTSCode(page));
-		fsa.generateFile(nameLowercase + '/' + nameLowercase + '.page.html', toHTMLCode(page));
+		var relativePath = 'pages/'+nameLowercase + '/' + nameLowercase;
+		fsa.generateFile(relativePath + '.page.ts', toTSCode(page));
+		fsa.generateFile(relativePath + '.page.html', toHTMLCode(page));
 	}
 
 	def generateClassFile(Comp comp, IFileSystemAccess2 fsa) {
 		var nameLowercase = (new String(comp.name)).toLowerCase()
-		fsa.generateFile(nameLowercase + '/' + nameLowercase + '.comp.ts', toTSCode(comp));
-		fsa.generateFile(nameLowercase + '/' + nameLowercase + '.comp.html', toHTMLCode(comp));
+		var relativePath = 'components/'+nameLowercase + '/' + nameLowercase;
+		fsa.generateFile(relativePath + '.comp.ts', toTSCode(comp));
+		fsa.generateFile(relativePath + '.comp.html', toHTMLCode(comp));
 	}
 
 	def className(Resource res) {

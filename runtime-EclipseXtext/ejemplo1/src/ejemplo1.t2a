@@ -10,7 +10,7 @@ Comp Cabecera {
 }
 
 Comp Footer { 
-	'Text A Angular - Footer'
+	'Text A Angular - Footer '
 	AllowSlot
 	div
 }

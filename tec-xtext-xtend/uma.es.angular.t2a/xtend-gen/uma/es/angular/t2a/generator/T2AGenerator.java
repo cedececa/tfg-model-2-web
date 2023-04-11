@@ -84,15 +84,17 @@ public class T2AGenerator extends AbstractGenerator {
   public void generateClassFile(final Page page, final IFileSystemAccess2 fsa) {
     String _name = page.getName();
     String nameLowercase = new String(_name).toLowerCase();
-    fsa.generateFile((((nameLowercase + "/") + nameLowercase) + ".page.ts"), this.toTSCode(page));
-    fsa.generateFile((((nameLowercase + "/") + nameLowercase) + ".page.html"), this.toHTMLCode(page));
+    String relativePath = ((("pages/" + nameLowercase) + "/") + nameLowercase);
+    fsa.generateFile((relativePath + ".page.ts"), this.toTSCode(page));
+    fsa.generateFile((relativePath + ".page.html"), this.toHTMLCode(page));
   }
   
   public void generateClassFile(final Comp comp, final IFileSystemAccess2 fsa) {
     String _name = comp.getName();
     String nameLowercase = new String(_name).toLowerCase();
-    fsa.generateFile((((nameLowercase + "/") + nameLowercase) + ".comp.ts"), this.toTSCode(comp));
-    fsa.generateFile((((nameLowercase + "/") + nameLowercase) + ".comp.html"), this.toHTMLCode(comp));
+    String relativePath = ((("components/" + nameLowercase) + "/") + nameLowercase);
+    fsa.generateFile((relativePath + ".comp.ts"), this.toTSCode(comp));
+    fsa.generateFile((relativePath + ".comp.html"), this.toHTMLCode(comp));
   }
   
   public String className(final Resource res) {
