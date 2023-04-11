@@ -26,12 +26,16 @@ import org.eclipse.core.resources.ResourcesPlugin
  */
 class T2AGenerator extends AbstractGenerator {
 
-	// For the absolute path of the generated files
 	
-	def printOutputDirectoryAbsolutePath(IFileSystemAccess2 fsa){
- // generate a dummy file and extract the output directory from the file path
-        fsa.generateFile("dummy.txt", "dummy content")
+	/*
+	 * For the absolute path of the generated files
+	 */
+	def getSRCGenDirectoryAbsolutePath(IFileSystemAccess2 fsa){
+		var fileName = "dummy.txt";
+		// generate a dummy file and extract the output directory from the file path
+        fsa.generateFile(fileName, "dummy content")
         val uri = URI.createURI(fsa.getURI("dummy.txt").toString)
+        
         val outputDir = if (uri.isFile()) {
             Paths.get(uri.toFileString()).getParent().toString()
         } else if (uri.isPlatform()) {
@@ -41,20 +45,29 @@ class T2AGenerator extends AbstractGenerator {
         }
 
         // delete the dummy file
-        fsa.deleteFile("dummy.txt")
+        fsa.deleteFile(fileName)
 
-        // use the generated file path as needed
-        println("Generated files path: " + outputDir)
+        // use the generated file path as neede -  C:\Users\TFG\Documents\GitHub\tfg-model-2-web\runtime-EclipseXtext
+        // println("Generated files path: " + outputDir)
+        
+        
+	 	// Get relative path of the generated file
+	 	var relativePath = uri.toPlatformString(true);
+        
+		//System.out.println(outputDir);   
+		//System.out.println(relativePath);   
+		relativePath = relativePath.replace("/","\\").replace('\\'+fileName,'');
+		
+		System.out.println(outputDir+relativePath);   
+		
+        return outputDir+relativePath;
 	}
+	
+	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		printOutputDirectoryAbsolutePath(fsa)
 		
 		var root = resource.contents.head as Root;
-		    val outputDir = fsa.getURI("").toFileString
-		System.out.println("out "+outputDir);
 
-        // use the generated file path as needed
-        println("Generated files path: " + outputDir)
 		for (element : root.elements) {
 			if (element.eClass.name.equals('Page')) {
 				generateClassFile(element as Page, fsa);
@@ -63,7 +76,8 @@ class T2AGenerator extends AbstractGenerator {
 				generateClassFile(element as Comp, fsa);
 			}
 		}
-		runAngularProject(fsa, resource, context);
+		
+		runAngularProject(getSRCGenDirectoryAbsolutePath(fsa));
 
 	}
 
@@ -158,12 +172,8 @@ class T2AGenerator extends AbstractGenerator {
 		'''
 	}
 
-	def runAngularProject(IFileSystemAccess2 fsa, Resource r, IGeneratorContext context) {
+	def runAngularProject(String srcGenDirectoryAbsolutePath) {
 
-		// get relative path of the instance 		
-		var relativePath = r.URI.toPlatformString(true)
-		System.out.println(relativePath);
-		
-		AngularRunner.AngularRunner(relativePath);
+		AngularRunner.AngularRunner(srcGenDirectoryAbsolutePath);
 	}
 }

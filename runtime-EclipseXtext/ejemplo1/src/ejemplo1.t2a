@@ -16,17 +16,17 @@ Comp Footer {
 }
 
 Comp Layout { 
-	Cabecera  
+	Cabecera   
 	AllowSlot 
-	Footer {
-		div{
-			" heihei"
+	Footer { 
+		div {
+			" heih ei" 
 		}
-	}
+	} 
 } 
 
-Comp HomeContent {   
-	'Bienvenido a la primera version de T2A'  
+Comp HomeContent {    
+	'Bienvenido a s  la pri mera ve rsion de T2A'   
 	AllowSlot 
 	 
 }
@@ -35,7 +35,7 @@ Page Home {
 	div{
 		'hhh'   
 		H1{
-			'h o  las s'
+			'h olas s'
 		}
 		div{  
 			'd ivis '   
