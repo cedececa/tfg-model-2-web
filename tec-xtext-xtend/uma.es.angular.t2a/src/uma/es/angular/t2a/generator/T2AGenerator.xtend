@@ -14,6 +14,10 @@ import uma.es.angular.t2a.t2A.Feature
 import uma.es.angular.t2a.t2A.PageFeature
 import uma.es.angular.t2a.t2A.InstanciaEDOM
 import uma.es.angular.t2a.t2A.InstanceEDOMFeature
+import java.nio.file.Paths
+import org.eclipse.emf.common.util.URI
+import org.eclipse.core.resources.ResourcesPlugin
+
 
 /**
  * Generates code from your model files on save.
@@ -22,8 +26,35 @@ import uma.es.angular.t2a.t2A.InstanceEDOMFeature
  */
 class T2AGenerator extends AbstractGenerator {
 
+	// For the absolute path of the generated files
+	
+	def printOutputDirectoryAbsolutePath(IFileSystemAccess2 fsa){
+ // generate a dummy file and extract the output directory from the file path
+        fsa.generateFile("dummy.txt", "dummy content")
+        val uri = URI.createURI(fsa.getURI("dummy.txt").toString)
+        val outputDir = if (uri.isFile()) {
+            Paths.get(uri.toFileString()).getParent().toString()
+        } else if (uri.isPlatform()) {
+            ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile().getAbsolutePath()
+        } else {
+            throw new IllegalArgumentException("Unsupported URI scheme: " + uri.scheme)
+        }
+
+        // delete the dummy file
+        fsa.deleteFile("dummy.txt")
+
+        // use the generated file path as needed
+        println("Generated files path: " + outputDir)
+	}
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		printOutputDirectoryAbsolutePath(fsa)
+		
 		var root = resource.contents.head as Root;
+		    val outputDir = fsa.getURI("").toFileString
+		System.out.println("out "+outputDir);
+
+        // use the generated file path as needed
+        println("Generated files path: " + outputDir)
 		for (element : root.elements) {
 			if (element.eClass.name.equals('Page')) {
 				generateClassFile(element as Page, fsa);
@@ -32,6 +63,8 @@ class T2AGenerator extends AbstractGenerator {
 				generateClassFile(element as Comp, fsa);
 			}
 		}
+		runAngularProject(fsa, resource, context);
+
 	}
 
 	def generateClassFile(Page page, IFileSystemAccess2 fsa) {
@@ -109,7 +142,7 @@ class T2AGenerator extends AbstractGenerator {
 		'''
 	}
 
-	def toHTMLCodeForInstanciaEDOM(InstanciaEDOM instanciaEDOM){
+	def toHTMLCodeForInstanciaEDOM(InstanciaEDOM instanciaEDOM) {
 		''' 
 			<«instanciaEDOM.instancia.name»>
 				«FOR insfeature : instanciaEDOM.insfeatures»
@@ -122,6 +155,15 @@ class T2AGenerator extends AbstractGenerator {
 					«ENDIF»
 				«ENDFOR»
 			</«instanciaEDOM.instancia.name»>
-		'''		
+		'''
+	}
+
+	def runAngularProject(IFileSystemAccess2 fsa, Resource r, IGeneratorContext context) {
+
+		// get relative path of the instance 		
+		var relativePath = r.URI.toPlatformString(true)
+		System.out.println(relativePath);
+		
+		AngularRunner.AngularRunner(relativePath);
 	}
 }

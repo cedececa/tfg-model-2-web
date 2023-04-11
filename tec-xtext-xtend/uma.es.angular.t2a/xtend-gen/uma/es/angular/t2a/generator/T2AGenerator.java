@@ -3,13 +3,17 @@
  */
 package uma.es.angular.t2a.generator;
 
+import java.nio.file.Paths;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import uma.es.angular.t2a.t2A.Comp;
 import uma.es.angular.t2a.t2A.Element;
@@ -27,10 +31,42 @@ import uma.es.angular.t2a.t2A.Root;
  */
 @SuppressWarnings("all")
 public class T2AGenerator extends AbstractGenerator {
+  public String printOutputDirectoryAbsolutePath(final IFileSystemAccess2 fsa) {
+    String _xblockexpression = null;
+    {
+      fsa.generateFile("dummy.txt", "dummy content");
+      final URI uri = URI.createURI(fsa.getURI("dummy.txt").toString());
+      String _xifexpression = null;
+      boolean _isFile = uri.isFile();
+      if (_isFile) {
+        _xifexpression = Paths.get(uri.toFileString()).getParent().toString();
+      } else {
+        String _xifexpression_1 = null;
+        boolean _isPlatform = uri.isPlatform();
+        if (_isPlatform) {
+          _xifexpression_1 = ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile().getAbsolutePath();
+        } else {
+          String _scheme = uri.scheme();
+          String _plus = ("Unsupported URI scheme: " + _scheme);
+          throw new IllegalArgumentException(_plus);
+        }
+        _xifexpression = _xifexpression_1;
+      }
+      final String outputDir = _xifexpression;
+      fsa.deleteFile("dummy.txt");
+      _xblockexpression = InputOutput.<String>println(("Generated files path: " + outputDir));
+    }
+    return _xblockexpression;
+  }
+  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    this.printOutputDirectoryAbsolutePath(fsa);
     EObject _head = IterableExtensions.<EObject>head(resource.getContents());
     Root root = ((Root) _head);
+    final String outputDir = fsa.getURI("").toFileString();
+    System.out.println(("out " + outputDir));
+    InputOutput.<String>println(("Generated files path: " + outputDir));
     EList<Element> _elements = root.getElements();
     for (final Element element : _elements) {
       {
@@ -44,6 +80,7 @@ public class T2AGenerator extends AbstractGenerator {
         }
       }
     }
+    this.runAngularProject(fsa, resource, context);
   }
   
   public void generateClassFile(final Page page, final IFileSystemAccess2 fsa) {
@@ -247,5 +284,11 @@ public class T2AGenerator extends AbstractGenerator {
     _builder.append(">");
     _builder.newLineIfNotEmpty();
     return _builder;
+  }
+  
+  public void runAngularProject(final IFileSystemAccess2 fsa, final Resource r, final IGeneratorContext context) {
+    String relativePath = r.getURI().toPlatformString(true);
+    System.out.println(relativePath);
+    AngularRunner.AngularRunner(relativePath);
   }
 }

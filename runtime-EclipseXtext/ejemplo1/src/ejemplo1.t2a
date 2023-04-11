@@ -20,34 +20,36 @@ Comp Layout {
 	AllowSlot 
 	Footer {
 		div{
-			"heihei"
+			" heihei"
 		}
 	}
 } 
 
-Comp HomeContent { 
+Comp HomeContent {   
 	'Bienvenido a la primera version de T2A'  
-	AllowSlot
-	
+	AllowSlot 
+	 
 }
 
 Page Home {
 	div{
-		'hhh'
+		'hhh'   
 		H1{
-			'holass'
+			'h o  las s'
 		}
-		div{
-			'divis'
-		}
+		div{  
+			'd ivis '   
+		}     
 	}
-	'Hola 1'
+	'Hola 1' 
 	Layout { 
 		'Hola 3'		
-		'Hola 3'	
+		'Hola 3' 	
 		'Hola 3'
+		
 		HomeContent{
-
+			
+ 
 		}
 
 	}
