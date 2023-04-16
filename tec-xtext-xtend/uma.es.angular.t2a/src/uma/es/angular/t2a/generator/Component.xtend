@@ -8,8 +8,6 @@ class Component {
 
 	def static generarSharedModule(IFileSystemAccess2 fsa, List<Comp> components){
 		var relativePath = 'components/';
-		
-		fsa.deleteFile(relativePath + 'shared-components.module.ts')
 		fsa.generateFile(relativePath + 'shared-components.module.ts', Component.toModuleCode(components));
 	}
 	def static toModuleCode(List<Comp> components){

@@ -62,17 +62,18 @@ class T2AGenerator extends AbstractGenerator {
         return outputDir+relativePath;
 	}
 	
-	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		
 		var root = resource.contents.head as Root;
 		
 		var components = new ArrayList<Comp>();
-		
 		for (element : root.elements) {
 			if (element.eClass.name.equals('Page')) {
-				generateClassFile(element as Page, fsa);
-				
+				var page = element as Page;
+				generateClassFile(page, fsa);
+				if(page.home==true){
+					AppEntrada.generarSharedModule(fsa, page);
+				}
 			}
 			if (element.eClass.name.equals('Comp')) {
 				var comp  = element as Comp;

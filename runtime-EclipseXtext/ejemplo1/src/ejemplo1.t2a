@@ -36,15 +36,17 @@ Comp Menu{
 	'We have a menu'
 }
 
-Page Home {
+Page Home
+ {
+ 	home
 	Layout{
 		Menu
 		'HOLA'
 		H5{
 			'Hola Soy H5'
 		}
-		
 	}
+	
 }  
 
 Page Items{

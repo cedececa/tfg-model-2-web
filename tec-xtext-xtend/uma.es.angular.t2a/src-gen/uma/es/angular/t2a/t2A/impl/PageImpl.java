@@ -5,12 +5,15 @@ package uma.es.angular.t2a.t2A.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -27,6 +30,7 @@ import uma.es.angular.t2a.t2A.T2APackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uma.es.angular.t2a.t2A.impl.PageImpl#isHome <em>Home</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.impl.PageImpl#getPageFeatures <em>Page Features</em>}</li>
  * </ul>
  *
@@ -34,6 +38,26 @@ import uma.es.angular.t2a.t2A.T2APackage;
  */
 public class PageImpl extends ElementImpl implements Page
 {
+  /**
+   * The default value of the '{@link #isHome() <em>Home</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isHome()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean HOME_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isHome() <em>Home</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isHome()
+   * @generated
+   * @ordered
+   */
+  protected boolean home = HOME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getPageFeatures() <em>Page Features</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -63,6 +87,31 @@ public class PageImpl extends ElementImpl implements Page
   protected EClass eStaticClass()
   {
     return T2APackage.Literals.PAGE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isHome()
+  {
+    return home;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setHome(boolean newHome)
+  {
+    boolean oldHome = home;
+    home = newHome;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, T2APackage.PAGE__HOME, oldHome, home));
   }
 
   /**
@@ -106,6 +155,8 @@ public class PageImpl extends ElementImpl implements Page
   {
     switch (featureID)
     {
+      case T2APackage.PAGE__HOME:
+        return isHome();
       case T2APackage.PAGE__PAGE_FEATURES:
         return getPageFeatures();
     }
@@ -123,6 +174,9 @@ public class PageImpl extends ElementImpl implements Page
   {
     switch (featureID)
     {
+      case T2APackage.PAGE__HOME:
+        setHome((Boolean)newValue);
+        return;
       case T2APackage.PAGE__PAGE_FEATURES:
         getPageFeatures().clear();
         getPageFeatures().addAll((Collection<? extends PageFeature>)newValue);
@@ -141,6 +195,9 @@ public class PageImpl extends ElementImpl implements Page
   {
     switch (featureID)
     {
+      case T2APackage.PAGE__HOME:
+        setHome(HOME_EDEFAULT);
+        return;
       case T2APackage.PAGE__PAGE_FEATURES:
         getPageFeatures().clear();
         return;
@@ -158,10 +215,29 @@ public class PageImpl extends ElementImpl implements Page
   {
     switch (featureID)
     {
+      case T2APackage.PAGE__HOME:
+        return home != HOME_EDEFAULT;
       case T2APackage.PAGE__PAGE_FEATURES:
         return pageFeatures != null && !pageFeatures.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (home: ");
+    result.append(home);
+    result.append(')');
+    return result.toString();
   }
 
 } //PageImpl

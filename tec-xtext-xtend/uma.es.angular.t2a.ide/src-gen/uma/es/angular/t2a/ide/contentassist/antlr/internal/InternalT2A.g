@@ -516,9 +516,9 @@ rule__Page__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getPageAccess().getPageFeaturesAssignment_3()); }
-	(rule__Page__PageFeaturesAssignment_3)*
-	{ after(grammarAccess.getPageAccess().getPageFeaturesAssignment_3()); }
+	{ before(grammarAccess.getPageAccess().getHomeAssignment_3()); }
+	(rule__Page__HomeAssignment_3)?
+	{ after(grammarAccess.getPageAccess().getHomeAssignment_3()); }
 )
 ;
 finally {
@@ -531,6 +531,7 @@ rule__Page__Group__4
 	}
 :
 	rule__Page__Group__4__Impl
+	rule__Page__Group__5
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -542,9 +543,35 @@ rule__Page__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_4()); }
+	{ before(grammarAccess.getPageAccess().getPageFeaturesAssignment_4()); }
+	(rule__Page__PageFeaturesAssignment_4)*
+	{ after(grammarAccess.getPageAccess().getPageFeaturesAssignment_4()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Page__Group__5
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Page__Group__5__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Page__Group__5__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_5()); }
 	'}'
-	{ after(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_4()); }
+	{ after(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_5()); }
 )
 ;
 finally {
@@ -1041,15 +1068,34 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Page__PageFeaturesAssignment_3
+rule__Page__HomeAssignment_3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getPageAccess().getPageFeaturesPageFeatureParserRuleCall_3_0()); }
+		{ before(grammarAccess.getPageAccess().getHomeHomeKeyword_3_0()); }
+		(
+			{ before(grammarAccess.getPageAccess().getHomeHomeKeyword_3_0()); }
+			'home'
+			{ after(grammarAccess.getPageAccess().getHomeHomeKeyword_3_0()); }
+		)
+		{ after(grammarAccess.getPageAccess().getHomeHomeKeyword_3_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Page__PageFeaturesAssignment_4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getPageAccess().getPageFeaturesPageFeatureParserRuleCall_4_0()); }
 		rulePageFeature
-		{ after(grammarAccess.getPageAccess().getPageFeaturesPageFeatureParserRuleCall_3_0()); }
+		{ after(grammarAccess.getPageAccess().getPageFeaturesPageFeatureParserRuleCall_4_0()); }
 	)
 ;
 finally {

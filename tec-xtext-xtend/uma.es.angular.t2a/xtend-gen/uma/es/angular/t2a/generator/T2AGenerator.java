@@ -72,10 +72,16 @@ public class T2AGenerator extends AbstractGenerator {
       {
         boolean _equals = element.eClass().getName().equals("Page");
         if (_equals) {
-          this.generateClassFile(((Page) element), fsa);
+          Page page = ((Page) element);
+          this.generateClassFile(page, fsa);
+          boolean _isHome = page.isHome();
+          boolean _equals_1 = (_isHome == true);
+          if (_equals_1) {
+            AppEntrada.generarSharedModule(fsa, page);
+          }
         }
-        boolean _equals_1 = element.eClass().getName().equals("Comp");
-        if (_equals_1) {
+        boolean _equals_2 = element.eClass().getName().equals("Comp");
+        if (_equals_2) {
           Comp comp = ((Comp) element);
           this.generateClassFile(comp, fsa);
           components.add(comp);

@@ -176,10 +176,24 @@ rulePage returns [EObject current=null]
 		}
 		(
 			(
+				lv_home_3_0='home'
 				{
-					newCompositeNode(grammarAccess.getPageAccess().getPageFeaturesPageFeatureParserRuleCall_3_0());
+					newLeafNode(lv_home_3_0, grammarAccess.getPageAccess().getHomeHomeKeyword_3_0());
 				}
-				lv_pageFeatures_3_0=rulePageFeature
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPageRule());
+					}
+					setWithLastConsumed($current, "home", lv_home_3_0 != null, "home");
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPageAccess().getPageFeaturesPageFeatureParserRuleCall_4_0());
+				}
+				lv_pageFeatures_4_0=rulePageFeature
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPageRule());
@@ -187,15 +201,15 @@ rulePage returns [EObject current=null]
 					add(
 						$current,
 						"pageFeatures",
-						lv_pageFeatures_3_0,
+						lv_pageFeatures_4_0,
 						"uma.es.angular.t2a.T2A.PageFeature");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_4='}'
+		otherlv_5='}'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_5());
 		}
 	)
 ;

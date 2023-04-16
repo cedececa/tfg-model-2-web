@@ -9,7 +9,9 @@ Element:
 	Page | EDOM;
 
 Page:
-	'Page' name=ID '{'
+	'Page' name=ID 
+	'{'
+	(home?='home')? 
 	(pageFeatures+=PageFeature)*
 	'}';
 
@@ -40,8 +42,7 @@ InstanceEDOMFeature:
 	
 PageFeature: 
 	instanciaEDOM=InstanciaEDOM | 
-	string=STRING
-; 
+	string=STRING ; 
 
 Feature: 
 	instanciaEDOM=InstanciaEDOM |
