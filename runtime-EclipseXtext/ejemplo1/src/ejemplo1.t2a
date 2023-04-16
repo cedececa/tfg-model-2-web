@@ -7,12 +7,12 @@ Dom h2
 Comp Cabecera { 	
 	'Texto A Angular - V0.001 ' 
 	div {
-		'Hss'
+		'Hss' 
 	}  
 }
 
 Comp Footer { 
-	'Text A Angular - Footer '
+	'Text A Angular   - Fo oter '
 	AllowSlot
 	div
 }
@@ -22,15 +22,14 @@ Comp Layout {
 	AllowSlot 
 	Footer { 
 		div {
-			" heih  ei" 
+			"  heih ei " 
 		}
 	} 
 } 
 
 Comp HomeContent {    
 	'Bienvenido a s  la pri mera ve rsion de T2A'   
-	AllowSlot 
-	 
+	AllowSlot  
 }
 
 Comp Menu{

@@ -3,6 +3,6 @@
 	templateUrl: 'Footer.comp.html',
 	styleUrls:['Footer.comp.scss']	
 })
-export class CompFooter{
+export class FooterComponent{
 	
 }

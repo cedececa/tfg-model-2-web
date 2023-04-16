@@ -17,7 +17,7 @@ import uma.es.angular.t2a.t2A.InstanceEDOMFeature
 import java.nio.file.Paths
 import org.eclipse.emf.common.util.URI
 import org.eclipse.core.resources.ResourcesPlugin
-
+import java.util.ArrayList
 
 /**
  * Generates code from your model files on save.
@@ -66,15 +66,22 @@ class T2AGenerator extends AbstractGenerator {
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		
 		var root = resource.contents.head as Root;
-
+		
+		var components = new ArrayList<Comp>();
+		
 		for (element : root.elements) {
 			if (element.eClass.name.equals('Page')) {
 				generateClassFile(element as Page, fsa);
+				
 			}
 			if (element.eClass.name.equals('Comp')) {
-				generateClassFile(element as Comp, fsa);
+				var comp  = element as Comp;
+				generateClassFile(comp, fsa);
+				components.add(comp);
 			}
 		}
+		
+		Component.generarSharedModule(fsa, components);
 		
 		runAngularProject(getSRCGenDirectoryAbsolutePath(fsa));
 
@@ -106,7 +113,7 @@ class T2AGenerator extends AbstractGenerator {
 				templateUrl: '«comp.name».comp.html',
 				styleUrls:['«comp.name».comp.scss']	
 			})
-			export class Comp«comp.name»{
+			export class «comp.name»Component{
 				
 			}
 		'''
@@ -119,7 +126,7 @@ class T2AGenerator extends AbstractGenerator {
 				templateUrl: '«page.name».page.html',
 				styleUrls:['«page.name».page.scss']	
 			})
-			export class Page«page.name»{
+			export class «page.name»Page{
 				
 			}
 		'''

@@ -3,6 +3,6 @@
 	templateUrl: 'Items.page.html',
 	styleUrls:['Items.page.scss']	
 })
-export class PageItems{
+export class ItemsPage{
 	
 }

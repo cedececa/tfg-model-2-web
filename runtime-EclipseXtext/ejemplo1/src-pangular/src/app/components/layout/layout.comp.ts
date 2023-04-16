@@ -3,6 +3,6 @@
 	templateUrl: 'Layout.comp.html',
 	styleUrls:['Layout.comp.scss']	
 })
-export class CompLayout{
+export class LayoutComponent{
 	
 }

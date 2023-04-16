@@ -3,6 +3,6 @@
 	templateUrl: 'HomeContent.comp.html',
 	styleUrls:['HomeContent.comp.scss']	
 })
-export class CompHomeContent{
+export class HomeContentComponent{
 	
 }

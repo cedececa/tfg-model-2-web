@@ -4,6 +4,7 @@
 package uma.es.angular.t2a.generator;
 
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -65,6 +66,7 @@ public class T2AGenerator extends AbstractGenerator {
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     EObject _head = IterableExtensions.<EObject>head(resource.getContents());
     Root root = ((Root) _head);
+    ArrayList<Comp> components = new ArrayList<Comp>();
     EList<Element> _elements = root.getElements();
     for (final Element element : _elements) {
       {
@@ -74,10 +76,13 @@ public class T2AGenerator extends AbstractGenerator {
         }
         boolean _equals_1 = element.eClass().getName().equals("Comp");
         if (_equals_1) {
-          this.generateClassFile(((Comp) element), fsa);
+          Comp comp = ((Comp) element);
+          this.generateClassFile(comp, fsa);
+          components.add(comp);
         }
       }
     }
+    Component.generarSharedModule(fsa, components);
     this.runAngularProject(this.getSRCGenDirectoryAbsolutePath(fsa));
   }
   
@@ -126,10 +131,10 @@ public class T2AGenerator extends AbstractGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append("})");
     _builder.newLine();
-    _builder.append("export class Comp");
+    _builder.append("export class ");
     String _name_3 = comp.getName();
     _builder.append(_name_3);
-    _builder.append("{");
+    _builder.append("Component{");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.newLine();
@@ -162,10 +167,10 @@ public class T2AGenerator extends AbstractGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append("})");
     _builder.newLine();
-    _builder.append("export class Page");
+    _builder.append("export class ");
     String _name_3 = page.getName();
     _builder.append(_name_3);
-    _builder.append("{");
+    _builder.append("Page{");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.newLine();

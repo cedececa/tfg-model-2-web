@@ -3,6 +3,6 @@
 	templateUrl: 'Menu.comp.html',
 	styleUrls:['Menu.comp.scss']	
 })
-export class CompMenu{
+export class MenuComponent{
 	
 }
