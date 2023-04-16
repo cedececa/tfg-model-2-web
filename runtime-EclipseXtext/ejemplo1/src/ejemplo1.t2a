@@ -1,6 +1,8 @@
-Dom H1 
+Dom H1
 Dom p
 Dom div
+Dom H5
+Dom h2
 
 Comp Cabecera { 	
 	'Texto A Angular - V0.001 ' 
@@ -20,7 +22,7 @@ Comp Layout {
 	AllowSlot 
 	Footer { 
 		div {
-			" heih ei" 
+			" heih  ei" 
 		}
 	} 
 } 
@@ -31,27 +33,31 @@ Comp HomeContent {
 	 
 }
 
-Page Home {
-	div{
-		'hhh'   
-		H1{
-			'h olas s'
-		}
-		div{  
-			'd ivis '   
-		}     
-	}
-	'Hola 1' 
-	Layout { 
-		'Hola 3'		
-		'Hola 3' 	
-		'Hola 3'
-		
-		HomeContent{
-			
- 
-		}
+Comp Menu{
+	'We have a menu'
+}
 
+Page Home {
+	Layout{
+		Menu
+		'HOLA'
+		H5{
+			'Hola Soy H5'
+		}
+		
 	}
 }  
 
+Page Items{
+	Layout{
+		Menu
+		'HOLA'
+		H5{
+			'Hola Soy H5'
+		}
+		h2{
+			'We have another h2'
+		}
+		
+	}
+}
