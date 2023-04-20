@@ -90,5 +90,11 @@ Page Cuarta{
 		}
 	}
 }
-
-
+Page Cinco{
+	showInNav
+	Layout{
+		Section{
+			h2 {'La pagina 5'}
+		}
+	}
+}
