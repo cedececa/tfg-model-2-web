@@ -142,13 +142,22 @@ public interface T2APackage extends EPackage
   int PAGE__HOME = ELEMENT_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Show In Nav</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAGE__SHOW_IN_NAV = ELEMENT_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Page Features</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PAGE__PAGE_FEATURES = ELEMENT_FEATURE_COUNT + 1;
+  int PAGE__PAGE_FEATURES = ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Page</em>' class.
@@ -157,7 +166,7 @@ public interface T2APackage extends EPackage
    * @generated
    * @ordered
    */
-  int PAGE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
+  int PAGE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.EDOMImpl <em>EDOM</em>}' class.
@@ -492,6 +501,17 @@ public interface T2APackage extends EPackage
   EAttribute getPage_Home();
 
   /**
+   * Returns the meta object for the attribute '{@link uma.es.angular.t2a.t2A.Page#isShowInNav <em>Show In Nav</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Show In Nav</em>'.
+   * @see uma.es.angular.t2a.t2A.Page#isShowInNav()
+   * @see #getPage()
+   * @generated
+   */
+  EAttribute getPage_ShowInNav();
+
+  /**
    * Returns the meta object for the containment reference list '{@link uma.es.angular.t2a.t2A.Page#getPageFeatures <em>Page Features</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -758,6 +778,14 @@ public interface T2APackage extends EPackage
      * @generated
      */
     EAttribute PAGE__HOME = eINSTANCE.getPage_Home();
+
+    /**
+     * The meta object literal for the '<em><b>Show In Nav</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PAGE__SHOW_IN_NAV = eINSTANCE.getPage_ShowInNav();
 
     /**
      * The meta object literal for the '<em><b>Page Features</b></em>' containment reference list feature.

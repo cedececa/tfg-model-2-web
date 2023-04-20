@@ -12,6 +12,7 @@ Page:
 	'Page' name=ID 
 	'{'
 	(home?='home')? 
+	(showInNav?='showInNav')?
 	(pageFeatures+=PageFeature)*
 	'}';
 

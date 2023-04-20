@@ -234,9 +234,20 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
    * @generated
    */
   @Override
+  public EAttribute getPage_ShowInNav()
+  {
+    return (EAttribute)pageEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getPage_PageFeatures()
   {
-    return (EReference)pageEClass.getEStructuralFeatures().get(1);
+    return (EReference)pageEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -465,6 +476,7 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
 
     pageEClass = createEClass(PAGE);
     createEAttribute(pageEClass, PAGE__HOME);
+    createEAttribute(pageEClass, PAGE__SHOW_IN_NAV);
     createEReference(pageEClass, PAGE__PAGE_FEATURES);
 
     edomEClass = createEClass(EDOM);
@@ -535,6 +547,7 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
 
     initEClass(pageEClass, Page.class, "Page", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPage_Home(), ecorePackage.getEBoolean(), "home", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPage_ShowInNav(), ecorePackage.getEBoolean(), "showInNav", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPage_PageFeatures(), this.getPageFeature(), null, "pageFeatures", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(edomEClass, uma.es.angular.t2a.t2A.EDOM.class, "EDOM", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

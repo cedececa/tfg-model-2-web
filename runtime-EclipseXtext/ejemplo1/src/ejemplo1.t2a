@@ -3,14 +3,15 @@ Dom h2
 Dom h3
 Dom h4
 Dom h5
-Dom nav
 Dom ul
 Dom p
 Dom li
 Dom a
 Dom header
 Dom div
-
+Comp leftNav{
+	AllowSlot
+}
 Comp Cabecera{
 	header{ 
 		h2{
@@ -20,7 +21,7 @@ Comp Cabecera{
 }
 
 Comp Section{
-	nav{
+	leftNav{
 		ul{
 			li{a{"London"}}
 			li{a{"Changsha"}}
@@ -34,7 +35,7 @@ Comp Articulo{
 		"London"
 	}
 	p{
-		"London is  the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants."
+		"London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants."
 	}
 	p{
 		"Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium."
@@ -55,6 +56,7 @@ Comp Layout{
 
 Page Primera{
 	home
+	showInNav
 	Layout{
 		Section{
 			Articulo
@@ -63,6 +65,7 @@ Page Primera{
 }
 
 Page Segunda{
+	showInNav
 	Layout{
 		Section{
 			h2{'La pagina segunda'}
@@ -71,9 +74,19 @@ Page Segunda{
 }
 
 Page Tercera{
+	showInNav
 	Layout{
 		Section{
 			h2 {'La pagina tercera'}
+		}
+	}
+}
+
+Page Cuarta{
+	showInNav
+	Layout{
+		Section{
+			h2 {'La pagina cuarta'}
 		}
 	}
 }

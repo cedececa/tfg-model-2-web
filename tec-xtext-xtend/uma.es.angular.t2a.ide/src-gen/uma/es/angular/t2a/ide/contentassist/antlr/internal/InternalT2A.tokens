@@ -1,8 +1,9 @@
-'AllowSlot'=17
+'AllowSlot'=18
 'Comp'=15
 'Dom'=14
 'Page'=11
 'home'=16
+'showInNav'=17
 '{'=12
 '}'=13
 RULE_ANY_OTHER=10
@@ -19,3 +20,4 @@ T__14=14
 T__15=15
 T__16=16
 T__17=17
+T__18=18

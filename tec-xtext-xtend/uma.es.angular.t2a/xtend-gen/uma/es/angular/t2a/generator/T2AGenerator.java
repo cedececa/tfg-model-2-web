@@ -110,7 +110,7 @@ public class T2AGenerator extends AbstractGenerator {
         }
       }
     }
-    AppRoot.generarRoot(fsa);
+    AppRoot.generarRoot(fsa, pages);
     ComponentModule.generarModule(fsa, components);
     PageModule.generarModule(fsa, pages);
     this.runAngularProject(absoluteSrcGenDirectory);

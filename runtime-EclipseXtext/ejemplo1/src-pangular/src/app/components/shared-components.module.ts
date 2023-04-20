@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { leftNavComponent } from './leftnav/leftnav.comp';
 import { CabeceraComponent } from './cabecera/cabecera.comp';
 import { SectionComponent } from './section/section.comp';
 import { ArticuloComponent } from './articulo/articulo.comp';
@@ -9,6 +10,7 @@ import { LayoutComponent } from './layout/layout.comp';
 		
 		@NgModule({
 		   declarations: [
+leftNavComponent,
 CabeceraComponent,
 SectionComponent,
 ArticuloComponent,
@@ -16,6 +18,7 @@ FooterComponent,
 LayoutComponent,
 		   ],
 			  exports:[
+leftNavComponent,
 CabeceraComponent,
 SectionComponent,
 ArticuloComponent,

@@ -92,7 +92,6 @@ class T2AGenerator extends AbstractGenerator {
 				if (page.home == true) {
 					AppModule.generarModule(fsa, page);
 				}
-
 			}
 			if (element.eClass.name.equals('Comp')) {
 				var comp = element as Comp;
@@ -100,7 +99,7 @@ class T2AGenerator extends AbstractGenerator {
 				components.add(comp);
 			}
 		}
-		AppRoot.generarRoot(fsa);
+		AppRoot.generarRoot(fsa, pages);
 		ComponentModule.generarModule(fsa, components);
 		PageModule.generarModule(fsa, pages);
 

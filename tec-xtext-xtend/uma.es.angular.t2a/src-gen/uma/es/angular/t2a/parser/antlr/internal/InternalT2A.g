@@ -190,10 +190,24 @@ rulePage returns [EObject current=null]
 		)?
 		(
 			(
+				lv_showInNav_4_0='showInNav'
 				{
-					newCompositeNode(grammarAccess.getPageAccess().getPageFeaturesPageFeatureParserRuleCall_4_0());
+					newLeafNode(lv_showInNav_4_0, grammarAccess.getPageAccess().getShowInNavShowInNavKeyword_4_0());
 				}
-				lv_pageFeatures_4_0=rulePageFeature
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPageRule());
+					}
+					setWithLastConsumed($current, "showInNav", lv_showInNav_4_0 != null, "showInNav");
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPageAccess().getPageFeaturesPageFeatureParserRuleCall_5_0());
+				}
+				lv_pageFeatures_5_0=rulePageFeature
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPageRule());
@@ -201,15 +215,15 @@ rulePage returns [EObject current=null]
 					add(
 						$current,
 						"pageFeatures",
-						lv_pageFeatures_4_0,
+						lv_pageFeatures_5_0,
 						"uma.es.angular.t2a.T2A.PageFeature");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_5='}'
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;

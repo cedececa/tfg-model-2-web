@@ -161,7 +161,7 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Page returns Page
 	 *
 	 * Constraint:
-	 *     (name=ID home?='home'? pageFeatures+=PageFeature*)
+	 *     (name=ID home?='home'? showInNav?='showInNav'? pageFeatures+=PageFeature*)
 	 * </pre>
 	 */
 	protected void sequence_Page(ISerializationContext context, Page semanticObject) {

@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link uma.es.angular.t2a.t2A.Page#isHome <em>Home</em>}</li>
+ *   <li>{@link uma.es.angular.t2a.t2A.Page#isShowInNav <em>Show In Nav</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.Page#getPageFeatures <em>Page Features</em>}</li>
  * </ul>
  *
@@ -45,6 +46,28 @@ public interface Page extends Element
    * @generated
    */
   void setHome(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Show In Nav</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Show In Nav</em>' attribute.
+   * @see #setShowInNav(boolean)
+   * @see uma.es.angular.t2a.t2A.T2APackage#getPage_ShowInNav()
+   * @model
+   * @generated
+   */
+  boolean isShowInNav();
+
+  /**
+   * Sets the value of the '{@link uma.es.angular.t2a.t2A.Page#isShowInNav <em>Show In Nav</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Show In Nav</em>' attribute.
+   * @see #isShowInNav()
+   * @generated
+   */
+  void setShowInNav(boolean value);
 
   /**
    * Returns the value of the '<em><b>Page Features</b></em>' containment reference list.

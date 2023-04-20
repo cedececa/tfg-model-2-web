@@ -66,14 +66,17 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cHomeAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final Keyword cHomeHomeKeyword_3_0 = (Keyword)cHomeAssignment_3.eContents().get(0);
-		private final Assignment cPageFeaturesAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cPageFeaturesPageFeatureParserRuleCall_4_0 = (RuleCall)cPageFeaturesAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cShowInNavAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final Keyword cShowInNavShowInNavKeyword_4_0 = (Keyword)cShowInNavAssignment_4.eContents().get(0);
+		private final Assignment cPageFeaturesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPageFeaturesPageFeatureParserRuleCall_5_0 = (RuleCall)cPageFeaturesAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Page:
 		//    'Page' name=ID
 		//    '{'
 		//    (home?='home')?
+		//    (showInNav?='showInNav')?
 		//    (pageFeatures+=PageFeature)*
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
@@ -81,6 +84,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'Page' name=ID
 		//'{'
 		//(home?='home')?
+		//(showInNav?='showInNav')?
 		//(pageFeatures+=PageFeature)*
 		//'}'
 		public Group getGroup() { return cGroup; }
@@ -103,14 +107,20 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'home'
 		public Keyword getHomeHomeKeyword_3_0() { return cHomeHomeKeyword_3_0; }
 		
+		//(showInNav?='showInNav')?
+		public Assignment getShowInNavAssignment_4() { return cShowInNavAssignment_4; }
+		
+		//'showInNav'
+		public Keyword getShowInNavShowInNavKeyword_4_0() { return cShowInNavShowInNavKeyword_4_0; }
+		
 		//(pageFeatures+=PageFeature)*
-		public Assignment getPageFeaturesAssignment_4() { return cPageFeaturesAssignment_4; }
+		public Assignment getPageFeaturesAssignment_5() { return cPageFeaturesAssignment_5; }
 		
 		//PageFeature
-		public RuleCall getPageFeaturesPageFeatureParserRuleCall_4_0() { return cPageFeaturesPageFeatureParserRuleCall_4_0; }
+		public RuleCall getPageFeaturesPageFeatureParserRuleCall_5_0() { return cPageFeaturesPageFeatureParserRuleCall_5_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class EDOMElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.EDOM");
@@ -473,6 +483,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//    'Page' name=ID
 	//    '{'
 	//    (home?='home')?
+	//    (showInNav?='showInNav')?
 	//    (pageFeatures+=PageFeature)*
 	//    '}';
 	public PageElements getPageAccess() {
