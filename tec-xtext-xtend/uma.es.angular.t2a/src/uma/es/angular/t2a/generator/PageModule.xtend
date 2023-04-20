@@ -13,32 +13,48 @@ class PageModule {
 	}
 
 	def static toModuleCode(List<Page> pages) {
-		'''import { NgModule } from '@angular/core';
-			«FOR page : pages»
-				«var nameLowercase = (new String(page.name)).toLowerCase()»
-				import { «page.name»Page } from './«nameLowercase»/«nameLowercase».page';
-				«ENDFOR»		
-				import { BrowserModule } from '@angular/platform-browser';
-				import { SharedComponentsModule } from '../components/shared-components.module';
-				
-				
-				@NgModule({
-				declarations: [
-				   «FOR page : pages»
-				   	«page.name»Page,
-				   «ENDFOR»
-				],
-				exports:[
-				   «FOR page : pages»
-				   	«page.name»Page,
-				«ENDFOR»
-				],
-				imports: [
-				 		    BrowserModule,
-				 		    SharedComponentsModule
-				]
-				})
-				export class PagesModule { }
+		'''
+		import { NgModule } from '@angular/core';
+		«FOR page : pages»
+		«var nameLowercase = (new String(page.name)).toLowerCase()»
+		import { «page.name»Page } from './«nameLowercase»/«nameLowercase».page';
+		«ENDFOR»		
+		import { BrowserModule } from '@angular/platform-browser';
+		import { SharedComponentsModule } from '../components/shared-components.module';
+		import { RouterModule } from '@angular/router';
+		import { AppRoot } from './app-root';
+		
+		
+		@NgModule({
+		declarations: [
+			AppRoot,
+		   «FOR page : pages»
+		   «page.name»Page,
+		   «ENDFOR»
+		],
+		exports:[
+			AppRoot,
+		    «FOR page : pages»
+		   	«page.name»Page,
+			«ENDFOR»
+		],
+		imports: [
+ 		    BrowserModule,
+ 		    SharedComponentsModule,
+    		RouterModule.forRoot([
+		   «FOR page : pages»
+		   		« val lowercase= page.name.toLowerCase »
+			   «IF page.home»
+    			{ path: '', component: «page.name»Page },
+			   «ELSE»
+    			{ path: '«lowercase»', component: «page.name»Page },
+			   «ENDIF»
+		   «ENDFOR»
+    		])
+		]
+		})
+		export class PagesModule { }
 		'''
 	}
+	
 }

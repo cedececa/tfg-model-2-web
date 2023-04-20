@@ -90,7 +90,7 @@ class T2AGenerator extends AbstractGenerator {
 				generateClassFile(page, fsa);
 				pages.add(page);
 				if (page.home == true) {
-					AppEntrada.generarModule(fsa, page);
+					AppModule.generarModule(fsa, page);
 				}
 
 			}
@@ -100,7 +100,7 @@ class T2AGenerator extends AbstractGenerator {
 				components.add(comp);
 			}
 		}
-
+		AppRoot.generarRoot(fsa);
 		ComponentModule.generarModule(fsa, components);
 		PageModule.generarModule(fsa, pages);
 

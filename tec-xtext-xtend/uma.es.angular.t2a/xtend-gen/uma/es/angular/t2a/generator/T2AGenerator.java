@@ -99,7 +99,7 @@ public class T2AGenerator extends AbstractGenerator {
           boolean _isHome = page.isHome();
           boolean _equals_1 = (_isHome == true);
           if (_equals_1) {
-            AppEntrada.generarModule(fsa, page);
+            AppModule.generarModule(fsa, page);
           }
         }
         boolean _equals_2 = element.eClass().getName().equals("Comp");
@@ -110,6 +110,7 @@ public class T2AGenerator extends AbstractGenerator {
         }
       }
     }
+    AppRoot.generarRoot(fsa);
     ComponentModule.generarModule(fsa, components);
     PageModule.generarModule(fsa, pages);
     this.runAngularProject(absoluteSrcGenDirectory);
