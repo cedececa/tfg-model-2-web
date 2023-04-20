@@ -19,49 +19,47 @@ public class AngularRunner {
 	public static void AngularRunner(String srcGenDirectoryAbsolutePath) {
 		// Angular project name
 		String angularProjectName = "src-pangular";
-		
+
 		// Angular project folder absolute path
-		String angularFolderAbsolutePath = srcGenDirectoryAbsolutePath.replace("src-gen",angularProjectName);
+		String angularFolderAbsolutePath = srcGenDirectoryAbsolutePath.replace("src-gen", angularProjectName);
 		System.out.println(angularFolderAbsolutePath);
 		File source = new File(srcGenDirectoryAbsolutePath);
-		
-		// If the directory is not exist
-	    File dest = new File(angularFolderAbsolutePath+"/src/app");
-	    if (!dest.exists()){
-	    	generateAngularProject(angularFolderAbsolutePath.replace(angularProjectName, ""), angularProjectName);
-	        //directory.mkdirs();
-	        // If you require it to make the entire directory patxh including parents,
-	        // use directory.mkdirs(); here instead.
-	    }
 
-	    // Put generated-files in the src/app/ of the angular project
-	    try {
+		// If the directory is not exist
+		File dest = new File(angularFolderAbsolutePath + "/src/app");
+		if (!dest.exists()) {
+			generateAngularProject(angularFolderAbsolutePath.replace(angularProjectName, ""), angularProjectName);
+			// directory.mkdirs();
+			// If you require it to make the entire directory patxh including parents,
+			// use directory.mkdirs(); here instead.
+		}
+
+		// Put generated-files in the src/app/ of the angular project
+		try {
 			FileUtils.deleteDirectory(dest);
 			dest.mkdirs();
-		    FileUtils.copyDirectory(source, dest);
+			FileUtils.copyDirectory(source, dest);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
 	}
 
-	
-	private static void generateAngularProject(String generatingDirectory,String angularProjectName) {
-		
+	private static void generateAngularProject(String generatingDirectory, String angularProjectName) {
+
 		String cmd = "ng new " + angularProjectName + " --routing false --style scss --skip-install";
-		//String newAngularProjectCMD = "cmd.exe /c cd "+generatingDirectory+" &&" +cmd;
+		// String newAngularProjectCMD = "cmd.exe /c cd "+generatingDirectory+" &&"
+		// +cmd;
 		System.out.println(cmd);
-		
+
 		boolean isWindows = System.getProperty("os.name").toLowerCase().startsWith("windows");
 		// TODO Auto-generated method stub
 		String homeDirectory = System.getProperty("user.home");
 		Process process = null;
 		if (isWindows) {
 			try {
-				//process = Runtime.getRuntime().exec(String.format("cmd.exe /c dir %s", homeDirectory));
+				// process = Runtime.getRuntime().exec(String.format("cmd.exe /c dir %s",
+				// homeDirectory));
 				process = Runtime.getRuntime().exec(String.format(cmd), null, new File(generatingDirectory));
 
 			} catch (IOException e) {
@@ -99,6 +97,7 @@ public class AngularRunner {
 		} // waits for streamGobbler to finish
 
 	}
+
 	private static class StreamGobbler implements Runnable {
 		private InputStream inputStream;
 		private Consumer<String> consumer;

@@ -67,13 +67,17 @@ class T2AGenerator extends AbstractGenerator {
 		var root = resource.contents.head as Root;
 		
 		var components = new ArrayList<Comp>();
+		var pages = new ArrayList<Page>();
+	
 		for (element : root.elements) {
 			if (element.eClass.name.equals('Page')) {
 				var page = element as Page;
 				generateClassFile(page, fsa);
+				pages.add(page);
 				if(page.home==true){
 					AppEntrada.generarSharedModule(fsa, page);
 				}
+				
 			}
 			if (element.eClass.name.equals('Comp')) {
 				var comp  = element as Comp;
@@ -82,7 +86,8 @@ class T2AGenerator extends AbstractGenerator {
 			}
 		}
 		
-		Component.generarSharedModule(fsa, components);
+		ComponentModule.generarModule(fsa, components);
+		PageModule.generarModule(fsa, pages);
 		
 		runAngularProject(getSRCGenDirectoryAbsolutePath(fsa));
 
@@ -109,28 +114,37 @@ class T2AGenerator extends AbstractGenerator {
 
 	def toTSCode(Comp comp) {
 		'''
+			import { Component } from '@angular/core';
+		
 			@Component({
 				selector: '«comp.name»',
-				templateUrl: '«comp.name».comp.html',
-				styleUrls:['«comp.name».comp.scss']	
+				templateUrl: './«comp.name.toLowerCase».comp.html',
+				styles:[]
 			})
 			export class «comp.name»Component{
 				
 			}
 		'''
+		
+		//				styleUrls:['«comp.name».comp.scss']	
 	}
 
 	def toTSCode(Page page) {
 		'''
+			import { Component } from '@angular/core';
+		
 			@Component({
 				selector: '«page.name»',
-				templateUrl: '«page.name».page.html',
-				styleUrls:['«page.name».page.scss']	
+				templateUrl: './«page.name.toLowerCase».page.html',
+				styles:[]
+				
 			})
 			export class «page.name»Page{
 				
 			}
 		'''
+		//				styleUrls:['«page.name».page.scss']	
+		
 	}
 
 	def toHTMLCode(Comp comp) {

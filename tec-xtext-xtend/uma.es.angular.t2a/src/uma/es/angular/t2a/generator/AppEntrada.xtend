@@ -9,14 +9,14 @@ class AppEntrada {
 	}
 	def static toModuleCode(uma.es.angular.t2a.t2A.Page page){
 		'''
+		«var lc=(new String(page.name)).toLowerCase()»
 		import { NgModule } from '@angular/core';
-		import { BrowserModule } from '@angular/platform-browser';
-		import { SharedComponentsModule } from './components/sharedcomponent.module';
+		import { PagesModule } from './pages/pages.module';
+		import { «page.name»Page } from './pages/«lc»/«lc».page';
 
 		@NgModule({
 		  imports: [
-		    BrowserModule,
-		    SharedComponentsModule,
+		    PagesModule,
 		  ],
 		  providers: [],
 		  bootstrap: [«page.name»Page]

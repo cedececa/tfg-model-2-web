@@ -1,8 +1,10 @@
-@Component({
-	selector: 'HomeContent',
-	templateUrl: 'HomeContent.comp.html',
-	styleUrls:['HomeContent.comp.scss']	
-})
-export class HomeContentComponent{
-	
-}
+	import { Component } from '@angular/core';
+
+	@Component({
+		selector: 'HomeContent',
+		templateUrl: './homecontent.comp.html',
+		styles:[]
+	})
+	export class HomeContentComponent{
+		
+	}

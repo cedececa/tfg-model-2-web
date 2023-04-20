@@ -1,8 +1,10 @@
-@Component({
-	selector: 'Layout',
-	templateUrl: 'Layout.comp.html',
-	styleUrls:['Layout.comp.scss']	
-})
-export class LayoutComponent{
-	
-}
+	import { Component } from '@angular/core';
+
+	@Component({
+		selector: 'Layout',
+		templateUrl: './layout.comp.html',
+		styles:[]
+	})
+	export class LayoutComponent{
+		
+	}

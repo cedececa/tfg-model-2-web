@@ -1,8 +1,11 @@
-@Component({
-	selector: 'Home',
-	templateUrl: 'Home.page.html',
-	styleUrls:['Home.page.scss']	
-})
-export class HomePage{
-	
-}
+	import { Component } from '@angular/core';
+
+	@Component({
+		selector: 'Home',
+		templateUrl: './home.page.html',
+		styles:[]
+		
+	})
+	export class HomePage{
+		
+	}

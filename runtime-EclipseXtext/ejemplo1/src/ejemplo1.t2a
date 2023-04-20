@@ -12,7 +12,7 @@ Comp Cabecera {
 }
 
 Comp Footer { 
-	'Text A Angular   - Fo oter '
+	'Text A Angular - Fo oter '
 	AllowSlot
 	div
 }
@@ -28,12 +28,12 @@ Comp Layout {
 } 
 
 Comp HomeContent {    
-	'Bienvenido a s  la pri mera ve rsion de T2A'   
+	'Bienvenido a la primera version de T2A'   
 	AllowSlot  
 }
 
 Comp Menu{
-	'We have a menu'
+	'We hav e a menu'
 }
 
 Page Home
@@ -43,7 +43,7 @@ Page Home
 		Menu
 		'HOLA'
 		H5{
-			'Hola Soy H5'
+			'Hola  Soy H5'
 		}
 	}
 	
@@ -54,7 +54,7 @@ Page Items{
 		Menu
 		'HOLA'
 		H5{
-			'Hola Soy H5'
+			'Hola  Soy H5'
 		}
 		h2{
 			'We have another h2'

@@ -1,8 +1,11 @@
-@Component({
-	selector: 'Items',
-	templateUrl: 'Items.page.html',
-	styleUrls:['Items.page.scss']	
-})
-export class ItemsPage{
-	
-}
+	import { Component } from '@angular/core';
+
+	@Component({
+		selector: 'Items',
+		templateUrl: './items.page.html',
+		styles:[]
+		
+	})
+	export class ItemsPage{
+		
+	}

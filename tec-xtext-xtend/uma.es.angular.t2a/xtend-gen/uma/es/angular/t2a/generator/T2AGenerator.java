@@ -67,6 +67,7 @@ public class T2AGenerator extends AbstractGenerator {
     EObject _head = IterableExtensions.<EObject>head(resource.getContents());
     Root root = ((Root) _head);
     ArrayList<Comp> components = new ArrayList<Comp>();
+    ArrayList<Page> pages = new ArrayList<Page>();
     EList<Element> _elements = root.getElements();
     for (final Element element : _elements) {
       {
@@ -74,6 +75,7 @@ public class T2AGenerator extends AbstractGenerator {
         if (_equals) {
           Page page = ((Page) element);
           this.generateClassFile(page, fsa);
+          pages.add(page);
           boolean _isHome = page.isHome();
           boolean _equals_1 = (_isHome == true);
           if (_equals_1) {
@@ -88,7 +90,8 @@ public class T2AGenerator extends AbstractGenerator {
         }
       }
     }
-    Component.generarSharedModule(fsa, components);
+    ComponentModule.generarModule(fsa, components);
+    PageModule.generarModule(fsa, pages);
     this.runAngularProject(this.getSRCGenDirectoryAbsolutePath(fsa));
   }
   
@@ -115,35 +118,40 @@ public class T2AGenerator extends AbstractGenerator {
   
   public CharSequence toTSCode(final Comp comp) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\t");
+    _builder.append("import { Component } from \'@angular/core\';");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t");
     _builder.append("@Component({");
     _builder.newLine();
-    _builder.append("\t");
+    _builder.append("\t\t");
     _builder.append("selector: \'");
     String _name = comp.getName();
-    _builder.append(_name, "\t");
+    _builder.append(_name, "\t\t");
     _builder.append("\',");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append("templateUrl: \'");
-    String _name_1 = comp.getName();
-    _builder.append(_name_1, "\t");
+    _builder.append("\t\t");
+    _builder.append("templateUrl: \'./");
+    String _lowerCase = comp.getName().toLowerCase();
+    _builder.append(_lowerCase, "\t\t");
     _builder.append(".comp.html\',");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("styles:[]");
+    _builder.newLine();
     _builder.append("\t");
-    _builder.append("styleUrls:[\'");
-    String _name_2 = comp.getName();
-    _builder.append(_name_2, "\t");
-    _builder.append(".comp.scss\']\t");
-    _builder.newLineIfNotEmpty();
     _builder.append("})");
     _builder.newLine();
+    _builder.append("\t");
     _builder.append("export class ");
-    String _name_3 = comp.getName();
-    _builder.append(_name_3);
+    String _name_1 = comp.getName();
+    _builder.append(_name_1, "\t");
     _builder.append("Component{");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
+    _builder.append("\t\t");
     _builder.newLine();
+    _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
     return _builder;
@@ -151,35 +159,42 @@ public class T2AGenerator extends AbstractGenerator {
   
   public CharSequence toTSCode(final Page page) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\t");
+    _builder.append("import { Component } from \'@angular/core\';");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t");
     _builder.append("@Component({");
     _builder.newLine();
-    _builder.append("\t");
+    _builder.append("\t\t");
     _builder.append("selector: \'");
     String _name = page.getName();
-    _builder.append(_name, "\t");
+    _builder.append(_name, "\t\t");
     _builder.append("\',");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append("templateUrl: \'");
-    String _name_1 = page.getName();
-    _builder.append(_name_1, "\t");
+    _builder.append("\t\t");
+    _builder.append("templateUrl: \'./");
+    String _lowerCase = page.getName().toLowerCase();
+    _builder.append(_lowerCase, "\t\t");
     _builder.append(".page.html\',");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("styles:[]");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
     _builder.append("\t");
-    _builder.append("styleUrls:[\'");
-    String _name_2 = page.getName();
-    _builder.append(_name_2, "\t");
-    _builder.append(".page.scss\']\t");
-    _builder.newLineIfNotEmpty();
     _builder.append("})");
     _builder.newLine();
+    _builder.append("\t");
     _builder.append("export class ");
-    String _name_3 = page.getName();
-    _builder.append(_name_3);
+    String _name_1 = page.getName();
+    _builder.append(_name_1, "\t");
     _builder.append("Page{");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
+    _builder.append("\t\t");
     _builder.newLine();
+    _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
     return _builder;

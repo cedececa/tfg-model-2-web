@@ -1,8 +1,10 @@
-@Component({
-	selector: 'Cabecera',
-	templateUrl: 'Cabecera.comp.html',
-	styleUrls:['Cabecera.comp.scss']	
-})
-export class CabeceraComponent{
-	
-}
+	import { Component } from '@angular/core';
+
+	@Component({
+		selector: 'Cabecera',
+		templateUrl: './cabecera.comp.html',
+		styles:[]
+	})
+	export class CabeceraComponent{
+		
+	}

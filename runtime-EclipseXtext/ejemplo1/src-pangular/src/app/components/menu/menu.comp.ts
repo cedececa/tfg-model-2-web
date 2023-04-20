@@ -1,8 +1,10 @@
-@Component({
-	selector: 'Menu',
-	templateUrl: 'Menu.comp.html',
-	styleUrls:['Menu.comp.scss']	
-})
-export class MenuComponent{
-	
-}
+	import { Component } from '@angular/core';
+
+	@Component({
+		selector: 'Menu',
+		templateUrl: './menu.comp.html',
+		styles:[]
+	})
+	export class MenuComponent{
+		
+	}
