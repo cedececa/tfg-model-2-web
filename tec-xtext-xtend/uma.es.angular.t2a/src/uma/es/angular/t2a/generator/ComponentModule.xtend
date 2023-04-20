@@ -8,7 +8,9 @@ class ComponentModule {
 
 	def static generarModule(IFileSystemAccess2 fsa, List<Comp> components){
 		var relativePath = 'components/';
-		fsa.generateFile(relativePath + 'shared-components.module.ts', ComponentModule.toModuleCode(components));
+		if(components.length>0){
+			fsa.generateFile(relativePath + 'shared-components.module.ts', ComponentModule.toModuleCode(components));
+		}
 	}
 	def static toModuleCode(List<Comp> components){
 		'''import { NgModule } from '@angular/core';

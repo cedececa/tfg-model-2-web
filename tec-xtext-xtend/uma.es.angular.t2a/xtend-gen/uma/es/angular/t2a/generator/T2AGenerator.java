@@ -3,8 +3,11 @@
  */
 package uma.es.angular.t2a.generator;
 
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import org.apache.commons.io.FileUtils;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -14,6 +17,7 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import uma.es.angular.t2a.t2A.Comp;
 import uma.es.angular.t2a.t2A.Element;
@@ -31,6 +35,20 @@ import uma.es.angular.t2a.t2A.Root;
  */
 @SuppressWarnings("all")
 public class T2AGenerator extends AbstractGenerator {
+  public void deleteDirectoryContent(final String path) {
+    final File dest = new File(path);
+    try {
+      FileUtils.deleteDirectory(dest);
+    } catch (final Throwable _t) {
+      if (_t instanceof IOException) {
+        final IOException e = (IOException)_t;
+        e.printStackTrace();
+      } else {
+        throw Exceptions.sneakyThrow(_t);
+      }
+    }
+  }
+  
   /**
    * For the absolute path of the generated files
    */
@@ -64,6 +82,8 @@ public class T2AGenerator extends AbstractGenerator {
   
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    String absoluteSrcGenDirectory = this.getSRCGenDirectoryAbsolutePath(fsa);
+    this.deleteDirectoryContent(absoluteSrcGenDirectory);
     EObject _head = IterableExtensions.<EObject>head(resource.getContents());
     Root root = ((Root) _head);
     ArrayList<Comp> components = new ArrayList<Comp>();
@@ -79,7 +99,7 @@ public class T2AGenerator extends AbstractGenerator {
           boolean _isHome = page.isHome();
           boolean _equals_1 = (_isHome == true);
           if (_equals_1) {
-            AppEntrada.generarSharedModule(fsa, page);
+            AppEntrada.generarModule(fsa, page);
           }
         }
         boolean _equals_2 = element.eClass().getName().equals("Comp");
@@ -92,7 +112,7 @@ public class T2AGenerator extends AbstractGenerator {
     }
     ComponentModule.generarModule(fsa, components);
     PageModule.generarModule(fsa, pages);
-    this.runAngularProject(this.getSRCGenDirectoryAbsolutePath(fsa));
+    this.runAngularProject(absoluteSrcGenDirectory);
   }
   
   public void generateClassFile(final Page page, final IFileSystemAccess2 fsa) {

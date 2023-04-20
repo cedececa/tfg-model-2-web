@@ -18,6 +18,9 @@ import java.nio.file.Paths
 import org.eclipse.emf.common.util.URI
 import org.eclipse.core.resources.ResourcesPlugin
 import java.util.ArrayList
+import org.apache.commons.io.FileUtils
+import java.io.IOException
+import java.io.File
 
 /**
  * Generates code from your model files on save.
@@ -26,83 +29,95 @@ import java.util.ArrayList
  */
 class T2AGenerator extends AbstractGenerator {
 
+	def deleteDirectoryContent(String path) {
+		val dest = new File(path);
+
+		try {
+			FileUtils.deleteDirectory(dest);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	/*
 	 * For the absolute path of the generated files
 	 */
-	def getSRCGenDirectoryAbsolutePath(IFileSystemAccess2 fsa){
+	def getSRCGenDirectoryAbsolutePath(IFileSystemAccess2 fsa) {
 		var fileName = "dummy.txt";
 		// generate a dummy file and extract the output directory from the file path
-        fsa.generateFile(fileName, "dummy content")
-        val uri = URI.createURI(fsa.getURI("dummy.txt").toString)
-        
-        val outputDir = if (uri.isFile()) {
-            Paths.get(uri.toFileString()).getParent().toString()
-        } else if (uri.isPlatform()) {
-            ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile().getAbsolutePath()
-        } else {
-            throw new IllegalArgumentException("Unsupported URI scheme: " + uri.scheme)
-        }
+		fsa.generateFile(fileName, "dummy content")
+		val uri = URI.createURI(fsa.getURI("dummy.txt").toString)
 
-        // delete the dummy file
-        fsa.deleteFile(fileName)
+		val outputDir = if (uri.isFile()) {
+				Paths.get(uri.toFileString()).getParent().toString()
+			} else if (uri.isPlatform()) {
+				ResourcesPlugin.getWorkspace().getRoot().getLocation().toFile().getAbsolutePath()
+			} else {
+				throw new IllegalArgumentException("Unsupported URI scheme: " + uri.scheme)
+			}
 
-        // use the generated file path as neede -  C:\Users\TFG\Documents\GitHub\tfg-model-2-web\runtime-EclipseXtext
-        // println("Generated files path: " + outputDir)
-        
-        
-	 	// Get relative path of the generated file
-	 	var relativePath = uri.toPlatformString(true);
-        
-		//System.out.println(outputDir);   
-		//System.out.println(relativePath);   
-		relativePath = relativePath.replace("/","\\").replace('\\'+fileName,'');
-		
-		System.out.println(outputDir+relativePath);   
-		
-        return outputDir+relativePath;
+		// delete the dummy file
+		fsa.deleteFile(fileName)
+
+		// use the generated file path as neede -  C:\Users\TFG\Documents\GitHub\tfg-model-2-web\runtime-EclipseXtext
+		// println("Generated files path: " + outputDir)
+		// Get relative path of the generated file
+		var relativePath = uri.toPlatformString(true);
+
+		// System.out.println(outputDir);   
+		// System.out.println(relativePath);   
+		relativePath = relativePath.replace("/", "\\").replace('\\' + fileName, '');
+
+		System.out.println(outputDir + relativePath);
+
+		return outputDir + relativePath;
 	}
-	
+
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+
+		var absoluteSrcGenDirectory = getSRCGenDirectoryAbsolutePath(fsa)
+		deleteDirectoryContent(absoluteSrcGenDirectory)
 		
 		var root = resource.contents.head as Root;
-		
+
 		var components = new ArrayList<Comp>();
 		var pages = new ArrayList<Page>();
-	
+
 		for (element : root.elements) {
 			if (element.eClass.name.equals('Page')) {
 				var page = element as Page;
 				generateClassFile(page, fsa);
 				pages.add(page);
-				if(page.home==true){
-					AppEntrada.generarSharedModule(fsa, page);
+				if (page.home == true) {
+					AppEntrada.generarModule(fsa, page);
 				}
-				
+
 			}
 			if (element.eClass.name.equals('Comp')) {
-				var comp  = element as Comp;
+				var comp = element as Comp;
 				generateClassFile(comp, fsa);
 				components.add(comp);
 			}
 		}
-		
+
 		ComponentModule.generarModule(fsa, components);
 		PageModule.generarModule(fsa, pages);
-		
-		runAngularProject(getSRCGenDirectoryAbsolutePath(fsa));
+
+		runAngularProject(absoluteSrcGenDirectory);
 
 	}
 
 	def generateClassFile(Page page, IFileSystemAccess2 fsa) {
 		var nameLowercase = (new String(page.name)).toLowerCase()
-		var relativePath = 'pages/'+nameLowercase + '/' + nameLowercase;
+		var relativePath = 'pages/' + nameLowercase + '/' + nameLowercase;
 		fsa.generateFile(relativePath + '.page.ts', toTSCode(page));
 		fsa.generateFile(relativePath + '.page.html', toHTMLCode(page));
 	}
 
 	def generateClassFile(Comp comp, IFileSystemAccess2 fsa) {
 		var nameLowercase = (new String(comp.name)).toLowerCase()
-		var relativePath = 'components/'+nameLowercase + '/' + nameLowercase;
+		var relativePath = 'components/' + nameLowercase + '/' + nameLowercase;
 		fsa.generateFile(relativePath + '.comp.ts', toTSCode(comp));
 		fsa.generateFile(relativePath + '.comp.html', toHTMLCode(comp));
 	}
@@ -114,37 +129,36 @@ class T2AGenerator extends AbstractGenerator {
 
 	def toTSCode(Comp comp) {
 		'''
-			import { Component } from '@angular/core';
-		
-			@Component({
-				selector: '«comp.name»',
-				templateUrl: './«comp.name.toLowerCase».comp.html',
-				styles:[]
-			})
-			export class «comp.name»Component{
-				
-			}
+				import { Component } from '@angular/core';
+			
+				@Component({
+					selector: '«comp.name»',
+					templateUrl: './«comp.name.toLowerCase».comp.html',
+					styles:[]
+				})
+				export class «comp.name»Component{
+					
+				}
 		'''
-		
-		//				styleUrls:['«comp.name».comp.scss']	
+
+	// styleUrls:['«comp.name».comp.scss']	
 	}
 
 	def toTSCode(Page page) {
 		'''
-			import { Component } from '@angular/core';
-		
-			@Component({
-				selector: '«page.name»',
-				templateUrl: './«page.name.toLowerCase».page.html',
-				styles:[]
-				
-			})
-			export class «page.name»Page{
-				
-			}
+				import { Component } from '@angular/core';
+			
+				@Component({
+					selector: '«page.name»',
+					templateUrl: './«page.name.toLowerCase».page.html',
+					styles:[]
+					
+				})
+				export class «page.name»Page{
+					
+				}
 		'''
-		//				styleUrls:['«page.name».page.scss']	
-		
+	// styleUrls:['«page.name».page.scss']	
 	}
 
 	def toHTMLCode(Comp comp) {
