@@ -9,9 +9,11 @@ Dom li
 Dom a
 Dom header
 Dom div
+
 Comp leftNav{
 	AllowSlot
 }
+
 Comp Cabecera{
 	header{ 
 		h2{
@@ -30,6 +32,7 @@ Comp Section{
 	}
 	AllowSlot
 }
+
 Comp Articulo{ 
 	h1{
 		"London"
