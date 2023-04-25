@@ -76,7 +76,7 @@ class T2AGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 
-		var absoluteSrcGenDirectory = getSRCGenDirectoryAbsolutePath(fsa)
+		var absoluteSrcGenDirectory = getSRCGenDirectoryAbsolutePath(fsa);
 		deleteDirectoryContent(absoluteSrcGenDirectory)
 		
 		var root = resource.contents.head as Root;
@@ -210,6 +210,6 @@ class T2AGenerator extends AbstractGenerator {
 
 	def runAngularProject(String srcGenDirectoryAbsolutePath) {
 
-		AngularRunner.AngularRunner(srcGenDirectoryAbsolutePath);
+		AngularRunner.run(srcGenDirectoryAbsolutePath);
 	}
 }

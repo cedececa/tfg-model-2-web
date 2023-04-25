@@ -61,7 +61,7 @@ Page Primera{
 		Section{
 			Articulo
 		}
-	}
+	} 
 }
 
 Page Segunda{
@@ -90,11 +90,14 @@ Page Cuarta{
 		}
 	}
 }
+
 Page Cinco{
 	showInNav
 	Layout{
 		Section{
-			h2 {'La pagina 5'}
+			h2 {'Cinco'}
 		}
 	}
 }
+
+

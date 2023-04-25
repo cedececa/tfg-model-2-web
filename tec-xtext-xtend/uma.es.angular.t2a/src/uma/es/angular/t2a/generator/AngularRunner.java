@@ -16,7 +16,7 @@ import org.apache.commons.io.FileUtils;
 // https://www.baeldung.com/run-shell-command-in-java
 
 public class AngularRunner {
-	public static void AngularRunner(String srcGenDirectoryAbsolutePath) {
+	public static void run(String srcGenDirectoryAbsolutePath) {
 		// Angular project name
 		String angularProjectName = "src-pangular";
 
@@ -47,7 +47,7 @@ public class AngularRunner {
 
 	private static void generateAngularProject(String generatingDirectory, String angularProjectName) {
 
-		String cmd = "ng new " + angularProjectName + " --routing false --style scss --skip-install";
+		String cmd = "cmd.exe /c ng new " + angularProjectName + " --routing false --style scss --skip-install";
 		// String newAngularProjectCMD = "cmd.exe /c cd "+generatingDirectory+" &&"
 		// +cmd;
 		System.out.println(cmd);
@@ -60,7 +60,7 @@ public class AngularRunner {
 			try {
 				// process = Runtime.getRuntime().exec(String.format("cmd.exe /c dir %s",
 				// homeDirectory));
-				process = Runtime.getRuntime().exec(String.format(cmd), null, new File(generatingDirectory));
+				process = Runtime.getRuntime().exec(String.format(cmd),  null, new File(generatingDirectory));
 
 			} catch (IOException e) {
 				// TODO Auto-generated catch block

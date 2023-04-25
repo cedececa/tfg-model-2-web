@@ -334,6 +334,6 @@ public class T2AGenerator extends AbstractGenerator {
   }
   
   public void runAngularProject(final String srcGenDirectoryAbsolutePath) {
-    AngularRunner.AngularRunner(srcGenDirectoryAbsolutePath);
+    AngularRunner.run(srcGenDirectoryAbsolutePath);
   }
 }

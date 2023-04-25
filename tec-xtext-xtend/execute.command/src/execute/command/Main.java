@@ -14,6 +14,7 @@ import java.util.function.Consumer;
 
 public class Main {
 	public static void main(String[] args) {
+
 		boolean isWindows = System.getProperty("os.name").toLowerCase().startsWith("windows");
 		// TODO Auto-generated method stub
 		String homeDirectory = System.getProperty("user.home");
