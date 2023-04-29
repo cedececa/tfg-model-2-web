@@ -11,7 +11,9 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import uma.es.angular.t2a.services.T2AGrammarAccess;
 import uma.es.angular.t2a.t2A.Comp;
 import uma.es.angular.t2a.t2A.DOM;
@@ -21,6 +23,9 @@ import uma.es.angular.t2a.t2A.InstanciaEDOM;
 import uma.es.angular.t2a.t2A.Page;
 import uma.es.angular.t2a.t2A.PageFeature;
 import uma.es.angular.t2a.t2A.Root;
+import uma.es.angular.t2a.t2A.SAttributeAndValue;
+import uma.es.angular.t2a.t2A.SAttributeName;
+import uma.es.angular.t2a.t2A.StyleClass;
 import uma.es.angular.t2a.t2A.T2APackage;
 
 @SuppressWarnings("all")
@@ -61,6 +66,15 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case T2APackage.ROOT:
 				sequence_Root(context, (Root) semanticObject); 
 				return; 
+			case T2APackage.SATTRIBUTE_AND_VALUE:
+				sequence_SAttributeAndValue(context, (SAttributeAndValue) semanticObject); 
+				return; 
+			case T2APackage.SATTRIBUTE_NAME:
+				sequence_SAttributeName(context, (SAttributeName) semanticObject); 
+				return; 
+			case T2APackage.STYLE_CLASS:
+				sequence_StyleClass(context, (StyleClass) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -74,7 +88,7 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Comp returns Comp
 	 *
 	 * Constraint:
-	 *     (name=ID features+=Feature*)
+	 *     (name=ID sclasses+=[StyleClass|ID]* features+=Feature*)
 	 * </pre>
 	 */
 	protected void sequence_Comp(ISerializationContext context, Comp semanticObject) {
@@ -90,7 +104,7 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     DOM returns DOM
 	 *
 	 * Constraint:
-	 *     (name=ID features+=Feature*)
+	 *     (name=ID sclasses+=[StyleClass|ID]* features+=Feature*)
 	 * </pre>
 	 */
 	protected void sequence_DOM(ISerializationContext context, DOM semanticObject) {
@@ -161,7 +175,7 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Page returns Page
 	 *
 	 * Constraint:
-	 *     (name=ID home?='home'? showInNav?='showInNav'? pageFeatures+=PageFeature*)
+	 *     (name=ID sclasses+=[StyleClass|ID]* home?='home'? showInNav?='showInNav'? pageFeatures+=PageFeature*)
 	 * </pre>
 	 */
 	protected void sequence_Page(ISerializationContext context, Page semanticObject) {
@@ -179,6 +193,67 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * </pre>
 	 */
 	protected void sequence_Root(ISerializationContext context, Root semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SAttributeAndValue returns SAttributeAndValue
+	 *
+	 * Constraint:
+	 *     (stname=[SAttributeName|ID] value=STRING)
+	 * </pre>
+	 */
+	protected void sequence_SAttributeAndValue(ISerializationContext context, SAttributeAndValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, T2APackage.Literals.SATTRIBUTE_AND_VALUE__STNAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, T2APackage.Literals.SATTRIBUTE_AND_VALUE__STNAME));
+			if (transientValues.isValueTransient(semanticObject, T2APackage.Literals.SATTRIBUTE_AND_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, T2APackage.Literals.SATTRIBUTE_AND_VALUE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSAttributeAndValueAccess().getStnameSAttributeNameIDTerminalRuleCall_0_0_1(), semanticObject.eGet(T2APackage.Literals.SATTRIBUTE_AND_VALUE__STNAME, false));
+		feeder.accept(grammarAccess.getSAttributeAndValueAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Element returns SAttributeName
+	 *     EDOM returns SAttributeName
+	 *     SAttributeName returns SAttributeName
+	 *
+	 * Constraint:
+	 *     name=ID
+	 * </pre>
+	 */
+	protected void sequence_SAttributeName(ISerializationContext context, SAttributeName semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, T2APackage.Literals.ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, T2APackage.Literals.ELEMENT__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSAttributeNameAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Element returns StyleClass
+	 *     EDOM returns StyleClass
+	 *     StyleClass returns StyleClass
+	 *
+	 * Constraint:
+	 *     (name=ID sattributes+=SAttributeAndValue*)
+	 * </pre>
+	 */
+	protected void sequence_StyleClass(ISerializationContext context, StyleClass semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

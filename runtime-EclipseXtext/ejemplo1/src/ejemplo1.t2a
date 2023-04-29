@@ -10,11 +10,38 @@ Dom a
 Dom header
 Dom div
 
+SAttri FontFamily
+SAttri BackgroundColor
+SAttri Padding
+SAttri TextAlign
+SAttri Color
+SAttri FontSize
+SAttri Float
+SAttri Background
+SAttri ListStyleType
+SAttri Display
+SAttri Clear
+SAttri Width
+SAttri Height
+SAttri Overflow
+SAttri Margin
+SAttri TextDecoration
+
+StyleClass scheader{
+	BackgroundColor: "#666"
+	Padding: "30px"
+	TextAlign: 'center'
+	FontSize: '35px'
+	Color: 'white'
+}
+
 Comp leftNav{
 	AllowSlot
 }
 
 Comp Cabecera{
+	SClass:{scheader}
+		
 	header{ 
 		h2{
 	 	"Cities"

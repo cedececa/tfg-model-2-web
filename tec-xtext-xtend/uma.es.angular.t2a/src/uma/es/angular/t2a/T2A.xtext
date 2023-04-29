@@ -11,27 +11,50 @@ Element:
 Page:
 	'Page' name=ID 
 	'{'
+	('SClass:{'(sclasses+=[StyleClass])* '}')?	
 	(home?='home')? 
 	(showInNav?='showInNav')?
 	(pageFeatures+=PageFeature)*
 	'}';
 
 EDOM:
-	DOM | Comp;
+	DOM | Comp | StyleClass | SAttributeName;
+
+
+
+StyleClass:
+	'StyleClass' name=ID
+	'{'
+		(sattributes+=SAttributeAndValue)*
+	'}'
+;
+
+SAttributeName:
+	'SAttri' name=ID 
+;
+
+SAttributeAndValue:
+	stname=[SAttributeName] ':' value=STRING
+;
+
 
 DOM:
 	'Dom' name=ID
 	('{' 
-	(features+=Feature)*
+	('SClass:{'(sclasses+=[StyleClass])* '}')?	
+		(features+=Feature)*
 	'}')?;
 	
 Comp:
 	'Comp' name=ID
 	(
 	'{'
+	('SClass:{'(sclasses+=[StyleClass])* '}')?	
 		(features+=Feature)*
 	'}'	
-	)?;
+	)?
+
+	;
 	
 InstanciaEDOM: instancia=[EDOM] ('{' 
 		(insfeatures+=InstanceEDOMFeature)*
@@ -51,7 +74,6 @@ Feature:
     string=STRING
 ; 
 
-@Override 
 terminal STRING:
     '"' ( '\\'('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
     "'" ( '\\'('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'";

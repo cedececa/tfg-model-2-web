@@ -3,20 +3,60 @@
  */
 package uma.es.angular.t2a.t2A.impl;
 
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import uma.es.angular.t2a.t2A.DOM;
+import uma.es.angular.t2a.t2A.Feature;
+import uma.es.angular.t2a.t2A.StyleClass;
 import uma.es.angular.t2a.t2A.T2APackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>DOM</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link uma.es.angular.t2a.t2A.impl.DOMImpl#getSclasses <em>Sclasses</em>}</li>
+ *   <li>{@link uma.es.angular.t2a.t2A.impl.DOMImpl#getFeatures <em>Features</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class DOMImpl extends EDOMImpl implements DOM
 {
+  /**
+   * The cached value of the '{@link #getSclasses() <em>Sclasses</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSclasses()
+   * @generated
+   * @ordered
+   */
+  protected EList<StyleClass> sclasses;
+
+  /**
+   * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFeatures()
+   * @generated
+   * @ordered
+   */
+  protected EList<Feature> features;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +76,131 @@ public class DOMImpl extends EDOMImpl implements DOM
   protected EClass eStaticClass()
   {
     return T2APackage.Literals.DOM;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<StyleClass> getSclasses()
+  {
+    if (sclasses == null)
+    {
+      sclasses = new EObjectResolvingEList<StyleClass>(StyleClass.class, this, T2APackage.DOM__SCLASSES);
+    }
+    return sclasses;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<Feature> getFeatures()
+  {
+    if (features == null)
+    {
+      features = new EObjectContainmentEList<Feature>(Feature.class, this, T2APackage.DOM__FEATURES);
+    }
+    return features;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case T2APackage.DOM__FEATURES:
+        return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case T2APackage.DOM__SCLASSES:
+        return getSclasses();
+      case T2APackage.DOM__FEATURES:
+        return getFeatures();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @SuppressWarnings("unchecked")
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case T2APackage.DOM__SCLASSES:
+        getSclasses().clear();
+        getSclasses().addAll((Collection<? extends StyleClass>)newValue);
+        return;
+      case T2APackage.DOM__FEATURES:
+        getFeatures().clear();
+        getFeatures().addAll((Collection<? extends Feature>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case T2APackage.DOM__SCLASSES:
+        getSclasses().clear();
+        return;
+      case T2APackage.DOM__FEATURES:
+        getFeatures().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case T2APackage.DOM__SCLASSES:
+        return sclasses != null && !sclasses.isEmpty();
+      case T2APackage.DOM__FEATURES:
+        return features != null && !features.isEmpty();
+    }
+    return super.eIsSet(featureID);
   }
 
 } //DOMImpl

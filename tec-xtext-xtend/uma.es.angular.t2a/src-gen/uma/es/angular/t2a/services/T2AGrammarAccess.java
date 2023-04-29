@@ -64,17 +64,24 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cHomeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final Keyword cHomeHomeKeyword_3_0 = (Keyword)cHomeAssignment_3.eContents().get(0);
-		private final Assignment cShowInNavAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final Keyword cShowInNavShowInNavKeyword_4_0 = (Keyword)cShowInNavAssignment_4.eContents().get(0);
-		private final Assignment cPageFeaturesAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cPageFeaturesPageFeatureParserRuleCall_5_0 = (RuleCall)cPageFeaturesAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cSClassKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cSclassesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final CrossReference cSclassesStyleClassCrossReference_3_1_0 = (CrossReference)cSclassesAssignment_3_1.eContents().get(0);
+		private final RuleCall cSclassesStyleClassIDTerminalRuleCall_3_1_0_1 = (RuleCall)cSclassesStyleClassCrossReference_3_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final Assignment cHomeAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final Keyword cHomeHomeKeyword_4_0 = (Keyword)cHomeAssignment_4.eContents().get(0);
+		private final Assignment cShowInNavAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final Keyword cShowInNavShowInNavKeyword_5_0 = (Keyword)cShowInNavAssignment_5.eContents().get(0);
+		private final Assignment cPageFeaturesAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cPageFeaturesPageFeatureParserRuleCall_6_0 = (RuleCall)cPageFeaturesAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Page:
 		//    'Page' name=ID
 		//    '{'
+		//    ('SClass:{'(sclasses+=[StyleClass])* '}')?
 		//    (home?='home')?
 		//    (showInNav?='showInNav')?
 		//    (pageFeatures+=PageFeature)*
@@ -83,6 +90,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//'Page' name=ID
 		//'{'
+		//('SClass:{'(sclasses+=[StyleClass])* '}')?
 		//(home?='home')?
 		//(showInNav?='showInNav')?
 		//(pageFeatures+=PageFeature)*
@@ -101,38 +109,58 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//(home?='home')?
-		public Assignment getHomeAssignment_3() { return cHomeAssignment_3; }
+		//('SClass:{'(sclasses+=[StyleClass])* '}')?
+		public Group getGroup_3() { return cGroup_3; }
 		
-		//'home'
-		public Keyword getHomeHomeKeyword_3_0() { return cHomeHomeKeyword_3_0; }
+		//'SClass:{'
+		public Keyword getSClassKeyword_3_0() { return cSClassKeyword_3_0; }
 		
-		//(showInNav?='showInNav')?
-		public Assignment getShowInNavAssignment_4() { return cShowInNavAssignment_4; }
+		//(sclasses+=[StyleClass])*
+		public Assignment getSclassesAssignment_3_1() { return cSclassesAssignment_3_1; }
 		
-		//'showInNav'
-		public Keyword getShowInNavShowInNavKeyword_4_0() { return cShowInNavShowInNavKeyword_4_0; }
+		//[StyleClass]
+		public CrossReference getSclassesStyleClassCrossReference_3_1_0() { return cSclassesStyleClassCrossReference_3_1_0; }
 		
-		//(pageFeatures+=PageFeature)*
-		public Assignment getPageFeaturesAssignment_5() { return cPageFeaturesAssignment_5; }
-		
-		//PageFeature
-		public RuleCall getPageFeaturesPageFeatureParserRuleCall_5_0() { return cPageFeaturesPageFeatureParserRuleCall_5_0; }
+		//ID
+		public RuleCall getSclassesStyleClassIDTerminalRuleCall_3_1_0_1() { return cSclassesStyleClassIDTerminalRuleCall_3_1_0_1; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_3_2() { return cRightCurlyBracketKeyword_3_2; }
+		
+		//(home?='home')?
+		public Assignment getHomeAssignment_4() { return cHomeAssignment_4; }
+		
+		//'home'
+		public Keyword getHomeHomeKeyword_4_0() { return cHomeHomeKeyword_4_0; }
+		
+		//(showInNav?='showInNav')?
+		public Assignment getShowInNavAssignment_5() { return cShowInNavAssignment_5; }
+		
+		//'showInNav'
+		public Keyword getShowInNavShowInNavKeyword_5_0() { return cShowInNavShowInNavKeyword_5_0; }
+		
+		//(pageFeatures+=PageFeature)*
+		public Assignment getPageFeaturesAssignment_6() { return cPageFeaturesAssignment_6; }
+		
+		//PageFeature
+		public RuleCall getPageFeaturesPageFeatureParserRuleCall_6_0() { return cPageFeaturesPageFeatureParserRuleCall_6_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class EDOMElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.EDOM");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cDOMParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cCompParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cStyleClassParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cSAttributeNameParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//EDOM:
-		//    DOM | Comp;
+		//    DOM | Comp | StyleClass | SAttributeName;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//DOM | Comp
+		//DOM | Comp | StyleClass | SAttributeName
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//DOM
@@ -140,6 +168,118 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//Comp
 		public RuleCall getCompParserRuleCall_1() { return cCompParserRuleCall_1; }
+		
+		//StyleClass
+		public RuleCall getStyleClassParserRuleCall_2() { return cStyleClassParserRuleCall_2; }
+		
+		//SAttributeName
+		public RuleCall getSAttributeNameParserRuleCall_3() { return cSAttributeNameParserRuleCall_3; }
+	}
+	public class StyleClassElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.StyleClass");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cStyleClassKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cSattributesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cSattributesSAttributeAndValueParserRuleCall_3_0 = (RuleCall)cSattributesAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//StyleClass:
+		//    'StyleClass' name=ID
+		//    '{'
+		//        (sattributes+=SAttributeAndValue)*
+		//    '}'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'StyleClass' name=ID
+		//'{'
+		//    (sattributes+=SAttributeAndValue)*
+		//'}'
+		public Group getGroup() { return cGroup; }
+		
+		//'StyleClass'
+		public Keyword getStyleClassKeyword_0() { return cStyleClassKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//(sattributes+=SAttributeAndValue)*
+		public Assignment getSattributesAssignment_3() { return cSattributesAssignment_3; }
+		
+		//SAttributeAndValue
+		public RuleCall getSattributesSAttributeAndValueParserRuleCall_3_0() { return cSattributesSAttributeAndValueParserRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class SAttributeNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.SAttributeName");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSAttriKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//SAttributeName:
+		//    'SAttri' name=ID
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'SAttri' name=ID
+		public Group getGroup() { return cGroup; }
+		
+		//'SAttri'
+		public Keyword getSAttriKeyword_0() { return cSAttriKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+	public class SAttributeAndValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.SAttributeAndValue");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cStnameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cStnameSAttributeNameCrossReference_0_0 = (CrossReference)cStnameAssignment_0.eContents().get(0);
+		private final RuleCall cStnameSAttributeNameIDTerminalRuleCall_0_0_1 = (RuleCall)cStnameSAttributeNameCrossReference_0_0.eContents().get(1);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		
+		//SAttributeAndValue:
+		//    stname=[SAttributeName] ':' value=STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//stname=[SAttributeName] ':' value=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//stname=[SAttributeName]
+		public Assignment getStnameAssignment_0() { return cStnameAssignment_0; }
+		
+		//[SAttributeName]
+		public CrossReference getStnameSAttributeNameCrossReference_0_0() { return cStnameSAttributeNameCrossReference_0_0; }
+		
+		//ID
+		public RuleCall getStnameSAttributeNameIDTerminalRuleCall_0_0_1() { return cStnameSAttributeNameIDTerminalRuleCall_0_0_1; }
+		
+		//':'
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		
+		//value=STRING
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_2_0() { return cValueSTRINGTerminalRuleCall_2_0; }
 	}
 	public class DOMElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.DOM");
@@ -149,20 +289,28 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cFeaturesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cFeaturesFeatureParserRuleCall_2_1_0 = (RuleCall)cFeaturesAssignment_2_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
+		private final Keyword cSClassKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final Assignment cSclassesAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final CrossReference cSclassesStyleClassCrossReference_2_1_1_0 = (CrossReference)cSclassesAssignment_2_1_1.eContents().get(0);
+		private final RuleCall cSclassesStyleClassIDTerminalRuleCall_2_1_1_0_1 = (RuleCall)cSclassesStyleClassCrossReference_2_1_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_2_1_2 = (Keyword)cGroup_2_1.eContents().get(2);
+		private final Assignment cFeaturesAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cFeaturesFeatureParserRuleCall_2_2_0 = (RuleCall)cFeaturesAssignment_2_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
 		
 		//DOM:
 		//    'Dom' name=ID
 		//    ('{'
-		//    (features+=Feature)*
+		//    ('SClass:{'(sclasses+=[StyleClass])* '}')?
+		//        (features+=Feature)*
 		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Dom' name=ID
 		//('{'
-		//(features+=Feature)*
+		//('SClass:{'(sclasses+=[StyleClass])* '}')?
+		//    (features+=Feature)*
 		//'}')?
 		public Group getGroup() { return cGroup; }
 		
@@ -176,21 +324,40 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//('{'
-		//(features+=Feature)*
+		//('SClass:{'(sclasses+=[StyleClass])* '}')?
+		//    (features+=Feature)*
 		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
-		//(features+=Feature)*
-		public Assignment getFeaturesAssignment_2_1() { return cFeaturesAssignment_2_1; }
+		//('SClass:{'(sclasses+=[StyleClass])* '}')?
+		public Group getGroup_2_1() { return cGroup_2_1; }
 		
-		//Feature
-		public RuleCall getFeaturesFeatureParserRuleCall_2_1_0() { return cFeaturesFeatureParserRuleCall_2_1_0; }
+		//'SClass:{'
+		public Keyword getSClassKeyword_2_1_0() { return cSClassKeyword_2_1_0; }
+		
+		//(sclasses+=[StyleClass])*
+		public Assignment getSclassesAssignment_2_1_1() { return cSclassesAssignment_2_1_1; }
+		
+		//[StyleClass]
+		public CrossReference getSclassesStyleClassCrossReference_2_1_1_0() { return cSclassesStyleClassCrossReference_2_1_1_0; }
+		
+		//ID
+		public RuleCall getSclassesStyleClassIDTerminalRuleCall_2_1_1_0_1() { return cSclassesStyleClassIDTerminalRuleCall_2_1_1_0_1; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_2_2() { return cRightCurlyBracketKeyword_2_2; }
+		public Keyword getRightCurlyBracketKeyword_2_1_2() { return cRightCurlyBracketKeyword_2_1_2; }
+		
+		//(features+=Feature)*
+		public Assignment getFeaturesAssignment_2_2() { return cFeaturesAssignment_2_2; }
+		
+		//Feature
+		public RuleCall getFeaturesFeatureParserRuleCall_2_2_0() { return cFeaturesFeatureParserRuleCall_2_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_3() { return cRightCurlyBracketKeyword_2_3; }
 	}
 	public class CompElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.Comp");
@@ -200,22 +367,31 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cFeaturesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cFeaturesFeatureParserRuleCall_2_1_0 = (RuleCall)cFeaturesAssignment_2_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
+		private final Keyword cSClassKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final Assignment cSclassesAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final CrossReference cSclassesStyleClassCrossReference_2_1_1_0 = (CrossReference)cSclassesAssignment_2_1_1.eContents().get(0);
+		private final RuleCall cSclassesStyleClassIDTerminalRuleCall_2_1_1_0_1 = (RuleCall)cSclassesStyleClassCrossReference_2_1_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_2_1_2 = (Keyword)cGroup_2_1.eContents().get(2);
+		private final Assignment cFeaturesAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cFeaturesFeatureParserRuleCall_2_2_0 = (RuleCall)cFeaturesAssignment_2_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
 		
 		//Comp:
 		//    'Comp' name=ID
 		//    (
 		//    '{'
+		//    ('SClass:{'(sclasses+=[StyleClass])* '}')?
 		//        (features+=Feature)*
 		//    '}'
-		//    )?;
+		//    )?
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Comp' name=ID
 		//(
 		//'{'
+		//('SClass:{'(sclasses+=[StyleClass])* '}')?
 		//    (features+=Feature)*
 		//'}'
 		//)?
@@ -232,6 +408,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//(
 		//'{'
+		//('SClass:{'(sclasses+=[StyleClass])* '}')?
 		//    (features+=Feature)*
 		//'}'
 		//)?
@@ -240,14 +417,32 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
-		//(features+=Feature)*
-		public Assignment getFeaturesAssignment_2_1() { return cFeaturesAssignment_2_1; }
+		//('SClass:{'(sclasses+=[StyleClass])* '}')?
+		public Group getGroup_2_1() { return cGroup_2_1; }
 		
-		//Feature
-		public RuleCall getFeaturesFeatureParserRuleCall_2_1_0() { return cFeaturesFeatureParserRuleCall_2_1_0; }
+		//'SClass:{'
+		public Keyword getSClassKeyword_2_1_0() { return cSClassKeyword_2_1_0; }
+		
+		//(sclasses+=[StyleClass])*
+		public Assignment getSclassesAssignment_2_1_1() { return cSclassesAssignment_2_1_1; }
+		
+		//[StyleClass]
+		public CrossReference getSclassesStyleClassCrossReference_2_1_1_0() { return cSclassesStyleClassCrossReference_2_1_1_0; }
+		
+		//ID
+		public RuleCall getSclassesStyleClassIDTerminalRuleCall_2_1_1_0_1() { return cSclassesStyleClassIDTerminalRuleCall_2_1_1_0_1; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_2_2() { return cRightCurlyBracketKeyword_2_2; }
+		public Keyword getRightCurlyBracketKeyword_2_1_2() { return cRightCurlyBracketKeyword_2_1_2; }
+		
+		//(features+=Feature)*
+		public Assignment getFeaturesAssignment_2_2() { return cFeaturesAssignment_2_2; }
+		
+		//Feature
+		public RuleCall getFeaturesFeatureParserRuleCall_2_2_0() { return cFeaturesFeatureParserRuleCall_2_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_3() { return cRightCurlyBracketKeyword_2_3; }
 	}
 	public class InstanciaEDOMElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.InstanciaEDOM");
@@ -402,6 +597,9 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	private final ElementElements pElement;
 	private final PageElements pPage;
 	private final EDOMElements pEDOM;
+	private final StyleClassElements pStyleClass;
+	private final SAttributeNameElements pSAttributeName;
+	private final SAttributeAndValueElements pSAttributeAndValue;
 	private final DOMElements pDOM;
 	private final CompElements pComp;
 	private final InstanciaEDOMElements pInstanciaEDOM;
@@ -423,6 +621,9 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		this.pElement = new ElementElements();
 		this.pPage = new PageElements();
 		this.pEDOM = new EDOMElements();
+		this.pStyleClass = new StyleClassElements();
+		this.pSAttributeName = new SAttributeNameElements();
+		this.pSAttributeAndValue = new SAttributeAndValueElements();
 		this.pDOM = new DOMElements();
 		this.pComp = new CompElements();
 		this.pInstanciaEDOM = new InstanciaEDOMElements();
@@ -482,6 +683,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//Page:
 	//    'Page' name=ID
 	//    '{'
+	//    ('SClass:{'(sclasses+=[StyleClass])* '}')?
 	//    (home?='home')?
 	//    (showInNav?='showInNav')?
 	//    (pageFeatures+=PageFeature)*
@@ -495,7 +697,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//EDOM:
-	//    DOM | Comp;
+	//    DOM | Comp | StyleClass | SAttributeName;
 	public EDOMElements getEDOMAccess() {
 		return pEDOM;
 	}
@@ -504,10 +706,47 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getEDOMAccess().getRule();
 	}
 	
+	//StyleClass:
+	//    'StyleClass' name=ID
+	//    '{'
+	//        (sattributes+=SAttributeAndValue)*
+	//    '}'
+	//;
+	public StyleClassElements getStyleClassAccess() {
+		return pStyleClass;
+	}
+	
+	public ParserRule getStyleClassRule() {
+		return getStyleClassAccess().getRule();
+	}
+	
+	//SAttributeName:
+	//    'SAttri' name=ID
+	//;
+	public SAttributeNameElements getSAttributeNameAccess() {
+		return pSAttributeName;
+	}
+	
+	public ParserRule getSAttributeNameRule() {
+		return getSAttributeNameAccess().getRule();
+	}
+	
+	//SAttributeAndValue:
+	//    stname=[SAttributeName] ':' value=STRING
+	//;
+	public SAttributeAndValueElements getSAttributeAndValueAccess() {
+		return pSAttributeAndValue;
+	}
+	
+	public ParserRule getSAttributeAndValueRule() {
+		return getSAttributeAndValueAccess().getRule();
+	}
+	
 	//DOM:
 	//    'Dom' name=ID
 	//    ('{'
-	//    (features+=Feature)*
+	//    ('SClass:{'(sclasses+=[StyleClass])* '}')?
+	//        (features+=Feature)*
 	//    '}')?;
 	public DOMElements getDOMAccess() {
 		return pDOM;
@@ -521,9 +760,11 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//    'Comp' name=ID
 	//    (
 	//    '{'
+	//    ('SClass:{'(sclasses+=[StyleClass])* '}')?
 	//        (features+=Feature)*
 	//    '}'
-	//    )?;
+	//    )?
+	//    ;
 	public CompElements getCompAccess() {
 		return pComp;
 	}

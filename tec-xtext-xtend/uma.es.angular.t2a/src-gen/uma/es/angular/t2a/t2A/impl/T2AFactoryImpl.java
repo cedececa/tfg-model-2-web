@@ -69,6 +69,9 @@ public class T2AFactoryImpl extends EFactoryImpl implements T2AFactory
       case T2APackage.ELEMENT: return createElement();
       case T2APackage.PAGE: return createPage();
       case T2APackage.EDOM: return createEDOM();
+      case T2APackage.STYLE_CLASS: return createStyleClass();
+      case T2APackage.SATTRIBUTE_NAME: return createSAttributeName();
+      case T2APackage.SATTRIBUTE_AND_VALUE: return createSAttributeAndValue();
       case T2APackage.DOM: return createDOM();
       case T2APackage.COMP: return createComp();
       case T2APackage.INSTANCIA_EDOM: return createInstanciaEDOM();
@@ -126,6 +129,42 @@ public class T2AFactoryImpl extends EFactoryImpl implements T2AFactory
   {
     EDOMImpl edom = new EDOMImpl();
     return edom;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StyleClass createStyleClass()
+  {
+    StyleClassImpl styleClass = new StyleClassImpl();
+    return styleClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAttributeName createSAttributeName()
+  {
+    SAttributeNameImpl sAttributeName = new SAttributeNameImpl();
+    return sAttributeName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SAttributeAndValue createSAttributeAndValue()
+  {
+    SAttributeAndValueImpl sAttributeAndValue = new SAttributeAndValueImpl();
+    return sAttributeAndValue;
   }
 
   /**

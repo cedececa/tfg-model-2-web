@@ -96,6 +96,21 @@ public class T2AAdapterFactory extends AdapterFactoryImpl
         return createEDOMAdapter();
       }
       @Override
+      public Adapter caseStyleClass(StyleClass object)
+      {
+        return createStyleClassAdapter();
+      }
+      @Override
+      public Adapter caseSAttributeName(SAttributeName object)
+      {
+        return createSAttributeNameAdapter();
+      }
+      @Override
+      public Adapter caseSAttributeAndValue(SAttributeAndValue object)
+      {
+        return createSAttributeAndValueAdapter();
+      }
+      @Override
       public Adapter caseDOM(DOM object)
       {
         return createDOMAdapter();
@@ -203,6 +218,51 @@ public class T2AAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createEDOMAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uma.es.angular.t2a.t2A.StyleClass <em>Style Class</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uma.es.angular.t2a.t2A.StyleClass
+   * @generated
+   */
+  public Adapter createStyleClassAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uma.es.angular.t2a.t2A.SAttributeName <em>SAttribute Name</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uma.es.angular.t2a.t2A.SAttributeName
+   * @generated
+   */
+  public Adapter createSAttributeNameAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uma.es.angular.t2a.t2A.SAttributeAndValue <em>SAttribute And Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uma.es.angular.t2a.t2A.SAttributeAndValue
+   * @generated
+   */
+  public Adapter createSAttributeAndValueAdapter()
   {
     return null;
   }

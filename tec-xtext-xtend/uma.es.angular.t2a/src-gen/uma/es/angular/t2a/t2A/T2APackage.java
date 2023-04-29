@@ -133,13 +133,22 @@ public interface T2APackage extends EPackage
   int PAGE__NAME = ELEMENT__NAME;
 
   /**
+   * The feature id for the '<em><b>Sclasses</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAGE__SCLASSES = ELEMENT_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Home</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PAGE__HOME = ELEMENT_FEATURE_COUNT + 0;
+  int PAGE__HOME = ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Show In Nav</b></em>' attribute.
@@ -148,7 +157,7 @@ public interface T2APackage extends EPackage
    * @generated
    * @ordered
    */
-  int PAGE__SHOW_IN_NAV = ELEMENT_FEATURE_COUNT + 1;
+  int PAGE__SHOW_IN_NAV = ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Page Features</b></em>' containment reference list.
@@ -157,7 +166,7 @@ public interface T2APackage extends EPackage
    * @generated
    * @ordered
    */
-  int PAGE__PAGE_FEATURES = ELEMENT_FEATURE_COUNT + 2;
+  int PAGE__PAGE_FEATURES = ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Page</em>' class.
@@ -166,7 +175,7 @@ public interface T2APackage extends EPackage
    * @generated
    * @ordered
    */
-  int PAGE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 3;
+  int PAGE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.EDOMImpl <em>EDOM</em>}' class.
@@ -188,22 +197,115 @@ public interface T2APackage extends EPackage
   int EDOM__NAME = ELEMENT__NAME;
 
   /**
-   * The feature id for the '<em><b>Features</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EDOM__FEATURES = ELEMENT_FEATURE_COUNT + 0;
-
-  /**
    * The number of structural features of the '<em>EDOM</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EDOM_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+  int EDOM_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.StyleClassImpl <em>Style Class</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uma.es.angular.t2a.t2A.impl.StyleClassImpl
+   * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getStyleClass()
+   * @generated
+   */
+  int STYLE_CLASS = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STYLE_CLASS__NAME = EDOM__NAME;
+
+  /**
+   * The feature id for the '<em><b>Sattributes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STYLE_CLASS__SATTRIBUTES = EDOM_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Style Class</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STYLE_CLASS_FEATURE_COUNT = EDOM_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.SAttributeNameImpl <em>SAttribute Name</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uma.es.angular.t2a.t2A.impl.SAttributeNameImpl
+   * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getSAttributeName()
+   * @generated
+   */
+  int SATTRIBUTE_NAME = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SATTRIBUTE_NAME__NAME = EDOM__NAME;
+
+  /**
+   * The number of structural features of the '<em>SAttribute Name</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SATTRIBUTE_NAME_FEATURE_COUNT = EDOM_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.SAttributeAndValueImpl <em>SAttribute And Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uma.es.angular.t2a.t2A.impl.SAttributeAndValueImpl
+   * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getSAttributeAndValue()
+   * @generated
+   */
+  int SATTRIBUTE_AND_VALUE = 6;
+
+  /**
+   * The feature id for the '<em><b>Stname</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SATTRIBUTE_AND_VALUE__STNAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SATTRIBUTE_AND_VALUE__VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>SAttribute And Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SATTRIBUTE_AND_VALUE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.DOMImpl <em>DOM</em>}' class.
@@ -213,7 +315,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getDOM()
    * @generated
    */
-  int DOM = 4;
+  int DOM = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -225,13 +327,22 @@ public interface T2APackage extends EPackage
   int DOM__NAME = EDOM__NAME;
 
   /**
+   * The feature id for the '<em><b>Sclasses</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOM__SCLASSES = EDOM_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Features</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DOM__FEATURES = EDOM__FEATURES;
+  int DOM__FEATURES = EDOM_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>DOM</em>' class.
@@ -240,7 +351,7 @@ public interface T2APackage extends EPackage
    * @generated
    * @ordered
    */
-  int DOM_FEATURE_COUNT = EDOM_FEATURE_COUNT + 0;
+  int DOM_FEATURE_COUNT = EDOM_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.CompImpl <em>Comp</em>}' class.
@@ -250,7 +361,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getComp()
    * @generated
    */
-  int COMP = 5;
+  int COMP = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -262,13 +373,22 @@ public interface T2APackage extends EPackage
   int COMP__NAME = EDOM__NAME;
 
   /**
+   * The feature id for the '<em><b>Sclasses</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMP__SCLASSES = EDOM_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Features</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMP__FEATURES = EDOM__FEATURES;
+  int COMP__FEATURES = EDOM_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Comp</em>' class.
@@ -277,7 +397,7 @@ public interface T2APackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMP_FEATURE_COUNT = EDOM_FEATURE_COUNT + 0;
+  int COMP_FEATURE_COUNT = EDOM_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.InstanciaEDOMImpl <em>Instancia EDOM</em>}' class.
@@ -287,7 +407,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getInstanciaEDOM()
    * @generated
    */
-  int INSTANCIA_EDOM = 6;
+  int INSTANCIA_EDOM = 9;
 
   /**
    * The feature id for the '<em><b>Instancia</b></em>' reference.
@@ -324,7 +444,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getInstanceEDOMFeature()
    * @generated
    */
-  int INSTANCE_EDOM_FEATURE = 7;
+  int INSTANCE_EDOM_FEATURE = 10;
 
   /**
    * The feature id for the '<em><b>Instancia EDOM</b></em>' containment reference.
@@ -361,7 +481,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getPageFeature()
    * @generated
    */
-  int PAGE_FEATURE = 8;
+  int PAGE_FEATURE = 11;
 
   /**
    * The feature id for the '<em><b>Instancia EDOM</b></em>' containment reference.
@@ -398,7 +518,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getFeature()
    * @generated
    */
-  int FEATURE = 9;
+  int FEATURE = 12;
 
   /**
    * The feature id for the '<em><b>Instancia EDOM</b></em>' containment reference.
@@ -490,6 +610,17 @@ public interface T2APackage extends EPackage
   EClass getPage();
 
   /**
+   * Returns the meta object for the reference list '{@link uma.es.angular.t2a.t2A.Page#getSclasses <em>Sclasses</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Sclasses</em>'.
+   * @see uma.es.angular.t2a.t2A.Page#getSclasses()
+   * @see #getPage()
+   * @generated
+   */
+  EReference getPage_Sclasses();
+
+  /**
    * Returns the meta object for the attribute '{@link uma.es.angular.t2a.t2A.Page#isHome <em>Home</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -533,15 +664,67 @@ public interface T2APackage extends EPackage
   EClass getEDOM();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uma.es.angular.t2a.t2A.EDOM#getFeatures <em>Features</em>}'.
+   * Returns the meta object for class '{@link uma.es.angular.t2a.t2A.StyleClass <em>Style Class</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Features</em>'.
-   * @see uma.es.angular.t2a.t2A.EDOM#getFeatures()
-   * @see #getEDOM()
+   * @return the meta object for class '<em>Style Class</em>'.
+   * @see uma.es.angular.t2a.t2A.StyleClass
    * @generated
    */
-  EReference getEDOM_Features();
+  EClass getStyleClass();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uma.es.angular.t2a.t2A.StyleClass#getSattributes <em>Sattributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Sattributes</em>'.
+   * @see uma.es.angular.t2a.t2A.StyleClass#getSattributes()
+   * @see #getStyleClass()
+   * @generated
+   */
+  EReference getStyleClass_Sattributes();
+
+  /**
+   * Returns the meta object for class '{@link uma.es.angular.t2a.t2A.SAttributeName <em>SAttribute Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAttribute Name</em>'.
+   * @see uma.es.angular.t2a.t2A.SAttributeName
+   * @generated
+   */
+  EClass getSAttributeName();
+
+  /**
+   * Returns the meta object for class '{@link uma.es.angular.t2a.t2A.SAttributeAndValue <em>SAttribute And Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SAttribute And Value</em>'.
+   * @see uma.es.angular.t2a.t2A.SAttributeAndValue
+   * @generated
+   */
+  EClass getSAttributeAndValue();
+
+  /**
+   * Returns the meta object for the reference '{@link uma.es.angular.t2a.t2A.SAttributeAndValue#getStname <em>Stname</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Stname</em>'.
+   * @see uma.es.angular.t2a.t2A.SAttributeAndValue#getStname()
+   * @see #getSAttributeAndValue()
+   * @generated
+   */
+  EReference getSAttributeAndValue_Stname();
+
+  /**
+   * Returns the meta object for the attribute '{@link uma.es.angular.t2a.t2A.SAttributeAndValue#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see uma.es.angular.t2a.t2A.SAttributeAndValue#getValue()
+   * @see #getSAttributeAndValue()
+   * @generated
+   */
+  EAttribute getSAttributeAndValue_Value();
 
   /**
    * Returns the meta object for class '{@link uma.es.angular.t2a.t2A.DOM <em>DOM</em>}'.
@@ -554,6 +737,28 @@ public interface T2APackage extends EPackage
   EClass getDOM();
 
   /**
+   * Returns the meta object for the reference list '{@link uma.es.angular.t2a.t2A.DOM#getSclasses <em>Sclasses</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Sclasses</em>'.
+   * @see uma.es.angular.t2a.t2A.DOM#getSclasses()
+   * @see #getDOM()
+   * @generated
+   */
+  EReference getDOM_Sclasses();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uma.es.angular.t2a.t2A.DOM#getFeatures <em>Features</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Features</em>'.
+   * @see uma.es.angular.t2a.t2A.DOM#getFeatures()
+   * @see #getDOM()
+   * @generated
+   */
+  EReference getDOM_Features();
+
+  /**
    * Returns the meta object for class '{@link uma.es.angular.t2a.t2A.Comp <em>Comp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -562,6 +767,28 @@ public interface T2APackage extends EPackage
    * @generated
    */
   EClass getComp();
+
+  /**
+   * Returns the meta object for the reference list '{@link uma.es.angular.t2a.t2A.Comp#getSclasses <em>Sclasses</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Sclasses</em>'.
+   * @see uma.es.angular.t2a.t2A.Comp#getSclasses()
+   * @see #getComp()
+   * @generated
+   */
+  EReference getComp_Sclasses();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uma.es.angular.t2a.t2A.Comp#getFeatures <em>Features</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Features</em>'.
+   * @see uma.es.angular.t2a.t2A.Comp#getFeatures()
+   * @see #getComp()
+   * @generated
+   */
+  EReference getComp_Features();
 
   /**
    * Returns the meta object for class '{@link uma.es.angular.t2a.t2A.InstanciaEDOM <em>Instancia EDOM</em>}'.
@@ -772,6 +999,14 @@ public interface T2APackage extends EPackage
     EClass PAGE = eINSTANCE.getPage();
 
     /**
+     * The meta object literal for the '<em><b>Sclasses</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PAGE__SCLASSES = eINSTANCE.getPage_Sclasses();
+
+    /**
      * The meta object literal for the '<em><b>Home</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -806,12 +1041,58 @@ public interface T2APackage extends EPackage
     EClass EDOM = eINSTANCE.getEDOM();
 
     /**
-     * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link uma.es.angular.t2a.t2A.impl.StyleClassImpl <em>Style Class</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uma.es.angular.t2a.t2A.impl.StyleClassImpl
+     * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getStyleClass()
+     * @generated
+     */
+    EClass STYLE_CLASS = eINSTANCE.getStyleClass();
+
+    /**
+     * The meta object literal for the '<em><b>Sattributes</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EDOM__FEATURES = eINSTANCE.getEDOM_Features();
+    EReference STYLE_CLASS__SATTRIBUTES = eINSTANCE.getStyleClass_Sattributes();
+
+    /**
+     * The meta object literal for the '{@link uma.es.angular.t2a.t2A.impl.SAttributeNameImpl <em>SAttribute Name</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uma.es.angular.t2a.t2A.impl.SAttributeNameImpl
+     * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getSAttributeName()
+     * @generated
+     */
+    EClass SATTRIBUTE_NAME = eINSTANCE.getSAttributeName();
+
+    /**
+     * The meta object literal for the '{@link uma.es.angular.t2a.t2A.impl.SAttributeAndValueImpl <em>SAttribute And Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uma.es.angular.t2a.t2A.impl.SAttributeAndValueImpl
+     * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getSAttributeAndValue()
+     * @generated
+     */
+    EClass SATTRIBUTE_AND_VALUE = eINSTANCE.getSAttributeAndValue();
+
+    /**
+     * The meta object literal for the '<em><b>Stname</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SATTRIBUTE_AND_VALUE__STNAME = eINSTANCE.getSAttributeAndValue_Stname();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SATTRIBUTE_AND_VALUE__VALUE = eINSTANCE.getSAttributeAndValue_Value();
 
     /**
      * The meta object literal for the '{@link uma.es.angular.t2a.t2A.impl.DOMImpl <em>DOM</em>}' class.
@@ -824,6 +1105,22 @@ public interface T2APackage extends EPackage
     EClass DOM = eINSTANCE.getDOM();
 
     /**
+     * The meta object literal for the '<em><b>Sclasses</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DOM__SCLASSES = eINSTANCE.getDOM_Sclasses();
+
+    /**
+     * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DOM__FEATURES = eINSTANCE.getDOM_Features();
+
+    /**
      * The meta object literal for the '{@link uma.es.angular.t2a.t2A.impl.CompImpl <em>Comp</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -832,6 +1129,22 @@ public interface T2APackage extends EPackage
      * @generated
      */
     EClass COMP = eINSTANCE.getComp();
+
+    /**
+     * The meta object literal for the '<em><b>Sclasses</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMP__SCLASSES = eINSTANCE.getComp_Sclasses();
+
+    /**
+     * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMP__FEATURES = eINSTANCE.getComp_Features();
 
     /**
      * The meta object literal for the '{@link uma.es.angular.t2a.t2A.impl.InstanciaEDOMImpl <em>Instancia EDOM</em>}' class.

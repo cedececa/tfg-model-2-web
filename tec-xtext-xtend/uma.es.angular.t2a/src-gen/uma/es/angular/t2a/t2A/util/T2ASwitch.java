@@ -103,6 +103,31 @@ public class T2ASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case T2APackage.STYLE_CLASS:
+      {
+        StyleClass styleClass = (StyleClass)theEObject;
+        T result = caseStyleClass(styleClass);
+        if (result == null) result = caseEDOM(styleClass);
+        if (result == null) result = caseElement(styleClass);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T2APackage.SATTRIBUTE_NAME:
+      {
+        SAttributeName sAttributeName = (SAttributeName)theEObject;
+        T result = caseSAttributeName(sAttributeName);
+        if (result == null) result = caseEDOM(sAttributeName);
+        if (result == null) result = caseElement(sAttributeName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T2APackage.SATTRIBUTE_AND_VALUE:
+      {
+        SAttributeAndValue sAttributeAndValue = (SAttributeAndValue)theEObject;
+        T result = caseSAttributeAndValue(sAttributeAndValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case T2APackage.DOM:
       {
         DOM dom = (DOM)theEObject;
@@ -213,6 +238,54 @@ public class T2ASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseEDOM(EDOM object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Style Class</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Style Class</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStyleClass(StyleClass object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SAttribute Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SAttribute Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSAttributeName(SAttributeName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SAttribute And Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SAttribute And Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSAttributeAndValue(SAttributeAndValue object)
   {
     return null;
   }

@@ -13,15 +13,28 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T2A.ecore#//Element/name"/>
     </genClasses>
     <genClasses ecoreClass="T2A.ecore#//Page">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference T2A.ecore#//Page/sclasses"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T2A.ecore#//Page/home"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T2A.ecore#//Page/showInNav"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//Page/pageFeatures"/>
     </genClasses>
-    <genClasses ecoreClass="T2A.ecore#//EDOM">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//EDOM/features"/>
+    <genClasses ecoreClass="T2A.ecore#//EDOM"/>
+    <genClasses ecoreClass="T2A.ecore#//StyleClass">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//StyleClass/sattributes"/>
     </genClasses>
-    <genClasses ecoreClass="T2A.ecore#//DOM"/>
-    <genClasses ecoreClass="T2A.ecore#//Comp"/>
+    <genClasses ecoreClass="T2A.ecore#//SAttributeName"/>
+    <genClasses ecoreClass="T2A.ecore#//SAttributeAndValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference T2A.ecore#//SAttributeAndValue/stname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T2A.ecore#//SAttributeAndValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="T2A.ecore#//DOM">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference T2A.ecore#//DOM/sclasses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//DOM/features"/>
+    </genClasses>
+    <genClasses ecoreClass="T2A.ecore#//Comp">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference T2A.ecore#//Comp/sclasses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//Comp/features"/>
+    </genClasses>
     <genClasses ecoreClass="T2A.ecore#//InstanciaEDOM">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference T2A.ecore#//InstanciaEDOM/instancia"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//InstanciaEDOM/insfeatures"/>

@@ -60,6 +60,33 @@ public interface T2AFactory extends EFactory
   EDOM createEDOM();
 
   /**
+   * Returns a new object of class '<em>Style Class</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Style Class</em>'.
+   * @generated
+   */
+  StyleClass createStyleClass();
+
+  /**
+   * Returns a new object of class '<em>SAttribute Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAttribute Name</em>'.
+   * @generated
+   */
+  SAttributeName createSAttributeName();
+
+  /**
+   * Returns a new object of class '<em>SAttribute And Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SAttribute And Value</em>'.
+   * @generated
+   */
+  SAttributeAndValue createSAttributeAndValue();
+
+  /**
    * Returns a new object of class '<em>DOM</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

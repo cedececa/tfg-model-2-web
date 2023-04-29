@@ -16,10 +16,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uma.es.angular.t2a.t2A.Page;
 import uma.es.angular.t2a.t2A.PageFeature;
+import uma.es.angular.t2a.t2A.StyleClass;
 import uma.es.angular.t2a.t2A.T2APackage;
 
 /**
@@ -30,6 +32,7 @@ import uma.es.angular.t2a.t2A.T2APackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uma.es.angular.t2a.t2A.impl.PageImpl#getSclasses <em>Sclasses</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.impl.PageImpl#isHome <em>Home</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.impl.PageImpl#isShowInNav <em>Show In Nav</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.impl.PageImpl#getPageFeatures <em>Page Features</em>}</li>
@@ -39,6 +42,16 @@ import uma.es.angular.t2a.t2A.T2APackage;
  */
 public class PageImpl extends ElementImpl implements Page
 {
+  /**
+   * The cached value of the '{@link #getSclasses() <em>Sclasses</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSclasses()
+   * @generated
+   * @ordered
+   */
+  protected EList<StyleClass> sclasses;
+
   /**
    * The default value of the '{@link #isHome() <em>Home</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -108,6 +121,21 @@ public class PageImpl extends ElementImpl implements Page
   protected EClass eStaticClass()
   {
     return T2APackage.Literals.PAGE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<StyleClass> getSclasses()
+  {
+    if (sclasses == null)
+    {
+      sclasses = new EObjectResolvingEList<StyleClass>(StyleClass.class, this, T2APackage.PAGE__SCLASSES);
+    }
+    return sclasses;
   }
 
   /**
@@ -201,6 +229,8 @@ public class PageImpl extends ElementImpl implements Page
   {
     switch (featureID)
     {
+      case T2APackage.PAGE__SCLASSES:
+        return getSclasses();
       case T2APackage.PAGE__HOME:
         return isHome();
       case T2APackage.PAGE__SHOW_IN_NAV:
@@ -222,6 +252,10 @@ public class PageImpl extends ElementImpl implements Page
   {
     switch (featureID)
     {
+      case T2APackage.PAGE__SCLASSES:
+        getSclasses().clear();
+        getSclasses().addAll((Collection<? extends StyleClass>)newValue);
+        return;
       case T2APackage.PAGE__HOME:
         setHome((Boolean)newValue);
         return;
@@ -246,6 +280,9 @@ public class PageImpl extends ElementImpl implements Page
   {
     switch (featureID)
     {
+      case T2APackage.PAGE__SCLASSES:
+        getSclasses().clear();
+        return;
       case T2APackage.PAGE__HOME:
         setHome(HOME_EDEFAULT);
         return;
@@ -269,6 +306,8 @@ public class PageImpl extends ElementImpl implements Page
   {
     switch (featureID)
     {
+      case T2APackage.PAGE__SCLASSES:
+        return sclasses != null && !sclasses.isEmpty();
       case T2APackage.PAGE__HOME:
         return home != HOME_EDEFAULT;
       case T2APackage.PAGE__SHOW_IN_NAV:
