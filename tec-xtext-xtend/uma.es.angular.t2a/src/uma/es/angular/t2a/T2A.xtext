@@ -11,7 +11,7 @@ Element:
 Page:
 	'Page' name=ID 
 	'{'
-	('SClass:{'(sclasses+=[StyleClass])* '}')?	
+	('SClass' '{'(sclasses+=[StyleClass])* '}')?	
 	(home?='home')? 
 	(showInNav?='showInNav')?
 	(pageFeatures+=PageFeature)*
@@ -41,7 +41,7 @@ SAttributeAndValue:
 DOM:
 	'Dom' name=ID
 	('{' 
-	('SClass:{'(sclasses+=[StyleClass])* '}')?	
+	('SClass' '{'(sclasses+=[StyleClass])* '}')?	
 		(features+=Feature)*
 	'}')?;
 	
@@ -49,7 +49,7 @@ Comp:
 	'Comp' name=ID
 	(
 	'{'
-	('SClass:{'(sclasses+=[StyleClass])* '}')?	
+	('SClass' '{'(sclasses+=[StyleClass])* '}')?	
 		(features+=Feature)*
 	'}'	
 	)?
@@ -74,6 +74,7 @@ Feature:
     string=STRING
 ; 
 
+@Override 
 terminal STRING:
     '"' ( '\\'('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
     "'" ( '\\'('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'";

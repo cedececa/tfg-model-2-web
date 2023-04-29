@@ -175,9 +175,13 @@ rulePage returns [EObject current=null]
 			newLeafNode(otherlv_2, grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
-			otherlv_3='SClass:{'
+			otherlv_3='SClass'
 			{
 				newLeafNode(otherlv_3, grammarAccess.getPageAccess().getSClassKeyword_3_0());
+			}
+			otherlv_4='{'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_3_1());
 			}
 			(
 				(
@@ -186,42 +190,42 @@ rulePage returns [EObject current=null]
 							$current = createModelElement(grammarAccess.getPageRule());
 						}
 					}
-					otherlv_4=RULE_ID
+					otherlv_5=RULE_ID
 					{
-						newLeafNode(otherlv_4, grammarAccess.getPageAccess().getSclassesStyleClassCrossReference_3_1_0());
+						newLeafNode(otherlv_5, grammarAccess.getPageAccess().getSclassesStyleClassCrossReference_3_2_0());
 					}
 				)
 			)*
-			otherlv_5='}'
+			otherlv_6='}'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_3_2());
+				newLeafNode(otherlv_6, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_3_3());
 			}
 		)?
 		(
 			(
-				lv_home_6_0='home'
+				lv_home_7_0='home'
 				{
-					newLeafNode(lv_home_6_0, grammarAccess.getPageAccess().getHomeHomeKeyword_4_0());
+					newLeafNode(lv_home_7_0, grammarAccess.getPageAccess().getHomeHomeKeyword_4_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getPageRule());
 					}
-					setWithLastConsumed($current, "home", lv_home_6_0 != null, "home");
+					setWithLastConsumed($current, "home", lv_home_7_0 != null, "home");
 				}
 			)
 		)?
 		(
 			(
-				lv_showInNav_7_0='showInNav'
+				lv_showInNav_8_0='showInNav'
 				{
-					newLeafNode(lv_showInNav_7_0, grammarAccess.getPageAccess().getShowInNavShowInNavKeyword_5_0());
+					newLeafNode(lv_showInNav_8_0, grammarAccess.getPageAccess().getShowInNavShowInNavKeyword_5_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getPageRule());
 					}
-					setWithLastConsumed($current, "showInNav", lv_showInNav_7_0 != null, "showInNav");
+					setWithLastConsumed($current, "showInNav", lv_showInNav_8_0 != null, "showInNav");
 				}
 			)
 		)?
@@ -230,7 +234,7 @@ rulePage returns [EObject current=null]
 				{
 					newCompositeNode(grammarAccess.getPageAccess().getPageFeaturesPageFeatureParserRuleCall_6_0());
 				}
-				lv_pageFeatures_8_0=rulePageFeature
+				lv_pageFeatures_9_0=rulePageFeature
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPageRule());
@@ -238,15 +242,15 @@ rulePage returns [EObject current=null]
 					add(
 						$current,
 						"pageFeatures",
-						lv_pageFeatures_8_0,
+						lv_pageFeatures_9_0,
 						"uma.es.angular.t2a.T2A.PageFeature");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_9='}'
+		otherlv_10='}'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_7());
+			newLeafNode(otherlv_10, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;
@@ -512,9 +516,13 @@ ruleDOM returns [EObject current=null]
 				newLeafNode(otherlv_2, grammarAccess.getDOMAccess().getLeftCurlyBracketKeyword_2_0());
 			}
 			(
-				otherlv_3='SClass:{'
+				otherlv_3='SClass'
 				{
 					newLeafNode(otherlv_3, grammarAccess.getDOMAccess().getSClassKeyword_2_1_0());
+				}
+				otherlv_4='{'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getDOMAccess().getLeftCurlyBracketKeyword_2_1_1());
 				}
 				(
 					(
@@ -523,15 +531,15 @@ ruleDOM returns [EObject current=null]
 								$current = createModelElement(grammarAccess.getDOMRule());
 							}
 						}
-						otherlv_4=RULE_ID
+						otherlv_5=RULE_ID
 						{
-							newLeafNode(otherlv_4, grammarAccess.getDOMAccess().getSclassesStyleClassCrossReference_2_1_1_0());
+							newLeafNode(otherlv_5, grammarAccess.getDOMAccess().getSclassesStyleClassCrossReference_2_1_2_0());
 						}
 					)
 				)*
-				otherlv_5='}'
+				otherlv_6='}'
 				{
-					newLeafNode(otherlv_5, grammarAccess.getDOMAccess().getRightCurlyBracketKeyword_2_1_2());
+					newLeafNode(otherlv_6, grammarAccess.getDOMAccess().getRightCurlyBracketKeyword_2_1_3());
 				}
 			)?
 			(
@@ -539,7 +547,7 @@ ruleDOM returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getDOMAccess().getFeaturesFeatureParserRuleCall_2_2_0());
 					}
-					lv_features_6_0=ruleFeature
+					lv_features_7_0=ruleFeature
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDOMRule());
@@ -547,15 +555,15 @@ ruleDOM returns [EObject current=null]
 						add(
 							$current,
 							"features",
-							lv_features_6_0,
+							lv_features_7_0,
 							"uma.es.angular.t2a.T2A.Feature");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_7='}'
+			otherlv_8='}'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getDOMAccess().getRightCurlyBracketKeyword_2_3());
+				newLeafNode(otherlv_8, grammarAccess.getDOMAccess().getRightCurlyBracketKeyword_2_3());
 			}
 		)?
 	)
@@ -605,9 +613,13 @@ ruleComp returns [EObject current=null]
 				newLeafNode(otherlv_2, grammarAccess.getCompAccess().getLeftCurlyBracketKeyword_2_0());
 			}
 			(
-				otherlv_3='SClass:{'
+				otherlv_3='SClass'
 				{
 					newLeafNode(otherlv_3, grammarAccess.getCompAccess().getSClassKeyword_2_1_0());
+				}
+				otherlv_4='{'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getCompAccess().getLeftCurlyBracketKeyword_2_1_1());
 				}
 				(
 					(
@@ -616,15 +628,15 @@ ruleComp returns [EObject current=null]
 								$current = createModelElement(grammarAccess.getCompRule());
 							}
 						}
-						otherlv_4=RULE_ID
+						otherlv_5=RULE_ID
 						{
-							newLeafNode(otherlv_4, grammarAccess.getCompAccess().getSclassesStyleClassCrossReference_2_1_1_0());
+							newLeafNode(otherlv_5, grammarAccess.getCompAccess().getSclassesStyleClassCrossReference_2_1_2_0());
 						}
 					)
 				)*
-				otherlv_5='}'
+				otherlv_6='}'
 				{
-					newLeafNode(otherlv_5, grammarAccess.getCompAccess().getRightCurlyBracketKeyword_2_1_2());
+					newLeafNode(otherlv_6, grammarAccess.getCompAccess().getRightCurlyBracketKeyword_2_1_3());
 				}
 			)?
 			(
@@ -632,7 +644,7 @@ ruleComp returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getCompAccess().getFeaturesFeatureParserRuleCall_2_2_0());
 					}
-					lv_features_6_0=ruleFeature
+					lv_features_7_0=ruleFeature
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCompRule());
@@ -640,15 +652,15 @@ ruleComp returns [EObject current=null]
 						add(
 							$current,
 							"features",
-							lv_features_6_0,
+							lv_features_7_0,
 							"uma.es.angular.t2a.T2A.Feature");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_7='}'
+			otherlv_8='}'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getCompAccess().getRightCurlyBracketKeyword_2_3());
+				newLeafNode(otherlv_8, grammarAccess.getCompAccess().getRightCurlyBracketKeyword_2_3());
 			}
 		)?
 	)

@@ -40,8 +40,10 @@ Comp leftNav{
 }
 
 Comp Cabecera{
-	SClass:{scheader}
-		
+	SClass {
+		scheader
+	}
+	
 	header{ 
 		h2{
 	 	"Cities"

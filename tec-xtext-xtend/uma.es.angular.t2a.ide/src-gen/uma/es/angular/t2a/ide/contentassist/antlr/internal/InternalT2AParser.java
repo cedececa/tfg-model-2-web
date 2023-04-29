@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalT2AParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Page'", "'{'", "'}'", "'SClass:{'", "'StyleClass'", "'SAttri'", "':'", "'Dom'", "'Comp'", "'home'", "'showInNav'", "'AllowSlot'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Page'", "'{'", "'}'", "'SClass'", "'StyleClass'", "'SAttri'", "':'", "'Dom'", "'Comp'", "'home'", "'showInNav'", "'AllowSlot'"
     };
     public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
@@ -2347,7 +2347,7 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
             // InternalT2A.g:727:1: ( rule__Page__Group_3__0__Impl rule__Page__Group_3__1 )
             // InternalT2A.g:728:2: rule__Page__Group_3__0__Impl rule__Page__Group_3__1
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_5);
             rule__Page__Group_3__0__Impl();
 
             state._fsp--;
@@ -2376,17 +2376,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Page__Group_3__0__Impl"
-    // InternalT2A.g:735:1: rule__Page__Group_3__0__Impl : ( 'SClass:{' ) ;
+    // InternalT2A.g:735:1: rule__Page__Group_3__0__Impl : ( 'SClass' ) ;
     public final void rule__Page__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:739:1: ( ( 'SClass:{' ) )
-            // InternalT2A.g:740:1: ( 'SClass:{' )
+            // InternalT2A.g:739:1: ( ( 'SClass' ) )
+            // InternalT2A.g:740:1: ( 'SClass' )
             {
-            // InternalT2A.g:740:1: ( 'SClass:{' )
-            // InternalT2A.g:741:2: 'SClass:{'
+            // InternalT2A.g:740:1: ( 'SClass' )
+            // InternalT2A.g:741:2: 'SClass'
             {
              before(grammarAccess.getPageAccess().getSClassKeyword_3_0()); 
             match(input,14,FOLLOW_2); 
@@ -2451,49 +2451,21 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Page__Group_3__1__Impl"
-    // InternalT2A.g:762:1: rule__Page__Group_3__1__Impl : ( ( rule__Page__SclassesAssignment_3_1 )* ) ;
+    // InternalT2A.g:762:1: rule__Page__Group_3__1__Impl : ( '{' ) ;
     public final void rule__Page__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:766:1: ( ( ( rule__Page__SclassesAssignment_3_1 )* ) )
-            // InternalT2A.g:767:1: ( ( rule__Page__SclassesAssignment_3_1 )* )
+            // InternalT2A.g:766:1: ( ( '{' ) )
+            // InternalT2A.g:767:1: ( '{' )
             {
-            // InternalT2A.g:767:1: ( ( rule__Page__SclassesAssignment_3_1 )* )
-            // InternalT2A.g:768:2: ( rule__Page__SclassesAssignment_3_1 )*
+            // InternalT2A.g:767:1: ( '{' )
+            // InternalT2A.g:768:2: '{'
             {
-             before(grammarAccess.getPageAccess().getSclassesAssignment_3_1()); 
-            // InternalT2A.g:769:2: ( rule__Page__SclassesAssignment_3_1 )*
-            loop11:
-            do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
-
-                if ( (LA11_0==RULE_ID) ) {
-                    alt11=1;
-                }
-
-
-                switch (alt11) {
-            	case 1 :
-            	    // InternalT2A.g:769:3: rule__Page__SclassesAssignment_3_1
-            	    {
-            	    pushFollow(FOLLOW_9);
-            	    rule__Page__SclassesAssignment_3_1();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop11;
-                }
-            } while (true);
-
-             after(grammarAccess.getPageAccess().getSclassesAssignment_3_1()); 
+             before(grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_3_1()); 
+            match(input,12,FOLLOW_2); 
+             after(grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_3_1()); 
 
             }
 
@@ -2516,17 +2488,22 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Page__Group_3__2"
-    // InternalT2A.g:777:1: rule__Page__Group_3__2 : rule__Page__Group_3__2__Impl ;
+    // InternalT2A.g:777:1: rule__Page__Group_3__2 : rule__Page__Group_3__2__Impl rule__Page__Group_3__3 ;
     public final void rule__Page__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:781:1: ( rule__Page__Group_3__2__Impl )
-            // InternalT2A.g:782:2: rule__Page__Group_3__2__Impl
+            // InternalT2A.g:781:1: ( rule__Page__Group_3__2__Impl rule__Page__Group_3__3 )
+            // InternalT2A.g:782:2: rule__Page__Group_3__2__Impl rule__Page__Group_3__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_8);
             rule__Page__Group_3__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Page__Group_3__3();
 
             state._fsp--;
 
@@ -2549,21 +2526,49 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Page__Group_3__2__Impl"
-    // InternalT2A.g:788:1: rule__Page__Group_3__2__Impl : ( '}' ) ;
+    // InternalT2A.g:789:1: rule__Page__Group_3__2__Impl : ( ( rule__Page__SclassesAssignment_3_2 )* ) ;
     public final void rule__Page__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:792:1: ( ( '}' ) )
-            // InternalT2A.g:793:1: ( '}' )
+            // InternalT2A.g:793:1: ( ( ( rule__Page__SclassesAssignment_3_2 )* ) )
+            // InternalT2A.g:794:1: ( ( rule__Page__SclassesAssignment_3_2 )* )
             {
-            // InternalT2A.g:793:1: ( '}' )
-            // InternalT2A.g:794:2: '}'
+            // InternalT2A.g:794:1: ( ( rule__Page__SclassesAssignment_3_2 )* )
+            // InternalT2A.g:795:2: ( rule__Page__SclassesAssignment_3_2 )*
             {
-             before(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_3_2()); 
-            match(input,13,FOLLOW_2); 
-             after(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_3_2()); 
+             before(grammarAccess.getPageAccess().getSclassesAssignment_3_2()); 
+            // InternalT2A.g:796:2: ( rule__Page__SclassesAssignment_3_2 )*
+            loop11:
+            do {
+                int alt11=2;
+                int LA11_0 = input.LA(1);
+
+                if ( (LA11_0==RULE_ID) ) {
+                    alt11=1;
+                }
+
+
+                switch (alt11) {
+            	case 1 :
+            	    // InternalT2A.g:796:3: rule__Page__SclassesAssignment_3_2
+            	    {
+            	    pushFollow(FOLLOW_9);
+            	    rule__Page__SclassesAssignment_3_2();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop11;
+                }
+            } while (true);
+
+             after(grammarAccess.getPageAccess().getSclassesAssignment_3_2()); 
 
             }
 
@@ -2585,15 +2590,85 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Page__Group_3__2__Impl"
 
 
+    // $ANTLR start "rule__Page__Group_3__3"
+    // InternalT2A.g:804:1: rule__Page__Group_3__3 : rule__Page__Group_3__3__Impl ;
+    public final void rule__Page__Group_3__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalT2A.g:808:1: ( rule__Page__Group_3__3__Impl )
+            // InternalT2A.g:809:2: rule__Page__Group_3__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Page__Group_3__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Page__Group_3__3"
+
+
+    // $ANTLR start "rule__Page__Group_3__3__Impl"
+    // InternalT2A.g:815:1: rule__Page__Group_3__3__Impl : ( '}' ) ;
+    public final void rule__Page__Group_3__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalT2A.g:819:1: ( ( '}' ) )
+            // InternalT2A.g:820:1: ( '}' )
+            {
+            // InternalT2A.g:820:1: ( '}' )
+            // InternalT2A.g:821:2: '}'
+            {
+             before(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_3_3()); 
+            match(input,13,FOLLOW_2); 
+             after(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_3_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Page__Group_3__3__Impl"
+
+
     // $ANTLR start "rule__StyleClass__Group__0"
-    // InternalT2A.g:804:1: rule__StyleClass__Group__0 : rule__StyleClass__Group__0__Impl rule__StyleClass__Group__1 ;
+    // InternalT2A.g:831:1: rule__StyleClass__Group__0 : rule__StyleClass__Group__0__Impl rule__StyleClass__Group__1 ;
     public final void rule__StyleClass__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:808:1: ( rule__StyleClass__Group__0__Impl rule__StyleClass__Group__1 )
-            // InternalT2A.g:809:2: rule__StyleClass__Group__0__Impl rule__StyleClass__Group__1
+            // InternalT2A.g:835:1: ( rule__StyleClass__Group__0__Impl rule__StyleClass__Group__1 )
+            // InternalT2A.g:836:2: rule__StyleClass__Group__0__Impl rule__StyleClass__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__StyleClass__Group__0__Impl();
@@ -2624,17 +2699,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StyleClass__Group__0__Impl"
-    // InternalT2A.g:816:1: rule__StyleClass__Group__0__Impl : ( 'StyleClass' ) ;
+    // InternalT2A.g:843:1: rule__StyleClass__Group__0__Impl : ( 'StyleClass' ) ;
     public final void rule__StyleClass__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:820:1: ( ( 'StyleClass' ) )
-            // InternalT2A.g:821:1: ( 'StyleClass' )
+            // InternalT2A.g:847:1: ( ( 'StyleClass' ) )
+            // InternalT2A.g:848:1: ( 'StyleClass' )
             {
-            // InternalT2A.g:821:1: ( 'StyleClass' )
-            // InternalT2A.g:822:2: 'StyleClass'
+            // InternalT2A.g:848:1: ( 'StyleClass' )
+            // InternalT2A.g:849:2: 'StyleClass'
             {
              before(grammarAccess.getStyleClassAccess().getStyleClassKeyword_0()); 
             match(input,15,FOLLOW_2); 
@@ -2661,14 +2736,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StyleClass__Group__1"
-    // InternalT2A.g:831:1: rule__StyleClass__Group__1 : rule__StyleClass__Group__1__Impl rule__StyleClass__Group__2 ;
+    // InternalT2A.g:858:1: rule__StyleClass__Group__1 : rule__StyleClass__Group__1__Impl rule__StyleClass__Group__2 ;
     public final void rule__StyleClass__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:835:1: ( rule__StyleClass__Group__1__Impl rule__StyleClass__Group__2 )
-            // InternalT2A.g:836:2: rule__StyleClass__Group__1__Impl rule__StyleClass__Group__2
+            // InternalT2A.g:862:1: ( rule__StyleClass__Group__1__Impl rule__StyleClass__Group__2 )
+            // InternalT2A.g:863:2: rule__StyleClass__Group__1__Impl rule__StyleClass__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__StyleClass__Group__1__Impl();
@@ -2699,21 +2774,21 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StyleClass__Group__1__Impl"
-    // InternalT2A.g:843:1: rule__StyleClass__Group__1__Impl : ( ( rule__StyleClass__NameAssignment_1 ) ) ;
+    // InternalT2A.g:870:1: rule__StyleClass__Group__1__Impl : ( ( rule__StyleClass__NameAssignment_1 ) ) ;
     public final void rule__StyleClass__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:847:1: ( ( ( rule__StyleClass__NameAssignment_1 ) ) )
-            // InternalT2A.g:848:1: ( ( rule__StyleClass__NameAssignment_1 ) )
+            // InternalT2A.g:874:1: ( ( ( rule__StyleClass__NameAssignment_1 ) ) )
+            // InternalT2A.g:875:1: ( ( rule__StyleClass__NameAssignment_1 ) )
             {
-            // InternalT2A.g:848:1: ( ( rule__StyleClass__NameAssignment_1 ) )
-            // InternalT2A.g:849:2: ( rule__StyleClass__NameAssignment_1 )
+            // InternalT2A.g:875:1: ( ( rule__StyleClass__NameAssignment_1 ) )
+            // InternalT2A.g:876:2: ( rule__StyleClass__NameAssignment_1 )
             {
              before(grammarAccess.getStyleClassAccess().getNameAssignment_1()); 
-            // InternalT2A.g:850:2: ( rule__StyleClass__NameAssignment_1 )
-            // InternalT2A.g:850:3: rule__StyleClass__NameAssignment_1
+            // InternalT2A.g:877:2: ( rule__StyleClass__NameAssignment_1 )
+            // InternalT2A.g:877:3: rule__StyleClass__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__StyleClass__NameAssignment_1();
@@ -2746,14 +2821,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StyleClass__Group__2"
-    // InternalT2A.g:858:1: rule__StyleClass__Group__2 : rule__StyleClass__Group__2__Impl rule__StyleClass__Group__3 ;
+    // InternalT2A.g:885:1: rule__StyleClass__Group__2 : rule__StyleClass__Group__2__Impl rule__StyleClass__Group__3 ;
     public final void rule__StyleClass__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:862:1: ( rule__StyleClass__Group__2__Impl rule__StyleClass__Group__3 )
-            // InternalT2A.g:863:2: rule__StyleClass__Group__2__Impl rule__StyleClass__Group__3
+            // InternalT2A.g:889:1: ( rule__StyleClass__Group__2__Impl rule__StyleClass__Group__3 )
+            // InternalT2A.g:890:2: rule__StyleClass__Group__2__Impl rule__StyleClass__Group__3
             {
             pushFollow(FOLLOW_8);
             rule__StyleClass__Group__2__Impl();
@@ -2784,17 +2859,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StyleClass__Group__2__Impl"
-    // InternalT2A.g:870:1: rule__StyleClass__Group__2__Impl : ( '{' ) ;
+    // InternalT2A.g:897:1: rule__StyleClass__Group__2__Impl : ( '{' ) ;
     public final void rule__StyleClass__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:874:1: ( ( '{' ) )
-            // InternalT2A.g:875:1: ( '{' )
+            // InternalT2A.g:901:1: ( ( '{' ) )
+            // InternalT2A.g:902:1: ( '{' )
             {
-            // InternalT2A.g:875:1: ( '{' )
-            // InternalT2A.g:876:2: '{'
+            // InternalT2A.g:902:1: ( '{' )
+            // InternalT2A.g:903:2: '{'
             {
              before(grammarAccess.getStyleClassAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,12,FOLLOW_2); 
@@ -2821,14 +2896,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StyleClass__Group__3"
-    // InternalT2A.g:885:1: rule__StyleClass__Group__3 : rule__StyleClass__Group__3__Impl rule__StyleClass__Group__4 ;
+    // InternalT2A.g:912:1: rule__StyleClass__Group__3 : rule__StyleClass__Group__3__Impl rule__StyleClass__Group__4 ;
     public final void rule__StyleClass__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:889:1: ( rule__StyleClass__Group__3__Impl rule__StyleClass__Group__4 )
-            // InternalT2A.g:890:2: rule__StyleClass__Group__3__Impl rule__StyleClass__Group__4
+            // InternalT2A.g:916:1: ( rule__StyleClass__Group__3__Impl rule__StyleClass__Group__4 )
+            // InternalT2A.g:917:2: rule__StyleClass__Group__3__Impl rule__StyleClass__Group__4
             {
             pushFollow(FOLLOW_8);
             rule__StyleClass__Group__3__Impl();
@@ -2859,20 +2934,20 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StyleClass__Group__3__Impl"
-    // InternalT2A.g:897:1: rule__StyleClass__Group__3__Impl : ( ( rule__StyleClass__SattributesAssignment_3 )* ) ;
+    // InternalT2A.g:924:1: rule__StyleClass__Group__3__Impl : ( ( rule__StyleClass__SattributesAssignment_3 )* ) ;
     public final void rule__StyleClass__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:901:1: ( ( ( rule__StyleClass__SattributesAssignment_3 )* ) )
-            // InternalT2A.g:902:1: ( ( rule__StyleClass__SattributesAssignment_3 )* )
+            // InternalT2A.g:928:1: ( ( ( rule__StyleClass__SattributesAssignment_3 )* ) )
+            // InternalT2A.g:929:1: ( ( rule__StyleClass__SattributesAssignment_3 )* )
             {
-            // InternalT2A.g:902:1: ( ( rule__StyleClass__SattributesAssignment_3 )* )
-            // InternalT2A.g:903:2: ( rule__StyleClass__SattributesAssignment_3 )*
+            // InternalT2A.g:929:1: ( ( rule__StyleClass__SattributesAssignment_3 )* )
+            // InternalT2A.g:930:2: ( rule__StyleClass__SattributesAssignment_3 )*
             {
              before(grammarAccess.getStyleClassAccess().getSattributesAssignment_3()); 
-            // InternalT2A.g:904:2: ( rule__StyleClass__SattributesAssignment_3 )*
+            // InternalT2A.g:931:2: ( rule__StyleClass__SattributesAssignment_3 )*
             loop12:
             do {
                 int alt12=2;
@@ -2885,7 +2960,7 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
                 switch (alt12) {
             	case 1 :
-            	    // InternalT2A.g:904:3: rule__StyleClass__SattributesAssignment_3
+            	    // InternalT2A.g:931:3: rule__StyleClass__SattributesAssignment_3
             	    {
             	    pushFollow(FOLLOW_9);
             	    rule__StyleClass__SattributesAssignment_3();
@@ -2924,14 +2999,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StyleClass__Group__4"
-    // InternalT2A.g:912:1: rule__StyleClass__Group__4 : rule__StyleClass__Group__4__Impl ;
+    // InternalT2A.g:939:1: rule__StyleClass__Group__4 : rule__StyleClass__Group__4__Impl ;
     public final void rule__StyleClass__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:916:1: ( rule__StyleClass__Group__4__Impl )
-            // InternalT2A.g:917:2: rule__StyleClass__Group__4__Impl
+            // InternalT2A.g:943:1: ( rule__StyleClass__Group__4__Impl )
+            // InternalT2A.g:944:2: rule__StyleClass__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__StyleClass__Group__4__Impl();
@@ -2957,17 +3032,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StyleClass__Group__4__Impl"
-    // InternalT2A.g:923:1: rule__StyleClass__Group__4__Impl : ( '}' ) ;
+    // InternalT2A.g:950:1: rule__StyleClass__Group__4__Impl : ( '}' ) ;
     public final void rule__StyleClass__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:927:1: ( ( '}' ) )
-            // InternalT2A.g:928:1: ( '}' )
+            // InternalT2A.g:954:1: ( ( '}' ) )
+            // InternalT2A.g:955:1: ( '}' )
             {
-            // InternalT2A.g:928:1: ( '}' )
-            // InternalT2A.g:929:2: '}'
+            // InternalT2A.g:955:1: ( '}' )
+            // InternalT2A.g:956:2: '}'
             {
              before(grammarAccess.getStyleClassAccess().getRightCurlyBracketKeyword_4()); 
             match(input,13,FOLLOW_2); 
@@ -2994,14 +3069,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SAttributeName__Group__0"
-    // InternalT2A.g:939:1: rule__SAttributeName__Group__0 : rule__SAttributeName__Group__0__Impl rule__SAttributeName__Group__1 ;
+    // InternalT2A.g:966:1: rule__SAttributeName__Group__0 : rule__SAttributeName__Group__0__Impl rule__SAttributeName__Group__1 ;
     public final void rule__SAttributeName__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:943:1: ( rule__SAttributeName__Group__0__Impl rule__SAttributeName__Group__1 )
-            // InternalT2A.g:944:2: rule__SAttributeName__Group__0__Impl rule__SAttributeName__Group__1
+            // InternalT2A.g:970:1: ( rule__SAttributeName__Group__0__Impl rule__SAttributeName__Group__1 )
+            // InternalT2A.g:971:2: rule__SAttributeName__Group__0__Impl rule__SAttributeName__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__SAttributeName__Group__0__Impl();
@@ -3032,17 +3107,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SAttributeName__Group__0__Impl"
-    // InternalT2A.g:951:1: rule__SAttributeName__Group__0__Impl : ( 'SAttri' ) ;
+    // InternalT2A.g:978:1: rule__SAttributeName__Group__0__Impl : ( 'SAttri' ) ;
     public final void rule__SAttributeName__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:955:1: ( ( 'SAttri' ) )
-            // InternalT2A.g:956:1: ( 'SAttri' )
+            // InternalT2A.g:982:1: ( ( 'SAttri' ) )
+            // InternalT2A.g:983:1: ( 'SAttri' )
             {
-            // InternalT2A.g:956:1: ( 'SAttri' )
-            // InternalT2A.g:957:2: 'SAttri'
+            // InternalT2A.g:983:1: ( 'SAttri' )
+            // InternalT2A.g:984:2: 'SAttri'
             {
              before(grammarAccess.getSAttributeNameAccess().getSAttriKeyword_0()); 
             match(input,16,FOLLOW_2); 
@@ -3069,14 +3144,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SAttributeName__Group__1"
-    // InternalT2A.g:966:1: rule__SAttributeName__Group__1 : rule__SAttributeName__Group__1__Impl ;
+    // InternalT2A.g:993:1: rule__SAttributeName__Group__1 : rule__SAttributeName__Group__1__Impl ;
     public final void rule__SAttributeName__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:970:1: ( rule__SAttributeName__Group__1__Impl )
-            // InternalT2A.g:971:2: rule__SAttributeName__Group__1__Impl
+            // InternalT2A.g:997:1: ( rule__SAttributeName__Group__1__Impl )
+            // InternalT2A.g:998:2: rule__SAttributeName__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SAttributeName__Group__1__Impl();
@@ -3102,21 +3177,21 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SAttributeName__Group__1__Impl"
-    // InternalT2A.g:977:1: rule__SAttributeName__Group__1__Impl : ( ( rule__SAttributeName__NameAssignment_1 ) ) ;
+    // InternalT2A.g:1004:1: rule__SAttributeName__Group__1__Impl : ( ( rule__SAttributeName__NameAssignment_1 ) ) ;
     public final void rule__SAttributeName__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:981:1: ( ( ( rule__SAttributeName__NameAssignment_1 ) ) )
-            // InternalT2A.g:982:1: ( ( rule__SAttributeName__NameAssignment_1 ) )
+            // InternalT2A.g:1008:1: ( ( ( rule__SAttributeName__NameAssignment_1 ) ) )
+            // InternalT2A.g:1009:1: ( ( rule__SAttributeName__NameAssignment_1 ) )
             {
-            // InternalT2A.g:982:1: ( ( rule__SAttributeName__NameAssignment_1 ) )
-            // InternalT2A.g:983:2: ( rule__SAttributeName__NameAssignment_1 )
+            // InternalT2A.g:1009:1: ( ( rule__SAttributeName__NameAssignment_1 ) )
+            // InternalT2A.g:1010:2: ( rule__SAttributeName__NameAssignment_1 )
             {
              before(grammarAccess.getSAttributeNameAccess().getNameAssignment_1()); 
-            // InternalT2A.g:984:2: ( rule__SAttributeName__NameAssignment_1 )
-            // InternalT2A.g:984:3: rule__SAttributeName__NameAssignment_1
+            // InternalT2A.g:1011:2: ( rule__SAttributeName__NameAssignment_1 )
+            // InternalT2A.g:1011:3: rule__SAttributeName__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__SAttributeName__NameAssignment_1();
@@ -3149,14 +3224,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SAttributeAndValue__Group__0"
-    // InternalT2A.g:993:1: rule__SAttributeAndValue__Group__0 : rule__SAttributeAndValue__Group__0__Impl rule__SAttributeAndValue__Group__1 ;
+    // InternalT2A.g:1020:1: rule__SAttributeAndValue__Group__0 : rule__SAttributeAndValue__Group__0__Impl rule__SAttributeAndValue__Group__1 ;
     public final void rule__SAttributeAndValue__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:997:1: ( rule__SAttributeAndValue__Group__0__Impl rule__SAttributeAndValue__Group__1 )
-            // InternalT2A.g:998:2: rule__SAttributeAndValue__Group__0__Impl rule__SAttributeAndValue__Group__1
+            // InternalT2A.g:1024:1: ( rule__SAttributeAndValue__Group__0__Impl rule__SAttributeAndValue__Group__1 )
+            // InternalT2A.g:1025:2: rule__SAttributeAndValue__Group__0__Impl rule__SAttributeAndValue__Group__1
             {
             pushFollow(FOLLOW_10);
             rule__SAttributeAndValue__Group__0__Impl();
@@ -3187,21 +3262,21 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SAttributeAndValue__Group__0__Impl"
-    // InternalT2A.g:1005:1: rule__SAttributeAndValue__Group__0__Impl : ( ( rule__SAttributeAndValue__StnameAssignment_0 ) ) ;
+    // InternalT2A.g:1032:1: rule__SAttributeAndValue__Group__0__Impl : ( ( rule__SAttributeAndValue__StnameAssignment_0 ) ) ;
     public final void rule__SAttributeAndValue__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1009:1: ( ( ( rule__SAttributeAndValue__StnameAssignment_0 ) ) )
-            // InternalT2A.g:1010:1: ( ( rule__SAttributeAndValue__StnameAssignment_0 ) )
+            // InternalT2A.g:1036:1: ( ( ( rule__SAttributeAndValue__StnameAssignment_0 ) ) )
+            // InternalT2A.g:1037:1: ( ( rule__SAttributeAndValue__StnameAssignment_0 ) )
             {
-            // InternalT2A.g:1010:1: ( ( rule__SAttributeAndValue__StnameAssignment_0 ) )
-            // InternalT2A.g:1011:2: ( rule__SAttributeAndValue__StnameAssignment_0 )
+            // InternalT2A.g:1037:1: ( ( rule__SAttributeAndValue__StnameAssignment_0 ) )
+            // InternalT2A.g:1038:2: ( rule__SAttributeAndValue__StnameAssignment_0 )
             {
              before(grammarAccess.getSAttributeAndValueAccess().getStnameAssignment_0()); 
-            // InternalT2A.g:1012:2: ( rule__SAttributeAndValue__StnameAssignment_0 )
-            // InternalT2A.g:1012:3: rule__SAttributeAndValue__StnameAssignment_0
+            // InternalT2A.g:1039:2: ( rule__SAttributeAndValue__StnameAssignment_0 )
+            // InternalT2A.g:1039:3: rule__SAttributeAndValue__StnameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__SAttributeAndValue__StnameAssignment_0();
@@ -3234,14 +3309,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SAttributeAndValue__Group__1"
-    // InternalT2A.g:1020:1: rule__SAttributeAndValue__Group__1 : rule__SAttributeAndValue__Group__1__Impl rule__SAttributeAndValue__Group__2 ;
+    // InternalT2A.g:1047:1: rule__SAttributeAndValue__Group__1 : rule__SAttributeAndValue__Group__1__Impl rule__SAttributeAndValue__Group__2 ;
     public final void rule__SAttributeAndValue__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1024:1: ( rule__SAttributeAndValue__Group__1__Impl rule__SAttributeAndValue__Group__2 )
-            // InternalT2A.g:1025:2: rule__SAttributeAndValue__Group__1__Impl rule__SAttributeAndValue__Group__2
+            // InternalT2A.g:1051:1: ( rule__SAttributeAndValue__Group__1__Impl rule__SAttributeAndValue__Group__2 )
+            // InternalT2A.g:1052:2: rule__SAttributeAndValue__Group__1__Impl rule__SAttributeAndValue__Group__2
             {
             pushFollow(FOLLOW_11);
             rule__SAttributeAndValue__Group__1__Impl();
@@ -3272,17 +3347,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SAttributeAndValue__Group__1__Impl"
-    // InternalT2A.g:1032:1: rule__SAttributeAndValue__Group__1__Impl : ( ':' ) ;
+    // InternalT2A.g:1059:1: rule__SAttributeAndValue__Group__1__Impl : ( ':' ) ;
     public final void rule__SAttributeAndValue__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1036:1: ( ( ':' ) )
-            // InternalT2A.g:1037:1: ( ':' )
+            // InternalT2A.g:1063:1: ( ( ':' ) )
+            // InternalT2A.g:1064:1: ( ':' )
             {
-            // InternalT2A.g:1037:1: ( ':' )
-            // InternalT2A.g:1038:2: ':'
+            // InternalT2A.g:1064:1: ( ':' )
+            // InternalT2A.g:1065:2: ':'
             {
              before(grammarAccess.getSAttributeAndValueAccess().getColonKeyword_1()); 
             match(input,17,FOLLOW_2); 
@@ -3309,14 +3384,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SAttributeAndValue__Group__2"
-    // InternalT2A.g:1047:1: rule__SAttributeAndValue__Group__2 : rule__SAttributeAndValue__Group__2__Impl ;
+    // InternalT2A.g:1074:1: rule__SAttributeAndValue__Group__2 : rule__SAttributeAndValue__Group__2__Impl ;
     public final void rule__SAttributeAndValue__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1051:1: ( rule__SAttributeAndValue__Group__2__Impl )
-            // InternalT2A.g:1052:2: rule__SAttributeAndValue__Group__2__Impl
+            // InternalT2A.g:1078:1: ( rule__SAttributeAndValue__Group__2__Impl )
+            // InternalT2A.g:1079:2: rule__SAttributeAndValue__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SAttributeAndValue__Group__2__Impl();
@@ -3342,21 +3417,21 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SAttributeAndValue__Group__2__Impl"
-    // InternalT2A.g:1058:1: rule__SAttributeAndValue__Group__2__Impl : ( ( rule__SAttributeAndValue__ValueAssignment_2 ) ) ;
+    // InternalT2A.g:1085:1: rule__SAttributeAndValue__Group__2__Impl : ( ( rule__SAttributeAndValue__ValueAssignment_2 ) ) ;
     public final void rule__SAttributeAndValue__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1062:1: ( ( ( rule__SAttributeAndValue__ValueAssignment_2 ) ) )
-            // InternalT2A.g:1063:1: ( ( rule__SAttributeAndValue__ValueAssignment_2 ) )
+            // InternalT2A.g:1089:1: ( ( ( rule__SAttributeAndValue__ValueAssignment_2 ) ) )
+            // InternalT2A.g:1090:1: ( ( rule__SAttributeAndValue__ValueAssignment_2 ) )
             {
-            // InternalT2A.g:1063:1: ( ( rule__SAttributeAndValue__ValueAssignment_2 ) )
-            // InternalT2A.g:1064:2: ( rule__SAttributeAndValue__ValueAssignment_2 )
+            // InternalT2A.g:1090:1: ( ( rule__SAttributeAndValue__ValueAssignment_2 ) )
+            // InternalT2A.g:1091:2: ( rule__SAttributeAndValue__ValueAssignment_2 )
             {
              before(grammarAccess.getSAttributeAndValueAccess().getValueAssignment_2()); 
-            // InternalT2A.g:1065:2: ( rule__SAttributeAndValue__ValueAssignment_2 )
-            // InternalT2A.g:1065:3: rule__SAttributeAndValue__ValueAssignment_2
+            // InternalT2A.g:1092:2: ( rule__SAttributeAndValue__ValueAssignment_2 )
+            // InternalT2A.g:1092:3: rule__SAttributeAndValue__ValueAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__SAttributeAndValue__ValueAssignment_2();
@@ -3389,14 +3464,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group__0"
-    // InternalT2A.g:1074:1: rule__DOM__Group__0 : rule__DOM__Group__0__Impl rule__DOM__Group__1 ;
+    // InternalT2A.g:1101:1: rule__DOM__Group__0 : rule__DOM__Group__0__Impl rule__DOM__Group__1 ;
     public final void rule__DOM__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1078:1: ( rule__DOM__Group__0__Impl rule__DOM__Group__1 )
-            // InternalT2A.g:1079:2: rule__DOM__Group__0__Impl rule__DOM__Group__1
+            // InternalT2A.g:1105:1: ( rule__DOM__Group__0__Impl rule__DOM__Group__1 )
+            // InternalT2A.g:1106:2: rule__DOM__Group__0__Impl rule__DOM__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__DOM__Group__0__Impl();
@@ -3427,17 +3502,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group__0__Impl"
-    // InternalT2A.g:1086:1: rule__DOM__Group__0__Impl : ( 'Dom' ) ;
+    // InternalT2A.g:1113:1: rule__DOM__Group__0__Impl : ( 'Dom' ) ;
     public final void rule__DOM__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1090:1: ( ( 'Dom' ) )
-            // InternalT2A.g:1091:1: ( 'Dom' )
+            // InternalT2A.g:1117:1: ( ( 'Dom' ) )
+            // InternalT2A.g:1118:1: ( 'Dom' )
             {
-            // InternalT2A.g:1091:1: ( 'Dom' )
-            // InternalT2A.g:1092:2: 'Dom'
+            // InternalT2A.g:1118:1: ( 'Dom' )
+            // InternalT2A.g:1119:2: 'Dom'
             {
              before(grammarAccess.getDOMAccess().getDomKeyword_0()); 
             match(input,18,FOLLOW_2); 
@@ -3464,14 +3539,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group__1"
-    // InternalT2A.g:1101:1: rule__DOM__Group__1 : rule__DOM__Group__1__Impl rule__DOM__Group__2 ;
+    // InternalT2A.g:1128:1: rule__DOM__Group__1 : rule__DOM__Group__1__Impl rule__DOM__Group__2 ;
     public final void rule__DOM__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1105:1: ( rule__DOM__Group__1__Impl rule__DOM__Group__2 )
-            // InternalT2A.g:1106:2: rule__DOM__Group__1__Impl rule__DOM__Group__2
+            // InternalT2A.g:1132:1: ( rule__DOM__Group__1__Impl rule__DOM__Group__2 )
+            // InternalT2A.g:1133:2: rule__DOM__Group__1__Impl rule__DOM__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__DOM__Group__1__Impl();
@@ -3502,21 +3577,21 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group__1__Impl"
-    // InternalT2A.g:1113:1: rule__DOM__Group__1__Impl : ( ( rule__DOM__NameAssignment_1 ) ) ;
+    // InternalT2A.g:1140:1: rule__DOM__Group__1__Impl : ( ( rule__DOM__NameAssignment_1 ) ) ;
     public final void rule__DOM__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1117:1: ( ( ( rule__DOM__NameAssignment_1 ) ) )
-            // InternalT2A.g:1118:1: ( ( rule__DOM__NameAssignment_1 ) )
+            // InternalT2A.g:1144:1: ( ( ( rule__DOM__NameAssignment_1 ) ) )
+            // InternalT2A.g:1145:1: ( ( rule__DOM__NameAssignment_1 ) )
             {
-            // InternalT2A.g:1118:1: ( ( rule__DOM__NameAssignment_1 ) )
-            // InternalT2A.g:1119:2: ( rule__DOM__NameAssignment_1 )
+            // InternalT2A.g:1145:1: ( ( rule__DOM__NameAssignment_1 ) )
+            // InternalT2A.g:1146:2: ( rule__DOM__NameAssignment_1 )
             {
              before(grammarAccess.getDOMAccess().getNameAssignment_1()); 
-            // InternalT2A.g:1120:2: ( rule__DOM__NameAssignment_1 )
-            // InternalT2A.g:1120:3: rule__DOM__NameAssignment_1
+            // InternalT2A.g:1147:2: ( rule__DOM__NameAssignment_1 )
+            // InternalT2A.g:1147:3: rule__DOM__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__DOM__NameAssignment_1();
@@ -3549,14 +3624,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group__2"
-    // InternalT2A.g:1128:1: rule__DOM__Group__2 : rule__DOM__Group__2__Impl ;
+    // InternalT2A.g:1155:1: rule__DOM__Group__2 : rule__DOM__Group__2__Impl ;
     public final void rule__DOM__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1132:1: ( rule__DOM__Group__2__Impl )
-            // InternalT2A.g:1133:2: rule__DOM__Group__2__Impl
+            // InternalT2A.g:1159:1: ( rule__DOM__Group__2__Impl )
+            // InternalT2A.g:1160:2: rule__DOM__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DOM__Group__2__Impl();
@@ -3582,20 +3657,20 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group__2__Impl"
-    // InternalT2A.g:1139:1: rule__DOM__Group__2__Impl : ( ( rule__DOM__Group_2__0 )? ) ;
+    // InternalT2A.g:1166:1: rule__DOM__Group__2__Impl : ( ( rule__DOM__Group_2__0 )? ) ;
     public final void rule__DOM__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1143:1: ( ( ( rule__DOM__Group_2__0 )? ) )
-            // InternalT2A.g:1144:1: ( ( rule__DOM__Group_2__0 )? )
+            // InternalT2A.g:1170:1: ( ( ( rule__DOM__Group_2__0 )? ) )
+            // InternalT2A.g:1171:1: ( ( rule__DOM__Group_2__0 )? )
             {
-            // InternalT2A.g:1144:1: ( ( rule__DOM__Group_2__0 )? )
-            // InternalT2A.g:1145:2: ( rule__DOM__Group_2__0 )?
+            // InternalT2A.g:1171:1: ( ( rule__DOM__Group_2__0 )? )
+            // InternalT2A.g:1172:2: ( rule__DOM__Group_2__0 )?
             {
              before(grammarAccess.getDOMAccess().getGroup_2()); 
-            // InternalT2A.g:1146:2: ( rule__DOM__Group_2__0 )?
+            // InternalT2A.g:1173:2: ( rule__DOM__Group_2__0 )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -3604,7 +3679,7 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
             }
             switch (alt13) {
                 case 1 :
-                    // InternalT2A.g:1146:3: rule__DOM__Group_2__0
+                    // InternalT2A.g:1173:3: rule__DOM__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__DOM__Group_2__0();
@@ -3640,14 +3715,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group_2__0"
-    // InternalT2A.g:1155:1: rule__DOM__Group_2__0 : rule__DOM__Group_2__0__Impl rule__DOM__Group_2__1 ;
+    // InternalT2A.g:1182:1: rule__DOM__Group_2__0 : rule__DOM__Group_2__0__Impl rule__DOM__Group_2__1 ;
     public final void rule__DOM__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1159:1: ( rule__DOM__Group_2__0__Impl rule__DOM__Group_2__1 )
-            // InternalT2A.g:1160:2: rule__DOM__Group_2__0__Impl rule__DOM__Group_2__1
+            // InternalT2A.g:1186:1: ( rule__DOM__Group_2__0__Impl rule__DOM__Group_2__1 )
+            // InternalT2A.g:1187:2: rule__DOM__Group_2__0__Impl rule__DOM__Group_2__1
             {
             pushFollow(FOLLOW_12);
             rule__DOM__Group_2__0__Impl();
@@ -3678,17 +3753,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group_2__0__Impl"
-    // InternalT2A.g:1167:1: rule__DOM__Group_2__0__Impl : ( '{' ) ;
+    // InternalT2A.g:1194:1: rule__DOM__Group_2__0__Impl : ( '{' ) ;
     public final void rule__DOM__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1171:1: ( ( '{' ) )
-            // InternalT2A.g:1172:1: ( '{' )
+            // InternalT2A.g:1198:1: ( ( '{' ) )
+            // InternalT2A.g:1199:1: ( '{' )
             {
-            // InternalT2A.g:1172:1: ( '{' )
-            // InternalT2A.g:1173:2: '{'
+            // InternalT2A.g:1199:1: ( '{' )
+            // InternalT2A.g:1200:2: '{'
             {
              before(grammarAccess.getDOMAccess().getLeftCurlyBracketKeyword_2_0()); 
             match(input,12,FOLLOW_2); 
@@ -3715,14 +3790,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group_2__1"
-    // InternalT2A.g:1182:1: rule__DOM__Group_2__1 : rule__DOM__Group_2__1__Impl rule__DOM__Group_2__2 ;
+    // InternalT2A.g:1209:1: rule__DOM__Group_2__1 : rule__DOM__Group_2__1__Impl rule__DOM__Group_2__2 ;
     public final void rule__DOM__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1186:1: ( rule__DOM__Group_2__1__Impl rule__DOM__Group_2__2 )
-            // InternalT2A.g:1187:2: rule__DOM__Group_2__1__Impl rule__DOM__Group_2__2
+            // InternalT2A.g:1213:1: ( rule__DOM__Group_2__1__Impl rule__DOM__Group_2__2 )
+            // InternalT2A.g:1214:2: rule__DOM__Group_2__1__Impl rule__DOM__Group_2__2
             {
             pushFollow(FOLLOW_12);
             rule__DOM__Group_2__1__Impl();
@@ -3753,20 +3828,20 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group_2__1__Impl"
-    // InternalT2A.g:1194:1: rule__DOM__Group_2__1__Impl : ( ( rule__DOM__Group_2_1__0 )? ) ;
+    // InternalT2A.g:1221:1: rule__DOM__Group_2__1__Impl : ( ( rule__DOM__Group_2_1__0 )? ) ;
     public final void rule__DOM__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1198:1: ( ( ( rule__DOM__Group_2_1__0 )? ) )
-            // InternalT2A.g:1199:1: ( ( rule__DOM__Group_2_1__0 )? )
+            // InternalT2A.g:1225:1: ( ( ( rule__DOM__Group_2_1__0 )? ) )
+            // InternalT2A.g:1226:1: ( ( rule__DOM__Group_2_1__0 )? )
             {
-            // InternalT2A.g:1199:1: ( ( rule__DOM__Group_2_1__0 )? )
-            // InternalT2A.g:1200:2: ( rule__DOM__Group_2_1__0 )?
+            // InternalT2A.g:1226:1: ( ( rule__DOM__Group_2_1__0 )? )
+            // InternalT2A.g:1227:2: ( rule__DOM__Group_2_1__0 )?
             {
              before(grammarAccess.getDOMAccess().getGroup_2_1()); 
-            // InternalT2A.g:1201:2: ( rule__DOM__Group_2_1__0 )?
+            // InternalT2A.g:1228:2: ( rule__DOM__Group_2_1__0 )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -3775,7 +3850,7 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
             }
             switch (alt14) {
                 case 1 :
-                    // InternalT2A.g:1201:3: rule__DOM__Group_2_1__0
+                    // InternalT2A.g:1228:3: rule__DOM__Group_2_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__DOM__Group_2_1__0();
@@ -3811,14 +3886,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group_2__2"
-    // InternalT2A.g:1209:1: rule__DOM__Group_2__2 : rule__DOM__Group_2__2__Impl rule__DOM__Group_2__3 ;
+    // InternalT2A.g:1236:1: rule__DOM__Group_2__2 : rule__DOM__Group_2__2__Impl rule__DOM__Group_2__3 ;
     public final void rule__DOM__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1213:1: ( rule__DOM__Group_2__2__Impl rule__DOM__Group_2__3 )
-            // InternalT2A.g:1214:2: rule__DOM__Group_2__2__Impl rule__DOM__Group_2__3
+            // InternalT2A.g:1240:1: ( rule__DOM__Group_2__2__Impl rule__DOM__Group_2__3 )
+            // InternalT2A.g:1241:2: rule__DOM__Group_2__2__Impl rule__DOM__Group_2__3
             {
             pushFollow(FOLLOW_12);
             rule__DOM__Group_2__2__Impl();
@@ -3849,20 +3924,20 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group_2__2__Impl"
-    // InternalT2A.g:1221:1: rule__DOM__Group_2__2__Impl : ( ( rule__DOM__FeaturesAssignment_2_2 )* ) ;
+    // InternalT2A.g:1248:1: rule__DOM__Group_2__2__Impl : ( ( rule__DOM__FeaturesAssignment_2_2 )* ) ;
     public final void rule__DOM__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1225:1: ( ( ( rule__DOM__FeaturesAssignment_2_2 )* ) )
-            // InternalT2A.g:1226:1: ( ( rule__DOM__FeaturesAssignment_2_2 )* )
+            // InternalT2A.g:1252:1: ( ( ( rule__DOM__FeaturesAssignment_2_2 )* ) )
+            // InternalT2A.g:1253:1: ( ( rule__DOM__FeaturesAssignment_2_2 )* )
             {
-            // InternalT2A.g:1226:1: ( ( rule__DOM__FeaturesAssignment_2_2 )* )
-            // InternalT2A.g:1227:2: ( rule__DOM__FeaturesAssignment_2_2 )*
+            // InternalT2A.g:1253:1: ( ( rule__DOM__FeaturesAssignment_2_2 )* )
+            // InternalT2A.g:1254:2: ( rule__DOM__FeaturesAssignment_2_2 )*
             {
              before(grammarAccess.getDOMAccess().getFeaturesAssignment_2_2()); 
-            // InternalT2A.g:1228:2: ( rule__DOM__FeaturesAssignment_2_2 )*
+            // InternalT2A.g:1255:2: ( rule__DOM__FeaturesAssignment_2_2 )*
             loop15:
             do {
                 int alt15=2;
@@ -3875,7 +3950,7 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
                 switch (alt15) {
             	case 1 :
-            	    // InternalT2A.g:1228:3: rule__DOM__FeaturesAssignment_2_2
+            	    // InternalT2A.g:1255:3: rule__DOM__FeaturesAssignment_2_2
             	    {
             	    pushFollow(FOLLOW_13);
             	    rule__DOM__FeaturesAssignment_2_2();
@@ -3914,14 +3989,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group_2__3"
-    // InternalT2A.g:1236:1: rule__DOM__Group_2__3 : rule__DOM__Group_2__3__Impl ;
+    // InternalT2A.g:1263:1: rule__DOM__Group_2__3 : rule__DOM__Group_2__3__Impl ;
     public final void rule__DOM__Group_2__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1240:1: ( rule__DOM__Group_2__3__Impl )
-            // InternalT2A.g:1241:2: rule__DOM__Group_2__3__Impl
+            // InternalT2A.g:1267:1: ( rule__DOM__Group_2__3__Impl )
+            // InternalT2A.g:1268:2: rule__DOM__Group_2__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DOM__Group_2__3__Impl();
@@ -3947,17 +4022,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group_2__3__Impl"
-    // InternalT2A.g:1247:1: rule__DOM__Group_2__3__Impl : ( '}' ) ;
+    // InternalT2A.g:1274:1: rule__DOM__Group_2__3__Impl : ( '}' ) ;
     public final void rule__DOM__Group_2__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1251:1: ( ( '}' ) )
-            // InternalT2A.g:1252:1: ( '}' )
+            // InternalT2A.g:1278:1: ( ( '}' ) )
+            // InternalT2A.g:1279:1: ( '}' )
             {
-            // InternalT2A.g:1252:1: ( '}' )
-            // InternalT2A.g:1253:2: '}'
+            // InternalT2A.g:1279:1: ( '}' )
+            // InternalT2A.g:1280:2: '}'
             {
              before(grammarAccess.getDOMAccess().getRightCurlyBracketKeyword_2_3()); 
             match(input,13,FOLLOW_2); 
@@ -3984,16 +4059,16 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group_2_1__0"
-    // InternalT2A.g:1263:1: rule__DOM__Group_2_1__0 : rule__DOM__Group_2_1__0__Impl rule__DOM__Group_2_1__1 ;
+    // InternalT2A.g:1290:1: rule__DOM__Group_2_1__0 : rule__DOM__Group_2_1__0__Impl rule__DOM__Group_2_1__1 ;
     public final void rule__DOM__Group_2_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1267:1: ( rule__DOM__Group_2_1__0__Impl rule__DOM__Group_2_1__1 )
-            // InternalT2A.g:1268:2: rule__DOM__Group_2_1__0__Impl rule__DOM__Group_2_1__1
+            // InternalT2A.g:1294:1: ( rule__DOM__Group_2_1__0__Impl rule__DOM__Group_2_1__1 )
+            // InternalT2A.g:1295:2: rule__DOM__Group_2_1__0__Impl rule__DOM__Group_2_1__1
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_5);
             rule__DOM__Group_2_1__0__Impl();
 
             state._fsp--;
@@ -4022,17 +4097,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group_2_1__0__Impl"
-    // InternalT2A.g:1275:1: rule__DOM__Group_2_1__0__Impl : ( 'SClass:{' ) ;
+    // InternalT2A.g:1302:1: rule__DOM__Group_2_1__0__Impl : ( 'SClass' ) ;
     public final void rule__DOM__Group_2_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1279:1: ( ( 'SClass:{' ) )
-            // InternalT2A.g:1280:1: ( 'SClass:{' )
+            // InternalT2A.g:1306:1: ( ( 'SClass' ) )
+            // InternalT2A.g:1307:1: ( 'SClass' )
             {
-            // InternalT2A.g:1280:1: ( 'SClass:{' )
-            // InternalT2A.g:1281:2: 'SClass:{'
+            // InternalT2A.g:1307:1: ( 'SClass' )
+            // InternalT2A.g:1308:2: 'SClass'
             {
              before(grammarAccess.getDOMAccess().getSClassKeyword_2_1_0()); 
             match(input,14,FOLLOW_2); 
@@ -4059,14 +4134,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group_2_1__1"
-    // InternalT2A.g:1290:1: rule__DOM__Group_2_1__1 : rule__DOM__Group_2_1__1__Impl rule__DOM__Group_2_1__2 ;
+    // InternalT2A.g:1317:1: rule__DOM__Group_2_1__1 : rule__DOM__Group_2_1__1__Impl rule__DOM__Group_2_1__2 ;
     public final void rule__DOM__Group_2_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1294:1: ( rule__DOM__Group_2_1__1__Impl rule__DOM__Group_2_1__2 )
-            // InternalT2A.g:1295:2: rule__DOM__Group_2_1__1__Impl rule__DOM__Group_2_1__2
+            // InternalT2A.g:1321:1: ( rule__DOM__Group_2_1__1__Impl rule__DOM__Group_2_1__2 )
+            // InternalT2A.g:1322:2: rule__DOM__Group_2_1__1__Impl rule__DOM__Group_2_1__2
             {
             pushFollow(FOLLOW_8);
             rule__DOM__Group_2_1__1__Impl();
@@ -4097,49 +4172,21 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group_2_1__1__Impl"
-    // InternalT2A.g:1302:1: rule__DOM__Group_2_1__1__Impl : ( ( rule__DOM__SclassesAssignment_2_1_1 )* ) ;
+    // InternalT2A.g:1329:1: rule__DOM__Group_2_1__1__Impl : ( '{' ) ;
     public final void rule__DOM__Group_2_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1306:1: ( ( ( rule__DOM__SclassesAssignment_2_1_1 )* ) )
-            // InternalT2A.g:1307:1: ( ( rule__DOM__SclassesAssignment_2_1_1 )* )
+            // InternalT2A.g:1333:1: ( ( '{' ) )
+            // InternalT2A.g:1334:1: ( '{' )
             {
-            // InternalT2A.g:1307:1: ( ( rule__DOM__SclassesAssignment_2_1_1 )* )
-            // InternalT2A.g:1308:2: ( rule__DOM__SclassesAssignment_2_1_1 )*
+            // InternalT2A.g:1334:1: ( '{' )
+            // InternalT2A.g:1335:2: '{'
             {
-             before(grammarAccess.getDOMAccess().getSclassesAssignment_2_1_1()); 
-            // InternalT2A.g:1309:2: ( rule__DOM__SclassesAssignment_2_1_1 )*
-            loop16:
-            do {
-                int alt16=2;
-                int LA16_0 = input.LA(1);
-
-                if ( (LA16_0==RULE_ID) ) {
-                    alt16=1;
-                }
-
-
-                switch (alt16) {
-            	case 1 :
-            	    // InternalT2A.g:1309:3: rule__DOM__SclassesAssignment_2_1_1
-            	    {
-            	    pushFollow(FOLLOW_9);
-            	    rule__DOM__SclassesAssignment_2_1_1();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop16;
-                }
-            } while (true);
-
-             after(grammarAccess.getDOMAccess().getSclassesAssignment_2_1_1()); 
+             before(grammarAccess.getDOMAccess().getLeftCurlyBracketKeyword_2_1_1()); 
+            match(input,12,FOLLOW_2); 
+             after(grammarAccess.getDOMAccess().getLeftCurlyBracketKeyword_2_1_1()); 
 
             }
 
@@ -4162,17 +4209,22 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group_2_1__2"
-    // InternalT2A.g:1317:1: rule__DOM__Group_2_1__2 : rule__DOM__Group_2_1__2__Impl ;
+    // InternalT2A.g:1344:1: rule__DOM__Group_2_1__2 : rule__DOM__Group_2_1__2__Impl rule__DOM__Group_2_1__3 ;
     public final void rule__DOM__Group_2_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1321:1: ( rule__DOM__Group_2_1__2__Impl )
-            // InternalT2A.g:1322:2: rule__DOM__Group_2_1__2__Impl
+            // InternalT2A.g:1348:1: ( rule__DOM__Group_2_1__2__Impl rule__DOM__Group_2_1__3 )
+            // InternalT2A.g:1349:2: rule__DOM__Group_2_1__2__Impl rule__DOM__Group_2_1__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_8);
             rule__DOM__Group_2_1__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__DOM__Group_2_1__3();
 
             state._fsp--;
 
@@ -4195,21 +4247,49 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__Group_2_1__2__Impl"
-    // InternalT2A.g:1328:1: rule__DOM__Group_2_1__2__Impl : ( '}' ) ;
+    // InternalT2A.g:1356:1: rule__DOM__Group_2_1__2__Impl : ( ( rule__DOM__SclassesAssignment_2_1_2 )* ) ;
     public final void rule__DOM__Group_2_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1332:1: ( ( '}' ) )
-            // InternalT2A.g:1333:1: ( '}' )
+            // InternalT2A.g:1360:1: ( ( ( rule__DOM__SclassesAssignment_2_1_2 )* ) )
+            // InternalT2A.g:1361:1: ( ( rule__DOM__SclassesAssignment_2_1_2 )* )
             {
-            // InternalT2A.g:1333:1: ( '}' )
-            // InternalT2A.g:1334:2: '}'
+            // InternalT2A.g:1361:1: ( ( rule__DOM__SclassesAssignment_2_1_2 )* )
+            // InternalT2A.g:1362:2: ( rule__DOM__SclassesAssignment_2_1_2 )*
             {
-             before(grammarAccess.getDOMAccess().getRightCurlyBracketKeyword_2_1_2()); 
-            match(input,13,FOLLOW_2); 
-             after(grammarAccess.getDOMAccess().getRightCurlyBracketKeyword_2_1_2()); 
+             before(grammarAccess.getDOMAccess().getSclassesAssignment_2_1_2()); 
+            // InternalT2A.g:1363:2: ( rule__DOM__SclassesAssignment_2_1_2 )*
+            loop16:
+            do {
+                int alt16=2;
+                int LA16_0 = input.LA(1);
+
+                if ( (LA16_0==RULE_ID) ) {
+                    alt16=1;
+                }
+
+
+                switch (alt16) {
+            	case 1 :
+            	    // InternalT2A.g:1363:3: rule__DOM__SclassesAssignment_2_1_2
+            	    {
+            	    pushFollow(FOLLOW_9);
+            	    rule__DOM__SclassesAssignment_2_1_2();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop16;
+                }
+            } while (true);
+
+             after(grammarAccess.getDOMAccess().getSclassesAssignment_2_1_2()); 
 
             }
 
@@ -4231,15 +4311,85 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__DOM__Group_2_1__2__Impl"
 
 
+    // $ANTLR start "rule__DOM__Group_2_1__3"
+    // InternalT2A.g:1371:1: rule__DOM__Group_2_1__3 : rule__DOM__Group_2_1__3__Impl ;
+    public final void rule__DOM__Group_2_1__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalT2A.g:1375:1: ( rule__DOM__Group_2_1__3__Impl )
+            // InternalT2A.g:1376:2: rule__DOM__Group_2_1__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__DOM__Group_2_1__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DOM__Group_2_1__3"
+
+
+    // $ANTLR start "rule__DOM__Group_2_1__3__Impl"
+    // InternalT2A.g:1382:1: rule__DOM__Group_2_1__3__Impl : ( '}' ) ;
+    public final void rule__DOM__Group_2_1__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalT2A.g:1386:1: ( ( '}' ) )
+            // InternalT2A.g:1387:1: ( '}' )
+            {
+            // InternalT2A.g:1387:1: ( '}' )
+            // InternalT2A.g:1388:2: '}'
+            {
+             before(grammarAccess.getDOMAccess().getRightCurlyBracketKeyword_2_1_3()); 
+            match(input,13,FOLLOW_2); 
+             after(grammarAccess.getDOMAccess().getRightCurlyBracketKeyword_2_1_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__DOM__Group_2_1__3__Impl"
+
+
     // $ANTLR start "rule__Comp__Group__0"
-    // InternalT2A.g:1344:1: rule__Comp__Group__0 : rule__Comp__Group__0__Impl rule__Comp__Group__1 ;
+    // InternalT2A.g:1398:1: rule__Comp__Group__0 : rule__Comp__Group__0__Impl rule__Comp__Group__1 ;
     public final void rule__Comp__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1348:1: ( rule__Comp__Group__0__Impl rule__Comp__Group__1 )
-            // InternalT2A.g:1349:2: rule__Comp__Group__0__Impl rule__Comp__Group__1
+            // InternalT2A.g:1402:1: ( rule__Comp__Group__0__Impl rule__Comp__Group__1 )
+            // InternalT2A.g:1403:2: rule__Comp__Group__0__Impl rule__Comp__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Comp__Group__0__Impl();
@@ -4270,17 +4420,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__Group__0__Impl"
-    // InternalT2A.g:1356:1: rule__Comp__Group__0__Impl : ( 'Comp' ) ;
+    // InternalT2A.g:1410:1: rule__Comp__Group__0__Impl : ( 'Comp' ) ;
     public final void rule__Comp__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1360:1: ( ( 'Comp' ) )
-            // InternalT2A.g:1361:1: ( 'Comp' )
+            // InternalT2A.g:1414:1: ( ( 'Comp' ) )
+            // InternalT2A.g:1415:1: ( 'Comp' )
             {
-            // InternalT2A.g:1361:1: ( 'Comp' )
-            // InternalT2A.g:1362:2: 'Comp'
+            // InternalT2A.g:1415:1: ( 'Comp' )
+            // InternalT2A.g:1416:2: 'Comp'
             {
              before(grammarAccess.getCompAccess().getCompKeyword_0()); 
             match(input,19,FOLLOW_2); 
@@ -4307,14 +4457,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__Group__1"
-    // InternalT2A.g:1371:1: rule__Comp__Group__1 : rule__Comp__Group__1__Impl rule__Comp__Group__2 ;
+    // InternalT2A.g:1425:1: rule__Comp__Group__1 : rule__Comp__Group__1__Impl rule__Comp__Group__2 ;
     public final void rule__Comp__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1375:1: ( rule__Comp__Group__1__Impl rule__Comp__Group__2 )
-            // InternalT2A.g:1376:2: rule__Comp__Group__1__Impl rule__Comp__Group__2
+            // InternalT2A.g:1429:1: ( rule__Comp__Group__1__Impl rule__Comp__Group__2 )
+            // InternalT2A.g:1430:2: rule__Comp__Group__1__Impl rule__Comp__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__Comp__Group__1__Impl();
@@ -4345,21 +4495,21 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__Group__1__Impl"
-    // InternalT2A.g:1383:1: rule__Comp__Group__1__Impl : ( ( rule__Comp__NameAssignment_1 ) ) ;
+    // InternalT2A.g:1437:1: rule__Comp__Group__1__Impl : ( ( rule__Comp__NameAssignment_1 ) ) ;
     public final void rule__Comp__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1387:1: ( ( ( rule__Comp__NameAssignment_1 ) ) )
-            // InternalT2A.g:1388:1: ( ( rule__Comp__NameAssignment_1 ) )
+            // InternalT2A.g:1441:1: ( ( ( rule__Comp__NameAssignment_1 ) ) )
+            // InternalT2A.g:1442:1: ( ( rule__Comp__NameAssignment_1 ) )
             {
-            // InternalT2A.g:1388:1: ( ( rule__Comp__NameAssignment_1 ) )
-            // InternalT2A.g:1389:2: ( rule__Comp__NameAssignment_1 )
+            // InternalT2A.g:1442:1: ( ( rule__Comp__NameAssignment_1 ) )
+            // InternalT2A.g:1443:2: ( rule__Comp__NameAssignment_1 )
             {
              before(grammarAccess.getCompAccess().getNameAssignment_1()); 
-            // InternalT2A.g:1390:2: ( rule__Comp__NameAssignment_1 )
-            // InternalT2A.g:1390:3: rule__Comp__NameAssignment_1
+            // InternalT2A.g:1444:2: ( rule__Comp__NameAssignment_1 )
+            // InternalT2A.g:1444:3: rule__Comp__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Comp__NameAssignment_1();
@@ -4392,14 +4542,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__Group__2"
-    // InternalT2A.g:1398:1: rule__Comp__Group__2 : rule__Comp__Group__2__Impl ;
+    // InternalT2A.g:1452:1: rule__Comp__Group__2 : rule__Comp__Group__2__Impl ;
     public final void rule__Comp__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1402:1: ( rule__Comp__Group__2__Impl )
-            // InternalT2A.g:1403:2: rule__Comp__Group__2__Impl
+            // InternalT2A.g:1456:1: ( rule__Comp__Group__2__Impl )
+            // InternalT2A.g:1457:2: rule__Comp__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Comp__Group__2__Impl();
@@ -4425,20 +4575,20 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__Group__2__Impl"
-    // InternalT2A.g:1409:1: rule__Comp__Group__2__Impl : ( ( rule__Comp__Group_2__0 )? ) ;
+    // InternalT2A.g:1463:1: rule__Comp__Group__2__Impl : ( ( rule__Comp__Group_2__0 )? ) ;
     public final void rule__Comp__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1413:1: ( ( ( rule__Comp__Group_2__0 )? ) )
-            // InternalT2A.g:1414:1: ( ( rule__Comp__Group_2__0 )? )
+            // InternalT2A.g:1467:1: ( ( ( rule__Comp__Group_2__0 )? ) )
+            // InternalT2A.g:1468:1: ( ( rule__Comp__Group_2__0 )? )
             {
-            // InternalT2A.g:1414:1: ( ( rule__Comp__Group_2__0 )? )
-            // InternalT2A.g:1415:2: ( rule__Comp__Group_2__0 )?
+            // InternalT2A.g:1468:1: ( ( rule__Comp__Group_2__0 )? )
+            // InternalT2A.g:1469:2: ( rule__Comp__Group_2__0 )?
             {
              before(grammarAccess.getCompAccess().getGroup_2()); 
-            // InternalT2A.g:1416:2: ( rule__Comp__Group_2__0 )?
+            // InternalT2A.g:1470:2: ( rule__Comp__Group_2__0 )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -4447,7 +4597,7 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
             }
             switch (alt17) {
                 case 1 :
-                    // InternalT2A.g:1416:3: rule__Comp__Group_2__0
+                    // InternalT2A.g:1470:3: rule__Comp__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Comp__Group_2__0();
@@ -4483,14 +4633,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__Group_2__0"
-    // InternalT2A.g:1425:1: rule__Comp__Group_2__0 : rule__Comp__Group_2__0__Impl rule__Comp__Group_2__1 ;
+    // InternalT2A.g:1479:1: rule__Comp__Group_2__0 : rule__Comp__Group_2__0__Impl rule__Comp__Group_2__1 ;
     public final void rule__Comp__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1429:1: ( rule__Comp__Group_2__0__Impl rule__Comp__Group_2__1 )
-            // InternalT2A.g:1430:2: rule__Comp__Group_2__0__Impl rule__Comp__Group_2__1
+            // InternalT2A.g:1483:1: ( rule__Comp__Group_2__0__Impl rule__Comp__Group_2__1 )
+            // InternalT2A.g:1484:2: rule__Comp__Group_2__0__Impl rule__Comp__Group_2__1
             {
             pushFollow(FOLLOW_12);
             rule__Comp__Group_2__0__Impl();
@@ -4521,17 +4671,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__Group_2__0__Impl"
-    // InternalT2A.g:1437:1: rule__Comp__Group_2__0__Impl : ( '{' ) ;
+    // InternalT2A.g:1491:1: rule__Comp__Group_2__0__Impl : ( '{' ) ;
     public final void rule__Comp__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1441:1: ( ( '{' ) )
-            // InternalT2A.g:1442:1: ( '{' )
+            // InternalT2A.g:1495:1: ( ( '{' ) )
+            // InternalT2A.g:1496:1: ( '{' )
             {
-            // InternalT2A.g:1442:1: ( '{' )
-            // InternalT2A.g:1443:2: '{'
+            // InternalT2A.g:1496:1: ( '{' )
+            // InternalT2A.g:1497:2: '{'
             {
              before(grammarAccess.getCompAccess().getLeftCurlyBracketKeyword_2_0()); 
             match(input,12,FOLLOW_2); 
@@ -4558,14 +4708,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__Group_2__1"
-    // InternalT2A.g:1452:1: rule__Comp__Group_2__1 : rule__Comp__Group_2__1__Impl rule__Comp__Group_2__2 ;
+    // InternalT2A.g:1506:1: rule__Comp__Group_2__1 : rule__Comp__Group_2__1__Impl rule__Comp__Group_2__2 ;
     public final void rule__Comp__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1456:1: ( rule__Comp__Group_2__1__Impl rule__Comp__Group_2__2 )
-            // InternalT2A.g:1457:2: rule__Comp__Group_2__1__Impl rule__Comp__Group_2__2
+            // InternalT2A.g:1510:1: ( rule__Comp__Group_2__1__Impl rule__Comp__Group_2__2 )
+            // InternalT2A.g:1511:2: rule__Comp__Group_2__1__Impl rule__Comp__Group_2__2
             {
             pushFollow(FOLLOW_12);
             rule__Comp__Group_2__1__Impl();
@@ -4596,20 +4746,20 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__Group_2__1__Impl"
-    // InternalT2A.g:1464:1: rule__Comp__Group_2__1__Impl : ( ( rule__Comp__Group_2_1__0 )? ) ;
+    // InternalT2A.g:1518:1: rule__Comp__Group_2__1__Impl : ( ( rule__Comp__Group_2_1__0 )? ) ;
     public final void rule__Comp__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1468:1: ( ( ( rule__Comp__Group_2_1__0 )? ) )
-            // InternalT2A.g:1469:1: ( ( rule__Comp__Group_2_1__0 )? )
+            // InternalT2A.g:1522:1: ( ( ( rule__Comp__Group_2_1__0 )? ) )
+            // InternalT2A.g:1523:1: ( ( rule__Comp__Group_2_1__0 )? )
             {
-            // InternalT2A.g:1469:1: ( ( rule__Comp__Group_2_1__0 )? )
-            // InternalT2A.g:1470:2: ( rule__Comp__Group_2_1__0 )?
+            // InternalT2A.g:1523:1: ( ( rule__Comp__Group_2_1__0 )? )
+            // InternalT2A.g:1524:2: ( rule__Comp__Group_2_1__0 )?
             {
              before(grammarAccess.getCompAccess().getGroup_2_1()); 
-            // InternalT2A.g:1471:2: ( rule__Comp__Group_2_1__0 )?
+            // InternalT2A.g:1525:2: ( rule__Comp__Group_2_1__0 )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -4618,7 +4768,7 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
             }
             switch (alt18) {
                 case 1 :
-                    // InternalT2A.g:1471:3: rule__Comp__Group_2_1__0
+                    // InternalT2A.g:1525:3: rule__Comp__Group_2_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Comp__Group_2_1__0();
@@ -4654,14 +4804,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__Group_2__2"
-    // InternalT2A.g:1479:1: rule__Comp__Group_2__2 : rule__Comp__Group_2__2__Impl rule__Comp__Group_2__3 ;
+    // InternalT2A.g:1533:1: rule__Comp__Group_2__2 : rule__Comp__Group_2__2__Impl rule__Comp__Group_2__3 ;
     public final void rule__Comp__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1483:1: ( rule__Comp__Group_2__2__Impl rule__Comp__Group_2__3 )
-            // InternalT2A.g:1484:2: rule__Comp__Group_2__2__Impl rule__Comp__Group_2__3
+            // InternalT2A.g:1537:1: ( rule__Comp__Group_2__2__Impl rule__Comp__Group_2__3 )
+            // InternalT2A.g:1538:2: rule__Comp__Group_2__2__Impl rule__Comp__Group_2__3
             {
             pushFollow(FOLLOW_12);
             rule__Comp__Group_2__2__Impl();
@@ -4692,20 +4842,20 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__Group_2__2__Impl"
-    // InternalT2A.g:1491:1: rule__Comp__Group_2__2__Impl : ( ( rule__Comp__FeaturesAssignment_2_2 )* ) ;
+    // InternalT2A.g:1545:1: rule__Comp__Group_2__2__Impl : ( ( rule__Comp__FeaturesAssignment_2_2 )* ) ;
     public final void rule__Comp__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1495:1: ( ( ( rule__Comp__FeaturesAssignment_2_2 )* ) )
-            // InternalT2A.g:1496:1: ( ( rule__Comp__FeaturesAssignment_2_2 )* )
+            // InternalT2A.g:1549:1: ( ( ( rule__Comp__FeaturesAssignment_2_2 )* ) )
+            // InternalT2A.g:1550:1: ( ( rule__Comp__FeaturesAssignment_2_2 )* )
             {
-            // InternalT2A.g:1496:1: ( ( rule__Comp__FeaturesAssignment_2_2 )* )
-            // InternalT2A.g:1497:2: ( rule__Comp__FeaturesAssignment_2_2 )*
+            // InternalT2A.g:1550:1: ( ( rule__Comp__FeaturesAssignment_2_2 )* )
+            // InternalT2A.g:1551:2: ( rule__Comp__FeaturesAssignment_2_2 )*
             {
              before(grammarAccess.getCompAccess().getFeaturesAssignment_2_2()); 
-            // InternalT2A.g:1498:2: ( rule__Comp__FeaturesAssignment_2_2 )*
+            // InternalT2A.g:1552:2: ( rule__Comp__FeaturesAssignment_2_2 )*
             loop19:
             do {
                 int alt19=2;
@@ -4718,7 +4868,7 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
                 switch (alt19) {
             	case 1 :
-            	    // InternalT2A.g:1498:3: rule__Comp__FeaturesAssignment_2_2
+            	    // InternalT2A.g:1552:3: rule__Comp__FeaturesAssignment_2_2
             	    {
             	    pushFollow(FOLLOW_13);
             	    rule__Comp__FeaturesAssignment_2_2();
@@ -4757,14 +4907,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__Group_2__3"
-    // InternalT2A.g:1506:1: rule__Comp__Group_2__3 : rule__Comp__Group_2__3__Impl ;
+    // InternalT2A.g:1560:1: rule__Comp__Group_2__3 : rule__Comp__Group_2__3__Impl ;
     public final void rule__Comp__Group_2__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1510:1: ( rule__Comp__Group_2__3__Impl )
-            // InternalT2A.g:1511:2: rule__Comp__Group_2__3__Impl
+            // InternalT2A.g:1564:1: ( rule__Comp__Group_2__3__Impl )
+            // InternalT2A.g:1565:2: rule__Comp__Group_2__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Comp__Group_2__3__Impl();
@@ -4790,17 +4940,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__Group_2__3__Impl"
-    // InternalT2A.g:1517:1: rule__Comp__Group_2__3__Impl : ( '}' ) ;
+    // InternalT2A.g:1571:1: rule__Comp__Group_2__3__Impl : ( '}' ) ;
     public final void rule__Comp__Group_2__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1521:1: ( ( '}' ) )
-            // InternalT2A.g:1522:1: ( '}' )
+            // InternalT2A.g:1575:1: ( ( '}' ) )
+            // InternalT2A.g:1576:1: ( '}' )
             {
-            // InternalT2A.g:1522:1: ( '}' )
-            // InternalT2A.g:1523:2: '}'
+            // InternalT2A.g:1576:1: ( '}' )
+            // InternalT2A.g:1577:2: '}'
             {
              before(grammarAccess.getCompAccess().getRightCurlyBracketKeyword_2_3()); 
             match(input,13,FOLLOW_2); 
@@ -4827,16 +4977,16 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__Group_2_1__0"
-    // InternalT2A.g:1533:1: rule__Comp__Group_2_1__0 : rule__Comp__Group_2_1__0__Impl rule__Comp__Group_2_1__1 ;
+    // InternalT2A.g:1587:1: rule__Comp__Group_2_1__0 : rule__Comp__Group_2_1__0__Impl rule__Comp__Group_2_1__1 ;
     public final void rule__Comp__Group_2_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1537:1: ( rule__Comp__Group_2_1__0__Impl rule__Comp__Group_2_1__1 )
-            // InternalT2A.g:1538:2: rule__Comp__Group_2_1__0__Impl rule__Comp__Group_2_1__1
+            // InternalT2A.g:1591:1: ( rule__Comp__Group_2_1__0__Impl rule__Comp__Group_2_1__1 )
+            // InternalT2A.g:1592:2: rule__Comp__Group_2_1__0__Impl rule__Comp__Group_2_1__1
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_5);
             rule__Comp__Group_2_1__0__Impl();
 
             state._fsp--;
@@ -4865,17 +5015,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__Group_2_1__0__Impl"
-    // InternalT2A.g:1545:1: rule__Comp__Group_2_1__0__Impl : ( 'SClass:{' ) ;
+    // InternalT2A.g:1599:1: rule__Comp__Group_2_1__0__Impl : ( 'SClass' ) ;
     public final void rule__Comp__Group_2_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1549:1: ( ( 'SClass:{' ) )
-            // InternalT2A.g:1550:1: ( 'SClass:{' )
+            // InternalT2A.g:1603:1: ( ( 'SClass' ) )
+            // InternalT2A.g:1604:1: ( 'SClass' )
             {
-            // InternalT2A.g:1550:1: ( 'SClass:{' )
-            // InternalT2A.g:1551:2: 'SClass:{'
+            // InternalT2A.g:1604:1: ( 'SClass' )
+            // InternalT2A.g:1605:2: 'SClass'
             {
              before(grammarAccess.getCompAccess().getSClassKeyword_2_1_0()); 
             match(input,14,FOLLOW_2); 
@@ -4902,14 +5052,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__Group_2_1__1"
-    // InternalT2A.g:1560:1: rule__Comp__Group_2_1__1 : rule__Comp__Group_2_1__1__Impl rule__Comp__Group_2_1__2 ;
+    // InternalT2A.g:1614:1: rule__Comp__Group_2_1__1 : rule__Comp__Group_2_1__1__Impl rule__Comp__Group_2_1__2 ;
     public final void rule__Comp__Group_2_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1564:1: ( rule__Comp__Group_2_1__1__Impl rule__Comp__Group_2_1__2 )
-            // InternalT2A.g:1565:2: rule__Comp__Group_2_1__1__Impl rule__Comp__Group_2_1__2
+            // InternalT2A.g:1618:1: ( rule__Comp__Group_2_1__1__Impl rule__Comp__Group_2_1__2 )
+            // InternalT2A.g:1619:2: rule__Comp__Group_2_1__1__Impl rule__Comp__Group_2_1__2
             {
             pushFollow(FOLLOW_8);
             rule__Comp__Group_2_1__1__Impl();
@@ -4940,49 +5090,21 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__Group_2_1__1__Impl"
-    // InternalT2A.g:1572:1: rule__Comp__Group_2_1__1__Impl : ( ( rule__Comp__SclassesAssignment_2_1_1 )* ) ;
+    // InternalT2A.g:1626:1: rule__Comp__Group_2_1__1__Impl : ( '{' ) ;
     public final void rule__Comp__Group_2_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1576:1: ( ( ( rule__Comp__SclassesAssignment_2_1_1 )* ) )
-            // InternalT2A.g:1577:1: ( ( rule__Comp__SclassesAssignment_2_1_1 )* )
+            // InternalT2A.g:1630:1: ( ( '{' ) )
+            // InternalT2A.g:1631:1: ( '{' )
             {
-            // InternalT2A.g:1577:1: ( ( rule__Comp__SclassesAssignment_2_1_1 )* )
-            // InternalT2A.g:1578:2: ( rule__Comp__SclassesAssignment_2_1_1 )*
+            // InternalT2A.g:1631:1: ( '{' )
+            // InternalT2A.g:1632:2: '{'
             {
-             before(grammarAccess.getCompAccess().getSclassesAssignment_2_1_1()); 
-            // InternalT2A.g:1579:2: ( rule__Comp__SclassesAssignment_2_1_1 )*
-            loop20:
-            do {
-                int alt20=2;
-                int LA20_0 = input.LA(1);
-
-                if ( (LA20_0==RULE_ID) ) {
-                    alt20=1;
-                }
-
-
-                switch (alt20) {
-            	case 1 :
-            	    // InternalT2A.g:1579:3: rule__Comp__SclassesAssignment_2_1_1
-            	    {
-            	    pushFollow(FOLLOW_9);
-            	    rule__Comp__SclassesAssignment_2_1_1();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop20;
-                }
-            } while (true);
-
-             after(grammarAccess.getCompAccess().getSclassesAssignment_2_1_1()); 
+             before(grammarAccess.getCompAccess().getLeftCurlyBracketKeyword_2_1_1()); 
+            match(input,12,FOLLOW_2); 
+             after(grammarAccess.getCompAccess().getLeftCurlyBracketKeyword_2_1_1()); 
 
             }
 
@@ -5005,17 +5127,22 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__Group_2_1__2"
-    // InternalT2A.g:1587:1: rule__Comp__Group_2_1__2 : rule__Comp__Group_2_1__2__Impl ;
+    // InternalT2A.g:1641:1: rule__Comp__Group_2_1__2 : rule__Comp__Group_2_1__2__Impl rule__Comp__Group_2_1__3 ;
     public final void rule__Comp__Group_2_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1591:1: ( rule__Comp__Group_2_1__2__Impl )
-            // InternalT2A.g:1592:2: rule__Comp__Group_2_1__2__Impl
+            // InternalT2A.g:1645:1: ( rule__Comp__Group_2_1__2__Impl rule__Comp__Group_2_1__3 )
+            // InternalT2A.g:1646:2: rule__Comp__Group_2_1__2__Impl rule__Comp__Group_2_1__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_8);
             rule__Comp__Group_2_1__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Comp__Group_2_1__3();
 
             state._fsp--;
 
@@ -5038,21 +5165,49 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__Group_2_1__2__Impl"
-    // InternalT2A.g:1598:1: rule__Comp__Group_2_1__2__Impl : ( '}' ) ;
+    // InternalT2A.g:1653:1: rule__Comp__Group_2_1__2__Impl : ( ( rule__Comp__SclassesAssignment_2_1_2 )* ) ;
     public final void rule__Comp__Group_2_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1602:1: ( ( '}' ) )
-            // InternalT2A.g:1603:1: ( '}' )
+            // InternalT2A.g:1657:1: ( ( ( rule__Comp__SclassesAssignment_2_1_2 )* ) )
+            // InternalT2A.g:1658:1: ( ( rule__Comp__SclassesAssignment_2_1_2 )* )
             {
-            // InternalT2A.g:1603:1: ( '}' )
-            // InternalT2A.g:1604:2: '}'
+            // InternalT2A.g:1658:1: ( ( rule__Comp__SclassesAssignment_2_1_2 )* )
+            // InternalT2A.g:1659:2: ( rule__Comp__SclassesAssignment_2_1_2 )*
             {
-             before(grammarAccess.getCompAccess().getRightCurlyBracketKeyword_2_1_2()); 
-            match(input,13,FOLLOW_2); 
-             after(grammarAccess.getCompAccess().getRightCurlyBracketKeyword_2_1_2()); 
+             before(grammarAccess.getCompAccess().getSclassesAssignment_2_1_2()); 
+            // InternalT2A.g:1660:2: ( rule__Comp__SclassesAssignment_2_1_2 )*
+            loop20:
+            do {
+                int alt20=2;
+                int LA20_0 = input.LA(1);
+
+                if ( (LA20_0==RULE_ID) ) {
+                    alt20=1;
+                }
+
+
+                switch (alt20) {
+            	case 1 :
+            	    // InternalT2A.g:1660:3: rule__Comp__SclassesAssignment_2_1_2
+            	    {
+            	    pushFollow(FOLLOW_9);
+            	    rule__Comp__SclassesAssignment_2_1_2();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop20;
+                }
+            } while (true);
+
+             after(grammarAccess.getCompAccess().getSclassesAssignment_2_1_2()); 
 
             }
 
@@ -5074,15 +5229,85 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Comp__Group_2_1__2__Impl"
 
 
+    // $ANTLR start "rule__Comp__Group_2_1__3"
+    // InternalT2A.g:1668:1: rule__Comp__Group_2_1__3 : rule__Comp__Group_2_1__3__Impl ;
+    public final void rule__Comp__Group_2_1__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalT2A.g:1672:1: ( rule__Comp__Group_2_1__3__Impl )
+            // InternalT2A.g:1673:2: rule__Comp__Group_2_1__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Comp__Group_2_1__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Comp__Group_2_1__3"
+
+
+    // $ANTLR start "rule__Comp__Group_2_1__3__Impl"
+    // InternalT2A.g:1679:1: rule__Comp__Group_2_1__3__Impl : ( '}' ) ;
+    public final void rule__Comp__Group_2_1__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalT2A.g:1683:1: ( ( '}' ) )
+            // InternalT2A.g:1684:1: ( '}' )
+            {
+            // InternalT2A.g:1684:1: ( '}' )
+            // InternalT2A.g:1685:2: '}'
+            {
+             before(grammarAccess.getCompAccess().getRightCurlyBracketKeyword_2_1_3()); 
+            match(input,13,FOLLOW_2); 
+             after(grammarAccess.getCompAccess().getRightCurlyBracketKeyword_2_1_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Comp__Group_2_1__3__Impl"
+
+
     // $ANTLR start "rule__InstanciaEDOM__Group__0"
-    // InternalT2A.g:1614:1: rule__InstanciaEDOM__Group__0 : rule__InstanciaEDOM__Group__0__Impl rule__InstanciaEDOM__Group__1 ;
+    // InternalT2A.g:1695:1: rule__InstanciaEDOM__Group__0 : rule__InstanciaEDOM__Group__0__Impl rule__InstanciaEDOM__Group__1 ;
     public final void rule__InstanciaEDOM__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1618:1: ( rule__InstanciaEDOM__Group__0__Impl rule__InstanciaEDOM__Group__1 )
-            // InternalT2A.g:1619:2: rule__InstanciaEDOM__Group__0__Impl rule__InstanciaEDOM__Group__1
+            // InternalT2A.g:1699:1: ( rule__InstanciaEDOM__Group__0__Impl rule__InstanciaEDOM__Group__1 )
+            // InternalT2A.g:1700:2: rule__InstanciaEDOM__Group__0__Impl rule__InstanciaEDOM__Group__1
             {
             pushFollow(FOLLOW_5);
             rule__InstanciaEDOM__Group__0__Impl();
@@ -5113,21 +5338,21 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InstanciaEDOM__Group__0__Impl"
-    // InternalT2A.g:1626:1: rule__InstanciaEDOM__Group__0__Impl : ( ( rule__InstanciaEDOM__InstanciaAssignment_0 ) ) ;
+    // InternalT2A.g:1707:1: rule__InstanciaEDOM__Group__0__Impl : ( ( rule__InstanciaEDOM__InstanciaAssignment_0 ) ) ;
     public final void rule__InstanciaEDOM__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1630:1: ( ( ( rule__InstanciaEDOM__InstanciaAssignment_0 ) ) )
-            // InternalT2A.g:1631:1: ( ( rule__InstanciaEDOM__InstanciaAssignment_0 ) )
+            // InternalT2A.g:1711:1: ( ( ( rule__InstanciaEDOM__InstanciaAssignment_0 ) ) )
+            // InternalT2A.g:1712:1: ( ( rule__InstanciaEDOM__InstanciaAssignment_0 ) )
             {
-            // InternalT2A.g:1631:1: ( ( rule__InstanciaEDOM__InstanciaAssignment_0 ) )
-            // InternalT2A.g:1632:2: ( rule__InstanciaEDOM__InstanciaAssignment_0 )
+            // InternalT2A.g:1712:1: ( ( rule__InstanciaEDOM__InstanciaAssignment_0 ) )
+            // InternalT2A.g:1713:2: ( rule__InstanciaEDOM__InstanciaAssignment_0 )
             {
              before(grammarAccess.getInstanciaEDOMAccess().getInstanciaAssignment_0()); 
-            // InternalT2A.g:1633:2: ( rule__InstanciaEDOM__InstanciaAssignment_0 )
-            // InternalT2A.g:1633:3: rule__InstanciaEDOM__InstanciaAssignment_0
+            // InternalT2A.g:1714:2: ( rule__InstanciaEDOM__InstanciaAssignment_0 )
+            // InternalT2A.g:1714:3: rule__InstanciaEDOM__InstanciaAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__InstanciaEDOM__InstanciaAssignment_0();
@@ -5160,14 +5385,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InstanciaEDOM__Group__1"
-    // InternalT2A.g:1641:1: rule__InstanciaEDOM__Group__1 : rule__InstanciaEDOM__Group__1__Impl ;
+    // InternalT2A.g:1722:1: rule__InstanciaEDOM__Group__1 : rule__InstanciaEDOM__Group__1__Impl ;
     public final void rule__InstanciaEDOM__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1645:1: ( rule__InstanciaEDOM__Group__1__Impl )
-            // InternalT2A.g:1646:2: rule__InstanciaEDOM__Group__1__Impl
+            // InternalT2A.g:1726:1: ( rule__InstanciaEDOM__Group__1__Impl )
+            // InternalT2A.g:1727:2: rule__InstanciaEDOM__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__InstanciaEDOM__Group__1__Impl();
@@ -5193,20 +5418,20 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InstanciaEDOM__Group__1__Impl"
-    // InternalT2A.g:1652:1: rule__InstanciaEDOM__Group__1__Impl : ( ( rule__InstanciaEDOM__Group_1__0 )? ) ;
+    // InternalT2A.g:1733:1: rule__InstanciaEDOM__Group__1__Impl : ( ( rule__InstanciaEDOM__Group_1__0 )? ) ;
     public final void rule__InstanciaEDOM__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1656:1: ( ( ( rule__InstanciaEDOM__Group_1__0 )? ) )
-            // InternalT2A.g:1657:1: ( ( rule__InstanciaEDOM__Group_1__0 )? )
+            // InternalT2A.g:1737:1: ( ( ( rule__InstanciaEDOM__Group_1__0 )? ) )
+            // InternalT2A.g:1738:1: ( ( rule__InstanciaEDOM__Group_1__0 )? )
             {
-            // InternalT2A.g:1657:1: ( ( rule__InstanciaEDOM__Group_1__0 )? )
-            // InternalT2A.g:1658:2: ( rule__InstanciaEDOM__Group_1__0 )?
+            // InternalT2A.g:1738:1: ( ( rule__InstanciaEDOM__Group_1__0 )? )
+            // InternalT2A.g:1739:2: ( rule__InstanciaEDOM__Group_1__0 )?
             {
              before(grammarAccess.getInstanciaEDOMAccess().getGroup_1()); 
-            // InternalT2A.g:1659:2: ( rule__InstanciaEDOM__Group_1__0 )?
+            // InternalT2A.g:1740:2: ( rule__InstanciaEDOM__Group_1__0 )?
             int alt21=2;
             int LA21_0 = input.LA(1);
 
@@ -5215,7 +5440,7 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
             }
             switch (alt21) {
                 case 1 :
-                    // InternalT2A.g:1659:3: rule__InstanciaEDOM__Group_1__0
+                    // InternalT2A.g:1740:3: rule__InstanciaEDOM__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__InstanciaEDOM__Group_1__0();
@@ -5251,14 +5476,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InstanciaEDOM__Group_1__0"
-    // InternalT2A.g:1668:1: rule__InstanciaEDOM__Group_1__0 : rule__InstanciaEDOM__Group_1__0__Impl rule__InstanciaEDOM__Group_1__1 ;
+    // InternalT2A.g:1749:1: rule__InstanciaEDOM__Group_1__0 : rule__InstanciaEDOM__Group_1__0__Impl rule__InstanciaEDOM__Group_1__1 ;
     public final void rule__InstanciaEDOM__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1672:1: ( rule__InstanciaEDOM__Group_1__0__Impl rule__InstanciaEDOM__Group_1__1 )
-            // InternalT2A.g:1673:2: rule__InstanciaEDOM__Group_1__0__Impl rule__InstanciaEDOM__Group_1__1
+            // InternalT2A.g:1753:1: ( rule__InstanciaEDOM__Group_1__0__Impl rule__InstanciaEDOM__Group_1__1 )
+            // InternalT2A.g:1754:2: rule__InstanciaEDOM__Group_1__0__Impl rule__InstanciaEDOM__Group_1__1
             {
             pushFollow(FOLLOW_14);
             rule__InstanciaEDOM__Group_1__0__Impl();
@@ -5289,17 +5514,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InstanciaEDOM__Group_1__0__Impl"
-    // InternalT2A.g:1680:1: rule__InstanciaEDOM__Group_1__0__Impl : ( '{' ) ;
+    // InternalT2A.g:1761:1: rule__InstanciaEDOM__Group_1__0__Impl : ( '{' ) ;
     public final void rule__InstanciaEDOM__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1684:1: ( ( '{' ) )
-            // InternalT2A.g:1685:1: ( '{' )
+            // InternalT2A.g:1765:1: ( ( '{' ) )
+            // InternalT2A.g:1766:1: ( '{' )
             {
-            // InternalT2A.g:1685:1: ( '{' )
-            // InternalT2A.g:1686:2: '{'
+            // InternalT2A.g:1766:1: ( '{' )
+            // InternalT2A.g:1767:2: '{'
             {
              before(grammarAccess.getInstanciaEDOMAccess().getLeftCurlyBracketKeyword_1_0()); 
             match(input,12,FOLLOW_2); 
@@ -5326,14 +5551,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InstanciaEDOM__Group_1__1"
-    // InternalT2A.g:1695:1: rule__InstanciaEDOM__Group_1__1 : rule__InstanciaEDOM__Group_1__1__Impl rule__InstanciaEDOM__Group_1__2 ;
+    // InternalT2A.g:1776:1: rule__InstanciaEDOM__Group_1__1 : rule__InstanciaEDOM__Group_1__1__Impl rule__InstanciaEDOM__Group_1__2 ;
     public final void rule__InstanciaEDOM__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1699:1: ( rule__InstanciaEDOM__Group_1__1__Impl rule__InstanciaEDOM__Group_1__2 )
-            // InternalT2A.g:1700:2: rule__InstanciaEDOM__Group_1__1__Impl rule__InstanciaEDOM__Group_1__2
+            // InternalT2A.g:1780:1: ( rule__InstanciaEDOM__Group_1__1__Impl rule__InstanciaEDOM__Group_1__2 )
+            // InternalT2A.g:1781:2: rule__InstanciaEDOM__Group_1__1__Impl rule__InstanciaEDOM__Group_1__2
             {
             pushFollow(FOLLOW_14);
             rule__InstanciaEDOM__Group_1__1__Impl();
@@ -5364,20 +5589,20 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InstanciaEDOM__Group_1__1__Impl"
-    // InternalT2A.g:1707:1: rule__InstanciaEDOM__Group_1__1__Impl : ( ( rule__InstanciaEDOM__InsfeaturesAssignment_1_1 )* ) ;
+    // InternalT2A.g:1788:1: rule__InstanciaEDOM__Group_1__1__Impl : ( ( rule__InstanciaEDOM__InsfeaturesAssignment_1_1 )* ) ;
     public final void rule__InstanciaEDOM__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1711:1: ( ( ( rule__InstanciaEDOM__InsfeaturesAssignment_1_1 )* ) )
-            // InternalT2A.g:1712:1: ( ( rule__InstanciaEDOM__InsfeaturesAssignment_1_1 )* )
+            // InternalT2A.g:1792:1: ( ( ( rule__InstanciaEDOM__InsfeaturesAssignment_1_1 )* ) )
+            // InternalT2A.g:1793:1: ( ( rule__InstanciaEDOM__InsfeaturesAssignment_1_1 )* )
             {
-            // InternalT2A.g:1712:1: ( ( rule__InstanciaEDOM__InsfeaturesAssignment_1_1 )* )
-            // InternalT2A.g:1713:2: ( rule__InstanciaEDOM__InsfeaturesAssignment_1_1 )*
+            // InternalT2A.g:1793:1: ( ( rule__InstanciaEDOM__InsfeaturesAssignment_1_1 )* )
+            // InternalT2A.g:1794:2: ( rule__InstanciaEDOM__InsfeaturesAssignment_1_1 )*
             {
              before(grammarAccess.getInstanciaEDOMAccess().getInsfeaturesAssignment_1_1()); 
-            // InternalT2A.g:1714:2: ( rule__InstanciaEDOM__InsfeaturesAssignment_1_1 )*
+            // InternalT2A.g:1795:2: ( rule__InstanciaEDOM__InsfeaturesAssignment_1_1 )*
             loop22:
             do {
                 int alt22=2;
@@ -5390,7 +5615,7 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
                 switch (alt22) {
             	case 1 :
-            	    // InternalT2A.g:1714:3: rule__InstanciaEDOM__InsfeaturesAssignment_1_1
+            	    // InternalT2A.g:1795:3: rule__InstanciaEDOM__InsfeaturesAssignment_1_1
             	    {
             	    pushFollow(FOLLOW_7);
             	    rule__InstanciaEDOM__InsfeaturesAssignment_1_1();
@@ -5429,14 +5654,14 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InstanciaEDOM__Group_1__2"
-    // InternalT2A.g:1722:1: rule__InstanciaEDOM__Group_1__2 : rule__InstanciaEDOM__Group_1__2__Impl ;
+    // InternalT2A.g:1803:1: rule__InstanciaEDOM__Group_1__2 : rule__InstanciaEDOM__Group_1__2__Impl ;
     public final void rule__InstanciaEDOM__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1726:1: ( rule__InstanciaEDOM__Group_1__2__Impl )
-            // InternalT2A.g:1727:2: rule__InstanciaEDOM__Group_1__2__Impl
+            // InternalT2A.g:1807:1: ( rule__InstanciaEDOM__Group_1__2__Impl )
+            // InternalT2A.g:1808:2: rule__InstanciaEDOM__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__InstanciaEDOM__Group_1__2__Impl();
@@ -5462,17 +5687,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InstanciaEDOM__Group_1__2__Impl"
-    // InternalT2A.g:1733:1: rule__InstanciaEDOM__Group_1__2__Impl : ( '}' ) ;
+    // InternalT2A.g:1814:1: rule__InstanciaEDOM__Group_1__2__Impl : ( '}' ) ;
     public final void rule__InstanciaEDOM__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1737:1: ( ( '}' ) )
-            // InternalT2A.g:1738:1: ( '}' )
+            // InternalT2A.g:1818:1: ( ( '}' ) )
+            // InternalT2A.g:1819:1: ( '}' )
             {
-            // InternalT2A.g:1738:1: ( '}' )
-            // InternalT2A.g:1739:2: '}'
+            // InternalT2A.g:1819:1: ( '}' )
+            // InternalT2A.g:1820:2: '}'
             {
              before(grammarAccess.getInstanciaEDOMAccess().getRightCurlyBracketKeyword_1_2()); 
             match(input,13,FOLLOW_2); 
@@ -5499,17 +5724,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Root__ElementsAssignment"
-    // InternalT2A.g:1749:1: rule__Root__ElementsAssignment : ( ruleElement ) ;
+    // InternalT2A.g:1830:1: rule__Root__ElementsAssignment : ( ruleElement ) ;
     public final void rule__Root__ElementsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1753:1: ( ( ruleElement ) )
-            // InternalT2A.g:1754:2: ( ruleElement )
+            // InternalT2A.g:1834:1: ( ( ruleElement ) )
+            // InternalT2A.g:1835:2: ( ruleElement )
             {
-            // InternalT2A.g:1754:2: ( ruleElement )
-            // InternalT2A.g:1755:3: ruleElement
+            // InternalT2A.g:1835:2: ( ruleElement )
+            // InternalT2A.g:1836:3: ruleElement
             {
              before(grammarAccess.getRootAccess().getElementsElementParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -5540,17 +5765,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Page__NameAssignment_1"
-    // InternalT2A.g:1764:1: rule__Page__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalT2A.g:1845:1: rule__Page__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Page__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1768:1: ( ( RULE_ID ) )
-            // InternalT2A.g:1769:2: ( RULE_ID )
+            // InternalT2A.g:1849:1: ( ( RULE_ID ) )
+            // InternalT2A.g:1850:2: ( RULE_ID )
             {
-            // InternalT2A.g:1769:2: ( RULE_ID )
-            // InternalT2A.g:1770:3: RULE_ID
+            // InternalT2A.g:1850:2: ( RULE_ID )
+            // InternalT2A.g:1851:3: RULE_ID
             {
              before(grammarAccess.getPageAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5576,30 +5801,30 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Page__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Page__SclassesAssignment_3_1"
-    // InternalT2A.g:1779:1: rule__Page__SclassesAssignment_3_1 : ( ( RULE_ID ) ) ;
-    public final void rule__Page__SclassesAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__Page__SclassesAssignment_3_2"
+    // InternalT2A.g:1860:1: rule__Page__SclassesAssignment_3_2 : ( ( RULE_ID ) ) ;
+    public final void rule__Page__SclassesAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1783:1: ( ( ( RULE_ID ) ) )
-            // InternalT2A.g:1784:2: ( ( RULE_ID ) )
+            // InternalT2A.g:1864:1: ( ( ( RULE_ID ) ) )
+            // InternalT2A.g:1865:2: ( ( RULE_ID ) )
             {
-            // InternalT2A.g:1784:2: ( ( RULE_ID ) )
-            // InternalT2A.g:1785:3: ( RULE_ID )
+            // InternalT2A.g:1865:2: ( ( RULE_ID ) )
+            // InternalT2A.g:1866:3: ( RULE_ID )
             {
-             before(grammarAccess.getPageAccess().getSclassesStyleClassCrossReference_3_1_0()); 
-            // InternalT2A.g:1786:3: ( RULE_ID )
-            // InternalT2A.g:1787:4: RULE_ID
+             before(grammarAccess.getPageAccess().getSclassesStyleClassCrossReference_3_2_0()); 
+            // InternalT2A.g:1867:3: ( RULE_ID )
+            // InternalT2A.g:1868:4: RULE_ID
             {
-             before(grammarAccess.getPageAccess().getSclassesStyleClassIDTerminalRuleCall_3_1_0_1()); 
+             before(grammarAccess.getPageAccess().getSclassesStyleClassIDTerminalRuleCall_3_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getPageAccess().getSclassesStyleClassIDTerminalRuleCall_3_1_0_1()); 
+             after(grammarAccess.getPageAccess().getSclassesStyleClassIDTerminalRuleCall_3_2_0_1()); 
 
             }
 
-             after(grammarAccess.getPageAccess().getSclassesStyleClassCrossReference_3_1_0()); 
+             after(grammarAccess.getPageAccess().getSclassesStyleClassCrossReference_3_2_0()); 
 
             }
 
@@ -5618,25 +5843,25 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Page__SclassesAssignment_3_1"
+    // $ANTLR end "rule__Page__SclassesAssignment_3_2"
 
 
     // $ANTLR start "rule__Page__HomeAssignment_4"
-    // InternalT2A.g:1798:1: rule__Page__HomeAssignment_4 : ( ( 'home' ) ) ;
+    // InternalT2A.g:1879:1: rule__Page__HomeAssignment_4 : ( ( 'home' ) ) ;
     public final void rule__Page__HomeAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1802:1: ( ( ( 'home' ) ) )
-            // InternalT2A.g:1803:2: ( ( 'home' ) )
+            // InternalT2A.g:1883:1: ( ( ( 'home' ) ) )
+            // InternalT2A.g:1884:2: ( ( 'home' ) )
             {
-            // InternalT2A.g:1803:2: ( ( 'home' ) )
-            // InternalT2A.g:1804:3: ( 'home' )
+            // InternalT2A.g:1884:2: ( ( 'home' ) )
+            // InternalT2A.g:1885:3: ( 'home' )
             {
              before(grammarAccess.getPageAccess().getHomeHomeKeyword_4_0()); 
-            // InternalT2A.g:1805:3: ( 'home' )
-            // InternalT2A.g:1806:4: 'home'
+            // InternalT2A.g:1886:3: ( 'home' )
+            // InternalT2A.g:1887:4: 'home'
             {
              before(grammarAccess.getPageAccess().getHomeHomeKeyword_4_0()); 
             match(input,20,FOLLOW_2); 
@@ -5667,21 +5892,21 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Page__ShowInNavAssignment_5"
-    // InternalT2A.g:1817:1: rule__Page__ShowInNavAssignment_5 : ( ( 'showInNav' ) ) ;
+    // InternalT2A.g:1898:1: rule__Page__ShowInNavAssignment_5 : ( ( 'showInNav' ) ) ;
     public final void rule__Page__ShowInNavAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1821:1: ( ( ( 'showInNav' ) ) )
-            // InternalT2A.g:1822:2: ( ( 'showInNav' ) )
+            // InternalT2A.g:1902:1: ( ( ( 'showInNav' ) ) )
+            // InternalT2A.g:1903:2: ( ( 'showInNav' ) )
             {
-            // InternalT2A.g:1822:2: ( ( 'showInNav' ) )
-            // InternalT2A.g:1823:3: ( 'showInNav' )
+            // InternalT2A.g:1903:2: ( ( 'showInNav' ) )
+            // InternalT2A.g:1904:3: ( 'showInNav' )
             {
              before(grammarAccess.getPageAccess().getShowInNavShowInNavKeyword_5_0()); 
-            // InternalT2A.g:1824:3: ( 'showInNav' )
-            // InternalT2A.g:1825:4: 'showInNav'
+            // InternalT2A.g:1905:3: ( 'showInNav' )
+            // InternalT2A.g:1906:4: 'showInNav'
             {
              before(grammarAccess.getPageAccess().getShowInNavShowInNavKeyword_5_0()); 
             match(input,21,FOLLOW_2); 
@@ -5712,17 +5937,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Page__PageFeaturesAssignment_6"
-    // InternalT2A.g:1836:1: rule__Page__PageFeaturesAssignment_6 : ( rulePageFeature ) ;
+    // InternalT2A.g:1917:1: rule__Page__PageFeaturesAssignment_6 : ( rulePageFeature ) ;
     public final void rule__Page__PageFeaturesAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1840:1: ( ( rulePageFeature ) )
-            // InternalT2A.g:1841:2: ( rulePageFeature )
+            // InternalT2A.g:1921:1: ( ( rulePageFeature ) )
+            // InternalT2A.g:1922:2: ( rulePageFeature )
             {
-            // InternalT2A.g:1841:2: ( rulePageFeature )
-            // InternalT2A.g:1842:3: rulePageFeature
+            // InternalT2A.g:1922:2: ( rulePageFeature )
+            // InternalT2A.g:1923:3: rulePageFeature
             {
              before(grammarAccess.getPageAccess().getPageFeaturesPageFeatureParserRuleCall_6_0()); 
             pushFollow(FOLLOW_2);
@@ -5753,17 +5978,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StyleClass__NameAssignment_1"
-    // InternalT2A.g:1851:1: rule__StyleClass__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalT2A.g:1932:1: rule__StyleClass__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__StyleClass__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1855:1: ( ( RULE_ID ) )
-            // InternalT2A.g:1856:2: ( RULE_ID )
+            // InternalT2A.g:1936:1: ( ( RULE_ID ) )
+            // InternalT2A.g:1937:2: ( RULE_ID )
             {
-            // InternalT2A.g:1856:2: ( RULE_ID )
-            // InternalT2A.g:1857:3: RULE_ID
+            // InternalT2A.g:1937:2: ( RULE_ID )
+            // InternalT2A.g:1938:3: RULE_ID
             {
              before(grammarAccess.getStyleClassAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5790,17 +6015,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StyleClass__SattributesAssignment_3"
-    // InternalT2A.g:1866:1: rule__StyleClass__SattributesAssignment_3 : ( ruleSAttributeAndValue ) ;
+    // InternalT2A.g:1947:1: rule__StyleClass__SattributesAssignment_3 : ( ruleSAttributeAndValue ) ;
     public final void rule__StyleClass__SattributesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1870:1: ( ( ruleSAttributeAndValue ) )
-            // InternalT2A.g:1871:2: ( ruleSAttributeAndValue )
+            // InternalT2A.g:1951:1: ( ( ruleSAttributeAndValue ) )
+            // InternalT2A.g:1952:2: ( ruleSAttributeAndValue )
             {
-            // InternalT2A.g:1871:2: ( ruleSAttributeAndValue )
-            // InternalT2A.g:1872:3: ruleSAttributeAndValue
+            // InternalT2A.g:1952:2: ( ruleSAttributeAndValue )
+            // InternalT2A.g:1953:3: ruleSAttributeAndValue
             {
              before(grammarAccess.getStyleClassAccess().getSattributesSAttributeAndValueParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -5831,17 +6056,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SAttributeName__NameAssignment_1"
-    // InternalT2A.g:1881:1: rule__SAttributeName__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalT2A.g:1962:1: rule__SAttributeName__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__SAttributeName__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1885:1: ( ( RULE_ID ) )
-            // InternalT2A.g:1886:2: ( RULE_ID )
+            // InternalT2A.g:1966:1: ( ( RULE_ID ) )
+            // InternalT2A.g:1967:2: ( RULE_ID )
             {
-            // InternalT2A.g:1886:2: ( RULE_ID )
-            // InternalT2A.g:1887:3: RULE_ID
+            // InternalT2A.g:1967:2: ( RULE_ID )
+            // InternalT2A.g:1968:3: RULE_ID
             {
              before(grammarAccess.getSAttributeNameAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5868,21 +6093,21 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SAttributeAndValue__StnameAssignment_0"
-    // InternalT2A.g:1896:1: rule__SAttributeAndValue__StnameAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalT2A.g:1977:1: rule__SAttributeAndValue__StnameAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__SAttributeAndValue__StnameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1900:1: ( ( ( RULE_ID ) ) )
-            // InternalT2A.g:1901:2: ( ( RULE_ID ) )
+            // InternalT2A.g:1981:1: ( ( ( RULE_ID ) ) )
+            // InternalT2A.g:1982:2: ( ( RULE_ID ) )
             {
-            // InternalT2A.g:1901:2: ( ( RULE_ID ) )
-            // InternalT2A.g:1902:3: ( RULE_ID )
+            // InternalT2A.g:1982:2: ( ( RULE_ID ) )
+            // InternalT2A.g:1983:3: ( RULE_ID )
             {
              before(grammarAccess.getSAttributeAndValueAccess().getStnameSAttributeNameCrossReference_0_0()); 
-            // InternalT2A.g:1903:3: ( RULE_ID )
-            // InternalT2A.g:1904:4: RULE_ID
+            // InternalT2A.g:1984:3: ( RULE_ID )
+            // InternalT2A.g:1985:4: RULE_ID
             {
              before(grammarAccess.getSAttributeAndValueAccess().getStnameSAttributeNameIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5913,17 +6138,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SAttributeAndValue__ValueAssignment_2"
-    // InternalT2A.g:1915:1: rule__SAttributeAndValue__ValueAssignment_2 : ( RULE_STRING ) ;
+    // InternalT2A.g:1996:1: rule__SAttributeAndValue__ValueAssignment_2 : ( RULE_STRING ) ;
     public final void rule__SAttributeAndValue__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1919:1: ( ( RULE_STRING ) )
-            // InternalT2A.g:1920:2: ( RULE_STRING )
+            // InternalT2A.g:2000:1: ( ( RULE_STRING ) )
+            // InternalT2A.g:2001:2: ( RULE_STRING )
             {
-            // InternalT2A.g:1920:2: ( RULE_STRING )
-            // InternalT2A.g:1921:3: RULE_STRING
+            // InternalT2A.g:2001:2: ( RULE_STRING )
+            // InternalT2A.g:2002:3: RULE_STRING
             {
              before(grammarAccess.getSAttributeAndValueAccess().getValueSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -5950,17 +6175,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DOM__NameAssignment_1"
-    // InternalT2A.g:1930:1: rule__DOM__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalT2A.g:2011:1: rule__DOM__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__DOM__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1934:1: ( ( RULE_ID ) )
-            // InternalT2A.g:1935:2: ( RULE_ID )
+            // InternalT2A.g:2015:1: ( ( RULE_ID ) )
+            // InternalT2A.g:2016:2: ( RULE_ID )
             {
-            // InternalT2A.g:1935:2: ( RULE_ID )
-            // InternalT2A.g:1936:3: RULE_ID
+            // InternalT2A.g:2016:2: ( RULE_ID )
+            // InternalT2A.g:2017:3: RULE_ID
             {
              before(grammarAccess.getDOMAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5986,30 +6211,30 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__DOM__NameAssignment_1"
 
 
-    // $ANTLR start "rule__DOM__SclassesAssignment_2_1_1"
-    // InternalT2A.g:1945:1: rule__DOM__SclassesAssignment_2_1_1 : ( ( RULE_ID ) ) ;
-    public final void rule__DOM__SclassesAssignment_2_1_1() throws RecognitionException {
+    // $ANTLR start "rule__DOM__SclassesAssignment_2_1_2"
+    // InternalT2A.g:2026:1: rule__DOM__SclassesAssignment_2_1_2 : ( ( RULE_ID ) ) ;
+    public final void rule__DOM__SclassesAssignment_2_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1949:1: ( ( ( RULE_ID ) ) )
-            // InternalT2A.g:1950:2: ( ( RULE_ID ) )
+            // InternalT2A.g:2030:1: ( ( ( RULE_ID ) ) )
+            // InternalT2A.g:2031:2: ( ( RULE_ID ) )
             {
-            // InternalT2A.g:1950:2: ( ( RULE_ID ) )
-            // InternalT2A.g:1951:3: ( RULE_ID )
+            // InternalT2A.g:2031:2: ( ( RULE_ID ) )
+            // InternalT2A.g:2032:3: ( RULE_ID )
             {
-             before(grammarAccess.getDOMAccess().getSclassesStyleClassCrossReference_2_1_1_0()); 
-            // InternalT2A.g:1952:3: ( RULE_ID )
-            // InternalT2A.g:1953:4: RULE_ID
+             before(grammarAccess.getDOMAccess().getSclassesStyleClassCrossReference_2_1_2_0()); 
+            // InternalT2A.g:2033:3: ( RULE_ID )
+            // InternalT2A.g:2034:4: RULE_ID
             {
-             before(grammarAccess.getDOMAccess().getSclassesStyleClassIDTerminalRuleCall_2_1_1_0_1()); 
+             before(grammarAccess.getDOMAccess().getSclassesStyleClassIDTerminalRuleCall_2_1_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getDOMAccess().getSclassesStyleClassIDTerminalRuleCall_2_1_1_0_1()); 
+             after(grammarAccess.getDOMAccess().getSclassesStyleClassIDTerminalRuleCall_2_1_2_0_1()); 
 
             }
 
-             after(grammarAccess.getDOMAccess().getSclassesStyleClassCrossReference_2_1_1_0()); 
+             after(grammarAccess.getDOMAccess().getSclassesStyleClassCrossReference_2_1_2_0()); 
 
             }
 
@@ -6028,21 +6253,21 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__DOM__SclassesAssignment_2_1_1"
+    // $ANTLR end "rule__DOM__SclassesAssignment_2_1_2"
 
 
     // $ANTLR start "rule__DOM__FeaturesAssignment_2_2"
-    // InternalT2A.g:1964:1: rule__DOM__FeaturesAssignment_2_2 : ( ruleFeature ) ;
+    // InternalT2A.g:2045:1: rule__DOM__FeaturesAssignment_2_2 : ( ruleFeature ) ;
     public final void rule__DOM__FeaturesAssignment_2_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1968:1: ( ( ruleFeature ) )
-            // InternalT2A.g:1969:2: ( ruleFeature )
+            // InternalT2A.g:2049:1: ( ( ruleFeature ) )
+            // InternalT2A.g:2050:2: ( ruleFeature )
             {
-            // InternalT2A.g:1969:2: ( ruleFeature )
-            // InternalT2A.g:1970:3: ruleFeature
+            // InternalT2A.g:2050:2: ( ruleFeature )
+            // InternalT2A.g:2051:3: ruleFeature
             {
              before(grammarAccess.getDOMAccess().getFeaturesFeatureParserRuleCall_2_2_0()); 
             pushFollow(FOLLOW_2);
@@ -6073,17 +6298,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comp__NameAssignment_1"
-    // InternalT2A.g:1979:1: rule__Comp__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalT2A.g:2060:1: rule__Comp__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Comp__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1983:1: ( ( RULE_ID ) )
-            // InternalT2A.g:1984:2: ( RULE_ID )
+            // InternalT2A.g:2064:1: ( ( RULE_ID ) )
+            // InternalT2A.g:2065:2: ( RULE_ID )
             {
-            // InternalT2A.g:1984:2: ( RULE_ID )
-            // InternalT2A.g:1985:3: RULE_ID
+            // InternalT2A.g:2065:2: ( RULE_ID )
+            // InternalT2A.g:2066:3: RULE_ID
             {
              before(grammarAccess.getCompAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -6109,30 +6334,30 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Comp__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Comp__SclassesAssignment_2_1_1"
-    // InternalT2A.g:1994:1: rule__Comp__SclassesAssignment_2_1_1 : ( ( RULE_ID ) ) ;
-    public final void rule__Comp__SclassesAssignment_2_1_1() throws RecognitionException {
+    // $ANTLR start "rule__Comp__SclassesAssignment_2_1_2"
+    // InternalT2A.g:2075:1: rule__Comp__SclassesAssignment_2_1_2 : ( ( RULE_ID ) ) ;
+    public final void rule__Comp__SclassesAssignment_2_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:1998:1: ( ( ( RULE_ID ) ) )
-            // InternalT2A.g:1999:2: ( ( RULE_ID ) )
+            // InternalT2A.g:2079:1: ( ( ( RULE_ID ) ) )
+            // InternalT2A.g:2080:2: ( ( RULE_ID ) )
             {
-            // InternalT2A.g:1999:2: ( ( RULE_ID ) )
-            // InternalT2A.g:2000:3: ( RULE_ID )
+            // InternalT2A.g:2080:2: ( ( RULE_ID ) )
+            // InternalT2A.g:2081:3: ( RULE_ID )
             {
-             before(grammarAccess.getCompAccess().getSclassesStyleClassCrossReference_2_1_1_0()); 
-            // InternalT2A.g:2001:3: ( RULE_ID )
-            // InternalT2A.g:2002:4: RULE_ID
+             before(grammarAccess.getCompAccess().getSclassesStyleClassCrossReference_2_1_2_0()); 
+            // InternalT2A.g:2082:3: ( RULE_ID )
+            // InternalT2A.g:2083:4: RULE_ID
             {
-             before(grammarAccess.getCompAccess().getSclassesStyleClassIDTerminalRuleCall_2_1_1_0_1()); 
+             before(grammarAccess.getCompAccess().getSclassesStyleClassIDTerminalRuleCall_2_1_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getCompAccess().getSclassesStyleClassIDTerminalRuleCall_2_1_1_0_1()); 
+             after(grammarAccess.getCompAccess().getSclassesStyleClassIDTerminalRuleCall_2_1_2_0_1()); 
 
             }
 
-             after(grammarAccess.getCompAccess().getSclassesStyleClassCrossReference_2_1_1_0()); 
+             after(grammarAccess.getCompAccess().getSclassesStyleClassCrossReference_2_1_2_0()); 
 
             }
 
@@ -6151,21 +6376,21 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Comp__SclassesAssignment_2_1_1"
+    // $ANTLR end "rule__Comp__SclassesAssignment_2_1_2"
 
 
     // $ANTLR start "rule__Comp__FeaturesAssignment_2_2"
-    // InternalT2A.g:2013:1: rule__Comp__FeaturesAssignment_2_2 : ( ruleFeature ) ;
+    // InternalT2A.g:2094:1: rule__Comp__FeaturesAssignment_2_2 : ( ruleFeature ) ;
     public final void rule__Comp__FeaturesAssignment_2_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:2017:1: ( ( ruleFeature ) )
-            // InternalT2A.g:2018:2: ( ruleFeature )
+            // InternalT2A.g:2098:1: ( ( ruleFeature ) )
+            // InternalT2A.g:2099:2: ( ruleFeature )
             {
-            // InternalT2A.g:2018:2: ( ruleFeature )
-            // InternalT2A.g:2019:3: ruleFeature
+            // InternalT2A.g:2099:2: ( ruleFeature )
+            // InternalT2A.g:2100:3: ruleFeature
             {
              before(grammarAccess.getCompAccess().getFeaturesFeatureParserRuleCall_2_2_0()); 
             pushFollow(FOLLOW_2);
@@ -6196,21 +6421,21 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InstanciaEDOM__InstanciaAssignment_0"
-    // InternalT2A.g:2028:1: rule__InstanciaEDOM__InstanciaAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalT2A.g:2109:1: rule__InstanciaEDOM__InstanciaAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__InstanciaEDOM__InstanciaAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:2032:1: ( ( ( RULE_ID ) ) )
-            // InternalT2A.g:2033:2: ( ( RULE_ID ) )
+            // InternalT2A.g:2113:1: ( ( ( RULE_ID ) ) )
+            // InternalT2A.g:2114:2: ( ( RULE_ID ) )
             {
-            // InternalT2A.g:2033:2: ( ( RULE_ID ) )
-            // InternalT2A.g:2034:3: ( RULE_ID )
+            // InternalT2A.g:2114:2: ( ( RULE_ID ) )
+            // InternalT2A.g:2115:3: ( RULE_ID )
             {
              before(grammarAccess.getInstanciaEDOMAccess().getInstanciaEDOMCrossReference_0_0()); 
-            // InternalT2A.g:2035:3: ( RULE_ID )
-            // InternalT2A.g:2036:4: RULE_ID
+            // InternalT2A.g:2116:3: ( RULE_ID )
+            // InternalT2A.g:2117:4: RULE_ID
             {
              before(grammarAccess.getInstanciaEDOMAccess().getInstanciaEDOMIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -6241,17 +6466,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InstanciaEDOM__InsfeaturesAssignment_1_1"
-    // InternalT2A.g:2047:1: rule__InstanciaEDOM__InsfeaturesAssignment_1_1 : ( ruleInstanceEDOMFeature ) ;
+    // InternalT2A.g:2128:1: rule__InstanciaEDOM__InsfeaturesAssignment_1_1 : ( ruleInstanceEDOMFeature ) ;
     public final void rule__InstanciaEDOM__InsfeaturesAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:2051:1: ( ( ruleInstanceEDOMFeature ) )
-            // InternalT2A.g:2052:2: ( ruleInstanceEDOMFeature )
+            // InternalT2A.g:2132:1: ( ( ruleInstanceEDOMFeature ) )
+            // InternalT2A.g:2133:2: ( ruleInstanceEDOMFeature )
             {
-            // InternalT2A.g:2052:2: ( ruleInstanceEDOMFeature )
-            // InternalT2A.g:2053:3: ruleInstanceEDOMFeature
+            // InternalT2A.g:2133:2: ( ruleInstanceEDOMFeature )
+            // InternalT2A.g:2134:3: ruleInstanceEDOMFeature
             {
              before(grammarAccess.getInstanciaEDOMAccess().getInsfeaturesInstanceEDOMFeatureParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6282,17 +6507,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0"
-    // InternalT2A.g:2062:1: rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0 : ( ruleInstanciaEDOM ) ;
+    // InternalT2A.g:2143:1: rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0 : ( ruleInstanciaEDOM ) ;
     public final void rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:2066:1: ( ( ruleInstanciaEDOM ) )
-            // InternalT2A.g:2067:2: ( ruleInstanciaEDOM )
+            // InternalT2A.g:2147:1: ( ( ruleInstanciaEDOM ) )
+            // InternalT2A.g:2148:2: ( ruleInstanciaEDOM )
             {
-            // InternalT2A.g:2067:2: ( ruleInstanciaEDOM )
-            // InternalT2A.g:2068:3: ruleInstanciaEDOM
+            // InternalT2A.g:2148:2: ( ruleInstanciaEDOM )
+            // InternalT2A.g:2149:3: ruleInstanciaEDOM
             {
              before(grammarAccess.getInstanceEDOMFeatureAccess().getInstanciaEDOMInstanciaEDOMParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -6323,17 +6548,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InstanceEDOMFeature__StringAssignment_1"
-    // InternalT2A.g:2077:1: rule__InstanceEDOMFeature__StringAssignment_1 : ( RULE_STRING ) ;
+    // InternalT2A.g:2158:1: rule__InstanceEDOMFeature__StringAssignment_1 : ( RULE_STRING ) ;
     public final void rule__InstanceEDOMFeature__StringAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:2081:1: ( ( RULE_STRING ) )
-            // InternalT2A.g:2082:2: ( RULE_STRING )
+            // InternalT2A.g:2162:1: ( ( RULE_STRING ) )
+            // InternalT2A.g:2163:2: ( RULE_STRING )
             {
-            // InternalT2A.g:2082:2: ( RULE_STRING )
-            // InternalT2A.g:2083:3: RULE_STRING
+            // InternalT2A.g:2163:2: ( RULE_STRING )
+            // InternalT2A.g:2164:3: RULE_STRING
             {
              before(grammarAccess.getInstanceEDOMFeatureAccess().getStringSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -6360,17 +6585,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PageFeature__InstanciaEDOMAssignment_0"
-    // InternalT2A.g:2092:1: rule__PageFeature__InstanciaEDOMAssignment_0 : ( ruleInstanciaEDOM ) ;
+    // InternalT2A.g:2173:1: rule__PageFeature__InstanciaEDOMAssignment_0 : ( ruleInstanciaEDOM ) ;
     public final void rule__PageFeature__InstanciaEDOMAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:2096:1: ( ( ruleInstanciaEDOM ) )
-            // InternalT2A.g:2097:2: ( ruleInstanciaEDOM )
+            // InternalT2A.g:2177:1: ( ( ruleInstanciaEDOM ) )
+            // InternalT2A.g:2178:2: ( ruleInstanciaEDOM )
             {
-            // InternalT2A.g:2097:2: ( ruleInstanciaEDOM )
-            // InternalT2A.g:2098:3: ruleInstanciaEDOM
+            // InternalT2A.g:2178:2: ( ruleInstanciaEDOM )
+            // InternalT2A.g:2179:3: ruleInstanciaEDOM
             {
              before(grammarAccess.getPageFeatureAccess().getInstanciaEDOMInstanciaEDOMParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -6401,17 +6626,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PageFeature__StringAssignment_1"
-    // InternalT2A.g:2107:1: rule__PageFeature__StringAssignment_1 : ( RULE_STRING ) ;
+    // InternalT2A.g:2188:1: rule__PageFeature__StringAssignment_1 : ( RULE_STRING ) ;
     public final void rule__PageFeature__StringAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:2111:1: ( ( RULE_STRING ) )
-            // InternalT2A.g:2112:2: ( RULE_STRING )
+            // InternalT2A.g:2192:1: ( ( RULE_STRING ) )
+            // InternalT2A.g:2193:2: ( RULE_STRING )
             {
-            // InternalT2A.g:2112:2: ( RULE_STRING )
-            // InternalT2A.g:2113:3: RULE_STRING
+            // InternalT2A.g:2193:2: ( RULE_STRING )
+            // InternalT2A.g:2194:3: RULE_STRING
             {
              before(grammarAccess.getPageFeatureAccess().getStringSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -6438,17 +6663,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__InstanciaEDOMAssignment_0"
-    // InternalT2A.g:2122:1: rule__Feature__InstanciaEDOMAssignment_0 : ( ruleInstanciaEDOM ) ;
+    // InternalT2A.g:2203:1: rule__Feature__InstanciaEDOMAssignment_0 : ( ruleInstanciaEDOM ) ;
     public final void rule__Feature__InstanciaEDOMAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:2126:1: ( ( ruleInstanciaEDOM ) )
-            // InternalT2A.g:2127:2: ( ruleInstanciaEDOM )
+            // InternalT2A.g:2207:1: ( ( ruleInstanciaEDOM ) )
+            // InternalT2A.g:2208:2: ( ruleInstanciaEDOM )
             {
-            // InternalT2A.g:2127:2: ( ruleInstanciaEDOM )
-            // InternalT2A.g:2128:3: ruleInstanciaEDOM
+            // InternalT2A.g:2208:2: ( ruleInstanciaEDOM )
+            // InternalT2A.g:2209:3: ruleInstanciaEDOM
             {
              before(grammarAccess.getFeatureAccess().getInstanciaEDOMInstanciaEDOMParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -6479,21 +6704,21 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__AllowSlotAssignment_1"
-    // InternalT2A.g:2137:1: rule__Feature__AllowSlotAssignment_1 : ( ( 'AllowSlot' ) ) ;
+    // InternalT2A.g:2218:1: rule__Feature__AllowSlotAssignment_1 : ( ( 'AllowSlot' ) ) ;
     public final void rule__Feature__AllowSlotAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:2141:1: ( ( ( 'AllowSlot' ) ) )
-            // InternalT2A.g:2142:2: ( ( 'AllowSlot' ) )
+            // InternalT2A.g:2222:1: ( ( ( 'AllowSlot' ) ) )
+            // InternalT2A.g:2223:2: ( ( 'AllowSlot' ) )
             {
-            // InternalT2A.g:2142:2: ( ( 'AllowSlot' ) )
-            // InternalT2A.g:2143:3: ( 'AllowSlot' )
+            // InternalT2A.g:2223:2: ( ( 'AllowSlot' ) )
+            // InternalT2A.g:2224:3: ( 'AllowSlot' )
             {
              before(grammarAccess.getFeatureAccess().getAllowSlotAllowSlotKeyword_1_0()); 
-            // InternalT2A.g:2144:3: ( 'AllowSlot' )
-            // InternalT2A.g:2145:4: 'AllowSlot'
+            // InternalT2A.g:2225:3: ( 'AllowSlot' )
+            // InternalT2A.g:2226:4: 'AllowSlot'
             {
              before(grammarAccess.getFeatureAccess().getAllowSlotAllowSlotKeyword_1_0()); 
             match(input,22,FOLLOW_2); 
@@ -6524,17 +6749,17 @@ public class InternalT2AParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Feature__StringAssignment_2"
-    // InternalT2A.g:2156:1: rule__Feature__StringAssignment_2 : ( RULE_STRING ) ;
+    // InternalT2A.g:2237:1: rule__Feature__StringAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Feature__StringAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalT2A.g:2160:1: ( ( RULE_STRING ) )
-            // InternalT2A.g:2161:2: ( RULE_STRING )
+            // InternalT2A.g:2241:1: ( ( RULE_STRING ) )
+            // InternalT2A.g:2242:2: ( RULE_STRING )
             {
-            // InternalT2A.g:2161:2: ( RULE_STRING )
-            // InternalT2A.g:2162:3: RULE_STRING
+            // InternalT2A.g:2242:2: ( RULE_STRING )
+            // InternalT2A.g:2243:3: RULE_STRING
             {
              before(grammarAccess.getFeatureAccess().getStringSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 

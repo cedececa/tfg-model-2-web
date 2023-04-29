@@ -51,7 +51,7 @@ public class T2AParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getInstanciaEDOMAccess().getGroup_1(), "rule__InstanciaEDOM__Group_1__0");
 			builder.put(grammarAccess.getRootAccess().getElementsAssignment(), "rule__Root__ElementsAssignment");
 			builder.put(grammarAccess.getPageAccess().getNameAssignment_1(), "rule__Page__NameAssignment_1");
-			builder.put(grammarAccess.getPageAccess().getSclassesAssignment_3_1(), "rule__Page__SclassesAssignment_3_1");
+			builder.put(grammarAccess.getPageAccess().getSclassesAssignment_3_2(), "rule__Page__SclassesAssignment_3_2");
 			builder.put(grammarAccess.getPageAccess().getHomeAssignment_4(), "rule__Page__HomeAssignment_4");
 			builder.put(grammarAccess.getPageAccess().getShowInNavAssignment_5(), "rule__Page__ShowInNavAssignment_5");
 			builder.put(grammarAccess.getPageAccess().getPageFeaturesAssignment_6(), "rule__Page__PageFeaturesAssignment_6");
@@ -61,10 +61,10 @@ public class T2AParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSAttributeAndValueAccess().getStnameAssignment_0(), "rule__SAttributeAndValue__StnameAssignment_0");
 			builder.put(grammarAccess.getSAttributeAndValueAccess().getValueAssignment_2(), "rule__SAttributeAndValue__ValueAssignment_2");
 			builder.put(grammarAccess.getDOMAccess().getNameAssignment_1(), "rule__DOM__NameAssignment_1");
-			builder.put(grammarAccess.getDOMAccess().getSclassesAssignment_2_1_1(), "rule__DOM__SclassesAssignment_2_1_1");
+			builder.put(grammarAccess.getDOMAccess().getSclassesAssignment_2_1_2(), "rule__DOM__SclassesAssignment_2_1_2");
 			builder.put(grammarAccess.getDOMAccess().getFeaturesAssignment_2_2(), "rule__DOM__FeaturesAssignment_2_2");
 			builder.put(grammarAccess.getCompAccess().getNameAssignment_1(), "rule__Comp__NameAssignment_1");
-			builder.put(grammarAccess.getCompAccess().getSclassesAssignment_2_1_1(), "rule__Comp__SclassesAssignment_2_1_1");
+			builder.put(grammarAccess.getCompAccess().getSclassesAssignment_2_1_2(), "rule__Comp__SclassesAssignment_2_1_2");
 			builder.put(grammarAccess.getCompAccess().getFeaturesAssignment_2_2(), "rule__Comp__FeaturesAssignment_2_2");
 			builder.put(grammarAccess.getInstanciaEDOMAccess().getInstanciaAssignment_0(), "rule__InstanciaEDOM__InstanciaAssignment_0");
 			builder.put(grammarAccess.getInstanciaEDOMAccess().getInsfeaturesAssignment_1_1(), "rule__InstanciaEDOM__InsfeaturesAssignment_1_1");
