@@ -199,7 +199,7 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     SAttributeAndValue returns SAttributeAndValue
 	 *
 	 * Constraint:
-	 *     (stname=ID value=STRING2)
+	 *     (stname=Name value=STRING2)
 	 * </pre>
 	 */
 	protected void sequence_SAttributeAndValue(ISerializationContext context, SAttributeAndValue semanticObject) {
@@ -210,7 +210,7 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, T2APackage.Literals.SATTRIBUTE_AND_VALUE__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSAttributeAndValueAccess().getStnameIDTerminalRuleCall_0_0(), semanticObject.getStname());
+		feeder.accept(grammarAccess.getSAttributeAndValueAccess().getStnameNameParserRuleCall_0_0(), semanticObject.getStname());
 		feeder.accept(grammarAccess.getSAttributeAndValueAccess().getValueSTRING2TerminalRuleCall_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
@@ -224,7 +224,7 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     StyleClass returns StyleClass
 	 *
 	 * Constraint:
-	 *     (name=ID sattributes+=SAttributeAndValue*)
+	 *     (name=Name sattributes+=SAttributeAndValue*)
 	 * </pre>
 	 */
 	protected void sequence_StyleClass(ISerializationContext context, StyleClass semanticObject) {

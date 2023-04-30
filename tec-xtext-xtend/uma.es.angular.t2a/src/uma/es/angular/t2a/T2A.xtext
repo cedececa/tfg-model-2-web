@@ -23,7 +23,7 @@ EDOM:
 
 
 StyleClass:
-	'StyleClass' name=ID
+	'StyleClass' name=Name
 	'{'
 		(sattributes+=SAttributeAndValue';')*
 	'}'
@@ -31,7 +31,7 @@ StyleClass:
 
 
 SAttributeAndValue:
-	stname=ID value=STRING2
+	stname=Name value=STRING2
 ;
 
 
@@ -50,8 +50,7 @@ Comp:
 		(features+=Feature)*
 	'}'	
 	)?
-
-	;
+;
 	
 InstanciaEDOM: instancia=[EDOM] ('{' 
 		(insfeatures+=InstanceEDOMFeature)*
@@ -71,17 +70,21 @@ Feature:
     string=STRING
 ; 
 
+
+Name:
+	 ('_'|'#'|'-'|'*'|'.'|'::'|'>'|ID)*
+;
+
 @Override 
 terminal STRING:
     '"' ( '\\'('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
     "'" ( '\\'('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'";
     
-@Override 
-terminal ID: 
-    ('^')?('a'..'z'|'A'..'Z'|'_'|'#'|'-'|'*') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'#'|'-'|'*')*;
+
+
    
 terminal STRING2: 
-    (':'|': '|' : ')('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'#'|'-'|'%'|'*'|','|', ') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'#'|'-'|'%'|'*'|','|', ')*;
+    (': '|':'|' : ')('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'#'|'-'|'%'|'*'|','|', '|'('|')'|'px '|'"') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'#'|'-'|'%'|'*'|','|', '|'('|')'|'px '|'"')*;
     
     
     

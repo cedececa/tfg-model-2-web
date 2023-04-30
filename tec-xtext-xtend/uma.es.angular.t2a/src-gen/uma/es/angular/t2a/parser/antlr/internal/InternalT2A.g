@@ -166,7 +166,7 @@ rulePage returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"uma.es.angular.t2a.T2A.ID");
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -322,19 +322,20 @@ ruleStyleClass returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getStyleClassAccess().getNameIDTerminalRuleCall_1_0());
+					newCompositeNode(grammarAccess.getStyleClassAccess().getNameNameParserRuleCall_1_0());
 				}
+				lv_name_1_0=ruleName
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getStyleClassRule());
+						$current = createModelElementForParent(grammarAccess.getStyleClassRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"name",
 						lv_name_1_0,
-						"uma.es.angular.t2a.T2A.ID");
+						"uma.es.angular.t2a.T2A.Name");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -392,19 +393,20 @@ ruleSAttributeAndValue returns [EObject current=null]
 	(
 		(
 			(
-				lv_stname_0_0=RULE_ID
 				{
-					newLeafNode(lv_stname_0_0, grammarAccess.getSAttributeAndValueAccess().getStnameIDTerminalRuleCall_0_0());
+					newCompositeNode(grammarAccess.getSAttributeAndValueAccess().getStnameNameParserRuleCall_0_0());
 				}
+				lv_stname_0_0=ruleName
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSAttributeAndValueRule());
+						$current = createModelElementForParent(grammarAccess.getSAttributeAndValueRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"stname",
 						lv_stname_0_0,
-						"uma.es.angular.t2a.T2A.ID");
+						"uma.es.angular.t2a.T2A.Name");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -463,7 +465,7 @@ ruleDOM returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"uma.es.angular.t2a.T2A.ID");
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -560,7 +562,7 @@ ruleComp returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"uma.es.angular.t2a.T2A.ID");
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -870,11 +872,79 @@ ruleFeature returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleName
+entryRuleName returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getNameRule()); }
+	iv_ruleName=ruleName
+	{ $current=$iv_ruleName.current.getText(); }
+	EOF;
+
+// Rule Name
+ruleName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw='_'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getNameAccess().get_Keyword_0());
+		}
+		    |
+		kw='#'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getNameAccess().getNumberSignKeyword_1());
+		}
+		    |
+		kw='-'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getNameAccess().getHyphenMinusKeyword_2());
+		}
+		    |
+		kw='*'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getNameAccess().getAsteriskKeyword_3());
+		}
+		    |
+		kw='.'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getNameAccess().getFullStopKeyword_4());
+		}
+		    |
+		kw='::'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getNameAccess().getColonColonKeyword_5());
+		}
+		    |
+		kw='>'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getNameAccess().getGreaterThanSignKeyword_6());
+		}
+		    |
+		this_ID_7=RULE_ID
+		{
+			$current.merge(this_ID_7);
+		}
+		{
+			newLeafNode(this_ID_7, grammarAccess.getNameAccess().getIDTerminalRuleCall_7());
+		}
+	)*
+;
+
 RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
 
-RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_'|'#'|'-'|'*') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'#'|'-'|'*')*;
+RULE_STRING2 : (': '|':'|' : ') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'#'|'-'|'%'|'*'|','|', '|'('|')'|'px '|'"') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'#'|'-'|'%'|'*'|','|', '|'('|')'|'px '|'"')*;
 
-RULE_STRING2 : (':'|': '|' : ') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'#'|'-'|'%'|'*'|','|', ') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'#'|'-'|'%'|'*'|','|', ')*;
+RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
 

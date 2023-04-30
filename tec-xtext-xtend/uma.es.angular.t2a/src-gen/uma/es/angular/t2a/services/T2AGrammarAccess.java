@@ -180,7 +180,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cStyleClassKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Assignment cSattributesAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
@@ -189,14 +189,14 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//StyleClass:
-		//    'StyleClass' name=ID
+		//    'StyleClass' name=Name
 		//    '{'
 		//        (sattributes+=SAttributeAndValue';')*
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'StyleClass' name=ID
+		//'StyleClass' name=Name
 		//'{'
 		//    (sattributes+=SAttributeAndValue';')*
 		//'}'
@@ -205,11 +205,11 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'StyleClass'
 		public Keyword getStyleClassKeyword_0() { return cStyleClassKeyword_0; }
 		
-		//name=ID
+		//name=Name
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		//Name
+		public RuleCall getNameNameParserRuleCall_1_0() { return cNameNameParserRuleCall_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
@@ -233,23 +233,23 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.SAttributeAndValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cStnameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cStnameIDTerminalRuleCall_0_0 = (RuleCall)cStnameAssignment_0.eContents().get(0);
+		private final RuleCall cStnameNameParserRuleCall_0_0 = (RuleCall)cStnameAssignment_0.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRING2TerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
 		
 		//SAttributeAndValue:
-		//    stname=ID value=STRING2
+		//    stname=Name value=STRING2
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//stname=ID value=STRING2
+		//stname=Name value=STRING2
 		public Group getGroup() { return cGroup; }
 		
-		//stname=ID
+		//stname=Name
 		public Assignment getStnameAssignment_0() { return cStnameAssignment_0; }
 		
-		//ID
-		public RuleCall getStnameIDTerminalRuleCall_0_0() { return cStnameIDTerminalRuleCall_0_0; }
+		//Name
+		public RuleCall getStnameNameParserRuleCall_0_0() { return cStnameNameParserRuleCall_0_0; }
 		
 		//value=STRING2
 		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
@@ -366,7 +366,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//        (features+=Feature)*
 		//    '}'
 		//    )?
-		//    ;
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Comp' name=ID
@@ -575,6 +575,50 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//STRING
 		public RuleCall getStringSTRINGTerminalRuleCall_2_0() { return cStringSTRINGTerminalRuleCall_2_0; }
 	}
+	public class NameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.Name");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword c_Keyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cNumberSignKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cAsteriskKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cFullStopKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cColonColonKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Keyword cGreaterThanSignKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final RuleCall cIDTerminalRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		
+		//Name:
+		//     ('_'|'#'|'-'|'*'|'.'|'::'|'>'|ID)*
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//('_'|'#'|'-'|'*'|'.'|'::'|'>'|ID)*
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'_'
+		public Keyword get_Keyword_0() { return c_Keyword_0; }
+		
+		//'#'
+		public Keyword getNumberSignKeyword_1() { return cNumberSignKeyword_1; }
+		
+		//'-'
+		public Keyword getHyphenMinusKeyword_2() { return cHyphenMinusKeyword_2; }
+		
+		//'*'
+		public Keyword getAsteriskKeyword_3() { return cAsteriskKeyword_3; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
+		
+		//'::'
+		public Keyword getColonColonKeyword_5() { return cColonColonKeyword_5; }
+		
+		//'>'
+		public Keyword getGreaterThanSignKeyword_6() { return cGreaterThanSignKeyword_6; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_7() { return cIDTerminalRuleCall_7; }
+	}
 	
 	
 	private final RootElements pRoot;
@@ -589,8 +633,8 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	private final InstanceEDOMFeatureElements pInstanceEDOMFeature;
 	private final PageFeatureElements pPageFeature;
 	private final FeatureElements pFeature;
+	private final NameElements pName;
 	private final TerminalRule tSTRING;
-	private final TerminalRule tID;
 	private final TerminalRule tSTRING2;
 	
 	private final Grammar grammar;
@@ -614,8 +658,8 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		this.pInstanceEDOMFeature = new InstanceEDOMFeatureElements();
 		this.pPageFeature = new PageFeatureElements();
 		this.pFeature = new FeatureElements();
+		this.pName = new NameElements();
 		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.STRING");
-		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.ID");
 		this.tSTRING2 = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.STRING2");
 	}
 	
@@ -693,7 +737,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//StyleClass:
-	//    'StyleClass' name=ID
+	//    'StyleClass' name=Name
 	//    '{'
 	//        (sattributes+=SAttributeAndValue';')*
 	//    '}'
@@ -707,7 +751,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//SAttributeAndValue:
-	//    stname=ID value=STRING2
+	//    stname=Name value=STRING2
 	//;
 	public SAttributeAndValueElements getSAttributeAndValueAccess() {
 		return pSAttributeAndValue;
@@ -739,7 +783,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//        (features+=Feature)*
 	//    '}'
 	//    )?
-	//    ;
+	//;
 	public CompElements getCompAccess() {
 		return pComp;
 	}
@@ -794,6 +838,17 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getFeatureAccess().getRule();
 	}
 	
+	//Name:
+	//     ('_'|'#'|'-'|'*'|'.'|'::'|'>'|ID)*
+	//;
+	public NameElements getNameAccess() {
+		return pName;
+	}
+	
+	public ParserRule getNameRule() {
+		return getNameAccess().getRule();
+	}
+	
 	//@Override
 	//terminal STRING:
 	//    '"' ( '\\'('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
@@ -802,17 +857,15 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return tSTRING;
 	}
 	
-	//@Override
-	//terminal ID:
-	//    ('^')?('a'..'z'|'A'..'Z'|'_'|'#'|'-'|'*') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'#'|'-'|'*')*;
-	public TerminalRule getIDRule() {
-		return tID;
-	}
-	
 	//terminal STRING2:
-	//    (':'|': '|' : ')('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'#'|'-'|'%'|'*'|','|', ') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'#'|'-'|'%'|'*'|','|', ')*;
+	//    (': '|':'|' : ')('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'#'|'-'|'%'|'*'|','|', '|'('|')'|'px '|'"') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'#'|'-'|'%'|'*'|','|', '|'('|')'|'px '|'"')*;
 	public TerminalRule getSTRING2Rule() {
 		return tSTRING2;
+	}
+	
+	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+	public TerminalRule getIDRule() {
+		return gaTerminals.getIDRule();
 	}
 	
 	//terminal INT returns ecore::EInt: ('0'..'9')+;
