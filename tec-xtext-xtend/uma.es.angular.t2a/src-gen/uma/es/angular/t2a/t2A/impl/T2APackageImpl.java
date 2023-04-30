@@ -19,7 +19,6 @@ import uma.es.angular.t2a.t2A.Page;
 import uma.es.angular.t2a.t2A.PageFeature;
 import uma.es.angular.t2a.t2A.Root;
 import uma.es.angular.t2a.t2A.SAttributeAndValue;
-import uma.es.angular.t2a.t2A.SAttributeName;
 import uma.es.angular.t2a.t2A.StyleClass;
 import uma.es.angular.t2a.t2A.T2AFactory;
 import uma.es.angular.t2a.t2A.T2APackage;
@@ -66,13 +65,6 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
    * @generated
    */
   private EClass styleClassEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass sAttributeNameEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -324,17 +316,6 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
    * @generated
    */
   @Override
-  public EClass getSAttributeName()
-  {
-    return sAttributeNameEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getSAttributeAndValue()
   {
     return sAttributeAndValueEClass;
@@ -346,9 +327,9 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
    * @generated
    */
   @Override
-  public EReference getSAttributeAndValue_Stname()
+  public EAttribute getSAttributeAndValue_Stname()
   {
-    return (EReference)sAttributeAndValueEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)sAttributeAndValueEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -619,10 +600,8 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
     styleClassEClass = createEClass(STYLE_CLASS);
     createEReference(styleClassEClass, STYLE_CLASS__SATTRIBUTES);
 
-    sAttributeNameEClass = createEClass(SATTRIBUTE_NAME);
-
     sAttributeAndValueEClass = createEClass(SATTRIBUTE_AND_VALUE);
-    createEReference(sAttributeAndValueEClass, SATTRIBUTE_AND_VALUE__STNAME);
+    createEAttribute(sAttributeAndValueEClass, SATTRIBUTE_AND_VALUE__STNAME);
     createEAttribute(sAttributeAndValueEClass, SATTRIBUTE_AND_VALUE__VALUE);
 
     domEClass = createEClass(DOM);
@@ -683,7 +662,6 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
     pageEClass.getESuperTypes().add(this.getElement());
     edomEClass.getESuperTypes().add(this.getElement());
     styleClassEClass.getESuperTypes().add(this.getEDOM());
-    sAttributeNameEClass.getESuperTypes().add(this.getEDOM());
     domEClass.getESuperTypes().add(this.getEDOM());
     compEClass.getESuperTypes().add(this.getEDOM());
 
@@ -705,10 +683,8 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
     initEClass(styleClassEClass, StyleClass.class, "StyleClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStyleClass_Sattributes(), this.getSAttributeAndValue(), null, "sattributes", null, 0, -1, StyleClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(sAttributeNameEClass, SAttributeName.class, "SAttributeName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
     initEClass(sAttributeAndValueEClass, SAttributeAndValue.class, "SAttributeAndValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSAttributeAndValue_Stname(), this.getSAttributeName(), null, "stname", null, 0, 1, SAttributeAndValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSAttributeAndValue_Stname(), ecorePackage.getEString(), "stname", null, 0, 1, SAttributeAndValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSAttributeAndValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, SAttributeAndValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(domEClass, uma.es.angular.t2a.t2A.DOM.class, "DOM", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

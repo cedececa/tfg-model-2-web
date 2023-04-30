@@ -166,7 +166,7 @@ rulePage returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"uma.es.angular.t2a.T2A.ID");
 				}
 			)
 		)
@@ -297,15 +297,6 @@ ruleEDOM returns [EObject current=null]
 			$current = $this_StyleClass_2.current;
 			afterParserOrEnumRuleCall();
 		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getEDOMAccess().getSAttributeNameParserRuleCall_3());
-		}
-		this_SAttributeName_3=ruleSAttributeName
-		{
-			$current = $this_SAttributeName_3.current;
-			afterParserOrEnumRuleCall();
-		}
 	)
 ;
 
@@ -343,7 +334,7 @@ ruleStyleClass returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"uma.es.angular.t2a.T2A.ID");
 				}
 			)
 		)
@@ -353,68 +344,33 @@ ruleStyleClass returns [EObject current=null]
 		}
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getStyleClassAccess().getSattributesSAttributeAndValueParserRuleCall_3_0());
-				}
-				lv_sattributes_3_0=ruleSAttributeAndValue
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getStyleClassRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getStyleClassAccess().getSattributesSAttributeAndValueParserRuleCall_3_0_0());
 					}
-					add(
-						$current,
-						"sattributes",
-						lv_sattributes_3_0,
-						"uma.es.angular.t2a.T2A.SAttributeAndValue");
-					afterParserOrEnumRuleCall();
-				}
+					lv_sattributes_3_0=ruleSAttributeAndValue
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getStyleClassRule());
+						}
+						add(
+							$current,
+							"sattributes",
+							lv_sattributes_3_0,
+							"uma.es.angular.t2a.T2A.SAttributeAndValue");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
+			otherlv_4=';'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getStyleClassAccess().getSemicolonKeyword_3_1());
+			}
 		)*
-		otherlv_4='}'
+		otherlv_5='}'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getStyleClassAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getStyleClassAccess().getRightCurlyBracketKeyword_4());
 		}
-	)
-;
-
-// Entry rule entryRuleSAttributeName
-entryRuleSAttributeName returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getSAttributeNameRule()); }
-	iv_ruleSAttributeName=ruleSAttributeName
-	{ $current=$iv_ruleSAttributeName.current; }
-	EOF;
-
-// Rule SAttributeName
-ruleSAttributeName returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='SAttri'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getSAttributeNameAccess().getSAttriKeyword_0());
-		}
-		(
-			(
-				lv_name_1_0=RULE_ID
-				{
-					newLeafNode(lv_name_1_0, grammarAccess.getSAttributeNameAccess().getNameIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSAttributeNameRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
 	)
 ;
 
@@ -436,26 +392,27 @@ ruleSAttributeAndValue returns [EObject current=null]
 	(
 		(
 			(
+				lv_stname_0_0=RULE_ID
+				{
+					newLeafNode(lv_stname_0_0, grammarAccess.getSAttributeAndValueAccess().getStnameIDTerminalRuleCall_0_0());
+				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getSAttributeAndValueRule());
 					}
-				}
-				otherlv_0=RULE_ID
-				{
-					newLeafNode(otherlv_0, grammarAccess.getSAttributeAndValueAccess().getStnameSAttributeNameCrossReference_0_0());
+					setWithLastConsumed(
+						$current,
+						"stname",
+						lv_stname_0_0,
+						"uma.es.angular.t2a.T2A.ID");
 				}
 			)
 		)
-		otherlv_1=':'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getSAttributeAndValueAccess().getColonKeyword_1());
-		}
 		(
 			(
-				lv_value_2_0=RULE_STRING
+				lv_value_1_0=RULE_STRING2
 				{
-					newLeafNode(lv_value_2_0, grammarAccess.getSAttributeAndValueAccess().getValueSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_value_1_0, grammarAccess.getSAttributeAndValueAccess().getValueSTRING2TerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -464,8 +421,8 @@ ruleSAttributeAndValue returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"value",
-						lv_value_2_0,
-						"uma.es.angular.t2a.T2A.STRING");
+						lv_value_1_0,
+						"uma.es.angular.t2a.T2A.STRING2");
 				}
 			)
 		)
@@ -506,7 +463,7 @@ ruleDOM returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"uma.es.angular.t2a.T2A.ID");
 				}
 			)
 		)
@@ -603,7 +560,7 @@ ruleComp returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"uma.es.angular.t2a.T2A.ID");
 				}
 			)
 		)
@@ -915,7 +872,9 @@ ruleFeature returns [EObject current=null]
 
 RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
 
-RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_'|'#'|'-'|'*') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'#'|'-'|'*')*;
+
+RULE_STRING2 : (':'|': '|' : ') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'#'|'-'|'%'|'*'|','|', ') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'#'|'-'|'%'|'*'|','|', ')*;
 
 RULE_INT : ('0'..'9')+;
 

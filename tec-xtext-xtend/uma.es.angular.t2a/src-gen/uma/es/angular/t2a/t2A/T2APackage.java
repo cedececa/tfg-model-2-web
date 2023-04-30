@@ -243,34 +243,6 @@ public interface T2APackage extends EPackage
   int STYLE_CLASS_FEATURE_COUNT = EDOM_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.SAttributeNameImpl <em>SAttribute Name</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uma.es.angular.t2a.t2A.impl.SAttributeNameImpl
-   * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getSAttributeName()
-   * @generated
-   */
-  int SATTRIBUTE_NAME = 5;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SATTRIBUTE_NAME__NAME = EDOM__NAME;
-
-  /**
-   * The number of structural features of the '<em>SAttribute Name</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SATTRIBUTE_NAME_FEATURE_COUNT = EDOM_FEATURE_COUNT + 0;
-
-  /**
    * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.SAttributeAndValueImpl <em>SAttribute And Value</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -278,10 +250,10 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getSAttributeAndValue()
    * @generated
    */
-  int SATTRIBUTE_AND_VALUE = 6;
+  int SATTRIBUTE_AND_VALUE = 5;
 
   /**
-   * The feature id for the '<em><b>Stname</b></em>' reference.
+   * The feature id for the '<em><b>Stname</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -315,7 +287,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getDOM()
    * @generated
    */
-  int DOM = 7;
+  int DOM = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -361,7 +333,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getComp()
    * @generated
    */
-  int COMP = 8;
+  int COMP = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -407,7 +379,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getInstanciaEDOM()
    * @generated
    */
-  int INSTANCIA_EDOM = 9;
+  int INSTANCIA_EDOM = 8;
 
   /**
    * The feature id for the '<em><b>Instancia</b></em>' reference.
@@ -444,7 +416,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getInstanceEDOMFeature()
    * @generated
    */
-  int INSTANCE_EDOM_FEATURE = 10;
+  int INSTANCE_EDOM_FEATURE = 9;
 
   /**
    * The feature id for the '<em><b>Instancia EDOM</b></em>' containment reference.
@@ -481,7 +453,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getPageFeature()
    * @generated
    */
-  int PAGE_FEATURE = 11;
+  int PAGE_FEATURE = 10;
 
   /**
    * The feature id for the '<em><b>Instancia EDOM</b></em>' containment reference.
@@ -518,7 +490,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getFeature()
    * @generated
    */
-  int FEATURE = 12;
+  int FEATURE = 11;
 
   /**
    * The feature id for the '<em><b>Instancia EDOM</b></em>' containment reference.
@@ -685,16 +657,6 @@ public interface T2APackage extends EPackage
   EReference getStyleClass_Sattributes();
 
   /**
-   * Returns the meta object for class '{@link uma.es.angular.t2a.t2A.SAttributeName <em>SAttribute Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>SAttribute Name</em>'.
-   * @see uma.es.angular.t2a.t2A.SAttributeName
-   * @generated
-   */
-  EClass getSAttributeName();
-
-  /**
    * Returns the meta object for class '{@link uma.es.angular.t2a.t2A.SAttributeAndValue <em>SAttribute And Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -705,15 +667,15 @@ public interface T2APackage extends EPackage
   EClass getSAttributeAndValue();
 
   /**
-   * Returns the meta object for the reference '{@link uma.es.angular.t2a.t2A.SAttributeAndValue#getStname <em>Stname</em>}'.
+   * Returns the meta object for the attribute '{@link uma.es.angular.t2a.t2A.SAttributeAndValue#getStname <em>Stname</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Stname</em>'.
+   * @return the meta object for the attribute '<em>Stname</em>'.
    * @see uma.es.angular.t2a.t2A.SAttributeAndValue#getStname()
    * @see #getSAttributeAndValue()
    * @generated
    */
-  EReference getSAttributeAndValue_Stname();
+  EAttribute getSAttributeAndValue_Stname();
 
   /**
    * Returns the meta object for the attribute '{@link uma.es.angular.t2a.t2A.SAttributeAndValue#getValue <em>Value</em>}'.
@@ -1059,16 +1021,6 @@ public interface T2APackage extends EPackage
     EReference STYLE_CLASS__SATTRIBUTES = eINSTANCE.getStyleClass_Sattributes();
 
     /**
-     * The meta object literal for the '{@link uma.es.angular.t2a.t2A.impl.SAttributeNameImpl <em>SAttribute Name</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uma.es.angular.t2a.t2A.impl.SAttributeNameImpl
-     * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getSAttributeName()
-     * @generated
-     */
-    EClass SATTRIBUTE_NAME = eINSTANCE.getSAttributeName();
-
-    /**
      * The meta object literal for the '{@link uma.es.angular.t2a.t2A.impl.SAttributeAndValueImpl <em>SAttribute And Value</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1079,12 +1031,12 @@ public interface T2APackage extends EPackage
     EClass SATTRIBUTE_AND_VALUE = eINSTANCE.getSAttributeAndValue();
 
     /**
-     * The meta object literal for the '<em><b>Stname</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Stname</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SATTRIBUTE_AND_VALUE__STNAME = eINSTANCE.getSAttributeAndValue_Stname();
+    EAttribute SATTRIBUTE_AND_VALUE__STNAME = eINSTANCE.getSAttributeAndValue_Stname();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.

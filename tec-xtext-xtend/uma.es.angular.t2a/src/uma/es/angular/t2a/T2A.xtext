@@ -18,23 +18,20 @@ Page:
 	'}';
 
 EDOM:
-	DOM | Comp | StyleClass | SAttributeName;
+	DOM | Comp | StyleClass ;
 
 
 
 StyleClass:
 	'StyleClass' name=ID
 	'{'
-		(sattributes+=SAttributeAndValue)*
+		(sattributes+=SAttributeAndValue';')*
 	'}'
 ;
 
-SAttributeName:
-	'SAttri' name=ID 
-;
 
 SAttributeAndValue:
-	stname=[SAttributeName] ':' value=STRING
+	stname=ID value=STRING2
 ;
 
 
@@ -78,3 +75,13 @@ Feature:
 terminal STRING:
     '"' ( '\\'('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
     "'" ( '\\'('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'";
+    
+@Override 
+terminal ID: 
+    ('^')?('a'..'z'|'A'..'Z'|'_'|'#'|'-'|'*') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'#'|'-'|'*')*;
+   
+terminal STRING2: 
+    (':'|': '|' : ')('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'#'|'-'|'%'|'*'|','|', ') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'#'|'-'|'%'|'*'|','|', ')*;
+    
+    
+    

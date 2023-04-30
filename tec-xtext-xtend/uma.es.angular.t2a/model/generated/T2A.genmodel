@@ -22,9 +22,8 @@
     <genClasses ecoreClass="T2A.ecore#//StyleClass">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//StyleClass/sattributes"/>
     </genClasses>
-    <genClasses ecoreClass="T2A.ecore#//SAttributeName"/>
     <genClasses ecoreClass="T2A.ecore#//SAttributeAndValue">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference T2A.ecore#//SAttributeAndValue/stname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T2A.ecore#//SAttributeAndValue/stname"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T2A.ecore#//SAttributeAndValue/value"/>
     </genClasses>
     <genClasses ecoreClass="T2A.ecore#//DOM">

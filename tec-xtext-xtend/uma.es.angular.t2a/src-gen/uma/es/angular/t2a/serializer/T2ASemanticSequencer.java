@@ -24,7 +24,6 @@ import uma.es.angular.t2a.t2A.Page;
 import uma.es.angular.t2a.t2A.PageFeature;
 import uma.es.angular.t2a.t2A.Root;
 import uma.es.angular.t2a.t2A.SAttributeAndValue;
-import uma.es.angular.t2a.t2A.SAttributeName;
 import uma.es.angular.t2a.t2A.StyleClass;
 import uma.es.angular.t2a.t2A.T2APackage;
 
@@ -68,9 +67,6 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case T2APackage.SATTRIBUTE_AND_VALUE:
 				sequence_SAttributeAndValue(context, (SAttributeAndValue) semanticObject); 
-				return; 
-			case T2APackage.SATTRIBUTE_NAME:
-				sequence_SAttributeName(context, (SAttributeName) semanticObject); 
 				return; 
 			case T2APackage.STYLE_CLASS:
 				sequence_StyleClass(context, (StyleClass) semanticObject); 
@@ -203,7 +199,7 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     SAttributeAndValue returns SAttributeAndValue
 	 *
 	 * Constraint:
-	 *     (stname=[SAttributeName|ID] value=STRING)
+	 *     (stname=ID value=STRING2)
 	 * </pre>
 	 */
 	protected void sequence_SAttributeAndValue(ISerializationContext context, SAttributeAndValue semanticObject) {
@@ -214,30 +210,8 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, T2APackage.Literals.SATTRIBUTE_AND_VALUE__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSAttributeAndValueAccess().getStnameSAttributeNameIDTerminalRuleCall_0_0_1(), semanticObject.eGet(T2APackage.Literals.SATTRIBUTE_AND_VALUE__STNAME, false));
-		feeder.accept(grammarAccess.getSAttributeAndValueAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Element returns SAttributeName
-	 *     EDOM returns SAttributeName
-	 *     SAttributeName returns SAttributeName
-	 *
-	 * Constraint:
-	 *     name=ID
-	 * </pre>
-	 */
-	protected void sequence_SAttributeName(ISerializationContext context, SAttributeName semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, T2APackage.Literals.ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, T2APackage.Literals.ELEMENT__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSAttributeNameAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSAttributeAndValueAccess().getStnameIDTerminalRuleCall_0_0(), semanticObject.getStname());
+		feeder.accept(grammarAccess.getSAttributeAndValueAccess().getValueSTRING2TerminalRuleCall_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

@@ -39,7 +39,7 @@ public class T2AParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPageAccess().getGroup(), "rule__Page__Group__0");
 			builder.put(grammarAccess.getPageAccess().getGroup_3(), "rule__Page__Group_3__0");
 			builder.put(grammarAccess.getStyleClassAccess().getGroup(), "rule__StyleClass__Group__0");
-			builder.put(grammarAccess.getSAttributeNameAccess().getGroup(), "rule__SAttributeName__Group__0");
+			builder.put(grammarAccess.getStyleClassAccess().getGroup_3(), "rule__StyleClass__Group_3__0");
 			builder.put(grammarAccess.getSAttributeAndValueAccess().getGroup(), "rule__SAttributeAndValue__Group__0");
 			builder.put(grammarAccess.getDOMAccess().getGroup(), "rule__DOM__Group__0");
 			builder.put(grammarAccess.getDOMAccess().getGroup_2(), "rule__DOM__Group_2__0");
@@ -56,10 +56,9 @@ public class T2AParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPageAccess().getShowInNavAssignment_5(), "rule__Page__ShowInNavAssignment_5");
 			builder.put(grammarAccess.getPageAccess().getPageFeaturesAssignment_6(), "rule__Page__PageFeaturesAssignment_6");
 			builder.put(grammarAccess.getStyleClassAccess().getNameAssignment_1(), "rule__StyleClass__NameAssignment_1");
-			builder.put(grammarAccess.getStyleClassAccess().getSattributesAssignment_3(), "rule__StyleClass__SattributesAssignment_3");
-			builder.put(grammarAccess.getSAttributeNameAccess().getNameAssignment_1(), "rule__SAttributeName__NameAssignment_1");
+			builder.put(grammarAccess.getStyleClassAccess().getSattributesAssignment_3_0(), "rule__StyleClass__SattributesAssignment_3_0");
 			builder.put(grammarAccess.getSAttributeAndValueAccess().getStnameAssignment_0(), "rule__SAttributeAndValue__StnameAssignment_0");
-			builder.put(grammarAccess.getSAttributeAndValueAccess().getValueAssignment_2(), "rule__SAttributeAndValue__ValueAssignment_2");
+			builder.put(grammarAccess.getSAttributeAndValueAccess().getValueAssignment_1(), "rule__SAttributeAndValue__ValueAssignment_1");
 			builder.put(grammarAccess.getDOMAccess().getNameAssignment_1(), "rule__DOM__NameAssignment_1");
 			builder.put(grammarAccess.getDOMAccess().getSclassesAssignment_2_1_2(), "rule__DOM__SclassesAssignment_2_1_2");
 			builder.put(grammarAccess.getDOMAccess().getFeaturesAssignment_2_2(), "rule__DOM__FeaturesAssignment_2_2");

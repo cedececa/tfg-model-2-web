@@ -158,13 +158,12 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cDOMParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cCompParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cStyleClassParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cSAttributeNameParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//EDOM:
-		//    DOM | Comp | StyleClass | SAttributeName;
+		//    DOM | Comp | StyleClass ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//DOM | Comp | StyleClass | SAttributeName
+		//DOM | Comp | StyleClass
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//DOM
@@ -175,9 +174,6 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//StyleClass
 		public RuleCall getStyleClassParserRuleCall_2() { return cStyleClassParserRuleCall_2; }
-		
-		//SAttributeName
-		public RuleCall getSAttributeNameParserRuleCall_3() { return cSAttributeNameParserRuleCall_3; }
 	}
 	public class StyleClassElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.StyleClass");
@@ -186,21 +182,23 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cSattributesAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cSattributesSAttributeAndValueParserRuleCall_3_0 = (RuleCall)cSattributesAssignment_3.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cSattributesAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cSattributesSAttributeAndValueParserRuleCall_3_0_0 = (RuleCall)cSattributesAssignment_3_0.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//StyleClass:
 		//    'StyleClass' name=ID
 		//    '{'
-		//        (sattributes+=SAttributeAndValue)*
+		//        (sattributes+=SAttributeAndValue';')*
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'StyleClass' name=ID
 		//'{'
-		//    (sattributes+=SAttributeAndValue)*
+		//    (sattributes+=SAttributeAndValue';')*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -216,74 +214,48 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//(sattributes+=SAttributeAndValue)*
-		public Assignment getSattributesAssignment_3() { return cSattributesAssignment_3; }
+		//(sattributes+=SAttributeAndValue';')*
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//sattributes+=SAttributeAndValue
+		public Assignment getSattributesAssignment_3_0() { return cSattributesAssignment_3_0; }
 		
 		//SAttributeAndValue
-		public RuleCall getSattributesSAttributeAndValueParserRuleCall_3_0() { return cSattributesSAttributeAndValueParserRuleCall_3_0; }
+		public RuleCall getSattributesSAttributeAndValueParserRuleCall_3_0_0() { return cSattributesSAttributeAndValueParserRuleCall_3_0_0; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_3_1() { return cSemicolonKeyword_3_1; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
-	}
-	public class SAttributeNameElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.SAttributeName");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSAttriKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		
-		//SAttributeName:
-		//    'SAttri' name=ID
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'SAttri' name=ID
-		public Group getGroup() { return cGroup; }
-		
-		//'SAttri'
-		public Keyword getSAttriKeyword_0() { return cSAttriKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 	}
 	public class SAttributeAndValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.SAttributeAndValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cStnameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cStnameSAttributeNameCrossReference_0_0 = (CrossReference)cStnameAssignment_0.eContents().get(0);
-		private final RuleCall cStnameSAttributeNameIDTerminalRuleCall_0_0_1 = (RuleCall)cStnameSAttributeNameCrossReference_0_0.eContents().get(1);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final RuleCall cStnameIDTerminalRuleCall_0_0 = (RuleCall)cStnameAssignment_0.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueSTRING2TerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
 		
 		//SAttributeAndValue:
-		//    stname=[SAttributeName] ':' value=STRING
+		//    stname=ID value=STRING2
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//stname=[SAttributeName] ':' value=STRING
+		//stname=ID value=STRING2
 		public Group getGroup() { return cGroup; }
 		
-		//stname=[SAttributeName]
+		//stname=ID
 		public Assignment getStnameAssignment_0() { return cStnameAssignment_0; }
 		
-		//[SAttributeName]
-		public CrossReference getStnameSAttributeNameCrossReference_0_0() { return cStnameSAttributeNameCrossReference_0_0; }
-		
 		//ID
-		public RuleCall getStnameSAttributeNameIDTerminalRuleCall_0_0_1() { return cStnameSAttributeNameIDTerminalRuleCall_0_0_1; }
+		public RuleCall getStnameIDTerminalRuleCall_0_0() { return cStnameIDTerminalRuleCall_0_0; }
 		
-		//':'
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		//value=STRING2
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
 		
-		//value=STRING
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
-		
-		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_2_0() { return cValueSTRINGTerminalRuleCall_2_0; }
+		//STRING2
+		public RuleCall getValueSTRING2TerminalRuleCall_1_0() { return cValueSTRING2TerminalRuleCall_1_0; }
 	}
 	public class DOMElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.DOM");
@@ -610,7 +582,6 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	private final PageElements pPage;
 	private final EDOMElements pEDOM;
 	private final StyleClassElements pStyleClass;
-	private final SAttributeNameElements pSAttributeName;
 	private final SAttributeAndValueElements pSAttributeAndValue;
 	private final DOMElements pDOM;
 	private final CompElements pComp;
@@ -619,6 +590,8 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	private final PageFeatureElements pPageFeature;
 	private final FeatureElements pFeature;
 	private final TerminalRule tSTRING;
+	private final TerminalRule tID;
+	private final TerminalRule tSTRING2;
 	
 	private final Grammar grammar;
 	
@@ -634,7 +607,6 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		this.pPage = new PageElements();
 		this.pEDOM = new EDOMElements();
 		this.pStyleClass = new StyleClassElements();
-		this.pSAttributeName = new SAttributeNameElements();
 		this.pSAttributeAndValue = new SAttributeAndValueElements();
 		this.pDOM = new DOMElements();
 		this.pComp = new CompElements();
@@ -643,6 +615,8 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		this.pPageFeature = new PageFeatureElements();
 		this.pFeature = new FeatureElements();
 		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.STRING");
+		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.ID");
+		this.tSTRING2 = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.STRING2");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -709,7 +683,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//EDOM:
-	//    DOM | Comp | StyleClass | SAttributeName;
+	//    DOM | Comp | StyleClass ;
 	public EDOMElements getEDOMAccess() {
 		return pEDOM;
 	}
@@ -721,7 +695,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//StyleClass:
 	//    'StyleClass' name=ID
 	//    '{'
-	//        (sattributes+=SAttributeAndValue)*
+	//        (sattributes+=SAttributeAndValue';')*
 	//    '}'
 	//;
 	public StyleClassElements getStyleClassAccess() {
@@ -732,19 +706,8 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getStyleClassAccess().getRule();
 	}
 	
-	//SAttributeName:
-	//    'SAttri' name=ID
-	//;
-	public SAttributeNameElements getSAttributeNameAccess() {
-		return pSAttributeName;
-	}
-	
-	public ParserRule getSAttributeNameRule() {
-		return getSAttributeNameAccess().getRule();
-	}
-	
 	//SAttributeAndValue:
-	//    stname=[SAttributeName] ':' value=STRING
+	//    stname=ID value=STRING2
 	//;
 	public SAttributeAndValueElements getSAttributeAndValueAccess() {
 		return pSAttributeAndValue;
@@ -839,9 +802,17 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return tSTRING;
 	}
 	
-	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+	//@Override
+	//terminal ID:
+	//    ('^')?('a'..'z'|'A'..'Z'|'_'|'#'|'-'|'*') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'#'|'-'|'*')*;
 	public TerminalRule getIDRule() {
-		return gaTerminals.getIDRule();
+		return tID;
+	}
+	
+	//terminal STRING2:
+	//    (':'|': '|' : ')('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'#'|'-'|'%'|'*'|','|', ') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'#'|'-'|'%'|'*'|','|', ')*;
+	public TerminalRule getSTRING2Rule() {
+		return tSTRING2;
 	}
 	
 	//terminal INT returns ecore::EInt: ('0'..'9')+;
