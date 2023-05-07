@@ -17,11 +17,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uma.es.angular.t2a.t2A.EDOM;
 import uma.es.angular.t2a.t2A.InstanceEDOMFeature;
 import uma.es.angular.t2a.t2A.InstanciaEDOM;
+import uma.es.angular.t2a.t2A.StyleClass;
 import uma.es.angular.t2a.t2A.T2APackage;
 
 /**
@@ -33,6 +35,7 @@ import uma.es.angular.t2a.t2A.T2APackage;
  * </p>
  * <ul>
  *   <li>{@link uma.es.angular.t2a.t2A.impl.InstanciaEDOMImpl#getInstancia <em>Instancia</em>}</li>
+ *   <li>{@link uma.es.angular.t2a.t2A.impl.InstanciaEDOMImpl#getSclasses <em>Sclasses</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.impl.InstanciaEDOMImpl#getInsfeatures <em>Insfeatures</em>}</li>
  * </ul>
  *
@@ -49,6 +52,16 @@ public class InstanciaEDOMImpl extends MinimalEObjectImpl.Container implements I
    * @ordered
    */
   protected EDOM instancia;
+
+  /**
+   * The cached value of the '{@link #getSclasses() <em>Sclasses</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSclasses()
+   * @generated
+   * @ordered
+   */
+  protected EList<StyleClass> sclasses;
 
   /**
    * The cached value of the '{@link #getInsfeatures() <em>Insfeatures</em>}' containment reference list.
@@ -132,6 +145,21 @@ public class InstanciaEDOMImpl extends MinimalEObjectImpl.Container implements I
    * @generated
    */
   @Override
+  public EList<StyleClass> getSclasses()
+  {
+    if (sclasses == null)
+    {
+      sclasses = new EObjectResolvingEList<StyleClass>(StyleClass.class, this, T2APackage.INSTANCIA_EDOM__SCLASSES);
+    }
+    return sclasses;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<InstanceEDOMFeature> getInsfeatures()
   {
     if (insfeatures == null)
@@ -170,6 +198,8 @@ public class InstanciaEDOMImpl extends MinimalEObjectImpl.Container implements I
       case T2APackage.INSTANCIA_EDOM__INSTANCIA:
         if (resolve) return getInstancia();
         return basicGetInstancia();
+      case T2APackage.INSTANCIA_EDOM__SCLASSES:
+        return getSclasses();
       case T2APackage.INSTANCIA_EDOM__INSFEATURES:
         return getInsfeatures();
     }
@@ -189,6 +219,10 @@ public class InstanciaEDOMImpl extends MinimalEObjectImpl.Container implements I
     {
       case T2APackage.INSTANCIA_EDOM__INSTANCIA:
         setInstancia((EDOM)newValue);
+        return;
+      case T2APackage.INSTANCIA_EDOM__SCLASSES:
+        getSclasses().clear();
+        getSclasses().addAll((Collection<? extends StyleClass>)newValue);
         return;
       case T2APackage.INSTANCIA_EDOM__INSFEATURES:
         getInsfeatures().clear();
@@ -211,6 +245,9 @@ public class InstanciaEDOMImpl extends MinimalEObjectImpl.Container implements I
       case T2APackage.INSTANCIA_EDOM__INSTANCIA:
         setInstancia((EDOM)null);
         return;
+      case T2APackage.INSTANCIA_EDOM__SCLASSES:
+        getSclasses().clear();
+        return;
       case T2APackage.INSTANCIA_EDOM__INSFEATURES:
         getInsfeatures().clear();
         return;
@@ -230,6 +267,8 @@ public class InstanciaEDOMImpl extends MinimalEObjectImpl.Container implements I
     {
       case T2APackage.INSTANCIA_EDOM__INSTANCIA:
         return instancia != null;
+      case T2APackage.INSTANCIA_EDOM__SCLASSES:
+        return sclasses != null && !sclasses.isEmpty();
       case T2APackage.INSTANCIA_EDOM__INSFEATURES:
         return insfeatures != null && !insfeatures.isEmpty();
     }

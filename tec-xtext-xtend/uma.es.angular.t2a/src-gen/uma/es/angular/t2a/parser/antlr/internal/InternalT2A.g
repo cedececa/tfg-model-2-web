@@ -175,9 +175,9 @@ rulePage returns [EObject current=null]
 			newLeafNode(otherlv_2, grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
-			otherlv_3='SClass'
+			otherlv_3='sclass'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getPageAccess().getSClassKeyword_3_0());
+				newLeafNode(otherlv_3, grammarAccess.getPageAccess().getSclassKeyword_3_0());
 			}
 			otherlv_4='{'
 			{
@@ -192,7 +192,7 @@ rulePage returns [EObject current=null]
 					}
 					otherlv_5=RULE_ID
 					{
-						newLeafNode(otherlv_5, grammarAccess.getPageAccess().getSclassesStyleClassCrossReference_3_2_0());
+						newLeafNode(otherlv_5, grammarAccess.getPageAccess().getHostclassesStyleClassCrossReference_3_2_0());
 					}
 				)
 			)*
@@ -553,9 +553,9 @@ ruleDOM returns [EObject current=null]
 				newLeafNode(otherlv_2, grammarAccess.getDOMAccess().getLeftCurlyBracketKeyword_2_0());
 			}
 			(
-				otherlv_3='SClass'
+				otherlv_3='sclass'
 				{
-					newLeafNode(otherlv_3, grammarAccess.getDOMAccess().getSClassKeyword_2_1_0());
+					newLeafNode(otherlv_3, grammarAccess.getDOMAccess().getSclassKeyword_2_1_0());
 				}
 				otherlv_4='{'
 				{
@@ -650,9 +650,9 @@ ruleComp returns [EObject current=null]
 				newLeafNode(otherlv_2, grammarAccess.getCompAccess().getLeftCurlyBracketKeyword_2_0());
 			}
 			(
-				otherlv_3='SClass'
+				otherlv_3='sclass'
 				{
-					newLeafNode(otherlv_3, grammarAccess.getCompAccess().getSClassKeyword_2_1_0());
+					newLeafNode(otherlv_3, grammarAccess.getCompAccess().getSclassKeyword_2_1_0());
 				}
 				otherlv_4='{'
 				{
@@ -667,7 +667,7 @@ ruleComp returns [EObject current=null]
 						}
 						otherlv_5=RULE_ID
 						{
-							newLeafNode(otherlv_5, grammarAccess.getCompAccess().getSclassesStyleClassCrossReference_2_1_2_0());
+							newLeafNode(otherlv_5, grammarAccess.getCompAccess().getHostclassesStyleClassCrossReference_2_1_2_0());
 						}
 					)
 				)*
@@ -738,11 +738,38 @@ ruleInstanciaEDOM returns [EObject current=null]
 				newLeafNode(otherlv_1, grammarAccess.getInstanciaEDOMAccess().getLeftCurlyBracketKeyword_1_0());
 			}
 			(
+				otherlv_2='sclass'
+				{
+					newLeafNode(otherlv_2, grammarAccess.getInstanciaEDOMAccess().getSclassKeyword_1_1_0());
+				}
+				otherlv_3='{'
+				{
+					newLeafNode(otherlv_3, grammarAccess.getInstanciaEDOMAccess().getLeftCurlyBracketKeyword_1_1_1());
+				}
+				(
+					(
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getInstanciaEDOMRule());
+							}
+						}
+						otherlv_4=RULE_ID
+						{
+							newLeafNode(otherlv_4, grammarAccess.getInstanciaEDOMAccess().getSclassesStyleClassCrossReference_1_1_2_0());
+						}
+					)
+				)*
+				otherlv_5='}'
+				{
+					newLeafNode(otherlv_5, grammarAccess.getInstanciaEDOMAccess().getRightCurlyBracketKeyword_1_1_3());
+				}
+			)?
+			(
 				(
 					{
-						newCompositeNode(grammarAccess.getInstanciaEDOMAccess().getInsfeaturesInstanceEDOMFeatureParserRuleCall_1_1_0());
+						newCompositeNode(grammarAccess.getInstanciaEDOMAccess().getInsfeaturesInstanceEDOMFeatureParserRuleCall_1_2_0());
 					}
-					lv_insfeatures_2_0=ruleInstanceEDOMFeature
+					lv_insfeatures_6_0=ruleInstanceEDOMFeature
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getInstanciaEDOMRule());
@@ -750,15 +777,15 @@ ruleInstanciaEDOM returns [EObject current=null]
 						add(
 							$current,
 							"insfeatures",
-							lv_insfeatures_2_0,
+							lv_insfeatures_6_0,
 							"uma.es.angular.t2a.T2A.InstanceEDOMFeature");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_3='}'
+			otherlv_7='}'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getInstanciaEDOMAccess().getRightCurlyBracketKeyword_1_2());
+				newLeafNode(otherlv_7, grammarAccess.getInstanciaEDOMAccess().getRightCurlyBracketKeyword_1_3());
 			}
 		)?
 	)

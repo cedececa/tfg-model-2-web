@@ -54,9 +54,10 @@ public class T2AParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCompAccess().getGroup_2_1(), "rule__Comp__Group_2_1__0");
 			builder.put(grammarAccess.getInstanciaEDOMAccess().getGroup(), "rule__InstanciaEDOM__Group__0");
 			builder.put(grammarAccess.getInstanciaEDOMAccess().getGroup_1(), "rule__InstanciaEDOM__Group_1__0");
+			builder.put(grammarAccess.getInstanciaEDOMAccess().getGroup_1_1(), "rule__InstanciaEDOM__Group_1_1__0");
 			builder.put(grammarAccess.getRootAccess().getElementsAssignment(), "rule__Root__ElementsAssignment");
 			builder.put(grammarAccess.getPageAccess().getNameAssignment_1(), "rule__Page__NameAssignment_1");
-			builder.put(grammarAccess.getPageAccess().getSclassesAssignment_3_2(), "rule__Page__SclassesAssignment_3_2");
+			builder.put(grammarAccess.getPageAccess().getHostclassesAssignment_3_2(), "rule__Page__HostclassesAssignment_3_2");
 			builder.put(grammarAccess.getPageAccess().getHomeAssignment_4(), "rule__Page__HomeAssignment_4");
 			builder.put(grammarAccess.getPageAccess().getShowInNavAssignment_5(), "rule__Page__ShowInNavAssignment_5");
 			builder.put(grammarAccess.getPageAccess().getPageFeaturesAssignment_6(), "rule__Page__PageFeaturesAssignment_6");
@@ -70,10 +71,11 @@ public class T2AParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDOMAccess().getSclassesAssignment_2_1_2(), "rule__DOM__SclassesAssignment_2_1_2");
 			builder.put(grammarAccess.getDOMAccess().getFeaturesAssignment_2_2(), "rule__DOM__FeaturesAssignment_2_2");
 			builder.put(grammarAccess.getCompAccess().getNameAssignment_1(), "rule__Comp__NameAssignment_1");
-			builder.put(grammarAccess.getCompAccess().getSclassesAssignment_2_1_2(), "rule__Comp__SclassesAssignment_2_1_2");
+			builder.put(grammarAccess.getCompAccess().getHostclassesAssignment_2_1_2(), "rule__Comp__HostclassesAssignment_2_1_2");
 			builder.put(grammarAccess.getCompAccess().getFeaturesAssignment_2_2(), "rule__Comp__FeaturesAssignment_2_2");
 			builder.put(grammarAccess.getInstanciaEDOMAccess().getInstanciaAssignment_0(), "rule__InstanciaEDOM__InstanciaAssignment_0");
-			builder.put(grammarAccess.getInstanciaEDOMAccess().getInsfeaturesAssignment_1_1(), "rule__InstanciaEDOM__InsfeaturesAssignment_1_1");
+			builder.put(grammarAccess.getInstanciaEDOMAccess().getSclassesAssignment_1_1_2(), "rule__InstanciaEDOM__SclassesAssignment_1_1_2");
+			builder.put(grammarAccess.getInstanciaEDOMAccess().getInsfeaturesAssignment_1_2(), "rule__InstanciaEDOM__InsfeaturesAssignment_1_2");
 			builder.put(grammarAccess.getInstanceEDOMFeatureAccess().getInstanciaEDOMAssignment_0(), "rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0");
 			builder.put(grammarAccess.getInstanceEDOMFeatureAccess().getStringAssignment_1(), "rule__InstanceEDOMFeature__StringAssignment_1");
 			builder.put(grammarAccess.getPageFeatureAccess().getInstanciaEDOMAssignment_0(), "rule__PageFeature__InstanciaEDOMAssignment_0");

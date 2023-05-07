@@ -239,7 +239,7 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
    * @generated
    */
   @Override
-  public EReference getPage_Sclasses()
+  public EReference getPage_Hostclasses()
   {
     return (EReference)pageEClass.getEStructuralFeatures().get(0);
   }
@@ -415,7 +415,7 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
    * @generated
    */
   @Override
-  public EReference getComp_Sclasses()
+  public EReference getComp_Hostclasses()
   {
     return (EReference)compEClass.getEStructuralFeatures().get(0);
   }
@@ -459,9 +459,20 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
    * @generated
    */
   @Override
-  public EReference getInstanciaEDOM_Insfeatures()
+  public EReference getInstanciaEDOM_Sclasses()
   {
     return (EReference)instanciaEDOMEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInstanciaEDOM_Insfeatures()
+  {
+    return (EReference)instanciaEDOMEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -612,7 +623,7 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
     createEAttribute(elementEClass, ELEMENT__NAME);
 
     pageEClass = createEClass(PAGE);
-    createEReference(pageEClass, PAGE__SCLASSES);
+    createEReference(pageEClass, PAGE__HOSTCLASSES);
     createEAttribute(pageEClass, PAGE__HOME);
     createEAttribute(pageEClass, PAGE__SHOW_IN_NAV);
     createEReference(pageEClass, PAGE__PAGE_FEATURES);
@@ -633,11 +644,12 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
     createEReference(domEClass, DOM__FEATURES);
 
     compEClass = createEClass(COMP);
-    createEReference(compEClass, COMP__SCLASSES);
+    createEReference(compEClass, COMP__HOSTCLASSES);
     createEReference(compEClass, COMP__FEATURES);
 
     instanciaEDOMEClass = createEClass(INSTANCIA_EDOM);
     createEReference(instanciaEDOMEClass, INSTANCIA_EDOM__INSTANCIA);
+    createEReference(instanciaEDOMEClass, INSTANCIA_EDOM__SCLASSES);
     createEReference(instanciaEDOMEClass, INSTANCIA_EDOM__INSFEATURES);
 
     instanceEDOMFeatureEClass = createEClass(INSTANCE_EDOM_FEATURE);
@@ -697,7 +709,7 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
     initEAttribute(getElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(pageEClass, Page.class, "Page", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPage_Sclasses(), this.getStyleClass(), null, "sclasses", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPage_Hostclasses(), this.getStyleClass(), null, "hostclasses", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPage_Home(), ecorePackage.getEBoolean(), "home", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPage_ShowInNav(), ecorePackage.getEBoolean(), "showInNav", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPage_PageFeatures(), this.getPageFeature(), null, "pageFeatures", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -718,11 +730,12 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
     initEReference(getDOM_Features(), this.getFeature(), null, "features", null, 0, -1, uma.es.angular.t2a.t2A.DOM.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(compEClass, Comp.class, "Comp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComp_Sclasses(), this.getStyleClass(), null, "sclasses", null, 0, -1, Comp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComp_Hostclasses(), this.getStyleClass(), null, "hostclasses", null, 0, -1, Comp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComp_Features(), this.getFeature(), null, "features", null, 0, -1, Comp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(instanciaEDOMEClass, InstanciaEDOM.class, "InstanciaEDOM", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getInstanciaEDOM_Instancia(), this.getEDOM(), null, "instancia", null, 0, 1, InstanciaEDOM.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInstanciaEDOM_Sclasses(), this.getStyleClass(), null, "sclasses", null, 0, -1, InstanciaEDOM.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInstanciaEDOM_Insfeatures(), this.getInstanceEDOMFeature(), null, "insfeatures", null, 0, -1, InstanciaEDOM.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(instanceEDOMFeatureEClass, InstanceEDOMFeature.class, "InstanceEDOMFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -133,13 +133,13 @@ public interface T2APackage extends EPackage
   int PAGE__NAME = ELEMENT__NAME;
 
   /**
-   * The feature id for the '<em><b>Sclasses</b></em>' reference list.
+   * The feature id for the '<em><b>Hostclasses</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PAGE__SCLASSES = ELEMENT_FEATURE_COUNT + 0;
+  int PAGE__HOSTCLASSES = ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Home</b></em>' attribute.
@@ -363,13 +363,13 @@ public interface T2APackage extends EPackage
   int COMP__NAME = EDOM__NAME;
 
   /**
-   * The feature id for the '<em><b>Sclasses</b></em>' reference list.
+   * The feature id for the '<em><b>Hostclasses</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMP__SCLASSES = EDOM_FEATURE_COUNT + 0;
+  int COMP__HOSTCLASSES = EDOM_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Features</b></em>' containment reference list.
@@ -409,13 +409,22 @@ public interface T2APackage extends EPackage
   int INSTANCIA_EDOM__INSTANCIA = 0;
 
   /**
+   * The feature id for the '<em><b>Sclasses</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTANCIA_EDOM__SCLASSES = 1;
+
+  /**
    * The feature id for the '<em><b>Insfeatures</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INSTANCIA_EDOM__INSFEATURES = 1;
+  int INSTANCIA_EDOM__INSFEATURES = 2;
 
   /**
    * The number of structural features of the '<em>Instancia EDOM</em>' class.
@@ -424,7 +433,7 @@ public interface T2APackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCIA_EDOM_FEATURE_COUNT = 2;
+  int INSTANCIA_EDOM_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.InstanceEDOMFeatureImpl <em>Instance EDOM Feature</em>}' class.
@@ -600,15 +609,15 @@ public interface T2APackage extends EPackage
   EClass getPage();
 
   /**
-   * Returns the meta object for the reference list '{@link uma.es.angular.t2a.t2A.Page#getSclasses <em>Sclasses</em>}'.
+   * Returns the meta object for the reference list '{@link uma.es.angular.t2a.t2A.Page#getHostclasses <em>Hostclasses</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Sclasses</em>'.
-   * @see uma.es.angular.t2a.t2A.Page#getSclasses()
+   * @return the meta object for the reference list '<em>Hostclasses</em>'.
+   * @see uma.es.angular.t2a.t2A.Page#getHostclasses()
    * @see #getPage()
    * @generated
    */
-  EReference getPage_Sclasses();
+  EReference getPage_Hostclasses();
 
   /**
    * Returns the meta object for the attribute '{@link uma.es.angular.t2a.t2A.Page#isHome <em>Home</em>}'.
@@ -771,15 +780,15 @@ public interface T2APackage extends EPackage
   EClass getComp();
 
   /**
-   * Returns the meta object for the reference list '{@link uma.es.angular.t2a.t2A.Comp#getSclasses <em>Sclasses</em>}'.
+   * Returns the meta object for the reference list '{@link uma.es.angular.t2a.t2A.Comp#getHostclasses <em>Hostclasses</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Sclasses</em>'.
-   * @see uma.es.angular.t2a.t2A.Comp#getSclasses()
+   * @return the meta object for the reference list '<em>Hostclasses</em>'.
+   * @see uma.es.angular.t2a.t2A.Comp#getHostclasses()
    * @see #getComp()
    * @generated
    */
-  EReference getComp_Sclasses();
+  EReference getComp_Hostclasses();
 
   /**
    * Returns the meta object for the containment reference list '{@link uma.es.angular.t2a.t2A.Comp#getFeatures <em>Features</em>}'.
@@ -812,6 +821,17 @@ public interface T2APackage extends EPackage
    * @generated
    */
   EReference getInstanciaEDOM_Instancia();
+
+  /**
+   * Returns the meta object for the reference list '{@link uma.es.angular.t2a.t2A.InstanciaEDOM#getSclasses <em>Sclasses</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Sclasses</em>'.
+   * @see uma.es.angular.t2a.t2A.InstanciaEDOM#getSclasses()
+   * @see #getInstanciaEDOM()
+   * @generated
+   */
+  EReference getInstanciaEDOM_Sclasses();
 
   /**
    * Returns the meta object for the containment reference list '{@link uma.es.angular.t2a.t2A.InstanciaEDOM#getInsfeatures <em>Insfeatures</em>}'.
@@ -1001,12 +1021,12 @@ public interface T2APackage extends EPackage
     EClass PAGE = eINSTANCE.getPage();
 
     /**
-     * The meta object literal for the '<em><b>Sclasses</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Hostclasses</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PAGE__SCLASSES = eINSTANCE.getPage_Sclasses();
+    EReference PAGE__HOSTCLASSES = eINSTANCE.getPage_Hostclasses();
 
     /**
      * The meta object literal for the '<em><b>Home</b></em>' attribute feature.
@@ -1139,12 +1159,12 @@ public interface T2APackage extends EPackage
     EClass COMP = eINSTANCE.getComp();
 
     /**
-     * The meta object literal for the '<em><b>Sclasses</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Hostclasses</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMP__SCLASSES = eINSTANCE.getComp_Sclasses();
+    EReference COMP__HOSTCLASSES = eINSTANCE.getComp_Hostclasses();
 
     /**
      * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
@@ -1171,6 +1191,14 @@ public interface T2APackage extends EPackage
      * @generated
      */
     EReference INSTANCIA_EDOM__INSTANCIA = eINSTANCE.getInstanciaEDOM_Instancia();
+
+    /**
+     * The meta object literal for the '<em><b>Sclasses</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INSTANCIA_EDOM__SCLASSES = eINSTANCE.getInstanciaEDOM_Sclasses();
 
     /**
      * The meta object literal for the '<em><b>Insfeatures</b></em>' containment reference list feature.

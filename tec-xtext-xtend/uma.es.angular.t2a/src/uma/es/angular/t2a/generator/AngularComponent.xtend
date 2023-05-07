@@ -6,15 +6,23 @@ import uma.es.angular.t2a.t2A.InstanciaEDOM
 import uma.es.angular.t2a.t2A.InstanceEDOMFeature
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import uma.es.angular.t2a.t2A.StyleClass
+import java.util.List
+import java.util.ArrayList
 
 class AngularComponent {
 
+	private static List<StyleClass> sclasses = new ArrayList<StyleClass>();
+	private static List<StyleClass> hostclasses = new ArrayList<StyleClass>();
+
 	static def generateComponentFiles(Comp comp, IFileSystemAccess2 fsa) {
+		sclasses = new ArrayList<StyleClass>();
+		hostclasses = new ArrayList<StyleClass>();
+		
 		var nameLowercase = (new String(comp.name)).toLowerCase()
 		var relativePath = 'components/' + nameLowercase + '/' + nameLowercase;
 		fsa.generateFile(relativePath + '.comp.ts', AngularComponent.toTSCode(comp));
 		fsa.generateFile(relativePath + '.comp.html', AngularComponent.toHTMLCode(comp));
-		fsa.generateFile(relativePath + '.comp.scss', AngularComponent.toCSSCode(comp));
+		fsa.generateFile(relativePath + '.comp.scss', AngularComponent.toCSSCode(hostclasses,sclasses));
 	}
 
 	static def toTSCode(Comp comp) {
@@ -35,6 +43,7 @@ class AngularComponent {
 	}
 
 	static def toHTMLCode(Comp comp) {
+		hostclasses.addAll(comp.hostclasses);
 		'''
 			«FOR feature : comp.features»
 				«var f = feature as Feature»
@@ -53,8 +62,9 @@ class AngularComponent {
 	}
 
 	static def toHTMLCodeForInstanciaEDOM(InstanciaEDOM instanciaEDOM) {
+		sclasses.addAll(instanciaEDOM.sclasses);
 		''' 
-			<«instanciaEDOM.instancia.name»>
+			<«instanciaEDOM.instancia.name» «getStyleClassesNames(instanciaEDOM.sclasses)»>
 				«FOR insfeature : instanciaEDOM.insfeatures»
 					«var insf = insfeature as InstanceEDOMFeature»
 					«IF insf.instanciaEDOM !== null»
@@ -67,10 +77,15 @@ class AngularComponent {
 			</«instanciaEDOM.instancia.name»>
 		'''
 	}
-	
-	static def toCSSCode(Comp comp) {
-		'''
-			«FOR sclass : comp.sclasses»
+
+	private static def getStyleClassesNames(List<StyleClass> sclasses) {
+		
+		'''«IF sclasses.length>0» class="«FOR sc:sclasses»«sc.name» «ENDFOR»" «ENDIF»'''
+	}
+
+	private static def toCSSCode(List<StyleClass> hostclasses,List<StyleClass> sclasses) {
+		''' «toHostCSSCode(hostclasses)»
+			«FOR sclass : sclasses»
 				«var sc = sclass as StyleClass»
 				.«sc.name» {
 					«FOR attri : sc.sattributes»
@@ -86,6 +101,32 @@ class AngularComponent {
 				«ENDIF»
 				«IF sc.sattributesActive.length>0»
 					.«sc.name».active{
+						«FOR aactive : sc.sattributesActive»
+							«aactive.stname» «aactive.value»;
+						«ENDFOR»		   				
+					}
+				«ENDIF»				
+			«ENDFOR»
+		'''
+	}
+	private static def toHostCSSCode(List<StyleClass> hostclasses){
+		'''
+			«FOR sclass : hostclasses»
+				«var sc = sclass as StyleClass»
+				:host {
+					«FOR attri : sc.sattributes»
+						«attri.stname» «attri.value»;
+					«ENDFOR»
+				}
+				«IF sc.sattributesAfter.length>0»
+					:host::after{
+						«FOR aafter : sc.sattributesAfter»
+							«aafter.stname» «aafter.value»;
+						«ENDFOR»		   				
+					}
+				«ENDIF»
+				«IF sc.sattributesActive.length>0»
+					:host.active{
 						«FOR aactive : sc.sattributesActive»
 							«aactive.stname» «aactive.value»;
 						«ENDFOR»		   				

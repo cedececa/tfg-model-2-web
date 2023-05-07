@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link uma.es.angular.t2a.t2A.InstanciaEDOM#getInstancia <em>Instancia</em>}</li>
+ *   <li>{@link uma.es.angular.t2a.t2A.InstanciaEDOM#getSclasses <em>Sclasses</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.InstanciaEDOM#getInsfeatures <em>Insfeatures</em>}</li>
  * </ul>
  *
@@ -47,6 +48,18 @@ public interface InstanciaEDOM extends EObject
    * @generated
    */
   void setInstancia(EDOM value);
+
+  /**
+   * Returns the value of the '<em><b>Sclasses</b></em>' reference list.
+   * The list contents are of type {@link uma.es.angular.t2a.t2A.StyleClass}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Sclasses</em>' reference list.
+   * @see uma.es.angular.t2a.t2A.T2APackage#getInstanciaEDOM_Sclasses()
+   * @model
+   * @generated
+   */
+  EList<StyleClass> getSclasses();
 
   /**
    * Returns the value of the '<em><b>Insfeatures</b></em>' containment reference list.

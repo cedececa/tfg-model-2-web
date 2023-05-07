@@ -11,7 +11,7 @@ Element:
 Page:
 	'Page' name=ID 
 	'{'
-	('SClass' '{'(sclasses+=[StyleClass])* '}')?	
+	('sclass' '{'(hostclasses+=[StyleClass])* '}')?	
 	(home?='home')? 
 	(showInNav?='showInNav')?
 	(pageFeatures+=PageFeature)*
@@ -41,7 +41,7 @@ SAttributeAndValue:
 DOM:
 	'Dom' name=ID
 	('{' 
-	('SClass' '{'(sclasses+=[StyleClass])* '}')?	
+	('sclass' '{'(sclasses+=[StyleClass])* '}')?	
 		(features+=Feature)*
 	'}')?;
 	
@@ -49,19 +49,20 @@ Comp:
 	'Comp' name=ID
 	(
 	'{'
-	('SClass' '{'(sclasses+=[StyleClass])* '}')?	
+	('sclass' '{'(hostclasses+=[StyleClass])* '}')?	
 		(features+=Feature)*
 	'}'	
 	)?
 ;
-	
+
 InstanciaEDOM: instancia=[EDOM] ('{' 
+		('sclass' '{'(sclasses+=[StyleClass])* '}')?
 		(insfeatures+=InstanceEDOMFeature)*
 	'}'
 )?; 
 
 InstanceEDOMFeature: 
-	instanciaEDOM= InstanciaEDOM | string=STRING;
+	instanciaEDOM=InstanciaEDOM  | string=STRING;
 	
 PageFeature: 
 	instanciaEDOM=InstanciaEDOM | 

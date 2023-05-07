@@ -29,7 +29,7 @@ import uma.es.angular.t2a.t2A.T2APackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uma.es.angular.t2a.t2A.impl.CompImpl#getSclasses <em>Sclasses</em>}</li>
+ *   <li>{@link uma.es.angular.t2a.t2A.impl.CompImpl#getHostclasses <em>Hostclasses</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.impl.CompImpl#getFeatures <em>Features</em>}</li>
  * </ul>
  *
@@ -38,14 +38,14 @@ import uma.es.angular.t2a.t2A.T2APackage;
 public class CompImpl extends EDOMImpl implements Comp
 {
   /**
-   * The cached value of the '{@link #getSclasses() <em>Sclasses</em>}' reference list.
+   * The cached value of the '{@link #getHostclasses() <em>Hostclasses</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSclasses()
+   * @see #getHostclasses()
    * @generated
    * @ordered
    */
-  protected EList<StyleClass> sclasses;
+  protected EList<StyleClass> hostclasses;
 
   /**
    * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
@@ -84,13 +84,13 @@ public class CompImpl extends EDOMImpl implements Comp
    * @generated
    */
   @Override
-  public EList<StyleClass> getSclasses()
+  public EList<StyleClass> getHostclasses()
   {
-    if (sclasses == null)
+    if (hostclasses == null)
     {
-      sclasses = new EObjectResolvingEList<StyleClass>(StyleClass.class, this, T2APackage.COMP__SCLASSES);
+      hostclasses = new EObjectResolvingEList<StyleClass>(StyleClass.class, this, T2APackage.COMP__HOSTCLASSES);
     }
-    return sclasses;
+    return hostclasses;
   }
 
   /**
@@ -134,8 +134,8 @@ public class CompImpl extends EDOMImpl implements Comp
   {
     switch (featureID)
     {
-      case T2APackage.COMP__SCLASSES:
-        return getSclasses();
+      case T2APackage.COMP__HOSTCLASSES:
+        return getHostclasses();
       case T2APackage.COMP__FEATURES:
         return getFeatures();
     }
@@ -153,9 +153,9 @@ public class CompImpl extends EDOMImpl implements Comp
   {
     switch (featureID)
     {
-      case T2APackage.COMP__SCLASSES:
-        getSclasses().clear();
-        getSclasses().addAll((Collection<? extends StyleClass>)newValue);
+      case T2APackage.COMP__HOSTCLASSES:
+        getHostclasses().clear();
+        getHostclasses().addAll((Collection<? extends StyleClass>)newValue);
         return;
       case T2APackage.COMP__FEATURES:
         getFeatures().clear();
@@ -175,8 +175,8 @@ public class CompImpl extends EDOMImpl implements Comp
   {
     switch (featureID)
     {
-      case T2APackage.COMP__SCLASSES:
-        getSclasses().clear();
+      case T2APackage.COMP__HOSTCLASSES:
+        getHostclasses().clear();
         return;
       case T2APackage.COMP__FEATURES:
         getFeatures().clear();
@@ -195,8 +195,8 @@ public class CompImpl extends EDOMImpl implements Comp
   {
     switch (featureID)
     {
-      case T2APackage.COMP__SCLASSES:
-        return sclasses != null && !sclasses.isEmpty();
+      case T2APackage.COMP__HOSTCLASSES:
+        return hostclasses != null && !hostclasses.isEmpty();
       case T2APackage.COMP__FEATURES:
         return features != null && !features.isEmpty();
     }

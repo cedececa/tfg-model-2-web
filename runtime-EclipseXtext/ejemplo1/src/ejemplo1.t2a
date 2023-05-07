@@ -112,21 +112,22 @@ Dom ul
 Dom p
 Dom li
 Dom a {
-	SClass{a}
+	sclass{a}
 }
 Dom header
 Dom div
 
 Comp leftNav{
-	SClass{leftNav}
+	sclass{leftNav}
 	AllowSlot
 }
 
 Comp Cabecera{
-	SClass{  
+	sclass{  
 		 header  a
-	}
-	header{ 
+	} 
+	header {
+		sclass{header a} 
 		h2{
 	 	"Cities"
 	    }
@@ -142,7 +143,7 @@ Comp Section{
 		}
 	}
 	AllowSlot
-}
+} 
 
 Comp Articulo{ 
 	h1{

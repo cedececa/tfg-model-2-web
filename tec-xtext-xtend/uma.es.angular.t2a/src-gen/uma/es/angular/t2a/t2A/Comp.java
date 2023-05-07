@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uma.es.angular.t2a.t2A.Comp#getSclasses <em>Sclasses</em>}</li>
+ *   <li>{@link uma.es.angular.t2a.t2A.Comp#getHostclasses <em>Hostclasses</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.Comp#getFeatures <em>Features</em>}</li>
  * </ul>
  *
@@ -25,16 +25,16 @@ import org.eclipse.emf.common.util.EList;
 public interface Comp extends EDOM
 {
   /**
-   * Returns the value of the '<em><b>Sclasses</b></em>' reference list.
+   * Returns the value of the '<em><b>Hostclasses</b></em>' reference list.
    * The list contents are of type {@link uma.es.angular.t2a.t2A.StyleClass}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Sclasses</em>' reference list.
-   * @see uma.es.angular.t2a.t2A.T2APackage#getComp_Sclasses()
+   * @return the value of the '<em>Hostclasses</em>' reference list.
+   * @see uma.es.angular.t2a.t2A.T2APackage#getComp_Hostclasses()
    * @model
    * @generated
    */
-  EList<StyleClass> getSclasses();
+  EList<StyleClass> getHostclasses();
 
   /**
    * Returns the value of the '<em><b>Features</b></em>' containment reference list.

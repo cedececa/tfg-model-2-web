@@ -9,7 +9,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Page" eSuperTypes="#//Element">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sclasses" unique="false"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hostclasses" unique="false"
         upperBound="-1" eType="#//StyleClass"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="home" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="showInNav" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -36,13 +36,15 @@
         eType="#//Feature" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Comp" eSuperTypes="#//EDOM">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sclasses" unique="false"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hostclasses" unique="false"
         upperBound="-1" eType="#//StyleClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
         eType="#//Feature" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InstanciaEDOM">
     <eStructuralFeatures xsi:type="ecore:EReference" name="instancia" eType="#//EDOM"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sclasses" unique="false"
+        upperBound="-1" eType="#//StyleClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="insfeatures" upperBound="-1"
         eType="#//InstanceEDOMFeature" containment="true"/>
   </eClassifiers>

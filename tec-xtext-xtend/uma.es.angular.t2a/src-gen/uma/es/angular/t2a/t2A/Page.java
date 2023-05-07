@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uma.es.angular.t2a.t2A.Page#getSclasses <em>Sclasses</em>}</li>
+ *   <li>{@link uma.es.angular.t2a.t2A.Page#getHostclasses <em>Hostclasses</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.Page#isHome <em>Home</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.Page#isShowInNav <em>Show In Nav</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.Page#getPageFeatures <em>Page Features</em>}</li>
@@ -27,16 +27,16 @@ import org.eclipse.emf.common.util.EList;
 public interface Page extends Element
 {
   /**
-   * Returns the value of the '<em><b>Sclasses</b></em>' reference list.
+   * Returns the value of the '<em><b>Hostclasses</b></em>' reference list.
    * The list contents are of type {@link uma.es.angular.t2a.t2A.StyleClass}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Sclasses</em>' reference list.
-   * @see uma.es.angular.t2a.t2A.T2APackage#getPage_Sclasses()
+   * @return the value of the '<em>Hostclasses</em>' reference list.
+   * @see uma.es.angular.t2a.t2A.T2APackage#getPage_Hostclasses()
    * @model
    * @generated
    */
-  EList<StyleClass> getSclasses();
+  EList<StyleClass> getHostclasses();
 
   /**
    * Returns the value of the '<em><b>Home</b></em>' attribute.

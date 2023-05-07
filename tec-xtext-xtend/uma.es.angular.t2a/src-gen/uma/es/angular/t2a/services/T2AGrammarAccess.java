@@ -65,11 +65,11 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cSClassKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cSclassKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cSclassesAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final CrossReference cSclassesStyleClassCrossReference_3_2_0 = (CrossReference)cSclassesAssignment_3_2.eContents().get(0);
-		private final RuleCall cSclassesStyleClassIDTerminalRuleCall_3_2_0_1 = (RuleCall)cSclassesStyleClassCrossReference_3_2_0.eContents().get(1);
+		private final Assignment cHostclassesAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final CrossReference cHostclassesStyleClassCrossReference_3_2_0 = (CrossReference)cHostclassesAssignment_3_2.eContents().get(0);
+		private final RuleCall cHostclassesStyleClassIDTerminalRuleCall_3_2_0_1 = (RuleCall)cHostclassesStyleClassCrossReference_3_2_0.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
 		private final Assignment cHomeAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final Keyword cHomeHomeKeyword_4_0 = (Keyword)cHomeAssignment_4.eContents().get(0);
@@ -82,7 +82,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//Page:
 		//    'Page' name=ID
 		//    '{'
-		//    ('SClass' '{'(sclasses+=[StyleClass])* '}')?
+		//    ('sclass' '{'(hostclasses+=[StyleClass])* '}')?
 		//    (home?='home')?
 		//    (showInNav?='showInNav')?
 		//    (pageFeatures+=PageFeature)*
@@ -91,7 +91,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//'Page' name=ID
 		//'{'
-		//('SClass' '{'(sclasses+=[StyleClass])* '}')?
+		//('sclass' '{'(hostclasses+=[StyleClass])* '}')?
 		//(home?='home')?
 		//(showInNav?='showInNav')?
 		//(pageFeatures+=PageFeature)*
@@ -110,23 +110,23 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//('SClass' '{'(sclasses+=[StyleClass])* '}')?
+		//('sclass' '{'(hostclasses+=[StyleClass])* '}')?
 		public Group getGroup_3() { return cGroup_3; }
 		
-		//'SClass'
-		public Keyword getSClassKeyword_3_0() { return cSClassKeyword_3_0; }
+		//'sclass'
+		public Keyword getSclassKeyword_3_0() { return cSclassKeyword_3_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3_1() { return cLeftCurlyBracketKeyword_3_1; }
 		
-		//(sclasses+=[StyleClass])*
-		public Assignment getSclassesAssignment_3_2() { return cSclassesAssignment_3_2; }
+		//(hostclasses+=[StyleClass])*
+		public Assignment getHostclassesAssignment_3_2() { return cHostclassesAssignment_3_2; }
 		
 		//[StyleClass]
-		public CrossReference getSclassesStyleClassCrossReference_3_2_0() { return cSclassesStyleClassCrossReference_3_2_0; }
+		public CrossReference getHostclassesStyleClassCrossReference_3_2_0() { return cHostclassesStyleClassCrossReference_3_2_0; }
 		
 		//ID
-		public RuleCall getSclassesStyleClassIDTerminalRuleCall_3_2_0_1() { return cSclassesStyleClassIDTerminalRuleCall_3_2_0_1; }
+		public RuleCall getHostclassesStyleClassIDTerminalRuleCall_3_2_0_1() { return cHostclassesStyleClassIDTerminalRuleCall_3_2_0_1; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3_3() { return cRightCurlyBracketKeyword_3_3; }
@@ -346,7 +346,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
-		private final Keyword cSClassKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final Keyword cSclassKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2_1_1 = (Keyword)cGroup_2_1.eContents().get(1);
 		private final Assignment cSclassesAssignment_2_1_2 = (Assignment)cGroup_2_1.eContents().get(2);
 		private final CrossReference cSclassesStyleClassCrossReference_2_1_2_0 = (CrossReference)cSclassesAssignment_2_1_2.eContents().get(0);
@@ -359,14 +359,14 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//DOM:
 		//    'Dom' name=ID
 		//    ('{'
-		//    ('SClass' '{'(sclasses+=[StyleClass])* '}')?
+		//    ('sclass' '{'(sclasses+=[StyleClass])* '}')?
 		//        (features+=Feature)*
 		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Dom' name=ID
 		//('{'
-		//('SClass' '{'(sclasses+=[StyleClass])* '}')?
+		//('sclass' '{'(sclasses+=[StyleClass])* '}')?
 		//    (features+=Feature)*
 		//'}')?
 		public Group getGroup() { return cGroup; }
@@ -381,7 +381,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//('{'
-		//('SClass' '{'(sclasses+=[StyleClass])* '}')?
+		//('sclass' '{'(sclasses+=[StyleClass])* '}')?
 		//    (features+=Feature)*
 		//'}')?
 		public Group getGroup_2() { return cGroup_2; }
@@ -389,11 +389,11 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
-		//('SClass' '{'(sclasses+=[StyleClass])* '}')?
+		//('sclass' '{'(sclasses+=[StyleClass])* '}')?
 		public Group getGroup_2_1() { return cGroup_2_1; }
 		
-		//'SClass'
-		public Keyword getSClassKeyword_2_1_0() { return cSClassKeyword_2_1_0; }
+		//'sclass'
+		public Keyword getSclassKeyword_2_1_0() { return cSclassKeyword_2_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2_1_1() { return cLeftCurlyBracketKeyword_2_1_1; }
@@ -428,11 +428,11 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
-		private final Keyword cSClassKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final Keyword cSclassKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2_1_1 = (Keyword)cGroup_2_1.eContents().get(1);
-		private final Assignment cSclassesAssignment_2_1_2 = (Assignment)cGroup_2_1.eContents().get(2);
-		private final CrossReference cSclassesStyleClassCrossReference_2_1_2_0 = (CrossReference)cSclassesAssignment_2_1_2.eContents().get(0);
-		private final RuleCall cSclassesStyleClassIDTerminalRuleCall_2_1_2_0_1 = (RuleCall)cSclassesStyleClassCrossReference_2_1_2_0.eContents().get(1);
+		private final Assignment cHostclassesAssignment_2_1_2 = (Assignment)cGroup_2_1.eContents().get(2);
+		private final CrossReference cHostclassesStyleClassCrossReference_2_1_2_0 = (CrossReference)cHostclassesAssignment_2_1_2.eContents().get(0);
+		private final RuleCall cHostclassesStyleClassIDTerminalRuleCall_2_1_2_0_1 = (RuleCall)cHostclassesStyleClassCrossReference_2_1_2_0.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_2_1_3 = (Keyword)cGroup_2_1.eContents().get(3);
 		private final Assignment cFeaturesAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
 		private final RuleCall cFeaturesFeatureParserRuleCall_2_2_0 = (RuleCall)cFeaturesAssignment_2_2.eContents().get(0);
@@ -442,7 +442,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//    'Comp' name=ID
 		//    (
 		//    '{'
-		//    ('SClass' '{'(sclasses+=[StyleClass])* '}')?
+		//    ('sclass' '{'(hostclasses+=[StyleClass])* '}')?
 		//        (features+=Feature)*
 		//    '}'
 		//    )?
@@ -452,7 +452,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'Comp' name=ID
 		//(
 		//'{'
-		//('SClass' '{'(sclasses+=[StyleClass])* '}')?
+		//('sclass' '{'(hostclasses+=[StyleClass])* '}')?
 		//    (features+=Feature)*
 		//'}'
 		//)?
@@ -469,7 +469,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//(
 		//'{'
-		//('SClass' '{'(sclasses+=[StyleClass])* '}')?
+		//('sclass' '{'(hostclasses+=[StyleClass])* '}')?
 		//    (features+=Feature)*
 		//'}'
 		//)?
@@ -478,23 +478,23 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
 		
-		//('SClass' '{'(sclasses+=[StyleClass])* '}')?
+		//('sclass' '{'(hostclasses+=[StyleClass])* '}')?
 		public Group getGroup_2_1() { return cGroup_2_1; }
 		
-		//'SClass'
-		public Keyword getSClassKeyword_2_1_0() { return cSClassKeyword_2_1_0; }
+		//'sclass'
+		public Keyword getSclassKeyword_2_1_0() { return cSclassKeyword_2_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2_1_1() { return cLeftCurlyBracketKeyword_2_1_1; }
 		
-		//(sclasses+=[StyleClass])*
-		public Assignment getSclassesAssignment_2_1_2() { return cSclassesAssignment_2_1_2; }
+		//(hostclasses+=[StyleClass])*
+		public Assignment getHostclassesAssignment_2_1_2() { return cHostclassesAssignment_2_1_2; }
 		
 		//[StyleClass]
-		public CrossReference getSclassesStyleClassCrossReference_2_1_2_0() { return cSclassesStyleClassCrossReference_2_1_2_0; }
+		public CrossReference getHostclassesStyleClassCrossReference_2_1_2_0() { return cHostclassesStyleClassCrossReference_2_1_2_0; }
 		
 		//ID
-		public RuleCall getSclassesStyleClassIDTerminalRuleCall_2_1_2_0_1() { return cSclassesStyleClassIDTerminalRuleCall_2_1_2_0_1; }
+		public RuleCall getHostclassesStyleClassIDTerminalRuleCall_2_1_2_0_1() { return cHostclassesStyleClassIDTerminalRuleCall_2_1_2_0_1; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_2_1_3() { return cRightCurlyBracketKeyword_2_1_3; }
@@ -516,17 +516,26 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cInstanciaEDOMIDTerminalRuleCall_0_0_1 = (RuleCall)cInstanciaEDOMCrossReference_0_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cInsfeaturesAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cInsfeaturesInstanceEDOMFeatureParserRuleCall_1_1_0 = (RuleCall)cInsfeaturesAssignment_1_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
+		private final Keyword cSclassKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
+		private final Assignment cSclassesAssignment_1_1_2 = (Assignment)cGroup_1_1.eContents().get(2);
+		private final CrossReference cSclassesStyleClassCrossReference_1_1_2_0 = (CrossReference)cSclassesAssignment_1_1_2.eContents().get(0);
+		private final RuleCall cSclassesStyleClassIDTerminalRuleCall_1_1_2_0_1 = (RuleCall)cSclassesStyleClassCrossReference_1_1_2_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_1_1_3 = (Keyword)cGroup_1_1.eContents().get(3);
+		private final Assignment cInsfeaturesAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cInsfeaturesInstanceEDOMFeatureParserRuleCall_1_2_0 = (RuleCall)cInsfeaturesAssignment_1_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
 		
 		//InstanciaEDOM: instancia=[EDOM] ('{'
+		//        ('sclass' '{'(sclasses+=[StyleClass])* '}')?
 		//        (insfeatures+=InstanceEDOMFeature)*
 		//    '}'
 		//)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		// instancia=[EDOM] ('{'
+		//        ('sclass' '{'(sclasses+=[StyleClass])* '}')?
 		//        (insfeatures+=InstanceEDOMFeature)*
 		//    '}'
 		//)?
@@ -542,6 +551,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		public RuleCall getInstanciaEDOMIDTerminalRuleCall_0_0_1() { return cInstanciaEDOMIDTerminalRuleCall_0_0_1; }
 		
 		// ('{'
+		//        ('sclass' '{'(sclasses+=[StyleClass])* '}')?
 		//        (insfeatures+=InstanceEDOMFeature)*
 		//    '}'
 		//)?
@@ -550,14 +560,35 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1_0() { return cLeftCurlyBracketKeyword_1_0; }
 		
-		//(insfeatures+=InstanceEDOMFeature)*
-		public Assignment getInsfeaturesAssignment_1_1() { return cInsfeaturesAssignment_1_1; }
+		//('sclass' '{'(sclasses+=[StyleClass])* '}')?
+		public Group getGroup_1_1() { return cGroup_1_1; }
 		
-		//InstanceEDOMFeature
-		public RuleCall getInsfeaturesInstanceEDOMFeatureParserRuleCall_1_1_0() { return cInsfeaturesInstanceEDOMFeatureParserRuleCall_1_1_0; }
+		//'sclass'
+		public Keyword getSclassKeyword_1_1_0() { return cSclassKeyword_1_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1_1_1() { return cLeftCurlyBracketKeyword_1_1_1; }
+		
+		//(sclasses+=[StyleClass])*
+		public Assignment getSclassesAssignment_1_1_2() { return cSclassesAssignment_1_1_2; }
+		
+		//[StyleClass]
+		public CrossReference getSclassesStyleClassCrossReference_1_1_2_0() { return cSclassesStyleClassCrossReference_1_1_2_0; }
+		
+		//ID
+		public RuleCall getSclassesStyleClassIDTerminalRuleCall_1_1_2_0_1() { return cSclassesStyleClassIDTerminalRuleCall_1_1_2_0_1; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_1_2() { return cRightCurlyBracketKeyword_1_2; }
+		public Keyword getRightCurlyBracketKeyword_1_1_3() { return cRightCurlyBracketKeyword_1_1_3; }
+		
+		//(insfeatures+=InstanceEDOMFeature)*
+		public Assignment getInsfeaturesAssignment_1_2() { return cInsfeaturesAssignment_1_2; }
+		
+		//InstanceEDOMFeature
+		public RuleCall getInsfeaturesInstanceEDOMFeatureParserRuleCall_1_2_0() { return cInsfeaturesInstanceEDOMFeatureParserRuleCall_1_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_1_3() { return cRightCurlyBracketKeyword_1_3; }
 	}
 	public class InstanceEDOMFeatureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.InstanceEDOMFeature");
@@ -568,13 +599,13 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cStringSTRINGTerminalRuleCall_1_0 = (RuleCall)cStringAssignment_1.eContents().get(0);
 		
 		//InstanceEDOMFeature:
-		//    instanciaEDOM= InstanciaEDOM | string=STRING;
+		//    instanciaEDOM=InstanciaEDOM  | string=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//instanciaEDOM= InstanciaEDOM | string=STRING
+		//instanciaEDOM=InstanciaEDOM  | string=STRING
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//instanciaEDOM= InstanciaEDOM
+		//instanciaEDOM=InstanciaEDOM
 		public Assignment getInstanciaEDOMAssignment_0() { return cInstanciaEDOMAssignment_0; }
 		
 		//InstanciaEDOM
@@ -793,7 +824,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//Page:
 	//    'Page' name=ID
 	//    '{'
-	//    ('SClass' '{'(sclasses+=[StyleClass])* '}')?
+	//    ('sclass' '{'(hostclasses+=[StyleClass])* '}')?
 	//    (home?='home')?
 	//    (showInNav?='showInNav')?
 	//    (pageFeatures+=PageFeature)*
@@ -850,7 +881,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//DOM:
 	//    'Dom' name=ID
 	//    ('{'
-	//    ('SClass' '{'(sclasses+=[StyleClass])* '}')?
+	//    ('sclass' '{'(sclasses+=[StyleClass])* '}')?
 	//        (features+=Feature)*
 	//    '}')?;
 	public DOMElements getDOMAccess() {
@@ -865,7 +896,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//    'Comp' name=ID
 	//    (
 	//    '{'
-	//    ('SClass' '{'(sclasses+=[StyleClass])* '}')?
+	//    ('sclass' '{'(hostclasses+=[StyleClass])* '}')?
 	//        (features+=Feature)*
 	//    '}'
 	//    )?
@@ -879,6 +910,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//InstanciaEDOM: instancia=[EDOM] ('{'
+	//        ('sclass' '{'(sclasses+=[StyleClass])* '}')?
 	//        (insfeatures+=InstanceEDOMFeature)*
 	//    '}'
 	//)?;
@@ -891,7 +923,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//InstanceEDOMFeature:
-	//    instanciaEDOM= InstanciaEDOM | string=STRING;
+	//    instanciaEDOM=InstanciaEDOM  | string=STRING;
 	public InstanceEDOMFeatureElements getInstanceEDOMFeatureAccess() {
 		return pInstanceEDOMFeature;
 	}
