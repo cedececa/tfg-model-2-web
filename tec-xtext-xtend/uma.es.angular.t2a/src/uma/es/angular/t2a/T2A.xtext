@@ -20,8 +20,6 @@ Page:
 EDOM:
 	DOM | Comp | StyleClass ;
 
-
-
 StyleClass:
 	'StyleClass' name=Name
 	'{'
@@ -29,11 +27,9 @@ StyleClass:
 	'}'
 ;
 
-
 SAttributeAndValue:
 	stname=Name value=STRING2
 ;
-
 
 DOM:
 	'Dom' name=ID
@@ -70,7 +66,6 @@ Feature:
     string=STRING
 ; 
 
-
 Name:
 	 ('_'|'#'|'-'|'*'|'.'|'::'|'>'|ID)*
 ;
@@ -79,12 +74,8 @@ Name:
 terminal STRING:
     '"' ( '\\'('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
     "'" ( '\\'('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'";
-    
-
-
    
 terminal STRING2: 
     (': '|':'|' : ')('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'#'|'-'|'%'|'*'|','|', '|'('|')'|'px '|'"') ('a'..'z'|'A'..'Z'|'_'|'0'..'9'|'#'|'-'|'%'|'*'|','|', '|'('|')'|'px '|'"')*;
-    
-    
+
     

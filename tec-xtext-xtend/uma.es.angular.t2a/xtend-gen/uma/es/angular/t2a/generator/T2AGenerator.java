@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
@@ -21,11 +20,7 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import uma.es.angular.t2a.t2A.Comp;
 import uma.es.angular.t2a.t2A.Element;
-import uma.es.angular.t2a.t2A.Feature;
-import uma.es.angular.t2a.t2A.InstanceEDOMFeature;
-import uma.es.angular.t2a.t2A.InstanciaEDOM;
 import uma.es.angular.t2a.t2A.Page;
-import uma.es.angular.t2a.t2A.PageFeature;
 import uma.es.angular.t2a.t2A.Root;
 
 /**
@@ -94,7 +89,7 @@ public class T2AGenerator extends AbstractGenerator {
         boolean _equals = element.eClass().getName().equals("Page");
         if (_equals) {
           Page page = ((Page) element);
-          this.generateClassFile(page, fsa);
+          AngularPage.generatePageFiles(page, fsa);
           pages.add(page);
           boolean _isHome = page.isHome();
           boolean _equals_1 = (_isHome == true);
@@ -105,7 +100,7 @@ public class T2AGenerator extends AbstractGenerator {
         boolean _equals_2 = element.eClass().getName().equals("Comp");
         if (_equals_2) {
           Comp comp = ((Comp) element);
-          this.generateClassFile(comp, fsa);
+          AngularComponent.generateComponentFiles(comp, fsa);
           components.add(comp);
         }
       }
@@ -116,221 +111,9 @@ public class T2AGenerator extends AbstractGenerator {
     this.runAngularProject(absoluteSrcGenDirectory);
   }
   
-  public void generateClassFile(final Page page, final IFileSystemAccess2 fsa) {
-    String _name = page.getName();
-    String nameLowercase = new String(_name).toLowerCase();
-    String relativePath = ((("pages/" + nameLowercase) + "/") + nameLowercase);
-    fsa.generateFile((relativePath + ".page.ts"), this.toTSCode(page));
-    fsa.generateFile((relativePath + ".page.html"), this.toHTMLCode(page));
-  }
-  
-  public void generateClassFile(final Comp comp, final IFileSystemAccess2 fsa) {
-    String _name = comp.getName();
-    String nameLowercase = new String(_name).toLowerCase();
-    String relativePath = ((("components/" + nameLowercase) + "/") + nameLowercase);
-    fsa.generateFile((relativePath + ".comp.ts"), this.toTSCode(comp));
-    fsa.generateFile((relativePath + ".comp.html"), this.toHTMLCode(comp));
-  }
-  
   public String className(final Resource res) {
     String name = res.getURI().lastSegment();
     return name.substring(0, name.indexOf("."));
-  }
-  
-  public CharSequence toTSCode(final Comp comp) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\t");
-    _builder.append("import { Component } from \'@angular/core\';");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("@Component({");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("selector: \'");
-    String _name = comp.getName();
-    _builder.append(_name, "\t\t");
-    _builder.append("\',");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
-    _builder.append("templateUrl: \'./");
-    String _lowerCase = comp.getName().toLowerCase();
-    _builder.append(_lowerCase, "\t\t");
-    _builder.append(".comp.html\',");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
-    _builder.append("styles:[]");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("})");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("export class ");
-    String _name_1 = comp.getName();
-    _builder.append(_name_1, "\t");
-    _builder.append("Component{");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("}");
-    _builder.newLine();
-    return _builder;
-  }
-  
-  public CharSequence toTSCode(final Page page) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\t");
-    _builder.append("import { Component } from \'@angular/core\';");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("@Component({");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("selector: \'");
-    String _name = page.getName();
-    _builder.append(_name, "\t\t");
-    _builder.append("\',");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
-    _builder.append("templateUrl: \'./");
-    String _lowerCase = page.getName().toLowerCase();
-    _builder.append(_lowerCase, "\t\t");
-    _builder.append(".page.html\',");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
-    _builder.append("styles:[]");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("})");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("export class ");
-    String _name_1 = page.getName();
-    _builder.append(_name_1, "\t");
-    _builder.append("Page{");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("}");
-    _builder.newLine();
-    return _builder;
-  }
-  
-  public CharSequence toHTMLCode(final Comp comp) {
-    StringConcatenation _builder = new StringConcatenation();
-    {
-      EList<Feature> _features = comp.getFeatures();
-      for(final Feature feature : _features) {
-        Feature f = ((Feature) feature);
-        _builder.newLineIfNotEmpty();
-        {
-          InstanciaEDOM _instanciaEDOM = f.getInstanciaEDOM();
-          boolean _tripleNotEquals = (_instanciaEDOM != null);
-          if (_tripleNotEquals) {
-            CharSequence _hTMLCodeForInstanciaEDOM = this.toHTMLCodeForInstanciaEDOM(f.getInstanciaEDOM());
-            _builder.append(_hTMLCodeForInstanciaEDOM);
-            _builder.newLineIfNotEmpty();
-          }
-        }
-        {
-          boolean _isAllowSlot = f.isAllowSlot();
-          if (_isAllowSlot) {
-            _builder.append("<ng-content>");
-            _builder.newLine();
-            _builder.append("</ng-content>");
-            _builder.newLine();
-          }
-        }
-        {
-          String _string = f.getString();
-          boolean _tripleNotEquals_1 = (_string != null);
-          if (_tripleNotEquals_1) {
-            String _string_1 = f.getString();
-            _builder.append(_string_1);
-            _builder.newLineIfNotEmpty();
-          }
-        }
-      }
-    }
-    return _builder;
-  }
-  
-  public CharSequence toHTMLCode(final Page page) {
-    StringConcatenation _builder = new StringConcatenation();
-    {
-      EList<PageFeature> _pageFeatures = page.getPageFeatures();
-      for(final PageFeature pageFeature : _pageFeatures) {
-        PageFeature pf = ((PageFeature) pageFeature);
-        _builder.newLineIfNotEmpty();
-        {
-          InstanciaEDOM _instanciaEDOM = pf.getInstanciaEDOM();
-          boolean _tripleNotEquals = (_instanciaEDOM != null);
-          if (_tripleNotEquals) {
-            CharSequence _hTMLCodeForInstanciaEDOM = this.toHTMLCodeForInstanciaEDOM(pf.getInstanciaEDOM());
-            _builder.append(_hTMLCodeForInstanciaEDOM);
-            _builder.newLineIfNotEmpty();
-          }
-        }
-        {
-          String _string = pf.getString();
-          boolean _tripleNotEquals_1 = (_string != null);
-          if (_tripleNotEquals_1) {
-            String _string_1 = pf.getString();
-            _builder.append(_string_1);
-            _builder.newLineIfNotEmpty();
-          }
-        }
-      }
-    }
-    return _builder;
-  }
-  
-  public CharSequence toHTMLCodeForInstanciaEDOM(final InstanciaEDOM instanciaEDOM) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<");
-    String _name = instanciaEDOM.getInstancia().getName();
-    _builder.append(_name);
-    _builder.append(">");
-    _builder.newLineIfNotEmpty();
-    {
-      EList<InstanceEDOMFeature> _insfeatures = instanciaEDOM.getInsfeatures();
-      for(final InstanceEDOMFeature insfeature : _insfeatures) {
-        _builder.append("\t");
-        InstanceEDOMFeature insf = ((InstanceEDOMFeature) insfeature);
-        _builder.newLineIfNotEmpty();
-        {
-          InstanciaEDOM _instanciaEDOM = insf.getInstanciaEDOM();
-          boolean _tripleNotEquals = (_instanciaEDOM != null);
-          if (_tripleNotEquals) {
-            _builder.append("\t");
-            Object _hTMLCodeForInstanciaEDOM = this.toHTMLCodeForInstanciaEDOM(insf.getInstanciaEDOM());
-            _builder.append(_hTMLCodeForInstanciaEDOM, "\t");
-            _builder.newLineIfNotEmpty();
-          }
-        }
-        {
-          String _string = insf.getString();
-          boolean _tripleNotEquals_1 = (_string != null);
-          if (_tripleNotEquals_1) {
-            _builder.append("\t");
-            String _string_1 = insf.getString();
-            _builder.append(_string_1, "\t");
-            _builder.newLineIfNotEmpty();
-          }
-        }
-      }
-    }
-    _builder.append("</");
-    String _name_1 = instanciaEDOM.getInstancia().getName();
-    _builder.append(_name_1);
-    _builder.append(">");
-    _builder.newLineIfNotEmpty();
-    return _builder;
   }
   
   public void runAngularProject(final String srcGenDirectoryAbsolutePath) {

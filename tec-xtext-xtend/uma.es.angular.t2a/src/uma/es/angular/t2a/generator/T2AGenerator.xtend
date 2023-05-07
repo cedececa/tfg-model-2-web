@@ -87,7 +87,7 @@ class T2AGenerator extends AbstractGenerator {
 		for (element : root.elements) {
 			if (element.eClass.name.equals('Page')) {
 				var page = element as Page;
-				generateClassFile(page, fsa);
+				AngularPage.generatePageFiles(page, fsa);
 				pages.add(page);
 				if (page.home == true) {
 					AppModule.generarModule(fsa, page);
@@ -95,7 +95,7 @@ class T2AGenerator extends AbstractGenerator {
 			}
 			if (element.eClass.name.equals('Comp')) {
 				var comp = element as Comp;
-				generateClassFile(comp, fsa);
+				AngularComponent.generateComponentFiles(comp, fsa);
 				components.add(comp);
 			}
 		}
@@ -107,109 +107,14 @@ class T2AGenerator extends AbstractGenerator {
 
 	}
 
-	def generateClassFile(Page page, IFileSystemAccess2 fsa) {
-		var nameLowercase = (new String(page.name)).toLowerCase()
-		var relativePath = 'pages/' + nameLowercase + '/' + nameLowercase;
-		fsa.generateFile(relativePath + '.page.ts', toTSCode(page));
-		fsa.generateFile(relativePath + '.page.html', toHTMLCode(page));
-	}
-
-	def generateClassFile(Comp comp, IFileSystemAccess2 fsa) {
-		var nameLowercase = (new String(comp.name)).toLowerCase()
-		var relativePath = 'components/' + nameLowercase + '/' + nameLowercase;
-		fsa.generateFile(relativePath + '.comp.ts', toTSCode(comp));
-		fsa.generateFile(relativePath + '.comp.html', toHTMLCode(comp));
-	}
 
 	def className(Resource res) {
 		var name = res.URI.lastSegment;
 		return name.substring(0, name.indexOf('.'))
 	}
 
-	def toTSCode(Comp comp) {
-		'''
-				import { Component } from '@angular/core';
-			
-				@Component({
-					selector: '«comp.name»',
-					templateUrl: './«comp.name.toLowerCase».comp.html',
-					styles:[]
-				})
-				export class «comp.name»Component{
-					
-				}
-		'''
-
-	// styleUrls:['«comp.name».comp.scss']	
-	}
-
-	def toTSCode(Page page) {
-		'''
-				import { Component } from '@angular/core';
-			
-				@Component({
-					selector: '«page.name»',
-					templateUrl: './«page.name.toLowerCase».page.html',
-					styles:[]
-					
-				})
-				export class «page.name»Page{
-					
-				}
-		'''
-	// styleUrls:['«page.name».page.scss']	
-	}
-
-	def toHTMLCode(Comp comp) {
-		'''
-			«FOR feature : comp.features»
-				«var f = feature as Feature»
-				«IF f.instanciaEDOM !== null »
-					«toHTMLCodeForInstanciaEDOM(f.instanciaEDOM)»
-				«ENDIF»	
-				«IF f.isAllowSlot»
-					<ng-content>
-					</ng-content>
-				«ENDIF»
-				«IF f.string!==null»
-					«f.string»
-				«ENDIF»
-			«ENDFOR»
-		'''
-	}
-
-	def toHTMLCode(Page page) {
-		'''
-			«FOR pageFeature : page.pageFeatures»
-				«var pf = pageFeature as PageFeature»
-				«IF pf.instanciaEDOM !== null »
-					«toHTMLCodeForInstanciaEDOM(pf.instanciaEDOM)»
-				«ENDIF»	
-				«IF pf.string!==null»
-					«pf.string»
-				«ENDIF»
-			«ENDFOR»
-		'''
-	}
-
-	def toHTMLCodeForInstanciaEDOM(InstanciaEDOM instanciaEDOM) {
-		''' 
-			<«instanciaEDOM.instancia.name»>
-				«FOR insfeature : instanciaEDOM.insfeatures»
-					«var insf = insfeature as InstanceEDOMFeature»
-					«IF insf.instanciaEDOM !== null»
-						«toHTMLCodeForInstanciaEDOM(insf.instanciaEDOM)»
-					«ENDIF»	
-					«IF insf.string!==null»
-						«insf.string»
-					«ENDIF»
-				«ENDFOR»
-			</«instanciaEDOM.instancia.name»>
-		'''
-	}
-
+	
 	def runAngularProject(String srcGenDirectoryAbsolutePath) {
-
 		AngularRunner.run(srcGenDirectoryAbsolutePath);
 	}
 }
