@@ -8,14 +8,17 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import uma.es.angular.t2a.t2A.StyleClass
 import java.util.List
 import java.util.ArrayList
+import java.util.Set
+import java.util.TreeSet
+import java.util.HashSet
 
 class AngularPage {
-	private static List<StyleClass> sclasses = new ArrayList<StyleClass>();
-	private static List<StyleClass> hostclasses = new ArrayList<StyleClass>();
+	private static Set<StyleClass> sclasses = new HashSet<StyleClass>();
+	private static Set<StyleClass> hostclasses = new HashSet<StyleClass>();
 
 	static def generatePageFiles(Page page, IFileSystemAccess2 fsa) {
-		sclasses = new ArrayList<StyleClass>();
-		hostclasses = new ArrayList<StyleClass>();
+		sclasses = new HashSet<StyleClass>();
+		hostclasses = new HashSet<StyleClass>();
 		var nameLowercase = (new String(page.name)).toLowerCase()
 		var relativePath = 'pages/' + nameLowercase + '/' + nameLowercase;
 		fsa.generateFile(relativePath + '.page.ts', AngularPage.toTSCode(page));
@@ -43,6 +46,8 @@ class AngularPage {
 	}
 
 	static def toHTMLCode(Page page) {
+		hostclasses.addAll(page.hostclasses);
+		
 		'''
 			«FOR pageFeature : page.pageFeatures»
 				«var pf = pageFeature as PageFeature»
@@ -57,6 +62,8 @@ class AngularPage {
 	}
 
 	static def toHTMLCodeForInstanciaEDOM(InstanciaEDOM instanciaEDOM) {
+		sclasses.addAll(instanciaEDOM.sclasses);
+		
 		''' 
 			<«instanciaEDOM.instancia.name» «getStyleClassesNames(instanciaEDOM.sclasses)»>
 				«FOR insfeature : instanciaEDOM.insfeatures»
@@ -77,7 +84,7 @@ class AngularPage {
 		'''«IF sclasses.length>0» class="«FOR sc:sclasses»«sc.name» «ENDFOR»" «ENDIF»'''
 	}
 
-	private static def toCSSCode(List<StyleClass> hostclasses, List<StyleClass> sclasses) {
+	private static def toCSSCode(Set<StyleClass>  hostclasses,Set<StyleClass>  sclasses) {
 		''' «toHostCSSCode(hostclasses)»
 			«FOR sclass : sclasses»
 				«var sc = sclass as StyleClass»
@@ -104,30 +111,35 @@ class AngularPage {
 		'''
 	}
 
-	private static def toHostCSSCode(List<StyleClass> hostclasses) {
+	private static def toHostCSSCode(Set<StyleClass> hostclasses) {
 		'''
+		«IF hostclasses.length>0»
+		:host {
 			«FOR sclass : hostclasses»
-				«var sc = sclass as StyleClass»
-				:host {
-					«FOR attri : sc.sattributes»
-						«attri.stname» «attri.value»;
-					«ENDFOR»
-				}
-				«IF sc.sattributesAfter.length>0»
-					:host::after{
-						«FOR aafter : sc.sattributesAfter»
-							«aafter.stname» «aafter.value»;
-						«ENDFOR»		   				
-					}
-				«ENDIF»
-				«IF sc.sattributesActive.length>0»
-					:host.active{
-						«FOR aactive : sc.sattributesActive»
-							«aactive.stname» «aactive.value»;
-						«ENDFOR»		   				
-					}
-				«ENDIF»				
+				«var sc = sclass as StyleClass»							
+				«FOR attri : sc.sattributes»
+					«attri.stname» «attri.value»;
+				«ENDFOR»
 			«ENDFOR»
+		}
+		«ENDIF»		
+		«FOR sclass : hostclasses»
+			«var sc = sclass as StyleClass»
+			«IF sc.sattributesAfter.length>0»
+				:host::after{
+					«FOR aafter : sc.sattributesAfter»
+						«aafter.stname» «aafter.value»;
+					«ENDFOR»		   				
+				}
+			«ENDIF»
+			«IF sc.sattributesActive.length>0»
+				:host.active{
+					«FOR aactive : sc.sattributesActive»
+						«aactive.stname» «aactive.value»;
+					«ENDFOR»		   				
+				}
+			«ENDIF»				
+		«ENDFOR»
 		'''
 	}
 }
