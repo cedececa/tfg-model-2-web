@@ -186,12 +186,34 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Assignment cSattributesAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
 		private final RuleCall cSattributesSAttributeAndValueParserRuleCall_3_0_0 = (RuleCall)cSattributesAssignment_3_0.eContents().get(0);
 		private final Keyword cSemicolonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cAfterKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Group cGroup_4_2 = (Group)cGroup_4.eContents().get(2);
+		private final Assignment cSattributesAfterAssignment_4_2_0 = (Assignment)cGroup_4_2.eContents().get(0);
+		private final RuleCall cSattributesAfterSAttributeAndValueParserRuleCall_4_2_0_0 = (RuleCall)cSattributesAfterAssignment_4_2_0.eContents().get(0);
+		private final Keyword cSemicolonKeyword_4_2_1 = (Keyword)cGroup_4_2.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_4_3 = (Keyword)cGroup_4.eContents().get(3);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cActiveKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Group cGroup_5_2 = (Group)cGroup_5.eContents().get(2);
+		private final Assignment cSattributesActiveAssignment_5_2_0 = (Assignment)cGroup_5_2.eContents().get(0);
+		private final RuleCall cSattributesActiveSAttributeAndValueParserRuleCall_5_2_0_0 = (RuleCall)cSattributesActiveAssignment_5_2_0.eContents().get(0);
+		private final Keyword cSemicolonKeyword_5_2_1 = (Keyword)cGroup_5_2.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//StyleClass:
 		//    'StyleClass' name=Name
 		//    '{'
 		//        (sattributes+=SAttributeAndValue';')*
+		//        ('after' '{'
+		//            (sattributesAfter+=SAttributeAndValue';')*
+		//        '}')?
+		//        ('active' '{'
+		//            (sattributesActive+=SAttributeAndValue';')*
+		//        '}')?
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -199,6 +221,12 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'StyleClass' name=Name
 		//'{'
 		//    (sattributes+=SAttributeAndValue';')*
+		//    ('after' '{'
+		//        (sattributesAfter+=SAttributeAndValue';')*
+		//    '}')?
+		//    ('active' '{'
+		//        (sattributesActive+=SAttributeAndValue';')*
+		//    '}')?
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -226,8 +254,60 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//';'
 		public Keyword getSemicolonKeyword_3_1() { return cSemicolonKeyword_3_1; }
 		
+		//('after' '{'
+		//    (sattributesAfter+=SAttributeAndValue';')*
+		//'}')?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'after'
+		public Keyword getAfterKeyword_4_0() { return cAfterKeyword_4_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
+		
+		//(sattributesAfter+=SAttributeAndValue';')*
+		public Group getGroup_4_2() { return cGroup_4_2; }
+		
+		//sattributesAfter+=SAttributeAndValue
+		public Assignment getSattributesAfterAssignment_4_2_0() { return cSattributesAfterAssignment_4_2_0; }
+		
+		//SAttributeAndValue
+		public RuleCall getSattributesAfterSAttributeAndValueParserRuleCall_4_2_0_0() { return cSattributesAfterSAttributeAndValueParserRuleCall_4_2_0_0; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_4_2_1() { return cSemicolonKeyword_4_2_1; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_4_3() { return cRightCurlyBracketKeyword_4_3; }
+		
+		//('active' '{'
+		//    (sattributesActive+=SAttributeAndValue';')*
+		//'}')?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'active'
+		public Keyword getActiveKeyword_5_0() { return cActiveKeyword_5_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_5_1() { return cLeftCurlyBracketKeyword_5_1; }
+		
+		//(sattributesActive+=SAttributeAndValue';')*
+		public Group getGroup_5_2() { return cGroup_5_2; }
+		
+		//sattributesActive+=SAttributeAndValue
+		public Assignment getSattributesActiveAssignment_5_2_0() { return cSattributesActiveAssignment_5_2_0; }
+		
+		//SAttributeAndValue
+		public RuleCall getSattributesActiveSAttributeAndValueParserRuleCall_5_2_0_0() { return cSattributesActiveSAttributeAndValueParserRuleCall_5_2_0_0; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_5_2_1() { return cSemicolonKeyword_5_2_1; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5_3() { return cRightCurlyBracketKeyword_5_3; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class SAttributeAndValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.SAttributeAndValue");
@@ -740,6 +820,12 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//    'StyleClass' name=Name
 	//    '{'
 	//        (sattributes+=SAttributeAndValue';')*
+	//        ('after' '{'
+	//            (sattributesAfter+=SAttributeAndValue';')*
+	//        '}')?
+	//        ('active' '{'
+	//            (sattributesActive+=SAttributeAndValue';')*
+	//        '}')?
 	//    '}'
 	//;
 	public StyleClassElements getStyleClassAccess() {

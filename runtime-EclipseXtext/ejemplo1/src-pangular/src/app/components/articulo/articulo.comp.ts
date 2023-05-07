@@ -3,7 +3,7 @@
 	@Component({
 		selector: 'Articulo',
 		templateUrl: './articulo.comp.html',
-		styles:[]
+		styleUrls:['articulo.comp.scss']	
 	})
 	export class ArticuloComponent{
 		

@@ -234,13 +234,31 @@ public interface T2APackage extends EPackage
   int STYLE_CLASS__SATTRIBUTES = EDOM_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Sattributes After</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STYLE_CLASS__SATTRIBUTES_AFTER = EDOM_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Sattributes Active</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STYLE_CLASS__SATTRIBUTES_ACTIVE = EDOM_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Style Class</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STYLE_CLASS_FEATURE_COUNT = EDOM_FEATURE_COUNT + 1;
+  int STYLE_CLASS_FEATURE_COUNT = EDOM_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.SAttributeAndValueImpl <em>SAttribute And Value</em>}' class.
@@ -657,6 +675,28 @@ public interface T2APackage extends EPackage
   EReference getStyleClass_Sattributes();
 
   /**
+   * Returns the meta object for the containment reference list '{@link uma.es.angular.t2a.t2A.StyleClass#getSattributesAfter <em>Sattributes After</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Sattributes After</em>'.
+   * @see uma.es.angular.t2a.t2A.StyleClass#getSattributesAfter()
+   * @see #getStyleClass()
+   * @generated
+   */
+  EReference getStyleClass_SattributesAfter();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uma.es.angular.t2a.t2A.StyleClass#getSattributesActive <em>Sattributes Active</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Sattributes Active</em>'.
+   * @see uma.es.angular.t2a.t2A.StyleClass#getSattributesActive()
+   * @see #getStyleClass()
+   * @generated
+   */
+  EReference getStyleClass_SattributesActive();
+
+  /**
    * Returns the meta object for class '{@link uma.es.angular.t2a.t2A.SAttributeAndValue <em>SAttribute And Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1019,6 +1059,22 @@ public interface T2APackage extends EPackage
      * @generated
      */
     EReference STYLE_CLASS__SATTRIBUTES = eINSTANCE.getStyleClass_Sattributes();
+
+    /**
+     * The meta object literal for the '<em><b>Sattributes After</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STYLE_CLASS__SATTRIBUTES_AFTER = eINSTANCE.getStyleClass_SattributesAfter();
+
+    /**
+     * The meta object literal for the '<em><b>Sattributes Active</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STYLE_CLASS__SATTRIBUTES_ACTIVE = eINSTANCE.getStyleClass_SattributesActive();
 
     /**
      * The meta object literal for the '{@link uma.es.angular.t2a.t2A.impl.SAttributeAndValueImpl <em>SAttribute And Value</em>}' class.

@@ -5,6 +5,7 @@ import uma.es.angular.t2a.t2A.Feature
 import uma.es.angular.t2a.t2A.InstanciaEDOM
 import uma.es.angular.t2a.t2A.InstanceEDOMFeature
 import org.eclipse.xtext.generator.IFileSystemAccess2
+import uma.es.angular.t2a.t2A.StyleClass
 
 class AngularComponent {
 
@@ -13,6 +14,7 @@ class AngularComponent {
 		var relativePath = 'components/' + nameLowercase + '/' + nameLowercase;
 		fsa.generateFile(relativePath + '.comp.ts', AngularComponent.toTSCode(comp));
 		fsa.generateFile(relativePath + '.comp.html', AngularComponent.toHTMLCode(comp));
+		fsa.generateFile(relativePath + '.comp.scss', AngularComponent.toCSSCode(comp));
 	}
 
 	static def toTSCode(Comp comp) {
@@ -22,7 +24,7 @@ class AngularComponent {
 				@Component({
 					selector: '«comp.name»',
 					templateUrl: './«comp.name.toLowerCase».comp.html',
-					styles:[]
+					styleUrls:['«comp.name.toLowerCase».comp.scss']	
 				})
 				export class «comp.name»Component{
 					
@@ -63,6 +65,33 @@ class AngularComponent {
 					«ENDIF»
 				«ENDFOR»
 			</«instanciaEDOM.instancia.name»>
+		'''
+	}
+	
+	static def toCSSCode(Comp comp) {
+		'''
+			«FOR sclass : comp.sclasses»
+				«var sc = sclass as StyleClass»
+				.«sc.name» {
+					«FOR attri : sc.sattributes»
+						«attri.stname» «attri.value»;
+					«ENDFOR»
+				}
+				«IF sc.sattributesAfter.length>0»
+					.«sc.name»::after{
+						«FOR aafter : sc.sattributesAfter»
+							«aafter.stname» «aafter.value»;
+						«ENDFOR»		   				
+					}
+				«ENDIF»
+				«IF sc.sattributesActive.length>0»
+					.«sc.name».active{
+						«FOR aactive : sc.sattributesActive»
+							«aactive.stname» «aactive.value»;
+						«ENDFOR»		   				
+					}
+				«ENDIF»				
+			«ENDFOR»
 		'''
 	}
 }

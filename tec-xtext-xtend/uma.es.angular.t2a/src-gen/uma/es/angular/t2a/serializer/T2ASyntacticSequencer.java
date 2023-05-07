@@ -27,6 +27,8 @@ public class T2ASyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_DOM___SClassKeyword_2_1_0_LeftCurlyBracketKeyword_2_1_1_RightCurlyBracketKeyword_2_1_3__q;
 	protected AbstractElementAlias match_InstanciaEDOM___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q;
 	protected AbstractElementAlias match_Page___SClassKeyword_3_0_LeftCurlyBracketKeyword_3_1_RightCurlyBracketKeyword_3_3__q;
+	protected AbstractElementAlias match_StyleClass___ActiveKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q;
+	protected AbstractElementAlias match_StyleClass___AfterKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -37,6 +39,8 @@ public class T2ASyntacticSequencer extends AbstractSyntacticSequencer {
 		match_DOM___SClassKeyword_2_1_0_LeftCurlyBracketKeyword_2_1_1_RightCurlyBracketKeyword_2_1_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDOMAccess().getSClassKeyword_2_1_0()), new TokenAlias(false, false, grammarAccess.getDOMAccess().getLeftCurlyBracketKeyword_2_1_1()), new TokenAlias(false, false, grammarAccess.getDOMAccess().getRightCurlyBracketKeyword_2_1_3()));
 		match_InstanciaEDOM___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getInstanciaEDOMAccess().getLeftCurlyBracketKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getInstanciaEDOMAccess().getRightCurlyBracketKeyword_1_2()));
 		match_Page___SClassKeyword_3_0_LeftCurlyBracketKeyword_3_1_RightCurlyBracketKeyword_3_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPageAccess().getSClassKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_3_1()), new TokenAlias(false, false, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_3_3()));
+		match_StyleClass___ActiveKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getStyleClassAccess().getActiveKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getStyleClassAccess().getLeftCurlyBracketKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getStyleClassAccess().getRightCurlyBracketKeyword_5_3()));
+		match_StyleClass___AfterKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getStyleClassAccess().getAfterKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getStyleClassAccess().getLeftCurlyBracketKeyword_4_1()), new TokenAlias(false, false, grammarAccess.getStyleClassAccess().getRightCurlyBracketKeyword_4_3()));
 	}
 	
 	@Override
@@ -63,6 +67,10 @@ public class T2ASyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_InstanciaEDOM___LeftCurlyBracketKeyword_1_0_RightCurlyBracketKeyword_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Page___SClassKeyword_3_0_LeftCurlyBracketKeyword_3_1_RightCurlyBracketKeyword_3_3__q.equals(syntax))
 				emit_Page___SClassKeyword_3_0_LeftCurlyBracketKeyword_3_1_RightCurlyBracketKeyword_3_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_StyleClass___ActiveKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q.equals(syntax))
+				emit_StyleClass___ActiveKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_StyleClass___AfterKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q.equals(syntax))
+				emit_StyleClass___AfterKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -151,6 +159,39 @@ public class T2ASyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_Page___SClassKeyword_3_0_LeftCurlyBracketKeyword_3_1_RightCurlyBracketKeyword_3_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('active' '{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=Name '{' ('after' '{' '}')? (ambiguity) '}' (rule end)
+	 *     sattributes+=SAttributeAndValue ';' ('after' '{' '}')? (ambiguity) '}' (rule end)
+	 *     sattributesAfter+=SAttributeAndValue ';' '}' (ambiguity) '}' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_StyleClass___ActiveKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('after' '{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=Name '{' (ambiguity) 'active' '{' sattributesActive+=SAttributeAndValue
+	 *     name=Name '{' (ambiguity) ('active' '{' '}')? '}' (rule end)
+	 *     sattributes+=SAttributeAndValue ';' (ambiguity) 'active' '{' sattributesActive+=SAttributeAndValue
+	 *     sattributes+=SAttributeAndValue ';' (ambiguity) ('active' '{' '}')? '}' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_StyleClass___AfterKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

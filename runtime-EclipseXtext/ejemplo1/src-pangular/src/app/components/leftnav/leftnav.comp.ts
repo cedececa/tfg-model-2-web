@@ -3,7 +3,7 @@
 	@Component({
 		selector: 'leftNav',
 		templateUrl: './leftnav.comp.html',
-		styles:[]
+		styleUrls:['leftnav.comp.scss']	
 	})
 	export class leftNavComponent{
 		

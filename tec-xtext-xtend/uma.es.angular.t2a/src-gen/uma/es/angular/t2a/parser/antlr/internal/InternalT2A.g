@@ -368,9 +368,87 @@ ruleStyleClass returns [EObject current=null]
 				newLeafNode(otherlv_4, grammarAccess.getStyleClassAccess().getSemicolonKeyword_3_1());
 			}
 		)*
-		otherlv_5='}'
+		(
+			otherlv_5='after'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getStyleClassAccess().getAfterKeyword_4_0());
+			}
+			otherlv_6='{'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getStyleClassAccess().getLeftCurlyBracketKeyword_4_1());
+			}
+			(
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getStyleClassAccess().getSattributesAfterSAttributeAndValueParserRuleCall_4_2_0_0());
+						}
+						lv_sattributesAfter_7_0=ruleSAttributeAndValue
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getStyleClassRule());
+							}
+							add(
+								$current,
+								"sattributesAfter",
+								lv_sattributesAfter_7_0,
+								"uma.es.angular.t2a.T2A.SAttributeAndValue");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				otherlv_8=';'
+				{
+					newLeafNode(otherlv_8, grammarAccess.getStyleClassAccess().getSemicolonKeyword_4_2_1());
+				}
+			)*
+			otherlv_9='}'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getStyleClassAccess().getRightCurlyBracketKeyword_4_3());
+			}
+		)?
+		(
+			otherlv_10='active'
+			{
+				newLeafNode(otherlv_10, grammarAccess.getStyleClassAccess().getActiveKeyword_5_0());
+			}
+			otherlv_11='{'
+			{
+				newLeafNode(otherlv_11, grammarAccess.getStyleClassAccess().getLeftCurlyBracketKeyword_5_1());
+			}
+			(
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getStyleClassAccess().getSattributesActiveSAttributeAndValueParserRuleCall_5_2_0_0());
+						}
+						lv_sattributesActive_12_0=ruleSAttributeAndValue
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getStyleClassRule());
+							}
+							add(
+								$current,
+								"sattributesActive",
+								lv_sattributesActive_12_0,
+								"uma.es.angular.t2a.T2A.SAttributeAndValue");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				otherlv_13=';'
+				{
+					newLeafNode(otherlv_13, grammarAccess.getStyleClassAccess().getSemicolonKeyword_5_2_1());
+				}
+			)*
+			otherlv_14='}'
+			{
+				newLeafNode(otherlv_14, grammarAccess.getStyleClassAccess().getRightCurlyBracketKeyword_5_3());
+			}
+		)?
+		otherlv_15='}'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getStyleClassAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_15, grammarAccess.getStyleClassAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;

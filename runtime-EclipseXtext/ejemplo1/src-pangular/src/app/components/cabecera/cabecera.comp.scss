@@ -1,0 +1,14 @@
+.header {
+}
+.header::after{
+	background-color  : #666;
+	padding  : 30px;
+	text-align  : center;
+	font-size  : 35px;
+	color  : white;
+}
+.a {
+}
+.a.active{
+	background-color : #04AA6D;
+}

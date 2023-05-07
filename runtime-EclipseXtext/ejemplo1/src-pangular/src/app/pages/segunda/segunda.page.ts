@@ -3,7 +3,7 @@
 	@Component({
 		selector: 'Segunda',
 		templateUrl: './segunda.page.html',
-		styles:[]
+		styleUrls:['segunda.page.scss']	
 		
 	})
 	export class SegundaPage{

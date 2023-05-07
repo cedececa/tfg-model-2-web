@@ -3,7 +3,7 @@
 	@Component({
 		selector: 'Cuarta',
 		templateUrl: './cuarta.page.html',
-		styles:[]
+		styleUrls:['cuarta.page.scss']	
 		
 	})
 	export class CuartaPage{

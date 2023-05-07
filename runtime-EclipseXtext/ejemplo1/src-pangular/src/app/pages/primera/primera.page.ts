@@ -3,7 +3,7 @@
 	@Component({
 		selector: 'Primera',
 		templateUrl: './primera.page.html',
-		styles:[]
+		styleUrls:['primera.page.scss']	
 		
 	})
 	export class PrimeraPage{

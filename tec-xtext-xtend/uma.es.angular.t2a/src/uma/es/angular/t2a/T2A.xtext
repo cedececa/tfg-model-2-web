@@ -24,6 +24,13 @@ StyleClass:
 	'StyleClass' name=Name
 	'{'
 		(sattributes+=SAttributeAndValue';')*
+		('after' '{'
+			(sattributesAfter+=SAttributeAndValue';')*		
+		'}')?
+		('active' '{'
+			(sattributesActive+=SAttributeAndValue';')*		
+		'}')?
+		
 	'}'
 ;
 

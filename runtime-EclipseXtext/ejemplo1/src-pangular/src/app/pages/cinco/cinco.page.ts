@@ -3,7 +3,7 @@
 	@Component({
 		selector: 'Cinco',
 		templateUrl: './cinco.page.html',
-		styles:[]
+		styleUrls:['cinco.page.scss']	
 		
 	})
 	export class CincoPage{

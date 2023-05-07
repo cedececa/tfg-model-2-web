@@ -5,6 +5,7 @@ import uma.es.angular.t2a.t2A.PageFeature
 import uma.es.angular.t2a.t2A.InstanciaEDOM
 import uma.es.angular.t2a.t2A.InstanceEDOMFeature
 import org.eclipse.xtext.generator.IFileSystemAccess2
+import uma.es.angular.t2a.t2A.StyleClass
 
 class AngularPage {
 
@@ -66,6 +67,28 @@ class AngularPage {
 
 	static def toCSSCode(Page page) {
 		'''
+			«FOR sclass : page.sclasses»
+				«var sc = sclass as StyleClass»
+				.«sc.name» {
+					«FOR attri : sc.sattributes»
+						«attri.stname» «attri.value»;
+					«ENDFOR»
+				}
+				«IF sc.sattributesAfter.length>0»
+					.«sc.name»::after{
+						«FOR aafter : sc.sattributesAfter»
+							«aafter.stname» «aafter.value»;
+						«ENDFOR»		   				
+					}
+				«ENDIF»
+				«IF sc.sattributesActive.length>0»
+					.«sc.name».active{
+						«FOR aactive : sc.sattributesActive»
+							«aactive.stname» «aactive.value»;
+						«ENDFOR»		   				
+					}
+				«ENDIF»				
+			«ENDFOR»
 		'''
 	}
 }

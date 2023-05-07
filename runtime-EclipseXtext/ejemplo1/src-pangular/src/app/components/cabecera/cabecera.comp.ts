@@ -3,7 +3,7 @@
 	@Component({
 		selector: 'Cabecera',
 		templateUrl: './cabecera.comp.html',
-		styles:[]
+		styleUrls:['cabecera.comp.scss']	
 	})
 	export class CabeceraComponent{
 		

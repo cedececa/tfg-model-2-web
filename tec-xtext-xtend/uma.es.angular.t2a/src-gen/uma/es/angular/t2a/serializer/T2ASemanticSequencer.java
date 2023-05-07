@@ -224,7 +224,7 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     StyleClass returns StyleClass
 	 *
 	 * Constraint:
-	 *     (name=Name sattributes+=SAttributeAndValue*)
+	 *     (name=Name sattributes+=SAttributeAndValue* sattributesAfter+=SAttributeAndValue* sattributesActive+=SAttributeAndValue*)
 	 * </pre>
 	 */
 	protected void sequence_StyleClass(ISerializationContext context, StyleClass semanticObject) {

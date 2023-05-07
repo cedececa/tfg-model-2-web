@@ -316,6 +316,28 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
    * @generated
    */
   @Override
+  public EReference getStyleClass_SattributesAfter()
+  {
+    return (EReference)styleClassEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getStyleClass_SattributesActive()
+  {
+    return (EReference)styleClassEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getSAttributeAndValue()
   {
     return sAttributeAndValueEClass;
@@ -599,6 +621,8 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
 
     styleClassEClass = createEClass(STYLE_CLASS);
     createEReference(styleClassEClass, STYLE_CLASS__SATTRIBUTES);
+    createEReference(styleClassEClass, STYLE_CLASS__SATTRIBUTES_AFTER);
+    createEReference(styleClassEClass, STYLE_CLASS__SATTRIBUTES_ACTIVE);
 
     sAttributeAndValueEClass = createEClass(SATTRIBUTE_AND_VALUE);
     createEAttribute(sAttributeAndValueEClass, SATTRIBUTE_AND_VALUE__STNAME);
@@ -682,6 +706,8 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
 
     initEClass(styleClassEClass, StyleClass.class, "StyleClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStyleClass_Sattributes(), this.getSAttributeAndValue(), null, "sattributes", null, 0, -1, StyleClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStyleClass_SattributesAfter(), this.getSAttributeAndValue(), null, "sattributesAfter", null, 0, -1, StyleClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStyleClass_SattributesActive(), this.getSAttributeAndValue(), null, "sattributesActive", null, 0, -1, StyleClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sAttributeAndValueEClass, SAttributeAndValue.class, "SAttributeAndValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSAttributeAndValue_Stname(), ecorePackage.getEString(), "stname", null, 0, 1, SAttributeAndValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

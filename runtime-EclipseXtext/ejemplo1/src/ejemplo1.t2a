@@ -6,12 +6,14 @@ StyleClass  body {
     font-family : Arial, Helvetica, sans-serif;
 }
 
-StyleClass  header::after {
-    background-color : #666;
-    padding : 30px;
-    text-align : center;
-    font-size : 35px;
-    color : white;
+StyleClass header{
+	after{
+	    background-color : #666;
+    	padding : 30px;
+    	text-align : center;
+    	font-size : 35px;
+    	color : white;		
+	}
 }
 
 StyleClass  leftNav {
@@ -21,6 +23,7 @@ StyleClass  leftNav {
     background : #ccc;
     padding : 20px;
 }
+
 StyleClass leftNavUl {
     list-style-type : none;
     padding : 0;
@@ -45,10 +48,12 @@ StyleClass  articulo {
     height: 300px;
 }
   
-StyleClass sectionStyleClass::after {
-    content:"";
-    display: table;
-    clear: both;
+StyleClass sectionStyleClass{
+	after{
+	    content:"";
+    	display: table;
+    	clear: both;
+	}
 }
 
 StyleClass  footer {
@@ -84,9 +89,11 @@ StyleClass liA {
   }
 
 
-StyleClass a.active {
-    background-color: #04AA6D;
-  }
+StyleClass a {
+	active{
+    	background-color: #04AA6D;
+	}
+}
 
 StyleClass li > a {
     display: inline-block;
@@ -94,8 +101,7 @@ StyleClass li > a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  }
-
+}
 
 Dom h1
 Dom h2
@@ -105,16 +111,21 @@ Dom h5
 Dom ul
 Dom p
 Dom li
-Dom a
+Dom a {
+	SClass{a}
+}
 Dom header
 Dom div
 
 Comp leftNav{
+	SClass{leftNav}
 	AllowSlot
 }
 
 Comp Cabecera{
-	
+	SClass{  
+		 header  a
+	}
 	header{ 
 		h2{
 	 	"Cities"
@@ -144,8 +155,8 @@ Comp Articulo{
 		"Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium."
 	}
 }
-
-Comp Footer{
+ 
+Comp Footer{ 
 	p{
 		"Footer"
 	}

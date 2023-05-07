@@ -3,7 +3,7 @@
 	@Component({
 		selector: 'Layout',
 		templateUrl: './layout.comp.html',
-		styles:[]
+		styleUrls:['layout.comp.scss']	
 	})
 	export class LayoutComponent{
 		
