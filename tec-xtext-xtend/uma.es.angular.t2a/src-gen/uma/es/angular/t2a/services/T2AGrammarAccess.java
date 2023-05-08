@@ -27,32 +27,66 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	public class RootElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.Root");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cGlobalStyleAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cGlobalStyleStyleGlobalParserRuleCall_0_0 = (RuleCall)cGlobalStyleAssignment_0.eContents().get(0);
-		private final Assignment cElementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cElementsElementParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
+		private final Keyword cAppNameKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cAppNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cAppNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cAppNameAssignment_1.eContents().get(0);
+		private final Assignment cGlobalStyleAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cGlobalStyleStyleGlobalParserRuleCall_2_0 = (RuleCall)cGlobalStyleAssignment_2.eContents().get(0);
+		private final Assignment cStyleOnlineAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cStyleOnlineStyleOnlineParserRuleCall_3_0 = (RuleCall)cStyleOnlineAssignment_3.eContents().get(0);
+		private final Assignment cJsOnlineAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cJsOnlineJSOnlineParserRuleCall_4_0 = (RuleCall)cJsOnlineAssignment_4.eContents().get(0);
+		private final Assignment cElementsAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cElementsElementParserRuleCall_5_0 = (RuleCall)cElementsAssignment_5.eContents().get(0);
 		
 		//Root:
-		//    globalStyle=StyleGlobal
+		//    'AppName:' appName=STRING
+		//    (globalStyle=StyleGlobal)?
+		//    (styleOnline=StyleOnline)?
+		//    (jsOnline=JSOnline)?
 		//    elements+=Element+
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//globalStyle=StyleGlobal
+		//'AppName:' appName=STRING
+		//(globalStyle=StyleGlobal)?
+		//(styleOnline=StyleOnline)?
+		//(jsOnline=JSOnline)?
 		//elements+=Element+
 		public Group getGroup() { return cGroup; }
 		
-		//globalStyle=StyleGlobal
-		public Assignment getGlobalStyleAssignment_0() { return cGlobalStyleAssignment_0; }
+		//'AppName:'
+		public Keyword getAppNameKeyword_0() { return cAppNameKeyword_0; }
+		
+		//appName=STRING
+		public Assignment getAppNameAssignment_1() { return cAppNameAssignment_1; }
+		
+		//STRING
+		public RuleCall getAppNameSTRINGTerminalRuleCall_1_0() { return cAppNameSTRINGTerminalRuleCall_1_0; }
+		
+		//(globalStyle=StyleGlobal)?
+		public Assignment getGlobalStyleAssignment_2() { return cGlobalStyleAssignment_2; }
 		
 		//StyleGlobal
-		public RuleCall getGlobalStyleStyleGlobalParserRuleCall_0_0() { return cGlobalStyleStyleGlobalParserRuleCall_0_0; }
+		public RuleCall getGlobalStyleStyleGlobalParserRuleCall_2_0() { return cGlobalStyleStyleGlobalParserRuleCall_2_0; }
+		
+		//(styleOnline=StyleOnline)?
+		public Assignment getStyleOnlineAssignment_3() { return cStyleOnlineAssignment_3; }
+		
+		//StyleOnline
+		public RuleCall getStyleOnlineStyleOnlineParserRuleCall_3_0() { return cStyleOnlineStyleOnlineParserRuleCall_3_0; }
+		
+		//(jsOnline=JSOnline)?
+		public Assignment getJsOnlineAssignment_4() { return cJsOnlineAssignment_4; }
+		
+		//JSOnline
+		public RuleCall getJsOnlineJSOnlineParserRuleCall_4_0() { return cJsOnlineJSOnlineParserRuleCall_4_0; }
 		
 		//elements+=Element+
-		public Assignment getElementsAssignment_1() { return cElementsAssignment_1; }
+		public Assignment getElementsAssignment_5() { return cElementsAssignment_5; }
 		
 		//Element
-		public RuleCall getElementsElementParserRuleCall_1_0() { return cElementsElementParserRuleCall_1_0; }
+		public RuleCall getElementsElementParserRuleCall_5_0() { return cElementsElementParserRuleCall_5_0; }
 	}
 	public class ElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.Element");
@@ -227,6 +261,86 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//StyleClass
 		public RuleCall getStyleclassesStyleClassParserRuleCall_3_0() { return cStyleclassesStyleClassParserRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class StyleOnlineElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.StyleOnline");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cStyleOnlineAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cStyleOnlineKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cFullTagsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cFullTagsSTRINGTerminalRuleCall_3_0 = (RuleCall)cFullTagsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//StyleOnline:
+		//    {StyleOnline} 'StyleOnline' '{'
+		//        (fullTags+=STRING)*
+		//    '}'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{StyleOnline} 'StyleOnline' '{'
+		//    (fullTags+=STRING)*
+		//'}'
+		public Group getGroup() { return cGroup; }
+		
+		//{StyleOnline}
+		public Action getStyleOnlineAction_0() { return cStyleOnlineAction_0; }
+		
+		//'StyleOnline'
+		public Keyword getStyleOnlineKeyword_1() { return cStyleOnlineKeyword_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//(fullTags+=STRING)*
+		public Assignment getFullTagsAssignment_3() { return cFullTagsAssignment_3; }
+		
+		//STRING
+		public RuleCall getFullTagsSTRINGTerminalRuleCall_3_0() { return cFullTagsSTRINGTerminalRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class JSOnlineElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.JSOnline");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cJSOnlineAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cJSOnlineKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cFullTagsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cFullTagsSTRINGTerminalRuleCall_3_0 = (RuleCall)cFullTagsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//JSOnline:
+		//    {JSOnline} 'JSOnline' '{'
+		//        (fullTags+=STRING)*
+		//    '}'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{JSOnline} 'JSOnline' '{'
+		//    (fullTags+=STRING)*
+		//'}'
+		public Group getGroup() { return cGroup; }
+		
+		//{JSOnline}
+		public Action getJSOnlineAction_0() { return cJSOnlineAction_0; }
+		
+		//'JSOnline'
+		public Keyword getJSOnlineKeyword_1() { return cJSOnlineKeyword_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//(fullTags+=STRING)*
+		public Assignment getFullTagsAssignment_3() { return cFullTagsAssignment_3; }
+		
+		//STRING
+		public RuleCall getFullTagsSTRINGTerminalRuleCall_3_0() { return cFullTagsSTRINGTerminalRuleCall_3_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
@@ -793,6 +907,8 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	private final PageElements pPage;
 	private final EDOMElements pEDOM;
 	private final StyleGlobalElements pStyleGlobal;
+	private final StyleOnlineElements pStyleOnline;
+	private final JSOnlineElements pJSOnline;
 	private final StyleClassElements pStyleClass;
 	private final SAttributeAndValueElements pSAttributeAndValue;
 	private final DOMElements pDOM;
@@ -819,6 +935,8 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		this.pPage = new PageElements();
 		this.pEDOM = new EDOMElements();
 		this.pStyleGlobal = new StyleGlobalElements();
+		this.pStyleOnline = new StyleOnlineElements();
+		this.pJSOnline = new JSOnlineElements();
 		this.pStyleClass = new StyleClassElements();
 		this.pSAttributeAndValue = new SAttributeAndValueElements();
 		this.pDOM = new DOMElements();
@@ -860,7 +978,10 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 
 	
 	//Root:
-	//    globalStyle=StyleGlobal
+	//    'AppName:' appName=STRING
+	//    (globalStyle=StyleGlobal)?
+	//    (styleOnline=StyleOnline)?
+	//    (jsOnline=JSOnline)?
 	//    elements+=Element+
 	//;
 	public RootElements getRootAccess() {
@@ -918,6 +1039,32 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	public ParserRule getStyleGlobalRule() {
 		return getStyleGlobalAccess().getRule();
+	}
+	
+	//StyleOnline:
+	//    {StyleOnline} 'StyleOnline' '{'
+	//        (fullTags+=STRING)*
+	//    '}'
+	//;
+	public StyleOnlineElements getStyleOnlineAccess() {
+		return pStyleOnline;
+	}
+	
+	public ParserRule getStyleOnlineRule() {
+		return getStyleOnlineAccess().getRule();
+	}
+	
+	//JSOnline:
+	//    {JSOnline} 'JSOnline' '{'
+	//        (fullTags+=STRING)*
+	//    '}'
+	//;
+	public JSOnlineElements getJSOnlineAccess() {
+		return pJSOnline;
+	}
+	
+	public ParserRule getJSOnlineRule() {
+		return getJSOnlineAccess().getRule();
 	}
 	
 	//StyleClass:

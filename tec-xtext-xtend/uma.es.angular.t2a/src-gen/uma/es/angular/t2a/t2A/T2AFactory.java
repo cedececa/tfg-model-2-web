@@ -69,6 +69,24 @@ public interface T2AFactory extends EFactory
   StyleGlobal createStyleGlobal();
 
   /**
+   * Returns a new object of class '<em>Style Online</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Style Online</em>'.
+   * @generated
+   */
+  StyleOnline createStyleOnline();
+
+  /**
+   * Returns a new object of class '<em>JS Online</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>JS Online</em>'.
+   * @generated
+   */
+  JSOnline createJSOnline();
+
+  /**
    * Returns a new object of class '<em>Style Class</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

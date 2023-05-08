@@ -20,8 +20,10 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uma.es.angular.t2a.t2A.Element;
+import uma.es.angular.t2a.t2A.JSOnline;
 import uma.es.angular.t2a.t2A.Root;
 import uma.es.angular.t2a.t2A.StyleGlobal;
+import uma.es.angular.t2a.t2A.StyleOnline;
 import uma.es.angular.t2a.t2A.T2APackage;
 
 /**
@@ -32,7 +34,10 @@ import uma.es.angular.t2a.t2A.T2APackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uma.es.angular.t2a.t2A.impl.RootImpl#getAppName <em>App Name</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.impl.RootImpl#getGlobalStyle <em>Global Style</em>}</li>
+ *   <li>{@link uma.es.angular.t2a.t2A.impl.RootImpl#getStyleOnline <em>Style Online</em>}</li>
+ *   <li>{@link uma.es.angular.t2a.t2A.impl.RootImpl#getJsOnline <em>Js Online</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.impl.RootImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -40,6 +45,26 @@ import uma.es.angular.t2a.t2A.T2APackage;
  */
 public class RootImpl extends MinimalEObjectImpl.Container implements Root
 {
+  /**
+   * The default value of the '{@link #getAppName() <em>App Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAppName()
+   * @generated
+   * @ordered
+   */
+  protected static final String APP_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getAppName() <em>App Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAppName()
+   * @generated
+   * @ordered
+   */
+  protected String appName = APP_NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getGlobalStyle() <em>Global Style</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -49,6 +74,26 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root
    * @ordered
    */
   protected StyleGlobal globalStyle;
+
+  /**
+   * The cached value of the '{@link #getStyleOnline() <em>Style Online</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStyleOnline()
+   * @generated
+   * @ordered
+   */
+  protected StyleOnline styleOnline;
+
+  /**
+   * The cached value of the '{@link #getJsOnline() <em>Js Online</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getJsOnline()
+   * @generated
+   * @ordered
+   */
+  protected JSOnline jsOnline;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -79,6 +124,31 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root
   protected EClass eStaticClass()
   {
     return T2APackage.Literals.ROOT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getAppName()
+  {
+    return appName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setAppName(String newAppName)
+  {
+    String oldAppName = appName;
+    appName = newAppName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, T2APackage.ROOT__APP_NAME, oldAppName, appName));
   }
 
   /**
@@ -137,6 +207,106 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root
    * @generated
    */
   @Override
+  public StyleOnline getStyleOnline()
+  {
+    return styleOnline;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetStyleOnline(StyleOnline newStyleOnline, NotificationChain msgs)
+  {
+    StyleOnline oldStyleOnline = styleOnline;
+    styleOnline = newStyleOnline;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, T2APackage.ROOT__STYLE_ONLINE, oldStyleOnline, newStyleOnline);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setStyleOnline(StyleOnline newStyleOnline)
+  {
+    if (newStyleOnline != styleOnline)
+    {
+      NotificationChain msgs = null;
+      if (styleOnline != null)
+        msgs = ((InternalEObject)styleOnline).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - T2APackage.ROOT__STYLE_ONLINE, null, msgs);
+      if (newStyleOnline != null)
+        msgs = ((InternalEObject)newStyleOnline).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - T2APackage.ROOT__STYLE_ONLINE, null, msgs);
+      msgs = basicSetStyleOnline(newStyleOnline, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, T2APackage.ROOT__STYLE_ONLINE, newStyleOnline, newStyleOnline));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public JSOnline getJsOnline()
+  {
+    return jsOnline;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetJsOnline(JSOnline newJsOnline, NotificationChain msgs)
+  {
+    JSOnline oldJsOnline = jsOnline;
+    jsOnline = newJsOnline;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, T2APackage.ROOT__JS_ONLINE, oldJsOnline, newJsOnline);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setJsOnline(JSOnline newJsOnline)
+  {
+    if (newJsOnline != jsOnline)
+    {
+      NotificationChain msgs = null;
+      if (jsOnline != null)
+        msgs = ((InternalEObject)jsOnline).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - T2APackage.ROOT__JS_ONLINE, null, msgs);
+      if (newJsOnline != null)
+        msgs = ((InternalEObject)newJsOnline).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - T2APackage.ROOT__JS_ONLINE, null, msgs);
+      msgs = basicSetJsOnline(newJsOnline, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, T2APackage.ROOT__JS_ONLINE, newJsOnline, newJsOnline));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<Element> getElements()
   {
     if (elements == null)
@@ -158,6 +328,10 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root
     {
       case T2APackage.ROOT__GLOBAL_STYLE:
         return basicSetGlobalStyle(null, msgs);
+      case T2APackage.ROOT__STYLE_ONLINE:
+        return basicSetStyleOnline(null, msgs);
+      case T2APackage.ROOT__JS_ONLINE:
+        return basicSetJsOnline(null, msgs);
       case T2APackage.ROOT__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
@@ -174,8 +348,14 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root
   {
     switch (featureID)
     {
+      case T2APackage.ROOT__APP_NAME:
+        return getAppName();
       case T2APackage.ROOT__GLOBAL_STYLE:
         return getGlobalStyle();
+      case T2APackage.ROOT__STYLE_ONLINE:
+        return getStyleOnline();
+      case T2APackage.ROOT__JS_ONLINE:
+        return getJsOnline();
       case T2APackage.ROOT__ELEMENTS:
         return getElements();
     }
@@ -193,8 +373,17 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root
   {
     switch (featureID)
     {
+      case T2APackage.ROOT__APP_NAME:
+        setAppName((String)newValue);
+        return;
       case T2APackage.ROOT__GLOBAL_STYLE:
         setGlobalStyle((StyleGlobal)newValue);
+        return;
+      case T2APackage.ROOT__STYLE_ONLINE:
+        setStyleOnline((StyleOnline)newValue);
+        return;
+      case T2APackage.ROOT__JS_ONLINE:
+        setJsOnline((JSOnline)newValue);
         return;
       case T2APackage.ROOT__ELEMENTS:
         getElements().clear();
@@ -214,8 +403,17 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root
   {
     switch (featureID)
     {
+      case T2APackage.ROOT__APP_NAME:
+        setAppName(APP_NAME_EDEFAULT);
+        return;
       case T2APackage.ROOT__GLOBAL_STYLE:
         setGlobalStyle((StyleGlobal)null);
+        return;
+      case T2APackage.ROOT__STYLE_ONLINE:
+        setStyleOnline((StyleOnline)null);
+        return;
+      case T2APackage.ROOT__JS_ONLINE:
+        setJsOnline((JSOnline)null);
         return;
       case T2APackage.ROOT__ELEMENTS:
         getElements().clear();
@@ -234,12 +432,35 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root
   {
     switch (featureID)
     {
+      case T2APackage.ROOT__APP_NAME:
+        return APP_NAME_EDEFAULT == null ? appName != null : !APP_NAME_EDEFAULT.equals(appName);
       case T2APackage.ROOT__GLOBAL_STYLE:
         return globalStyle != null;
+      case T2APackage.ROOT__STYLE_ONLINE:
+        return styleOnline != null;
+      case T2APackage.ROOT__JS_ONLINE:
+        return jsOnline != null;
       case T2APackage.ROOT__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (appName: ");
+    result.append(appName);
+    result.append(')');
+    return result.toString();
   }
 
 } //RootImpl

@@ -3,7 +3,11 @@ grammar uma.es.angular.t2a.T2A with org.eclipse.xtext.common.Terminals
 generate t2A "http://www.es.uma/angular/t2a/T2A"
 
 Root:
-	globalStyle=StyleGlobal
+	'AppName:' appName=STRING
+	
+	(globalStyle=StyleGlobal)?
+	(styleOnline=StyleOnline)?
+	(jsOnline=JSOnline)?
 	elements+=Element+
 ;
 
@@ -27,6 +31,18 @@ StyleGlobal:
 		(styleclasses+=StyleClass)*
 	'}'
 ;
+StyleOnline:
+	{StyleOnline} 'StyleOnline' '{'
+		(fullTags+=STRING)*
+	'}'
+;
+JSOnline:
+	{JSOnline} 'JSOnline' '{'
+		(fullTags+=STRING)*
+	'}'
+;
+
+
 StyleClass:
 	'StyleClass' name=Name
 	'{'

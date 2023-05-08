@@ -110,6 +110,20 @@ public class T2ASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case T2APackage.STYLE_ONLINE:
+      {
+        StyleOnline styleOnline = (StyleOnline)theEObject;
+        T result = caseStyleOnline(styleOnline);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case T2APackage.JS_ONLINE:
+      {
+        JSOnline jsOnline = (JSOnline)theEObject;
+        T result = caseJSOnline(jsOnline);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case T2APackage.STYLE_CLASS:
       {
         StyleClass styleClass = (StyleClass)theEObject;
@@ -252,6 +266,38 @@ public class T2ASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStyleGlobal(StyleGlobal object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Style Online</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Style Online</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStyleOnline(StyleOnline object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>JS Online</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>JS Online</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseJSOnline(JSOnline object)
   {
     return null;
   }

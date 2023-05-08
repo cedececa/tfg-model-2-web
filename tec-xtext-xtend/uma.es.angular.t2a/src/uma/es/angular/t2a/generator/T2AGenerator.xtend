@@ -80,7 +80,9 @@ class T2AGenerator extends AbstractGenerator {
 		deleteDirectoryContent(absoluteSrcGenDirectory)
 		
 		var root = resource.contents.head as Root;
+		
 		StyleGlobalCSS.toStyleGlobalFile(root.globalStyle, fsa);
+		IndexHTML.toIndexHTMLFile(root, fsa);
 		
 		var components = new ArrayList<Comp>();
 		var pages = new ArrayList<Page>();

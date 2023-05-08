@@ -1,6 +1,8 @@
 
+AppName: 'Ejemplo1'
+ 
 StyleGlobal {
-	StyleClass * {
+	StyleClass * { 
 	    box-sizing: border-box;
 	}
 	

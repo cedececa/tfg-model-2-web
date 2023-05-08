@@ -82,6 +82,7 @@ public class T2AGenerator extends AbstractGenerator {
     EObject _head = IterableExtensions.<EObject>head(resource.getContents());
     Root root = ((Root) _head);
     StyleGlobalCSS.toStyleGlobalFile(root.getGlobalStyle(), fsa);
+    IndexHTML.toIndexHTMLFile(root, fsa);
     ArrayList<Comp> components = new ArrayList<Comp>();
     ArrayList<Page> pages = new ArrayList<Page>();
     EList<Element> _elements = root.getElements();

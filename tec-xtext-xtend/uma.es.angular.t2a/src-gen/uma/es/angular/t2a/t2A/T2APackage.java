@@ -68,13 +68,40 @@ public interface T2APackage extends EPackage
   int ROOT = 0;
 
   /**
+   * The feature id for the '<em><b>App Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROOT__APP_NAME = 0;
+
+  /**
    * The feature id for the '<em><b>Global Style</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ROOT__GLOBAL_STYLE = 0;
+  int ROOT__GLOBAL_STYLE = 1;
+
+  /**
+   * The feature id for the '<em><b>Style Online</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROOT__STYLE_ONLINE = 2;
+
+  /**
+   * The feature id for the '<em><b>Js Online</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROOT__JS_ONLINE = 3;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -83,7 +110,7 @@ public interface T2APackage extends EPackage
    * @generated
    * @ordered
    */
-  int ROOT__ELEMENTS = 1;
+  int ROOT__ELEMENTS = 4;
 
   /**
    * The number of structural features of the '<em>Root</em>' class.
@@ -92,7 +119,7 @@ public interface T2APackage extends EPackage
    * @generated
    * @ordered
    */
-  int ROOT_FEATURE_COUNT = 2;
+  int ROOT_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.ElementImpl <em>Element</em>}' class.
@@ -243,6 +270,62 @@ public interface T2APackage extends EPackage
   int STYLE_GLOBAL_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.StyleOnlineImpl <em>Style Online</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uma.es.angular.t2a.t2A.impl.StyleOnlineImpl
+   * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getStyleOnline()
+   * @generated
+   */
+  int STYLE_ONLINE = 5;
+
+  /**
+   * The feature id for the '<em><b>Full Tags</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STYLE_ONLINE__FULL_TAGS = 0;
+
+  /**
+   * The number of structural features of the '<em>Style Online</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STYLE_ONLINE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.JSOnlineImpl <em>JS Online</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uma.es.angular.t2a.t2A.impl.JSOnlineImpl
+   * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getJSOnline()
+   * @generated
+   */
+  int JS_ONLINE = 6;
+
+  /**
+   * The feature id for the '<em><b>Full Tags</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JS_ONLINE__FULL_TAGS = 0;
+
+  /**
+   * The number of structural features of the '<em>JS Online</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JS_ONLINE_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.StyleClassImpl <em>Style Class</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -250,7 +333,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getStyleClass()
    * @generated
    */
-  int STYLE_CLASS = 5;
+  int STYLE_CLASS = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -305,7 +388,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getSAttributeAndValue()
    * @generated
    */
-  int SATTRIBUTE_AND_VALUE = 6;
+  int SATTRIBUTE_AND_VALUE = 8;
 
   /**
    * The feature id for the '<em><b>Stname</b></em>' attribute.
@@ -342,7 +425,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getDOM()
    * @generated
    */
-  int DOM = 7;
+  int DOM = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -388,7 +471,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getComp()
    * @generated
    */
-  int COMP = 8;
+  int COMP = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -434,7 +517,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getInstanciaEDOM()
    * @generated
    */
-  int INSTANCIA_EDOM = 9;
+  int INSTANCIA_EDOM = 11;
 
   /**
    * The feature id for the '<em><b>Instancia</b></em>' reference.
@@ -480,7 +563,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getInstanceEDOMFeature()
    * @generated
    */
-  int INSTANCE_EDOM_FEATURE = 10;
+  int INSTANCE_EDOM_FEATURE = 12;
 
   /**
    * The feature id for the '<em><b>Instancia EDOM</b></em>' containment reference.
@@ -517,7 +600,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getPageFeature()
    * @generated
    */
-  int PAGE_FEATURE = 11;
+  int PAGE_FEATURE = 13;
 
   /**
    * The feature id for the '<em><b>Instancia EDOM</b></em>' containment reference.
@@ -554,7 +637,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getFeature()
    * @generated
    */
-  int FEATURE = 12;
+  int FEATURE = 14;
 
   /**
    * The feature id for the '<em><b>Instancia EDOM</b></em>' containment reference.
@@ -604,6 +687,17 @@ public interface T2APackage extends EPackage
   EClass getRoot();
 
   /**
+   * Returns the meta object for the attribute '{@link uma.es.angular.t2a.t2A.Root#getAppName <em>App Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>App Name</em>'.
+   * @see uma.es.angular.t2a.t2A.Root#getAppName()
+   * @see #getRoot()
+   * @generated
+   */
+  EAttribute getRoot_AppName();
+
+  /**
    * Returns the meta object for the containment reference '{@link uma.es.angular.t2a.t2A.Root#getGlobalStyle <em>Global Style</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -613,6 +707,28 @@ public interface T2APackage extends EPackage
    * @generated
    */
   EReference getRoot_GlobalStyle();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uma.es.angular.t2a.t2A.Root#getStyleOnline <em>Style Online</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Style Online</em>'.
+   * @see uma.es.angular.t2a.t2A.Root#getStyleOnline()
+   * @see #getRoot()
+   * @generated
+   */
+  EReference getRoot_StyleOnline();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uma.es.angular.t2a.t2A.Root#getJsOnline <em>Js Online</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Js Online</em>'.
+   * @see uma.es.angular.t2a.t2A.Root#getJsOnline()
+   * @see #getRoot()
+   * @generated
+   */
+  EReference getRoot_JsOnline();
 
   /**
    * Returns the meta object for the containment reference list '{@link uma.es.angular.t2a.t2A.Root#getElements <em>Elements</em>}'.
@@ -730,6 +846,48 @@ public interface T2APackage extends EPackage
    * @generated
    */
   EReference getStyleGlobal_Styleclasses();
+
+  /**
+   * Returns the meta object for class '{@link uma.es.angular.t2a.t2A.StyleOnline <em>Style Online</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Style Online</em>'.
+   * @see uma.es.angular.t2a.t2A.StyleOnline
+   * @generated
+   */
+  EClass getStyleOnline();
+
+  /**
+   * Returns the meta object for the attribute list '{@link uma.es.angular.t2a.t2A.StyleOnline#getFullTags <em>Full Tags</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Full Tags</em>'.
+   * @see uma.es.angular.t2a.t2A.StyleOnline#getFullTags()
+   * @see #getStyleOnline()
+   * @generated
+   */
+  EAttribute getStyleOnline_FullTags();
+
+  /**
+   * Returns the meta object for class '{@link uma.es.angular.t2a.t2A.JSOnline <em>JS Online</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>JS Online</em>'.
+   * @see uma.es.angular.t2a.t2A.JSOnline
+   * @generated
+   */
+  EClass getJSOnline();
+
+  /**
+   * Returns the meta object for the attribute list '{@link uma.es.angular.t2a.t2A.JSOnline#getFullTags <em>Full Tags</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Full Tags</em>'.
+   * @see uma.es.angular.t2a.t2A.JSOnline#getFullTags()
+   * @see #getJSOnline()
+   * @generated
+   */
+  EAttribute getJSOnline_FullTags();
 
   /**
    * Returns the meta object for class '{@link uma.es.angular.t2a.t2A.StyleClass <em>Style Class</em>}'.
@@ -1054,12 +1212,36 @@ public interface T2APackage extends EPackage
     EClass ROOT = eINSTANCE.getRoot();
 
     /**
+     * The meta object literal for the '<em><b>App Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ROOT__APP_NAME = eINSTANCE.getRoot_AppName();
+
+    /**
      * The meta object literal for the '<em><b>Global Style</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference ROOT__GLOBAL_STYLE = eINSTANCE.getRoot_GlobalStyle();
+
+    /**
+     * The meta object literal for the '<em><b>Style Online</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ROOT__STYLE_ONLINE = eINSTANCE.getRoot_StyleOnline();
+
+    /**
+     * The meta object literal for the '<em><b>Js Online</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ROOT__JS_ONLINE = eINSTANCE.getRoot_JsOnline();
 
     /**
      * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
@@ -1156,6 +1338,42 @@ public interface T2APackage extends EPackage
      * @generated
      */
     EReference STYLE_GLOBAL__STYLECLASSES = eINSTANCE.getStyleGlobal_Styleclasses();
+
+    /**
+     * The meta object literal for the '{@link uma.es.angular.t2a.t2A.impl.StyleOnlineImpl <em>Style Online</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uma.es.angular.t2a.t2A.impl.StyleOnlineImpl
+     * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getStyleOnline()
+     * @generated
+     */
+    EClass STYLE_ONLINE = eINSTANCE.getStyleOnline();
+
+    /**
+     * The meta object literal for the '<em><b>Full Tags</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STYLE_ONLINE__FULL_TAGS = eINSTANCE.getStyleOnline_FullTags();
+
+    /**
+     * The meta object literal for the '{@link uma.es.angular.t2a.t2A.impl.JSOnlineImpl <em>JS Online</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uma.es.angular.t2a.t2A.impl.JSOnlineImpl
+     * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getJSOnline()
+     * @generated
+     */
+    EClass JS_ONLINE = eINSTANCE.getJSOnline();
+
+    /**
+     * The meta object literal for the '<em><b>Full Tags</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute JS_ONLINE__FULL_TAGS = eINSTANCE.getJSOnline_FullTags();
 
     /**
      * The meta object literal for the '{@link uma.es.angular.t2a.t2A.impl.StyleClassImpl <em>Style Class</em>}' class.

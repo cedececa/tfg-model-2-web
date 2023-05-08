@@ -20,12 +20,14 @@ import uma.es.angular.t2a.t2A.DOM;
 import uma.es.angular.t2a.t2A.Feature;
 import uma.es.angular.t2a.t2A.InstanceEDOMFeature;
 import uma.es.angular.t2a.t2A.InstanciaEDOM;
+import uma.es.angular.t2a.t2A.JSOnline;
 import uma.es.angular.t2a.t2A.Page;
 import uma.es.angular.t2a.t2A.PageFeature;
 import uma.es.angular.t2a.t2A.Root;
 import uma.es.angular.t2a.t2A.SAttributeAndValue;
 import uma.es.angular.t2a.t2A.StyleClass;
 import uma.es.angular.t2a.t2A.StyleGlobal;
+import uma.es.angular.t2a.t2A.StyleOnline;
 import uma.es.angular.t2a.t2A.T2APackage;
 
 @SuppressWarnings("all")
@@ -57,6 +59,9 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case T2APackage.INSTANCIA_EDOM:
 				sequence_InstanciaEDOM(context, (InstanciaEDOM) semanticObject); 
 				return; 
+			case T2APackage.JS_ONLINE:
+				sequence_JSOnline(context, (JSOnline) semanticObject); 
+				return; 
 			case T2APackage.PAGE:
 				sequence_Page(context, (Page) semanticObject); 
 				return; 
@@ -74,6 +79,9 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case T2APackage.STYLE_GLOBAL:
 				sequence_StyleGlobal(context, (StyleGlobal) semanticObject); 
+				return; 
+			case T2APackage.STYLE_ONLINE:
+				sequence_StyleOnline(context, (StyleOnline) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -157,6 +165,20 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     JSOnline returns JSOnline
+	 *
+	 * Constraint:
+	 *     fullTags+=STRING*
+	 * </pre>
+	 */
+	protected void sequence_JSOnline(ISerializationContext context, JSOnline semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     PageFeature returns PageFeature
 	 *
 	 * Constraint:
@@ -189,7 +211,7 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Root returns Root
 	 *
 	 * Constraint:
-	 *     (globalStyle=StyleGlobal elements+=Element+)
+	 *     (appName=STRING globalStyle=StyleGlobal? styleOnline=StyleOnline? jsOnline=JSOnline? elements+=Element+)
 	 * </pre>
 	 */
 	protected void sequence_Root(ISerializationContext context, Root semanticObject) {
@@ -246,6 +268,20 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * </pre>
 	 */
 	protected void sequence_StyleGlobal(ISerializationContext context, StyleGlobal semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     StyleOnline returns StyleOnline
+	 *
+	 * Constraint:
+	 *     fullTags+=STRING*
+	 * </pre>
+	 */
+	protected void sequence_StyleOnline(ISerializationContext context, StyleOnline semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

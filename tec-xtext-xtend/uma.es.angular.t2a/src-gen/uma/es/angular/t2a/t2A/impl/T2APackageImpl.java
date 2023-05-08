@@ -15,12 +15,14 @@ import uma.es.angular.t2a.t2A.Element;
 import uma.es.angular.t2a.t2A.Feature;
 import uma.es.angular.t2a.t2A.InstanceEDOMFeature;
 import uma.es.angular.t2a.t2A.InstanciaEDOM;
+import uma.es.angular.t2a.t2A.JSOnline;
 import uma.es.angular.t2a.t2A.Page;
 import uma.es.angular.t2a.t2A.PageFeature;
 import uma.es.angular.t2a.t2A.Root;
 import uma.es.angular.t2a.t2A.SAttributeAndValue;
 import uma.es.angular.t2a.t2A.StyleClass;
 import uma.es.angular.t2a.t2A.StyleGlobal;
+import uma.es.angular.t2a.t2A.StyleOnline;
 import uma.es.angular.t2a.t2A.T2AFactory;
 import uma.es.angular.t2a.t2A.T2APackage;
 
@@ -66,6 +68,20 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
    * @generated
    */
   private EClass styleGlobalEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass styleOnlineEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass jsOnlineEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -203,9 +219,42 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
    * @generated
    */
   @Override
+  public EAttribute getRoot_AppName()
+  {
+    return (EAttribute)rootEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getRoot_GlobalStyle()
   {
-    return (EReference)rootEClass.getEStructuralFeatures().get(0);
+    return (EReference)rootEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRoot_StyleOnline()
+  {
+    return (EReference)rootEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRoot_JsOnline()
+  {
+    return (EReference)rootEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -216,7 +265,7 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
   @Override
   public EReference getRoot_Elements()
   {
-    return (EReference)rootEClass.getEStructuralFeatures().get(1);
+    return (EReference)rootEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -327,6 +376,50 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
   public EReference getStyleGlobal_Styleclasses()
   {
     return (EReference)styleGlobalEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStyleOnline()
+  {
+    return styleOnlineEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getStyleOnline_FullTags()
+  {
+    return (EAttribute)styleOnlineEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getJSOnline()
+  {
+    return jsOnlineEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getJSOnline_FullTags()
+  {
+    return (EAttribute)jsOnlineEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -658,7 +751,10 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
 
     // Create classes and their features
     rootEClass = createEClass(ROOT);
+    createEAttribute(rootEClass, ROOT__APP_NAME);
     createEReference(rootEClass, ROOT__GLOBAL_STYLE);
+    createEReference(rootEClass, ROOT__STYLE_ONLINE);
+    createEReference(rootEClass, ROOT__JS_ONLINE);
     createEReference(rootEClass, ROOT__ELEMENTS);
 
     elementEClass = createEClass(ELEMENT);
@@ -674,6 +770,12 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
 
     styleGlobalEClass = createEClass(STYLE_GLOBAL);
     createEReference(styleGlobalEClass, STYLE_GLOBAL__STYLECLASSES);
+
+    styleOnlineEClass = createEClass(STYLE_ONLINE);
+    createEAttribute(styleOnlineEClass, STYLE_ONLINE__FULL_TAGS);
+
+    jsOnlineEClass = createEClass(JS_ONLINE);
+    createEAttribute(jsOnlineEClass, JS_ONLINE__FULL_TAGS);
 
     styleClassEClass = createEClass(STYLE_CLASS);
     createEReference(styleClassEClass, STYLE_CLASS__SATTRIBUTES);
@@ -748,7 +850,10 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(rootEClass, Root.class, "Root", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRoot_AppName(), ecorePackage.getEString(), "appName", null, 0, 1, Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRoot_GlobalStyle(), this.getStyleGlobal(), null, "globalStyle", null, 0, 1, Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRoot_StyleOnline(), this.getStyleOnline(), null, "styleOnline", null, 0, 1, Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRoot_JsOnline(), this.getJSOnline(), null, "jsOnline", null, 0, 1, Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRoot_Elements(), this.getElement(), null, "elements", null, 0, -1, Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -764,6 +869,12 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
 
     initEClass(styleGlobalEClass, StyleGlobal.class, "StyleGlobal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStyleGlobal_Styleclasses(), this.getStyleClass(), null, "styleclasses", null, 0, -1, StyleGlobal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(styleOnlineEClass, StyleOnline.class, "StyleOnline", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStyleOnline_FullTags(), ecorePackage.getEString(), "fullTags", null, 0, -1, StyleOnline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(jsOnlineEClass, JSOnline.class, "JSOnline", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getJSOnline_FullTags(), ecorePackage.getEString(), "fullTags", null, 0, -1, JSOnline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(styleClassEClass, StyleClass.class, "StyleClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStyleClass_Sattributes(), this.getSAttributeAndValue(), null, "sattributes", null, 0, -1, StyleClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

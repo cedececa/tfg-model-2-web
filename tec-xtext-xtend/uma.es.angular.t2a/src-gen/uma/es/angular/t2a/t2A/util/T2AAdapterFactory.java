@@ -101,6 +101,16 @@ public class T2AAdapterFactory extends AdapterFactoryImpl
         return createStyleGlobalAdapter();
       }
       @Override
+      public Adapter caseStyleOnline(StyleOnline object)
+      {
+        return createStyleOnlineAdapter();
+      }
+      @Override
+      public Adapter caseJSOnline(JSOnline object)
+      {
+        return createJSOnlineAdapter();
+      }
+      @Override
       public Adapter caseStyleClass(StyleClass object)
       {
         return createStyleClassAdapter();
@@ -233,6 +243,36 @@ public class T2AAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStyleGlobalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uma.es.angular.t2a.t2A.StyleOnline <em>Style Online</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uma.es.angular.t2a.t2A.StyleOnline
+   * @generated
+   */
+  public Adapter createStyleOnlineAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uma.es.angular.t2a.t2A.JSOnline <em>JS Online</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uma.es.angular.t2a.t2A.JSOnline
+   * @generated
+   */
+  public Adapter createJSOnlineAdapter()
   {
     return null;
   }

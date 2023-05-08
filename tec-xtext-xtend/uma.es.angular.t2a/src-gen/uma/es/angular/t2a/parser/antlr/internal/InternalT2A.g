@@ -76,12 +76,34 @@ ruleRoot returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		otherlv_0='AppName:'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getRootAccess().getAppNameKeyword_0());
+		}
+		(
+			(
+				lv_appName_1_0=RULE_STRING
+				{
+					newLeafNode(lv_appName_1_0, grammarAccess.getRootAccess().getAppNameSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRootRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"appName",
+						lv_appName_1_0,
+						"uma.es.angular.t2a.T2A.STRING");
+				}
+			)
+		)
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRootAccess().getGlobalStyleStyleGlobalParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getRootAccess().getGlobalStyleStyleGlobalParserRuleCall_2_0());
 				}
-				lv_globalStyle_0_0=ruleStyleGlobal
+				lv_globalStyle_2_0=ruleStyleGlobal
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRootRule());
@@ -89,18 +111,56 @@ ruleRoot returns [EObject current=null]
 					set(
 						$current,
 						"globalStyle",
-						lv_globalStyle_0_0,
+						lv_globalStyle_2_0,
 						"uma.es.angular.t2a.T2A.StyleGlobal");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)?
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRootAccess().getElementsElementParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getRootAccess().getStyleOnlineStyleOnlineParserRuleCall_3_0());
 				}
-				lv_elements_1_0=ruleElement
+				lv_styleOnline_3_0=ruleStyleOnline
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRootRule());
+					}
+					set(
+						$current,
+						"styleOnline",
+						lv_styleOnline_3_0,
+						"uma.es.angular.t2a.T2A.StyleOnline");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRootAccess().getJsOnlineJSOnlineParserRuleCall_4_0());
+				}
+				lv_jsOnline_4_0=ruleJSOnline
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRootRule());
+					}
+					set(
+						$current,
+						"jsOnline",
+						lv_jsOnline_4_0,
+						"uma.es.angular.t2a.T2A.JSOnline");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRootAccess().getElementsElementParserRuleCall_5_0());
+				}
+				lv_elements_5_0=ruleElement
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRootRule());
@@ -108,7 +168,7 @@ ruleRoot returns [EObject current=null]
 					add(
 						$current,
 						"elements",
-						lv_elements_1_0,
+						lv_elements_5_0,
 						"uma.es.angular.t2a.T2A.Element");
 					afterParserOrEnumRuleCall();
 				}
@@ -374,6 +434,118 @@ ruleStyleGlobal returns [EObject current=null]
 		otherlv_4='}'
 		{
 			newLeafNode(otherlv_4, grammarAccess.getStyleGlobalAccess().getRightCurlyBracketKeyword_4());
+		}
+	)
+;
+
+// Entry rule entryRuleStyleOnline
+entryRuleStyleOnline returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStyleOnlineRule()); }
+	iv_ruleStyleOnline=ruleStyleOnline
+	{ $current=$iv_ruleStyleOnline.current; }
+	EOF;
+
+// Rule StyleOnline
+ruleStyleOnline returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getStyleOnlineAccess().getStyleOnlineAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='StyleOnline'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getStyleOnlineAccess().getStyleOnlineKeyword_1());
+		}
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getStyleOnlineAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				lv_fullTags_3_0=RULE_STRING
+				{
+					newLeafNode(lv_fullTags_3_0, grammarAccess.getStyleOnlineAccess().getFullTagsSTRINGTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getStyleOnlineRule());
+					}
+					addWithLastConsumed(
+						$current,
+						"fullTags",
+						lv_fullTags_3_0,
+						"uma.es.angular.t2a.T2A.STRING");
+				}
+			)
+		)*
+		otherlv_4='}'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getStyleOnlineAccess().getRightCurlyBracketKeyword_4());
+		}
+	)
+;
+
+// Entry rule entryRuleJSOnline
+entryRuleJSOnline returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getJSOnlineRule()); }
+	iv_ruleJSOnline=ruleJSOnline
+	{ $current=$iv_ruleJSOnline.current; }
+	EOF;
+
+// Rule JSOnline
+ruleJSOnline returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getJSOnlineAccess().getJSOnlineAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='JSOnline'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getJSOnlineAccess().getJSOnlineKeyword_1());
+		}
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getJSOnlineAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				lv_fullTags_3_0=RULE_STRING
+				{
+					newLeafNode(lv_fullTags_3_0, grammarAccess.getJSOnlineAccess().getFullTagsSTRINGTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getJSOnlineRule());
+					}
+					addWithLastConsumed(
+						$current,
+						"fullTags",
+						lv_fullTags_3_0,
+						"uma.es.angular.t2a.T2A.STRING");
+				}
+			)
+		)*
+		otherlv_4='}'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getJSOnlineAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;

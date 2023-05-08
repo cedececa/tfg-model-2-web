@@ -1,0 +1,33 @@
+AppName: 'Ejemplo2'
+
+StyleGlobal { 
+	StyleClass * {
+	    box-sizing: border-box;
+	}
+}
+ 
+Comp Layout{
+	AllowSlot
+}
+
+Page Home{
+	home
+	showInNav
+	Layout{
+		'Hola'
+	}
+}
+
+Page Segunda{
+	showInNav	
+	Layout{
+		'Segunda'
+	}
+}
+
+Page Tercera{
+	showInNav	
+	Layout{
+		'Tercera'
+	}
+}

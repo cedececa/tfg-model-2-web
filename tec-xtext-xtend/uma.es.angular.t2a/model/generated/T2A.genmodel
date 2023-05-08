@@ -7,7 +7,10 @@
   <genPackages prefix="T2A" basePackage="uma.es.angular.t2a" disposableProviderFactory="true"
       fileExtensions="t2a" ecorePackage="T2A.ecore#/">
     <genClasses ecoreClass="T2A.ecore#//Root">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T2A.ecore#//Root/appName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//Root/globalStyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//Root/styleOnline"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//Root/jsOnline"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//Root/elements"/>
     </genClasses>
     <genClasses ecoreClass="T2A.ecore#//Element">
@@ -22,6 +25,12 @@
     <genClasses ecoreClass="T2A.ecore#//EDOM"/>
     <genClasses ecoreClass="T2A.ecore#//StyleGlobal">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//StyleGlobal/styleclasses"/>
+    </genClasses>
+    <genClasses ecoreClass="T2A.ecore#//StyleOnline">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T2A.ecore#//StyleOnline/fullTags"/>
+    </genClasses>
+    <genClasses ecoreClass="T2A.ecore#//JSOnline">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T2A.ecore#//JSOnline/fullTags"/>
     </genClasses>
     <genClasses ecoreClass="T2A.ecore#//StyleClass">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//StyleClass/sattributes"/>
