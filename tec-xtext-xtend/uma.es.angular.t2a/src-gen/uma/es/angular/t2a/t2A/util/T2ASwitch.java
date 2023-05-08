@@ -103,6 +103,13 @@ public class T2ASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case T2APackage.STYLE_GLOBAL:
+      {
+        StyleGlobal styleGlobal = (StyleGlobal)theEObject;
+        T result = caseStyleGlobal(styleGlobal);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case T2APackage.STYLE_CLASS:
       {
         StyleClass styleClass = (StyleClass)theEObject;
@@ -229,6 +236,22 @@ public class T2ASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseEDOM(EDOM object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Style Global</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Style Global</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStyleGlobal(StyleGlobal object)
   {
     return null;
   }

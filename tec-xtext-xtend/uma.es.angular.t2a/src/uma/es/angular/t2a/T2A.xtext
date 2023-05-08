@@ -3,7 +3,9 @@ grammar uma.es.angular.t2a.T2A with org.eclipse.xtext.common.Terminals
 generate t2A "http://www.es.uma/angular/t2a/T2A"
 
 Root:
-	elements+=Element+;
+	globalStyle=StyleGlobal
+	elements+=Element+
+;
 
 Element:
 	Page | EDOM;
@@ -20,6 +22,11 @@ Page:
 EDOM:
 	DOM | Comp | StyleClass ;
 
+StyleGlobal:
+	{StyleGlobal} 'StyleGlobal' '{'
+		(styleclasses+=StyleClass)*
+	'}'
+;
 StyleClass:
 	'StyleClass' name=Name
 	'{'

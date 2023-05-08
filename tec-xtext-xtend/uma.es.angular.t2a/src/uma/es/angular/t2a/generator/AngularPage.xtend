@@ -20,7 +20,7 @@ class AngularPage {
 		sclasses = new HashSet<StyleClass>();
 		hostclasses = new HashSet<StyleClass>();
 		var nameLowercase = (new String(page.name)).toLowerCase()
-		var relativePath = 'pages/' + nameLowercase + '/' + nameLowercase;
+		var relativePath = 'app/pages/' + nameLowercase + '/' + nameLowercase;
 		fsa.generateFile(relativePath + '.page.ts', AngularPage.toTSCode(page));
 		fsa.generateFile(relativePath + '.page.html', AngularPage.toHTMLCode(page));
 		fsa.generateFile(relativePath + '.page.scss', AngularPage.toCSSCode(hostclasses, sclasses));

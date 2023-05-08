@@ -68,13 +68,22 @@ public interface T2APackage extends EPackage
   int ROOT = 0;
 
   /**
+   * The feature id for the '<em><b>Global Style</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROOT__GLOBAL_STYLE = 0;
+
+  /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ROOT__ELEMENTS = 0;
+  int ROOT__ELEMENTS = 1;
 
   /**
    * The number of structural features of the '<em>Root</em>' class.
@@ -83,7 +92,7 @@ public interface T2APackage extends EPackage
    * @generated
    * @ordered
    */
-  int ROOT_FEATURE_COUNT = 1;
+  int ROOT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.ElementImpl <em>Element</em>}' class.
@@ -206,6 +215,34 @@ public interface T2APackage extends EPackage
   int EDOM_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.StyleGlobalImpl <em>Style Global</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uma.es.angular.t2a.t2A.impl.StyleGlobalImpl
+   * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getStyleGlobal()
+   * @generated
+   */
+  int STYLE_GLOBAL = 4;
+
+  /**
+   * The feature id for the '<em><b>Styleclasses</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STYLE_GLOBAL__STYLECLASSES = 0;
+
+  /**
+   * The number of structural features of the '<em>Style Global</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STYLE_GLOBAL_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.StyleClassImpl <em>Style Class</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -213,7 +250,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getStyleClass()
    * @generated
    */
-  int STYLE_CLASS = 4;
+  int STYLE_CLASS = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -268,7 +305,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getSAttributeAndValue()
    * @generated
    */
-  int SATTRIBUTE_AND_VALUE = 5;
+  int SATTRIBUTE_AND_VALUE = 6;
 
   /**
    * The feature id for the '<em><b>Stname</b></em>' attribute.
@@ -305,7 +342,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getDOM()
    * @generated
    */
-  int DOM = 6;
+  int DOM = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -351,7 +388,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getComp()
    * @generated
    */
-  int COMP = 7;
+  int COMP = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -397,7 +434,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getInstanciaEDOM()
    * @generated
    */
-  int INSTANCIA_EDOM = 8;
+  int INSTANCIA_EDOM = 9;
 
   /**
    * The feature id for the '<em><b>Instancia</b></em>' reference.
@@ -443,7 +480,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getInstanceEDOMFeature()
    * @generated
    */
-  int INSTANCE_EDOM_FEATURE = 9;
+  int INSTANCE_EDOM_FEATURE = 10;
 
   /**
    * The feature id for the '<em><b>Instancia EDOM</b></em>' containment reference.
@@ -480,7 +517,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getPageFeature()
    * @generated
    */
-  int PAGE_FEATURE = 10;
+  int PAGE_FEATURE = 11;
 
   /**
    * The feature id for the '<em><b>Instancia EDOM</b></em>' containment reference.
@@ -517,7 +554,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getFeature()
    * @generated
    */
-  int FEATURE = 11;
+  int FEATURE = 12;
 
   /**
    * The feature id for the '<em><b>Instancia EDOM</b></em>' containment reference.
@@ -565,6 +602,17 @@ public interface T2APackage extends EPackage
    * @generated
    */
   EClass getRoot();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uma.es.angular.t2a.t2A.Root#getGlobalStyle <em>Global Style</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Global Style</em>'.
+   * @see uma.es.angular.t2a.t2A.Root#getGlobalStyle()
+   * @see #getRoot()
+   * @generated
+   */
+  EReference getRoot_GlobalStyle();
 
   /**
    * Returns the meta object for the containment reference list '{@link uma.es.angular.t2a.t2A.Root#getElements <em>Elements</em>}'.
@@ -661,6 +709,27 @@ public interface T2APackage extends EPackage
    * @generated
    */
   EClass getEDOM();
+
+  /**
+   * Returns the meta object for class '{@link uma.es.angular.t2a.t2A.StyleGlobal <em>Style Global</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Style Global</em>'.
+   * @see uma.es.angular.t2a.t2A.StyleGlobal
+   * @generated
+   */
+  EClass getStyleGlobal();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uma.es.angular.t2a.t2A.StyleGlobal#getStyleclasses <em>Styleclasses</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Styleclasses</em>'.
+   * @see uma.es.angular.t2a.t2A.StyleGlobal#getStyleclasses()
+   * @see #getStyleGlobal()
+   * @generated
+   */
+  EReference getStyleGlobal_Styleclasses();
 
   /**
    * Returns the meta object for class '{@link uma.es.angular.t2a.t2A.StyleClass <em>Style Class</em>}'.
@@ -985,6 +1054,14 @@ public interface T2APackage extends EPackage
     EClass ROOT = eINSTANCE.getRoot();
 
     /**
+     * The meta object literal for the '<em><b>Global Style</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ROOT__GLOBAL_STYLE = eINSTANCE.getRoot_GlobalStyle();
+
+    /**
      * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1061,6 +1138,24 @@ public interface T2APackage extends EPackage
      * @generated
      */
     EClass EDOM = eINSTANCE.getEDOM();
+
+    /**
+     * The meta object literal for the '{@link uma.es.angular.t2a.t2A.impl.StyleGlobalImpl <em>Style Global</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uma.es.angular.t2a.t2A.impl.StyleGlobalImpl
+     * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getStyleGlobal()
+     * @generated
+     */
+    EClass STYLE_GLOBAL = eINSTANCE.getStyleGlobal();
+
+    /**
+     * The meta object literal for the '<em><b>Styleclasses</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STYLE_GLOBAL__STYLECLASSES = eINSTANCE.getStyleGlobal_Styleclasses();
 
     /**
      * The meta object literal for the '{@link uma.es.angular.t2a.t2A.impl.StyleClassImpl <em>Style Class</em>}' class.

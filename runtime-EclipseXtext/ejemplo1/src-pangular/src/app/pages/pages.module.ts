@@ -11,32 +11,32 @@ import { AppRoot } from './app-root';
 
 
 @NgModule({
-	declarations: [
-		AppRoot,
-		PrimeraPage,
-		SegundaPage,
-		TerceraPage,
-		CuartaPage,
-		CincoPage,
-	],
-	exports: [
-		AppRoot,
-		PrimeraPage,
-		SegundaPage,
-		TerceraPage,
-		CuartaPage,
-		CincoPage,
-	],
-	imports: [
-		BrowserModule,
-		SharedComponentsModule,
-		RouterModule.forRoot([
-			{ path: '', component: PrimeraPage },
-			{ path: 'segunda', component: SegundaPage },
-			{ path: 'tercera', component: TerceraPage },
-			{ path: 'cuarta', component: CuartaPage },
-			{ path: 'cinco', component: CincoPage },
-		])
-	]
+declarations: [
+	AppRoot,
+   PrimeraPage,
+   SegundaPage,
+   TerceraPage,
+   CuartaPage,
+   CincoPage,
+],
+exports:[
+	AppRoot,
+PrimeraPage,
+SegundaPage,
+TerceraPage,
+CuartaPage,
+CincoPage,
+],
+imports: [
+ 		    BrowserModule,
+ 		    SharedComponentsModule,
+    		RouterModule.forRoot([
+{ path: '', component: PrimeraPage },
+{ path: 'segunda', component: SegundaPage },
+{ path: 'tercera', component: TerceraPage },
+{ path: 'cuarta', component: CuartaPage },
+{ path: 'cinco', component: CincoPage },
+    		])
+]
 })
 export class PagesModule { }

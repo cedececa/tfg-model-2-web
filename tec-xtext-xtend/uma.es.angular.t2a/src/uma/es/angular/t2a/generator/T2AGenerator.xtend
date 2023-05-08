@@ -80,10 +80,11 @@ class T2AGenerator extends AbstractGenerator {
 		deleteDirectoryContent(absoluteSrcGenDirectory)
 		
 		var root = resource.contents.head as Root;
-
+		StyleGlobalCSS.toStyleGlobalFile(root.globalStyle, fsa);
+		
 		var components = new ArrayList<Comp>();
 		var pages = new ArrayList<Page>();
-
+		
 		for (element : root.elements) {
 			if (element.eClass.name.equals('Page')) {
 				var page = element as Page;
@@ -104,7 +105,7 @@ class T2AGenerator extends AbstractGenerator {
 		PageModule.generarModule(fsa, pages);
 
 		runAngularProject(absoluteSrcGenDirectory);
-
+		
 	}
 
 

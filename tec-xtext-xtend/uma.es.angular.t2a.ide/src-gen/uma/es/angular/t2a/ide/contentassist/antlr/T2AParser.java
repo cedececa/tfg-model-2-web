@@ -37,8 +37,10 @@ public class T2AParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPageFeatureAccess().getAlternatives(), "rule__PageFeature__Alternatives");
 			builder.put(grammarAccess.getFeatureAccess().getAlternatives(), "rule__Feature__Alternatives");
 			builder.put(grammarAccess.getNameAccess().getAlternatives(), "rule__Name__Alternatives");
+			builder.put(grammarAccess.getRootAccess().getGroup(), "rule__Root__Group__0");
 			builder.put(grammarAccess.getPageAccess().getGroup(), "rule__Page__Group__0");
 			builder.put(grammarAccess.getPageAccess().getGroup_3(), "rule__Page__Group_3__0");
+			builder.put(grammarAccess.getStyleGlobalAccess().getGroup(), "rule__StyleGlobal__Group__0");
 			builder.put(grammarAccess.getStyleClassAccess().getGroup(), "rule__StyleClass__Group__0");
 			builder.put(grammarAccess.getStyleClassAccess().getGroup_3(), "rule__StyleClass__Group_3__0");
 			builder.put(grammarAccess.getStyleClassAccess().getGroup_4(), "rule__StyleClass__Group_4__0");
@@ -55,12 +57,14 @@ public class T2AParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getInstanciaEDOMAccess().getGroup(), "rule__InstanciaEDOM__Group__0");
 			builder.put(grammarAccess.getInstanciaEDOMAccess().getGroup_1(), "rule__InstanciaEDOM__Group_1__0");
 			builder.put(grammarAccess.getInstanciaEDOMAccess().getGroup_1_1(), "rule__InstanciaEDOM__Group_1_1__0");
-			builder.put(grammarAccess.getRootAccess().getElementsAssignment(), "rule__Root__ElementsAssignment");
+			builder.put(grammarAccess.getRootAccess().getGlobalStyleAssignment_0(), "rule__Root__GlobalStyleAssignment_0");
+			builder.put(grammarAccess.getRootAccess().getElementsAssignment_1(), "rule__Root__ElementsAssignment_1");
 			builder.put(grammarAccess.getPageAccess().getNameAssignment_1(), "rule__Page__NameAssignment_1");
 			builder.put(grammarAccess.getPageAccess().getHostclassesAssignment_3_2(), "rule__Page__HostclassesAssignment_3_2");
 			builder.put(grammarAccess.getPageAccess().getHomeAssignment_4(), "rule__Page__HomeAssignment_4");
 			builder.put(grammarAccess.getPageAccess().getShowInNavAssignment_5(), "rule__Page__ShowInNavAssignment_5");
 			builder.put(grammarAccess.getPageAccess().getPageFeaturesAssignment_6(), "rule__Page__PageFeaturesAssignment_6");
+			builder.put(grammarAccess.getStyleGlobalAccess().getStyleclassesAssignment_3(), "rule__StyleGlobal__StyleclassesAssignment_3");
 			builder.put(grammarAccess.getStyleClassAccess().getNameAssignment_1(), "rule__StyleClass__NameAssignment_1");
 			builder.put(grammarAccess.getStyleClassAccess().getSattributesAssignment_3_0(), "rule__StyleClass__SattributesAssignment_3_0");
 			builder.put(grammarAccess.getStyleClassAccess().getSattributesAfterAssignment_4_2_0(), "rule__StyleClass__SattributesAfterAssignment_4_2_0");

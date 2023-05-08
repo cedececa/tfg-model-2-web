@@ -60,6 +60,15 @@ public interface T2AFactory extends EFactory
   EDOM createEDOM();
 
   /**
+   * Returns a new object of class '<em>Style Global</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Style Global</em>'.
+   * @generated
+   */
+  StyleGlobal createStyleGlobal();
+
+  /**
    * Returns a new object of class '<em>Style Class</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -6,6 +6,7 @@ package uma.es.angular.t2a.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
+import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.CrossReference;
@@ -25,18 +26,33 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	public class RootElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.Root");
-		private final Assignment cElementsAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cElementsElementParserRuleCall_0 = (RuleCall)cElementsAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cGlobalStyleAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cGlobalStyleStyleGlobalParserRuleCall_0_0 = (RuleCall)cGlobalStyleAssignment_0.eContents().get(0);
+		private final Assignment cElementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cElementsElementParserRuleCall_1_0 = (RuleCall)cElementsAssignment_1.eContents().get(0);
 		
 		//Root:
-		//    elements+=Element+;
+		//    globalStyle=StyleGlobal
+		//    elements+=Element+
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//globalStyle=StyleGlobal
 		//elements+=Element+
-		public Assignment getElementsAssignment() { return cElementsAssignment; }
+		public Group getGroup() { return cGroup; }
+		
+		//globalStyle=StyleGlobal
+		public Assignment getGlobalStyleAssignment_0() { return cGlobalStyleAssignment_0; }
+		
+		//StyleGlobal
+		public RuleCall getGlobalStyleStyleGlobalParserRuleCall_0_0() { return cGlobalStyleStyleGlobalParserRuleCall_0_0; }
+		
+		//elements+=Element+
+		public Assignment getElementsAssignment_1() { return cElementsAssignment_1; }
 		
 		//Element
-		public RuleCall getElementsElementParserRuleCall_0() { return cElementsElementParserRuleCall_0; }
+		public RuleCall getElementsElementParserRuleCall_1_0() { return cElementsElementParserRuleCall_1_0; }
 	}
 	public class ElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.Element");
@@ -174,6 +190,46 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//StyleClass
 		public RuleCall getStyleClassParserRuleCall_2() { return cStyleClassParserRuleCall_2; }
+	}
+	public class StyleGlobalElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.StyleGlobal");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cStyleGlobalAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cStyleGlobalKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cStyleclassesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cStyleclassesStyleClassParserRuleCall_3_0 = (RuleCall)cStyleclassesAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//StyleGlobal:
+		//    {StyleGlobal} 'StyleGlobal' '{'
+		//        (styleclasses+=StyleClass)*
+		//    '}'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{StyleGlobal} 'StyleGlobal' '{'
+		//    (styleclasses+=StyleClass)*
+		//'}'
+		public Group getGroup() { return cGroup; }
+		
+		//{StyleGlobal}
+		public Action getStyleGlobalAction_0() { return cStyleGlobalAction_0; }
+		
+		//'StyleGlobal'
+		public Keyword getStyleGlobalKeyword_1() { return cStyleGlobalKeyword_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//(styleclasses+=StyleClass)*
+		public Assignment getStyleclassesAssignment_3() { return cStyleclassesAssignment_3; }
+		
+		//StyleClass
+		public RuleCall getStyleclassesStyleClassParserRuleCall_3_0() { return cStyleclassesStyleClassParserRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class StyleClassElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uma.es.angular.t2a.T2A.StyleClass");
@@ -736,6 +792,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	private final ElementElements pElement;
 	private final PageElements pPage;
 	private final EDOMElements pEDOM;
+	private final StyleGlobalElements pStyleGlobal;
 	private final StyleClassElements pStyleClass;
 	private final SAttributeAndValueElements pSAttributeAndValue;
 	private final DOMElements pDOM;
@@ -761,6 +818,7 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		this.pElement = new ElementElements();
 		this.pPage = new PageElements();
 		this.pEDOM = new EDOMElements();
+		this.pStyleGlobal = new StyleGlobalElements();
 		this.pStyleClass = new StyleClassElements();
 		this.pSAttributeAndValue = new SAttributeAndValueElements();
 		this.pDOM = new DOMElements();
@@ -802,7 +860,9 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 
 	
 	//Root:
-	//    elements+=Element+;
+	//    globalStyle=StyleGlobal
+	//    elements+=Element+
+	//;
 	public RootElements getRootAccess() {
 		return pRoot;
 	}
@@ -845,6 +905,19 @@ public class T2AGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	public ParserRule getEDOMRule() {
 		return getEDOMAccess().getRule();
+	}
+	
+	//StyleGlobal:
+	//    {StyleGlobal} 'StyleGlobal' '{'
+	//        (styleclasses+=StyleClass)*
+	//    '}'
+	//;
+	public StyleGlobalElements getStyleGlobalAccess() {
+		return pStyleGlobal;
+	}
+	
+	public ParserRule getStyleGlobalRule() {
+		return getStyleGlobalAccess().getRule();
 	}
 	
 	//StyleClass:

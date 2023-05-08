@@ -2,6 +2,8 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="t2A" nsURI="http://www.es.uma/angular/t2a/T2A" nsPrefix="t2A">
   <eClassifiers xsi:type="ecore:EClass" name="Root">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="globalStyle" eType="#//StyleGlobal"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//Element" containment="true"/>
   </eClassifiers>
@@ -17,6 +19,10 @@
         eType="#//PageFeature" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EDOM" eSuperTypes="#//Element"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StyleGlobal">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="styleclasses" upperBound="-1"
+        eType="#//StyleClass" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StyleClass" eSuperTypes="#//EDOM">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sattributes" upperBound="-1"
         eType="#//SAttributeAndValue" containment="true"/>

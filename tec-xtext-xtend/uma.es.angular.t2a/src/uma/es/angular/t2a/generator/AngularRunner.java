@@ -26,7 +26,8 @@ public class AngularRunner {
 		File source = new File(srcGenDirectoryAbsolutePath);
 
 		// If the directory is not exist
-		File dest = new File(angularFolderAbsolutePath + "/src/app");
+		File dest = new File(angularFolderAbsolutePath + "/src");
+		File destApp = new File(angularFolderAbsolutePath + "/src/app");
 		if (!dest.exists()) {
 			generateAngularProject(angularFolderAbsolutePath.replace(angularProjectName, ""), angularProjectName);
 			// directory.mkdirs();
@@ -36,7 +37,7 @@ public class AngularRunner {
 
 		// Put generated-files in the src/app/ of the angular project
 		try {
-			FileUtils.deleteDirectory(dest);
+			FileUtils.deleteDirectory(destApp); // only remove angular template codes
 			dest.mkdirs();
 			FileUtils.copyDirectory(source, dest);
 		} catch (IOException e) {

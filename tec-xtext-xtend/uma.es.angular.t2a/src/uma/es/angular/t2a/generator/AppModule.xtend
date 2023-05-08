@@ -6,7 +6,7 @@ import uma.es.angular.t2a.t2A.Page
 class AppModule {
 	
 	def static generarModule(IFileSystemAccess2 fsa, Page page){
-		fsa.generateFile('app.module.ts', AppModule.toModuleCode(page));
+		fsa.generateFile('app/app.module.ts', AppModule.toModuleCode(page));
 	}
 	def static toModuleCode(uma.es.angular.t2a.t2A.Page page){
 		'''

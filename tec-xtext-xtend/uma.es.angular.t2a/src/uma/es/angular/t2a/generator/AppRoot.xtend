@@ -8,8 +8,8 @@ import java.util.ArrayList
 class AppRoot {
 	
 	def static generarRoot(IFileSystemAccess2 fsa, List<Page> pages){
-		fsa.generateFile('./pages/app-root.ts', AppRoot.toRootPageTSCode());
-		fsa.generateFile('./pages/app-root.html', AppRoot.toRootPageHTMLCode(pages));
+		fsa.generateFile('app/pages/app-root.ts', AppRoot.toRootPageTSCode());
+		fsa.generateFile('app/pages/app-root.html', AppRoot.toRootPageHTMLCode(pages));
 	}
 	def static toRootPageTSCode(){
 		'''

@@ -20,6 +20,7 @@ import uma.es.angular.t2a.t2A.PageFeature;
 import uma.es.angular.t2a.t2A.Root;
 import uma.es.angular.t2a.t2A.SAttributeAndValue;
 import uma.es.angular.t2a.t2A.StyleClass;
+import uma.es.angular.t2a.t2A.StyleGlobal;
 import uma.es.angular.t2a.t2A.T2AFactory;
 import uma.es.angular.t2a.t2A.T2APackage;
 
@@ -58,6 +59,13 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
    * @generated
    */
   private EClass edomEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass styleGlobalEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -195,9 +203,20 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
    * @generated
    */
   @Override
-  public EReference getRoot_Elements()
+  public EReference getRoot_GlobalStyle()
   {
     return (EReference)rootEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRoot_Elements()
+  {
+    return (EReference)rootEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -286,6 +305,28 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
   public EClass getEDOM()
   {
     return edomEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStyleGlobal()
+  {
+    return styleGlobalEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getStyleGlobal_Styleclasses()
+  {
+    return (EReference)styleGlobalEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -617,6 +658,7 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
 
     // Create classes and their features
     rootEClass = createEClass(ROOT);
+    createEReference(rootEClass, ROOT__GLOBAL_STYLE);
     createEReference(rootEClass, ROOT__ELEMENTS);
 
     elementEClass = createEClass(ELEMENT);
@@ -629,6 +671,9 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
     createEReference(pageEClass, PAGE__PAGE_FEATURES);
 
     edomEClass = createEClass(EDOM);
+
+    styleGlobalEClass = createEClass(STYLE_GLOBAL);
+    createEReference(styleGlobalEClass, STYLE_GLOBAL__STYLECLASSES);
 
     styleClassEClass = createEClass(STYLE_CLASS);
     createEReference(styleClassEClass, STYLE_CLASS__SATTRIBUTES);
@@ -703,6 +748,7 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(rootEClass, Root.class, "Root", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRoot_GlobalStyle(), this.getStyleGlobal(), null, "globalStyle", null, 0, 1, Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRoot_Elements(), this.getElement(), null, "elements", null, 0, -1, Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -715,6 +761,9 @@ public class T2APackageImpl extends EPackageImpl implements T2APackage
     initEReference(getPage_PageFeatures(), this.getPageFeature(), null, "pageFeatures", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(edomEClass, uma.es.angular.t2a.t2A.EDOM.class, "EDOM", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(styleGlobalEClass, StyleGlobal.class, "StyleGlobal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStyleGlobal_Styleclasses(), this.getStyleClass(), null, "styleclasses", null, 0, -1, StyleGlobal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(styleClassEClass, StyleClass.class, "StyleClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStyleClass_Sattributes(), this.getSAttributeAndValue(), null, "sattributes", null, 0, -1, StyleClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

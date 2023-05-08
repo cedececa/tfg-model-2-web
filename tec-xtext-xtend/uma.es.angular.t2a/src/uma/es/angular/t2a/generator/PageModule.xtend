@@ -6,7 +6,7 @@ import uma.es.angular.t2a.t2A.Page
 
 class PageModule {
 	def static generarModule(IFileSystemAccess2 fsa, List<Page> pages) {
-		var relativePath = 'pages/';
+		var relativePath = 'app/pages/';
 		if (pages.length > 0) {
 			fsa.generateFile(relativePath + 'pages.module.ts', PageModule.toModuleCode(pages));
 		}

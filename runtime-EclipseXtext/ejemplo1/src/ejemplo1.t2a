@@ -1,14 +1,55 @@
-Dom h1 
-Dom h2
-Dom h3
-Dom h4
-Dom h5
-Dom ul
-Dom p
-Dom li
-Dom a
-Dom header
-Dom div
+
+StyleGlobal {
+	StyleClass * {
+	    box-sizing: border-box;
+	}
+	
+	StyleClass h1 {
+	    display: inline-block;
+	} 
+	 
+	StyleClass h2 {
+	    display: inline-block;
+	}
+	 
+	StyleClass h3 {
+	    display: inline-block;
+	}
+	
+	StyleClass h4 {
+	    display: inline-block;  
+	}
+	
+	StyleClass nav ul li a {
+	    display: block;
+	    color: white;
+	    text-align: center;
+	    padding: 14px 16px;
+	    text-decoration: none;
+	}
+	
+	StyleClass nav ul li a{ 
+		active {
+	    	background-color: #04AA6D;		
+		} 
+	}
+	
+	StyleClass nav ul {
+	    list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	    overflow: hidden;
+	    background-color: #333;
+	}
+	
+	StyleClass nav ul li {
+	    display: inline-block;
+	    color: white;
+	    text-align: center;
+	    text-decoration: none;
+	}
+}
+
 
 StyleClass cabecera{
 	  background-color: #666;
@@ -79,6 +120,20 @@ StyleClass liA{
   	      background-color: #04AA6D;	
       }
 }
+
+Dom h1 
+Dom h2
+Dom h3
+Dom h4
+Dom h5
+Dom ul
+Dom p
+Dom li
+Dom a
+Dom header
+Dom div
+
+
 Comp Section{
 	sclass { section}
 	leftNav{
@@ -88,20 +143,22 @@ Comp Section{
 				sclass{navUlLi}
 				a{
 					sclass{liA}
-				"London"
+					"London"
 				}
 			}
 			li{
 				sclass{navUlLi}
 				a{					
 					sclass{liA}
-				"Changsha"}
+					"Changsha"
+				}
 			}
 			li{
 				sclass{navUlLi}				
 				a{
 					sclass{liA}
-				"Malaga"}
+					"Malaga"
+				}
 			}
 		}
 	}
@@ -186,5 +243,6 @@ Page Cinco{
 		}
 	}
 }
+
 
 

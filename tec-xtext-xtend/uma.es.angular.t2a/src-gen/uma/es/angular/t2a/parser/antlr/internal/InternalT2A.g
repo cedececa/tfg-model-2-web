@@ -77,23 +77,44 @@ ruleRoot returns [EObject current=null]
 }:
 	(
 		(
-			{
-				newCompositeNode(grammarAccess.getRootAccess().getElementsElementParserRuleCall_0());
-			}
-			lv_elements_0_0=ruleElement
-			{
-				if ($current==null) {
-					$current = createModelElementForParent(grammarAccess.getRootRule());
+			(
+				{
+					newCompositeNode(grammarAccess.getRootAccess().getGlobalStyleStyleGlobalParserRuleCall_0_0());
 				}
-				add(
-					$current,
-					"elements",
-					lv_elements_0_0,
-					"uma.es.angular.t2a.T2A.Element");
-				afterParserOrEnumRuleCall();
-			}
+				lv_globalStyle_0_0=ruleStyleGlobal
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRootRule());
+					}
+					set(
+						$current,
+						"globalStyle",
+						lv_globalStyle_0_0,
+						"uma.es.angular.t2a.T2A.StyleGlobal");
+					afterParserOrEnumRuleCall();
+				}
+			)
 		)
-	)+
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRootAccess().getElementsElementParserRuleCall_1_0());
+				}
+				lv_elements_1_0=ruleElement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRootRule());
+					}
+					add(
+						$current,
+						"elements",
+						lv_elements_1_0,
+						"uma.es.angular.t2a.T2A.Element");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)+
+	)
 ;
 
 // Entry rule entryRuleElement
@@ -296,6 +317,63 @@ ruleEDOM returns [EObject current=null]
 		{
 			$current = $this_StyleClass_2.current;
 			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleStyleGlobal
+entryRuleStyleGlobal returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStyleGlobalRule()); }
+	iv_ruleStyleGlobal=ruleStyleGlobal
+	{ $current=$iv_ruleStyleGlobal.current; }
+	EOF;
+
+// Rule StyleGlobal
+ruleStyleGlobal returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getStyleGlobalAccess().getStyleGlobalAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='StyleGlobal'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getStyleGlobalAccess().getStyleGlobalKeyword_1());
+		}
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getStyleGlobalAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getStyleGlobalAccess().getStyleclassesStyleClassParserRuleCall_3_0());
+				}
+				lv_styleclasses_3_0=ruleStyleClass
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getStyleGlobalRule());
+					}
+					add(
+						$current,
+						"styleclasses",
+						lv_styleclasses_3_0,
+						"uma.es.angular.t2a.T2A.StyleClass");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_4='}'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getStyleGlobalAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;

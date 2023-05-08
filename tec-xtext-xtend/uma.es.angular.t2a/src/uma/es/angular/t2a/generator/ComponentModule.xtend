@@ -7,7 +7,7 @@ class ComponentModule {
 //	public static List<Comp> components = new ArrayList<Comp>();
 
 	def static generarModule(IFileSystemAccess2 fsa, List<Comp> components){
-		var relativePath = 'components/';
+		var relativePath = 'app/components/';
 		if(components.length>0){
 			fsa.generateFile(relativePath + 'shared-components.module.ts', ComponentModule.toModuleCode(components));
 		}

@@ -25,6 +25,7 @@ import uma.es.angular.t2a.t2A.PageFeature;
 import uma.es.angular.t2a.t2A.Root;
 import uma.es.angular.t2a.t2A.SAttributeAndValue;
 import uma.es.angular.t2a.t2A.StyleClass;
+import uma.es.angular.t2a.t2A.StyleGlobal;
 import uma.es.angular.t2a.t2A.T2APackage;
 
 @SuppressWarnings("all")
@@ -70,6 +71,9 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case T2APackage.STYLE_CLASS:
 				sequence_StyleClass(context, (StyleClass) semanticObject); 
+				return; 
+			case T2APackage.STYLE_GLOBAL:
+				sequence_StyleGlobal(context, (StyleGlobal) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -185,7 +189,7 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Root returns Root
 	 *
 	 * Constraint:
-	 *     elements+=Element+
+	 *     (globalStyle=StyleGlobal elements+=Element+)
 	 * </pre>
 	 */
 	protected void sequence_Root(ISerializationContext context, Root semanticObject) {
@@ -228,6 +232,20 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * </pre>
 	 */
 	protected void sequence_StyleClass(ISerializationContext context, StyleClass semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     StyleGlobal returns StyleGlobal
+	 *
+	 * Constraint:
+	 *     styleclasses+=StyleClass*
+	 * </pre>
+	 */
+	protected void sequence_StyleGlobal(ISerializationContext context, StyleGlobal semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

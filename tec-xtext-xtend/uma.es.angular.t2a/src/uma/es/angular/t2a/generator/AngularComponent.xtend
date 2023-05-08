@@ -22,7 +22,7 @@ class AngularComponent {
 		hostclasses = new HashSet<StyleClass>();
 		
 		var nameLowercase = (new String(comp.name)).toLowerCase()
-		var relativePath = 'components/' + nameLowercase + '/' + nameLowercase;
+		var relativePath = 'app/components/' + nameLowercase + '/' + nameLowercase;
 		fsa.generateFile(relativePath + '.comp.ts', AngularComponent.toTSCode(comp));
 		fsa.generateFile(relativePath + '.comp.html', AngularComponent.toHTMLCode(comp));
 		fsa.generateFile(relativePath + '.comp.scss', AngularComponent.toCSSCode(hostclasses,sclasses));

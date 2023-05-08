@@ -7,6 +7,7 @@
   <genPackages prefix="T2A" basePackage="uma.es.angular.t2a" disposableProviderFactory="true"
       fileExtensions="t2a" ecorePackage="T2A.ecore#/">
     <genClasses ecoreClass="T2A.ecore#//Root">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//Root/globalStyle"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//Root/elements"/>
     </genClasses>
     <genClasses ecoreClass="T2A.ecore#//Element">
@@ -19,6 +20,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//Page/pageFeatures"/>
     </genClasses>
     <genClasses ecoreClass="T2A.ecore#//EDOM"/>
+    <genClasses ecoreClass="T2A.ecore#//StyleGlobal">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//StyleGlobal/styleclasses"/>
+    </genClasses>
     <genClasses ecoreClass="T2A.ecore#//StyleClass">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//StyleClass/sattributes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//StyleClass/sattributesAfter"/>

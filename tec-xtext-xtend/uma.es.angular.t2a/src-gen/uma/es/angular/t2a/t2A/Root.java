@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uma.es.angular.t2a.t2A.Root#getGlobalStyle <em>Global Style</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.Root#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -25,6 +26,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Root extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Global Style</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Global Style</em>' containment reference.
+   * @see #setGlobalStyle(StyleGlobal)
+   * @see uma.es.angular.t2a.t2A.T2APackage#getRoot_GlobalStyle()
+   * @model containment="true"
+   * @generated
+   */
+  StyleGlobal getGlobalStyle();
+
+  /**
+   * Sets the value of the '{@link uma.es.angular.t2a.t2A.Root#getGlobalStyle <em>Global Style</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Global Style</em>' containment reference.
+   * @see #getGlobalStyle()
+   * @generated
+   */
+  void setGlobalStyle(StyleGlobal value);
+
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
    * The list contents are of type {@link uma.es.angular.t2a.t2A.Element}.

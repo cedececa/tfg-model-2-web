@@ -96,6 +96,11 @@ public class T2AAdapterFactory extends AdapterFactoryImpl
         return createEDOMAdapter();
       }
       @Override
+      public Adapter caseStyleGlobal(StyleGlobal object)
+      {
+        return createStyleGlobalAdapter();
+      }
+      @Override
       public Adapter caseStyleClass(StyleClass object)
       {
         return createStyleClassAdapter();
@@ -213,6 +218,21 @@ public class T2AAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createEDOMAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uma.es.angular.t2a.t2A.StyleGlobal <em>Style Global</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uma.es.angular.t2a.t2A.StyleGlobal
+   * @generated
+   */
+  public Adapter createStyleGlobalAdapter()
   {
     return null;
   }
