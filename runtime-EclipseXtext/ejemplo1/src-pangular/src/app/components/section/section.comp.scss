@@ -5,13 +5,6 @@
  	display : table;
  	clear : both;
  }
-			.navUl {
-				list-style-type : none;
-				margin : 0;
-				padding : 0;
-				overflow : hidden;
-				background-color : #333;
-			}
 			.liA {
 				display : inline-block;
 				color : white;
@@ -24,4 +17,11 @@
 			}
 			.navUlLi {
 				float : left;
+			}
+			.navUl {
+				list-style-type : none;
+				margin : 0;
+				padding : 0;
+				overflow : hidden;
+				background-color : #333;
 			}

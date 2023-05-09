@@ -65,7 +65,7 @@ class AngularPage {
 		sclasses.addAll(instanciaEDOM.sclasses);
 		
 		''' 
-			<«instanciaEDOM.instancia.name» «getStyleClassesNames(instanciaEDOM.sclasses)»>
+			<«instanciaEDOM.instancia.name» «IF sclasses.length>0 || instanciaEDOM.sclassesOnline.length>0 »  class="«getStyleClassesNames(instanciaEDOM.sclasses)» «getStyleClassesStrings(instanciaEDOM.sclassesOnline)»"«ENDIF»>
 				«FOR insfeature : instanciaEDOM.insfeatures»
 					«var insf = insfeature as InstanceEDOMFeature»
 					«IF insf.instanciaEDOM !== null»
@@ -81,9 +81,14 @@ class AngularPage {
 
 	private static def getStyleClassesNames(List<StyleClass> sclasses) {
 		
-		'''«IF sclasses.length>0» class="«FOR sc:sclasses»«sc.name» «ENDFOR»" «ENDIF»'''
+		'''«FOR sc:sclasses»«sc.name» «ENDFOR»'''
 	}
-
+	
+	private static def getStyleClassesStrings(List<String> sclassesString) {
+		
+		'''«FOR scstring:sclassesString »«scstring» «ENDFOR»'''
+	}
+	
 	private static def toCSSCode(Set<StyleClass>  hostclasses,Set<StyleClass>  sclasses) {
 		''' «toHostCSSCode(hostclasses)»
 			«FOR sclass : sclasses»

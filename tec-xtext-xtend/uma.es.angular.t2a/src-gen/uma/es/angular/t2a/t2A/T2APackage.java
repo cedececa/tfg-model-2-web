@@ -446,13 +446,22 @@ public interface T2APackage extends EPackage
   int DOM__SCLASSES = EDOM_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Sclasses Online</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOM__SCLASSES_ONLINE = EDOM_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Features</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DOM__FEATURES = EDOM_FEATURE_COUNT + 1;
+  int DOM__FEATURES = EDOM_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>DOM</em>' class.
@@ -461,7 +470,7 @@ public interface T2APackage extends EPackage
    * @generated
    * @ordered
    */
-  int DOM_FEATURE_COUNT = EDOM_FEATURE_COUNT + 2;
+  int DOM_FEATURE_COUNT = EDOM_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.CompImpl <em>Comp</em>}' class.
@@ -492,13 +501,22 @@ public interface T2APackage extends EPackage
   int COMP__HOSTCLASSES = EDOM_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Sclasses Online</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMP__SCLASSES_ONLINE = EDOM_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Features</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMP__FEATURES = EDOM_FEATURE_COUNT + 1;
+  int COMP__FEATURES = EDOM_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Comp</em>' class.
@@ -507,7 +525,7 @@ public interface T2APackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMP_FEATURE_COUNT = EDOM_FEATURE_COUNT + 2;
+  int COMP_FEATURE_COUNT = EDOM_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.InstanciaEDOMImpl <em>Instancia EDOM</em>}' class.
@@ -538,13 +556,22 @@ public interface T2APackage extends EPackage
   int INSTANCIA_EDOM__SCLASSES = 1;
 
   /**
+   * The feature id for the '<em><b>Sclasses Online</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTANCIA_EDOM__SCLASSES_ONLINE = 2;
+
+  /**
    * The feature id for the '<em><b>Insfeatures</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INSTANCIA_EDOM__INSFEATURES = 2;
+  int INSTANCIA_EDOM__INSFEATURES = 3;
 
   /**
    * The number of structural features of the '<em>Instancia EDOM</em>' class.
@@ -553,7 +580,7 @@ public interface T2APackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCIA_EDOM_FEATURE_COUNT = 3;
+  int INSTANCIA_EDOM_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.InstanceEDOMFeatureImpl <em>Instance EDOM Feature</em>}' class.
@@ -986,6 +1013,17 @@ public interface T2APackage extends EPackage
   EReference getDOM_Sclasses();
 
   /**
+   * Returns the meta object for the attribute list '{@link uma.es.angular.t2a.t2A.DOM#getSclassesOnline <em>Sclasses Online</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Sclasses Online</em>'.
+   * @see uma.es.angular.t2a.t2A.DOM#getSclassesOnline()
+   * @see #getDOM()
+   * @generated
+   */
+  EAttribute getDOM_SclassesOnline();
+
+  /**
    * Returns the meta object for the containment reference list '{@link uma.es.angular.t2a.t2A.DOM#getFeatures <em>Features</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1016,6 +1054,17 @@ public interface T2APackage extends EPackage
    * @generated
    */
   EReference getComp_Hostclasses();
+
+  /**
+   * Returns the meta object for the attribute list '{@link uma.es.angular.t2a.t2A.Comp#getSclassesOnline <em>Sclasses Online</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Sclasses Online</em>'.
+   * @see uma.es.angular.t2a.t2A.Comp#getSclassesOnline()
+   * @see #getComp()
+   * @generated
+   */
+  EAttribute getComp_SclassesOnline();
 
   /**
    * Returns the meta object for the containment reference list '{@link uma.es.angular.t2a.t2A.Comp#getFeatures <em>Features</em>}'.
@@ -1059,6 +1108,17 @@ public interface T2APackage extends EPackage
    * @generated
    */
   EReference getInstanciaEDOM_Sclasses();
+
+  /**
+   * Returns the meta object for the attribute list '{@link uma.es.angular.t2a.t2A.InstanciaEDOM#getSclassesOnline <em>Sclasses Online</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Sclasses Online</em>'.
+   * @see uma.es.angular.t2a.t2A.InstanciaEDOM#getSclassesOnline()
+   * @see #getInstanciaEDOM()
+   * @generated
+   */
+  EAttribute getInstanciaEDOM_SclassesOnline();
 
   /**
    * Returns the meta object for the containment reference list '{@link uma.es.angular.t2a.t2A.InstanciaEDOM#getInsfeatures <em>Insfeatures</em>}'.
@@ -1454,6 +1514,14 @@ public interface T2APackage extends EPackage
     EReference DOM__SCLASSES = eINSTANCE.getDOM_Sclasses();
 
     /**
+     * The meta object literal for the '<em><b>Sclasses Online</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DOM__SCLASSES_ONLINE = eINSTANCE.getDOM_SclassesOnline();
+
+    /**
      * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1478,6 +1546,14 @@ public interface T2APackage extends EPackage
      * @generated
      */
     EReference COMP__HOSTCLASSES = eINSTANCE.getComp_Hostclasses();
+
+    /**
+     * The meta object literal for the '<em><b>Sclasses Online</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMP__SCLASSES_ONLINE = eINSTANCE.getComp_SclassesOnline();
 
     /**
      * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
@@ -1512,6 +1588,14 @@ public interface T2APackage extends EPackage
      * @generated
      */
     EReference INSTANCIA_EDOM__SCLASSES = eINSTANCE.getInstanciaEDOM_Sclasses();
+
+    /**
+     * The meta object literal for the '<em><b>Sclasses Online</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INSTANCIA_EDOM__SCLASSES_ONLINE = eINSTANCE.getInstanciaEDOM_SclassesOnline();
 
     /**
      * The meta object literal for the '<em><b>Insfeatures</b></em>' containment reference list feature.

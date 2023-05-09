@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link uma.es.angular.t2a.t2A.InstanciaEDOM#getInstancia <em>Instancia</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.InstanciaEDOM#getSclasses <em>Sclasses</em>}</li>
+ *   <li>{@link uma.es.angular.t2a.t2A.InstanciaEDOM#getSclassesOnline <em>Sclasses Online</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.InstanciaEDOM#getInsfeatures <em>Insfeatures</em>}</li>
  * </ul>
  *
@@ -60,6 +61,18 @@ public interface InstanciaEDOM extends EObject
    * @generated
    */
   EList<StyleClass> getSclasses();
+
+  /**
+   * Returns the value of the '<em><b>Sclasses Online</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Sclasses Online</em>' attribute list.
+   * @see uma.es.angular.t2a.t2A.T2APackage#getInstanciaEDOM_SclassesOnline()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getSclassesOnline();
 
   /**
    * Returns the value of the '<em><b>Insfeatures</b></em>' containment reference list.

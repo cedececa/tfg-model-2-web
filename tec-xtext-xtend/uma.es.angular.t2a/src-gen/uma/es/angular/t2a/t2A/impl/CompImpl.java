@@ -12,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -30,6 +31,7 @@ import uma.es.angular.t2a.t2A.T2APackage;
  * </p>
  * <ul>
  *   <li>{@link uma.es.angular.t2a.t2A.impl.CompImpl#getHostclasses <em>Hostclasses</em>}</li>
+ *   <li>{@link uma.es.angular.t2a.t2A.impl.CompImpl#getSclassesOnline <em>Sclasses Online</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.impl.CompImpl#getFeatures <em>Features</em>}</li>
  * </ul>
  *
@@ -46,6 +48,16 @@ public class CompImpl extends EDOMImpl implements Comp
    * @ordered
    */
   protected EList<StyleClass> hostclasses;
+
+  /**
+   * The cached value of the '{@link #getSclassesOnline() <em>Sclasses Online</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSclassesOnline()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> sclassesOnline;
 
   /**
    * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
@@ -99,6 +111,21 @@ public class CompImpl extends EDOMImpl implements Comp
    * @generated
    */
   @Override
+  public EList<String> getSclassesOnline()
+  {
+    if (sclassesOnline == null)
+    {
+      sclassesOnline = new EDataTypeEList<String>(String.class, this, T2APackage.COMP__SCLASSES_ONLINE);
+    }
+    return sclassesOnline;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<Feature> getFeatures()
   {
     if (features == null)
@@ -136,6 +163,8 @@ public class CompImpl extends EDOMImpl implements Comp
     {
       case T2APackage.COMP__HOSTCLASSES:
         return getHostclasses();
+      case T2APackage.COMP__SCLASSES_ONLINE:
+        return getSclassesOnline();
       case T2APackage.COMP__FEATURES:
         return getFeatures();
     }
@@ -156,6 +185,10 @@ public class CompImpl extends EDOMImpl implements Comp
       case T2APackage.COMP__HOSTCLASSES:
         getHostclasses().clear();
         getHostclasses().addAll((Collection<? extends StyleClass>)newValue);
+        return;
+      case T2APackage.COMP__SCLASSES_ONLINE:
+        getSclassesOnline().clear();
+        getSclassesOnline().addAll((Collection<? extends String>)newValue);
         return;
       case T2APackage.COMP__FEATURES:
         getFeatures().clear();
@@ -178,6 +211,9 @@ public class CompImpl extends EDOMImpl implements Comp
       case T2APackage.COMP__HOSTCLASSES:
         getHostclasses().clear();
         return;
+      case T2APackage.COMP__SCLASSES_ONLINE:
+        getSclassesOnline().clear();
+        return;
       case T2APackage.COMP__FEATURES:
         getFeatures().clear();
         return;
@@ -197,10 +233,29 @@ public class CompImpl extends EDOMImpl implements Comp
     {
       case T2APackage.COMP__HOSTCLASSES:
         return hostclasses != null && !hostclasses.isEmpty();
+      case T2APackage.COMP__SCLASSES_ONLINE:
+        return sclassesOnline != null && !sclassesOnline.isEmpty();
       case T2APackage.COMP__FEATURES:
         return features != null && !features.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (sclassesOnline: ");
+    result.append(sclassesOnline);
+    result.append(')');
+    return result.toString();
   }
 
 } //CompImpl

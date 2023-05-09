@@ -96,7 +96,7 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Comp returns Comp
 	 *
 	 * Constraint:
-	 *     (name=ID hostclasses+=[StyleClass|ID]* features+=Feature*)
+	 *     (name=ID hostclasses+=[StyleClass|ID]* sclassesOnline+=STRING* features+=Feature*)
 	 * </pre>
 	 */
 	protected void sequence_Comp(ISerializationContext context, Comp semanticObject) {
@@ -112,7 +112,7 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     DOM returns DOM
 	 *
 	 * Constraint:
-	 *     (name=ID sclasses+=[StyleClass|ID]* features+=Feature*)
+	 *     (name=ID sclasses+=[StyleClass|ID]* sclassesOnline+=STRING* features+=Feature*)
 	 * </pre>
 	 */
 	protected void sequence_DOM(ISerializationContext context, DOM semanticObject) {
@@ -154,7 +154,7 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     InstanciaEDOM returns InstanciaEDOM
 	 *
 	 * Constraint:
-	 *     (instancia=[EDOM|ID] sclasses+=[StyleClass|ID]* insfeatures+=InstanceEDOMFeature*)
+	 *     (instancia=[EDOM|ID] sclasses+=[StyleClass|ID]* sclassesOnline+=STRING* insfeatures+=InstanceEDOMFeature*)
 	 * </pre>
 	 */
 	protected void sequence_InstanciaEDOM(ISerializationContext context, InstanciaEDOM semanticObject) {

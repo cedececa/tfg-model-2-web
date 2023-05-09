@@ -43,15 +43,18 @@
     </genClasses>
     <genClasses ecoreClass="T2A.ecore#//DOM">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference T2A.ecore#//DOM/sclasses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T2A.ecore#//DOM/sclassesOnline"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//DOM/features"/>
     </genClasses>
     <genClasses ecoreClass="T2A.ecore#//Comp">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference T2A.ecore#//Comp/hostclasses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T2A.ecore#//Comp/sclassesOnline"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//Comp/features"/>
     </genClasses>
     <genClasses ecoreClass="T2A.ecore#//InstanciaEDOM">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference T2A.ecore#//InstanciaEDOM/instancia"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference T2A.ecore#//InstanciaEDOM/sclasses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T2A.ecore#//InstanciaEDOM/sclassesOnline"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//InstanciaEDOM/insfeatures"/>
     </genClasses>
     <genClasses ecoreClass="T2A.ecore#//InstanceEDOMFeature">

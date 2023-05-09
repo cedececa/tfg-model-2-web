@@ -12,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -30,6 +31,7 @@ import uma.es.angular.t2a.t2A.T2APackage;
  * </p>
  * <ul>
  *   <li>{@link uma.es.angular.t2a.t2A.impl.DOMImpl#getSclasses <em>Sclasses</em>}</li>
+ *   <li>{@link uma.es.angular.t2a.t2A.impl.DOMImpl#getSclassesOnline <em>Sclasses Online</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.impl.DOMImpl#getFeatures <em>Features</em>}</li>
  * </ul>
  *
@@ -46,6 +48,16 @@ public class DOMImpl extends EDOMImpl implements DOM
    * @ordered
    */
   protected EList<StyleClass> sclasses;
+
+  /**
+   * The cached value of the '{@link #getSclassesOnline() <em>Sclasses Online</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSclassesOnline()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> sclassesOnline;
 
   /**
    * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
@@ -99,6 +111,21 @@ public class DOMImpl extends EDOMImpl implements DOM
    * @generated
    */
   @Override
+  public EList<String> getSclassesOnline()
+  {
+    if (sclassesOnline == null)
+    {
+      sclassesOnline = new EDataTypeEList<String>(String.class, this, T2APackage.DOM__SCLASSES_ONLINE);
+    }
+    return sclassesOnline;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<Feature> getFeatures()
   {
     if (features == null)
@@ -136,6 +163,8 @@ public class DOMImpl extends EDOMImpl implements DOM
     {
       case T2APackage.DOM__SCLASSES:
         return getSclasses();
+      case T2APackage.DOM__SCLASSES_ONLINE:
+        return getSclassesOnline();
       case T2APackage.DOM__FEATURES:
         return getFeatures();
     }
@@ -156,6 +185,10 @@ public class DOMImpl extends EDOMImpl implements DOM
       case T2APackage.DOM__SCLASSES:
         getSclasses().clear();
         getSclasses().addAll((Collection<? extends StyleClass>)newValue);
+        return;
+      case T2APackage.DOM__SCLASSES_ONLINE:
+        getSclassesOnline().clear();
+        getSclassesOnline().addAll((Collection<? extends String>)newValue);
         return;
       case T2APackage.DOM__FEATURES:
         getFeatures().clear();
@@ -178,6 +211,9 @@ public class DOMImpl extends EDOMImpl implements DOM
       case T2APackage.DOM__SCLASSES:
         getSclasses().clear();
         return;
+      case T2APackage.DOM__SCLASSES_ONLINE:
+        getSclassesOnline().clear();
+        return;
       case T2APackage.DOM__FEATURES:
         getFeatures().clear();
         return;
@@ -197,10 +233,29 @@ public class DOMImpl extends EDOMImpl implements DOM
     {
       case T2APackage.DOM__SCLASSES:
         return sclasses != null && !sclasses.isEmpty();
+      case T2APackage.DOM__SCLASSES_ONLINE:
+        return sclassesOnline != null && !sclassesOnline.isEmpty();
       case T2APackage.DOM__FEATURES:
         return features != null && !features.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (sclassesOnline: ");
+    result.append(sclassesOnline);
+    result.append(')');
+    return result.toString();
   }
 
 } //DOMImpl

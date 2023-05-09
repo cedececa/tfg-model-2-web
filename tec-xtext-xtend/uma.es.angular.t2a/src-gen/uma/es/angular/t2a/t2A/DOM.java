@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link uma.es.angular.t2a.t2A.DOM#getSclasses <em>Sclasses</em>}</li>
+ *   <li>{@link uma.es.angular.t2a.t2A.DOM#getSclassesOnline <em>Sclasses Online</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.DOM#getFeatures <em>Features</em>}</li>
  * </ul>
  *
@@ -35,6 +36,18 @@ public interface DOM extends EDOM
    * @generated
    */
   EList<StyleClass> getSclasses();
+
+  /**
+   * Returns the value of the '<em><b>Sclasses Online</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Sclasses Online</em>' attribute list.
+   * @see uma.es.angular.t2a.t2A.T2APackage#getDOM_SclassesOnline()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getSclassesOnline();
 
   /**
    * Returns the value of the '<em><b>Features</b></em>' containment reference list.

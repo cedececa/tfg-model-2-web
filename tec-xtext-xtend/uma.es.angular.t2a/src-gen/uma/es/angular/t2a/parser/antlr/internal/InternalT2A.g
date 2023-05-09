@@ -830,11 +830,43 @@ ruleDOM returns [EObject current=null]
 				}
 			)?
 			(
+				otherlv_7='sclassString'
+				{
+					newLeafNode(otherlv_7, grammarAccess.getDOMAccess().getSclassStringKeyword_2_2_0());
+				}
+				otherlv_8='{'
+				{
+					newLeafNode(otherlv_8, grammarAccess.getDOMAccess().getLeftCurlyBracketKeyword_2_2_1());
+				}
+				(
+					(
+						lv_sclassesOnline_9_0=RULE_STRING
+						{
+							newLeafNode(lv_sclassesOnline_9_0, grammarAccess.getDOMAccess().getSclassesOnlineSTRINGTerminalRuleCall_2_2_2_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getDOMRule());
+							}
+							addWithLastConsumed(
+								$current,
+								"sclassesOnline",
+								lv_sclassesOnline_9_0,
+								"uma.es.angular.t2a.T2A.STRING");
+						}
+					)
+				)*
+				otherlv_10='}'
+				{
+					newLeafNode(otherlv_10, grammarAccess.getDOMAccess().getRightCurlyBracketKeyword_2_2_3());
+				}
+			)?
+			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDOMAccess().getFeaturesFeatureParserRuleCall_2_2_0());
+						newCompositeNode(grammarAccess.getDOMAccess().getFeaturesFeatureParserRuleCall_2_3_0());
 					}
-					lv_features_7_0=ruleFeature
+					lv_features_11_0=ruleFeature
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDOMRule());
@@ -842,15 +874,15 @@ ruleDOM returns [EObject current=null]
 						add(
 							$current,
 							"features",
-							lv_features_7_0,
+							lv_features_11_0,
 							"uma.es.angular.t2a.T2A.Feature");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_8='}'
+			otherlv_12='}'
 			{
-				newLeafNode(otherlv_8, grammarAccess.getDOMAccess().getRightCurlyBracketKeyword_2_3());
+				newLeafNode(otherlv_12, grammarAccess.getDOMAccess().getRightCurlyBracketKeyword_2_4());
 			}
 		)?
 	)
@@ -927,11 +959,43 @@ ruleComp returns [EObject current=null]
 				}
 			)?
 			(
+				otherlv_7='sclassString'
+				{
+					newLeafNode(otherlv_7, grammarAccess.getCompAccess().getSclassStringKeyword_2_2_0());
+				}
+				otherlv_8='{'
+				{
+					newLeafNode(otherlv_8, grammarAccess.getCompAccess().getLeftCurlyBracketKeyword_2_2_1());
+				}
+				(
+					(
+						lv_sclassesOnline_9_0=RULE_STRING
+						{
+							newLeafNode(lv_sclassesOnline_9_0, grammarAccess.getCompAccess().getSclassesOnlineSTRINGTerminalRuleCall_2_2_2_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getCompRule());
+							}
+							addWithLastConsumed(
+								$current,
+								"sclassesOnline",
+								lv_sclassesOnline_9_0,
+								"uma.es.angular.t2a.T2A.STRING");
+						}
+					)
+				)*
+				otherlv_10='}'
+				{
+					newLeafNode(otherlv_10, grammarAccess.getCompAccess().getRightCurlyBracketKeyword_2_2_3());
+				}
+			)?
+			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCompAccess().getFeaturesFeatureParserRuleCall_2_2_0());
+						newCompositeNode(grammarAccess.getCompAccess().getFeaturesFeatureParserRuleCall_2_3_0());
 					}
-					lv_features_7_0=ruleFeature
+					lv_features_11_0=ruleFeature
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCompRule());
@@ -939,15 +1003,15 @@ ruleComp returns [EObject current=null]
 						add(
 							$current,
 							"features",
-							lv_features_7_0,
+							lv_features_11_0,
 							"uma.es.angular.t2a.T2A.Feature");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_8='}'
+			otherlv_12='}'
 			{
-				newLeafNode(otherlv_8, grammarAccess.getCompAccess().getRightCurlyBracketKeyword_2_3());
+				newLeafNode(otherlv_12, grammarAccess.getCompAccess().getRightCurlyBracketKeyword_2_4());
 			}
 		)?
 	)
@@ -1015,11 +1079,43 @@ ruleInstanciaEDOM returns [EObject current=null]
 				}
 			)?
 			(
+				otherlv_6='sclassString'
+				{
+					newLeafNode(otherlv_6, grammarAccess.getInstanciaEDOMAccess().getSclassStringKeyword_1_2_0());
+				}
+				otherlv_7='{'
+				{
+					newLeafNode(otherlv_7, grammarAccess.getInstanciaEDOMAccess().getLeftCurlyBracketKeyword_1_2_1());
+				}
+				(
+					(
+						lv_sclassesOnline_8_0=RULE_STRING
+						{
+							newLeafNode(lv_sclassesOnline_8_0, grammarAccess.getInstanciaEDOMAccess().getSclassesOnlineSTRINGTerminalRuleCall_1_2_2_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getInstanciaEDOMRule());
+							}
+							addWithLastConsumed(
+								$current,
+								"sclassesOnline",
+								lv_sclassesOnline_8_0,
+								"uma.es.angular.t2a.T2A.STRING");
+						}
+					)
+				)*
+				otherlv_9='}'
+				{
+					newLeafNode(otherlv_9, grammarAccess.getInstanciaEDOMAccess().getRightCurlyBracketKeyword_1_2_3());
+				}
+			)?
+			(
 				(
 					{
-						newCompositeNode(grammarAccess.getInstanciaEDOMAccess().getInsfeaturesInstanceEDOMFeatureParserRuleCall_1_2_0());
+						newCompositeNode(grammarAccess.getInstanciaEDOMAccess().getInsfeaturesInstanceEDOMFeatureParserRuleCall_1_3_0());
 					}
-					lv_insfeatures_6_0=ruleInstanceEDOMFeature
+					lv_insfeatures_10_0=ruleInstanceEDOMFeature
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getInstanciaEDOMRule());
@@ -1027,15 +1123,15 @@ ruleInstanciaEDOM returns [EObject current=null]
 						add(
 							$current,
 							"insfeatures",
-							lv_insfeatures_6_0,
+							lv_insfeatures_10_0,
 							"uma.es.angular.t2a.T2A.InstanceEDOMFeature");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_7='}'
+			otherlv_11='}'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getInstanciaEDOMAccess().getRightCurlyBracketKeyword_1_3());
+				newLeafNode(otherlv_11, grammarAccess.getInstanciaEDOMAccess().getRightCurlyBracketKeyword_1_4());
 			}
 		)?
 	)
