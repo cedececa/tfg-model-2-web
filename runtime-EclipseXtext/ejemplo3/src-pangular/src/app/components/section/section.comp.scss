@@ -5,16 +5,6 @@
  	display : table;
  	clear : both;
  }
-			.navUl {
-				list-style-type : none;
-				margin : 0;
-				padding : 0;
-				overflow : hidden;
-				background-color : #333;
-			}
-			.navUlLi {
-				float : left;
-			}
 			.liA {
 				display : inline-block;
 				color : white;
@@ -24,4 +14,14 @@
 			}
 			.liA.active{
 				background-color : #04AA6D;
+			}
+			.navUlLi {
+				float : left;
+			}
+			.navUl {
+				list-style-type : none;
+				margin : 0;
+				padding : 0;
+				overflow : hidden;
+				background-color : #333;
 			}

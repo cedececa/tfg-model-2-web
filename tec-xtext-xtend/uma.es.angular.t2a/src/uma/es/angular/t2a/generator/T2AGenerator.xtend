@@ -105,6 +105,9 @@ class T2AGenerator extends AbstractGenerator {
 		AppRoot.generarRoot(fsa, pages);
 		ComponentModule.generarModule(fsa, components);
 		PageModule.generarModule(fsa, pages);
+		
+		// pruebas jasmine, karma
+		ComponentTestGenerator.generateAllTest(fsa,components)
 
 		runAngularProject(absoluteSrcGenDirectory);
 		

@@ -3,16 +3,20 @@ AppName: 'Ejemplo1'
 StyleGlobal { 
 	StyleClass * {
 	    box-sizing: border-box;
-	}
+	} 
 }
  
 Comp Layout1{
 	AllowSlot
 }
 
+Comp Cabecera{
+	AllowSlot
+}
+
 Page Home{
 	home
-	showInNav
+	showInNav 
 	Layout1{
 		'Hola'
 	}
@@ -20,21 +24,11 @@ Page Home{
 
 Page Segunda{
 	showInNav	
+	Cabecera
 	Layout1{
 		'Segunda'
 	}
 }
-
-Page Tercera{
-	showInNav	
-	Layout1{
-		'Tercera'
-	}
-}
-
-
-
-
 
 
 
