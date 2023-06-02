@@ -123,6 +123,15 @@ public interface T2AFactory extends EFactory
   Comp createComp();
 
   /**
+   * Returns a new object of class '<em>Go To</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Go To</em>'.
+   * @generated
+   */
+  GoTo createGoTo();
+
+  /**
    * Returns a new object of class '<em>Instancia EDOM</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

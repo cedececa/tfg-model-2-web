@@ -21,6 +21,7 @@ import java.util.ArrayList
 import org.apache.commons.io.FileUtils
 import java.io.IOException
 import java.io.File
+import uma.es.angular.t2a.generator.services.RouterService
 
 /**
  * Generates code from your model files on save.
@@ -108,6 +109,9 @@ class T2AGenerator extends AbstractGenerator {
 		
 		// pruebas jasmine, karma
 		ComponentTestGenerator.generateAllTest(fsa,components)
+		
+		// generate services
+		RouterService.generate(fsa);
 
 		runAngularProject(absoluteSrcGenDirectory);
 		

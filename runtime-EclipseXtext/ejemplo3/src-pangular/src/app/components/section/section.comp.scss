@@ -5,6 +5,9 @@
  	display : table;
  	clear : both;
  }
+			.navUlLi {
+				float : left;
+			}
 			.liA {
 				display : inline-block;
 				color : white;
@@ -14,9 +17,6 @@
 			}
 			.liA.active{
 				background-color : #04AA6D;
-			}
-			.navUlLi {
-				float : left;
 			}
 			.navUl {
 				list-style-type : none;

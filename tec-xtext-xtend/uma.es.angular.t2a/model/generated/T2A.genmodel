@@ -51,10 +51,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T2A.ecore#//Comp/sclassesOnline"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//Comp/features"/>
     </genClasses>
+    <genClasses ecoreClass="T2A.ecore#//GoTo">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference T2A.ecore#//GoTo/page"/>
+    </genClasses>
     <genClasses ecoreClass="T2A.ecore#//InstanciaEDOM">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference T2A.ecore#//InstanciaEDOM/instancia"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference T2A.ecore#//InstanciaEDOM/sclasses"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute T2A.ecore#//InstanciaEDOM/sclassesOnline"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//InstanciaEDOM/goTo"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference T2A.ecore#//InstanciaEDOM/insfeatures"/>
     </genClasses>
     <genClasses ecoreClass="T2A.ecore#//InstanceEDOMFeature">

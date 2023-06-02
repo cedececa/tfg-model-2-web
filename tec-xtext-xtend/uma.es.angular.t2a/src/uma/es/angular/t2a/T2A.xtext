@@ -64,8 +64,8 @@ SAttributeAndValue:
 DOM:
 	'Dom' name=ID
 	('{' 
-	('sclass' '{'(sclasses+=[StyleClass])* '}')?	
-			('sclassString' '{'(sclassesOnline+=STRING)* '}')?
+		('sclass' '{'(sclasses+=[StyleClass])* '}')?	
+		('sclassString' '{'(sclassesOnline+=STRING)* '}')?
 	
 		(features+=Feature)*
 	'}')?;
@@ -74,17 +74,26 @@ Comp:
 	'Comp' name=ID
 	(
 	'{'
-	('sclass' '{'(hostclasses+=[StyleClass])* '}')?	
+		('sclass' '{'(hostclasses+=[StyleClass])* '}')?	
 		('sclassString' '{'(sclassesOnline+=STRING)* '}')?
-	
 		(features+=Feature)*
 	'}'	
 	)?
 ;
 
+
+
+GoTo:
+	{GoTo} 'GoTo''('
+		page=[Page]
+	')'
+	
+;
+
 InstanciaEDOM: instancia=[EDOM] ('{' 
-		('sclass' '{'(sclasses+=[StyleClass])* '}')?
-				('sclassString' '{'(sclassesOnline+=STRING)* '}')?
+		('sclass' '{'(sclasses+=[StyleClass])* '}')?	
+		('sclassString' '{'(sclassesOnline+=STRING)* '}')?
+		('click::'(goTo=GoTo))?
 		
 		(insfeatures+=InstanceEDOMFeature)*
 	'}'
@@ -96,6 +105,7 @@ InstanceEDOMFeature:
 PageFeature: 
 	instanciaEDOM=InstanciaEDOM | 
 	string=STRING ; 
+
 
 Feature: 
 	instanciaEDOM=InstanciaEDOM |

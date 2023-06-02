@@ -18,6 +18,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import uma.es.angular.t2a.generator.services.RouterService;
 import uma.es.angular.t2a.t2A.Comp;
 import uma.es.angular.t2a.t2A.Element;
 import uma.es.angular.t2a.t2A.Page;
@@ -111,6 +112,7 @@ public class T2AGenerator extends AbstractGenerator {
     ComponentModule.generarModule(fsa, components);
     PageModule.generarModule(fsa, pages);
     ComponentTestGenerator.generateAllTest(fsa, components);
+    RouterService.generate(fsa);
     this.runAngularProject(absoluteSrcGenDirectory);
   }
   

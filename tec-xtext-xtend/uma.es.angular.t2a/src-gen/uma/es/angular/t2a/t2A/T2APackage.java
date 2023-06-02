@@ -528,6 +528,34 @@ public interface T2APackage extends EPackage
   int COMP_FEATURE_COUNT = EDOM_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.GoToImpl <em>Go To</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uma.es.angular.t2a.t2A.impl.GoToImpl
+   * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getGoTo()
+   * @generated
+   */
+  int GO_TO = 11;
+
+  /**
+   * The feature id for the '<em><b>Page</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GO_TO__PAGE = 0;
+
+  /**
+   * The number of structural features of the '<em>Go To</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GO_TO_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.InstanciaEDOMImpl <em>Instancia EDOM</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -535,7 +563,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getInstanciaEDOM()
    * @generated
    */
-  int INSTANCIA_EDOM = 11;
+  int INSTANCIA_EDOM = 12;
 
   /**
    * The feature id for the '<em><b>Instancia</b></em>' reference.
@@ -565,13 +593,22 @@ public interface T2APackage extends EPackage
   int INSTANCIA_EDOM__SCLASSES_ONLINE = 2;
 
   /**
+   * The feature id for the '<em><b>Go To</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTANCIA_EDOM__GO_TO = 3;
+
+  /**
    * The feature id for the '<em><b>Insfeatures</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INSTANCIA_EDOM__INSFEATURES = 3;
+  int INSTANCIA_EDOM__INSFEATURES = 4;
 
   /**
    * The number of structural features of the '<em>Instancia EDOM</em>' class.
@@ -580,7 +617,7 @@ public interface T2APackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCIA_EDOM_FEATURE_COUNT = 4;
+  int INSTANCIA_EDOM_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link uma.es.angular.t2a.t2A.impl.InstanceEDOMFeatureImpl <em>Instance EDOM Feature</em>}' class.
@@ -590,7 +627,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getInstanceEDOMFeature()
    * @generated
    */
-  int INSTANCE_EDOM_FEATURE = 12;
+  int INSTANCE_EDOM_FEATURE = 13;
 
   /**
    * The feature id for the '<em><b>Instancia EDOM</b></em>' containment reference.
@@ -627,7 +664,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getPageFeature()
    * @generated
    */
-  int PAGE_FEATURE = 13;
+  int PAGE_FEATURE = 14;
 
   /**
    * The feature id for the '<em><b>Instancia EDOM</b></em>' containment reference.
@@ -664,7 +701,7 @@ public interface T2APackage extends EPackage
    * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getFeature()
    * @generated
    */
-  int FEATURE = 14;
+  int FEATURE = 15;
 
   /**
    * The feature id for the '<em><b>Instancia EDOM</b></em>' containment reference.
@@ -1078,6 +1115,27 @@ public interface T2APackage extends EPackage
   EReference getComp_Features();
 
   /**
+   * Returns the meta object for class '{@link uma.es.angular.t2a.t2A.GoTo <em>Go To</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Go To</em>'.
+   * @see uma.es.angular.t2a.t2A.GoTo
+   * @generated
+   */
+  EClass getGoTo();
+
+  /**
+   * Returns the meta object for the reference '{@link uma.es.angular.t2a.t2A.GoTo#getPage <em>Page</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Page</em>'.
+   * @see uma.es.angular.t2a.t2A.GoTo#getPage()
+   * @see #getGoTo()
+   * @generated
+   */
+  EReference getGoTo_Page();
+
+  /**
    * Returns the meta object for class '{@link uma.es.angular.t2a.t2A.InstanciaEDOM <em>Instancia EDOM</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1119,6 +1177,17 @@ public interface T2APackage extends EPackage
    * @generated
    */
   EAttribute getInstanciaEDOM_SclassesOnline();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uma.es.angular.t2a.t2A.InstanciaEDOM#getGoTo <em>Go To</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Go To</em>'.
+   * @see uma.es.angular.t2a.t2A.InstanciaEDOM#getGoTo()
+   * @see #getInstanciaEDOM()
+   * @generated
+   */
+  EReference getInstanciaEDOM_GoTo();
 
   /**
    * Returns the meta object for the containment reference list '{@link uma.es.angular.t2a.t2A.InstanciaEDOM#getInsfeatures <em>Insfeatures</em>}'.
@@ -1564,6 +1633,24 @@ public interface T2APackage extends EPackage
     EReference COMP__FEATURES = eINSTANCE.getComp_Features();
 
     /**
+     * The meta object literal for the '{@link uma.es.angular.t2a.t2A.impl.GoToImpl <em>Go To</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uma.es.angular.t2a.t2A.impl.GoToImpl
+     * @see uma.es.angular.t2a.t2A.impl.T2APackageImpl#getGoTo()
+     * @generated
+     */
+    EClass GO_TO = eINSTANCE.getGoTo();
+
+    /**
+     * The meta object literal for the '<em><b>Page</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GO_TO__PAGE = eINSTANCE.getGoTo_Page();
+
+    /**
      * The meta object literal for the '{@link uma.es.angular.t2a.t2A.impl.InstanciaEDOMImpl <em>Instancia EDOM</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1596,6 +1683,14 @@ public interface T2APackage extends EPackage
      * @generated
      */
     EAttribute INSTANCIA_EDOM__SCLASSES_ONLINE = eINSTANCE.getInstanciaEDOM_SclassesOnline();
+
+    /**
+     * The meta object literal for the '<em><b>Go To</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INSTANCIA_EDOM__GO_TO = eINSTANCE.getInstanciaEDOM_GoTo();
 
     /**
      * The meta object literal for the '<em><b>Insfeatures</b></em>' containment reference list feature.

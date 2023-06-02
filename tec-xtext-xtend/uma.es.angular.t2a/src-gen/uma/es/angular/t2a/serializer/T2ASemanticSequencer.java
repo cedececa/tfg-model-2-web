@@ -18,6 +18,7 @@ import uma.es.angular.t2a.services.T2AGrammarAccess;
 import uma.es.angular.t2a.t2A.Comp;
 import uma.es.angular.t2a.t2A.DOM;
 import uma.es.angular.t2a.t2A.Feature;
+import uma.es.angular.t2a.t2A.GoTo;
 import uma.es.angular.t2a.t2A.InstanceEDOMFeature;
 import uma.es.angular.t2a.t2A.InstanciaEDOM;
 import uma.es.angular.t2a.t2A.JSOnline;
@@ -52,6 +53,9 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case T2APackage.FEATURE:
 				sequence_Feature(context, (Feature) semanticObject); 
+				return; 
+			case T2APackage.GO_TO:
+				sequence_GoTo(context, (GoTo) semanticObject); 
 				return; 
 			case T2APackage.INSTANCE_EDOM_FEATURE:
 				sequence_InstanceEDOMFeature(context, (InstanceEDOMFeature) semanticObject); 
@@ -137,6 +141,26 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     GoTo returns GoTo
+	 *
+	 * Constraint:
+	 *     page=[Page|ID]
+	 * </pre>
+	 */
+	protected void sequence_GoTo(ISerializationContext context, GoTo semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, T2APackage.Literals.GO_TO__PAGE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, T2APackage.Literals.GO_TO__PAGE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getGoToAccess().getPagePageIDTerminalRuleCall_3_0_1(), semanticObject.eGet(T2APackage.Literals.GO_TO__PAGE, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     InstanceEDOMFeature returns InstanceEDOMFeature
 	 *
 	 * Constraint:
@@ -154,7 +178,7 @@ public class T2ASemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     InstanciaEDOM returns InstanciaEDOM
 	 *
 	 * Constraint:
-	 *     (instancia=[EDOM|ID] sclasses+=[StyleClass|ID]* sclassesOnline+=STRING* insfeatures+=InstanceEDOMFeature*)
+	 *     (instancia=[EDOM|ID] sclasses+=[StyleClass|ID]* sclassesOnline+=STRING* goTo=GoTo? insfeatures+=InstanceEDOMFeature*)
 	 * </pre>
 	 */
 	protected void sequence_InstanciaEDOM(ISerializationContext context, InstanciaEDOM semanticObject) {

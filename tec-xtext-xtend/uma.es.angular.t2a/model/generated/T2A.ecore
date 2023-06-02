@@ -64,12 +64,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
         eType="#//Feature" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GoTo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="page" eType="#//Page"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InstanciaEDOM">
     <eStructuralFeatures xsi:type="ecore:EReference" name="instancia" eType="#//EDOM"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sclasses" unique="false"
         upperBound="-1" eType="#//StyleClass"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sclassesOnline" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goTo" eType="#//GoTo" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="insfeatures" upperBound="-1"
         eType="#//InstanceEDOMFeature" containment="true"/>
   </eClassifiers>

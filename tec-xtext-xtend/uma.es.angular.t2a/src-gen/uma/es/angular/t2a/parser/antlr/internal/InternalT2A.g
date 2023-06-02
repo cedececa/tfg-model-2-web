@@ -1017,6 +1017,57 @@ ruleComp returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleGoTo
+entryRuleGoTo returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGoToRule()); }
+	iv_ruleGoTo=ruleGoTo
+	{ $current=$iv_ruleGoTo.current; }
+	EOF;
+
+// Rule GoTo
+ruleGoTo returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getGoToAccess().getGoToAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='GoTo'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getGoToAccess().getGoToKeyword_1());
+		}
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getGoToAccess().getLeftParenthesisKeyword_2());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGoToRule());
+					}
+				}
+				otherlv_3=RULE_ID
+				{
+					newLeafNode(otherlv_3, grammarAccess.getGoToAccess().getPagePageCrossReference_3_0());
+				}
+			)
+		)
+		otherlv_4=')'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getGoToAccess().getRightParenthesisKeyword_4());
+		}
+	)
+;
+
 // Entry rule entryRuleInstanciaEDOM
 entryRuleInstanciaEDOM returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getInstanciaEDOMRule()); }
@@ -1111,11 +1162,36 @@ ruleInstanciaEDOM returns [EObject current=null]
 				}
 			)?
 			(
+				otherlv_10='click::'
+				{
+					newLeafNode(otherlv_10, grammarAccess.getInstanciaEDOMAccess().getClickKeyword_1_3_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getInstanciaEDOMAccess().getGoToGoToParserRuleCall_1_3_1_0());
+						}
+						lv_goTo_11_0=ruleGoTo
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getInstanciaEDOMRule());
+							}
+							set(
+								$current,
+								"goTo",
+								lv_goTo_11_0,
+								"uma.es.angular.t2a.T2A.GoTo");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)?
+			(
 				(
 					{
-						newCompositeNode(grammarAccess.getInstanciaEDOMAccess().getInsfeaturesInstanceEDOMFeatureParserRuleCall_1_3_0());
+						newCompositeNode(grammarAccess.getInstanciaEDOMAccess().getInsfeaturesInstanceEDOMFeatureParserRuleCall_1_4_0());
 					}
-					lv_insfeatures_10_0=ruleInstanceEDOMFeature
+					lv_insfeatures_12_0=ruleInstanceEDOMFeature
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getInstanciaEDOMRule());
@@ -1123,15 +1199,15 @@ ruleInstanciaEDOM returns [EObject current=null]
 						add(
 							$current,
 							"insfeatures",
-							lv_insfeatures_10_0,
+							lv_insfeatures_12_0,
 							"uma.es.angular.t2a.T2A.InstanceEDOMFeature");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
-			otherlv_11='}'
+			otherlv_13='}'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getInstanciaEDOMAccess().getRightCurlyBracketKeyword_1_4());
+				newLeafNode(otherlv_13, grammarAccess.getInstanciaEDOMAccess().getRightCurlyBracketKeyword_1_5());
 			}
 		)?
 	)

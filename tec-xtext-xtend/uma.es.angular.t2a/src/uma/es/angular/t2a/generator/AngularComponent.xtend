@@ -1,14 +1,14 @@
 package uma.es.angular.t2a.generator
 
-import uma.es.angular.t2a.t2A.Comp
-import uma.es.angular.t2a.t2A.Feature
-import uma.es.angular.t2a.t2A.InstanciaEDOM
-import uma.es.angular.t2a.t2A.InstanceEDOMFeature
-import org.eclipse.xtext.generator.IFileSystemAccess2
-import uma.es.angular.t2a.t2A.StyleClass
+import java.util.HashSet
 import java.util.List
 import java.util.Set
-import java.util.HashSet
+import org.eclipse.xtext.generator.IFileSystemAccess2
+import uma.es.angular.t2a.t2A.Comp
+import uma.es.angular.t2a.t2A.Feature
+import uma.es.angular.t2a.t2A.InstanceEDOMFeature
+import uma.es.angular.t2a.t2A.InstanciaEDOM
+import uma.es.angular.t2a.t2A.StyleClass
 
 class AngularComponent {
 
@@ -28,16 +28,18 @@ class AngularComponent {
 
 	static def toTSCode(Comp comp) {
 		'''
-				import { Component } from '@angular/core';
+			import { Component } from '@angular/core';
+			import { RouterService } from '../../services/router.service';
 			
-				@Component({
-					selector: '«comp.name»',
-					templateUrl: './«comp.name.toLowerCase».comp.html',
-					styleUrls:['«comp.name.toLowerCase».comp.scss']	
-				})
-				export class «comp.name»Component{
-					
-				}
+				
+			@Component({
+				selector: '«comp.name»',
+				templateUrl: './«comp.name.toLowerCase».comp.html',
+				styleUrls:['«comp.name.toLowerCase».comp.scss']	
+			})
+			export class «comp.name»Component{
+				constructor(public routerService:RouterService){}	
+			}
 		'''
 
 	// styleUrls:['«comp.name».comp.scss']	
@@ -65,7 +67,7 @@ class AngularComponent {
 	static def toHTMLCodeForInstanciaEDOM(InstanciaEDOM instanciaEDOM) {
 		sclasses.addAll(instanciaEDOM.sclasses);
 		''' 
-			<«instanciaEDOM.instancia.name» «IF sclasses.length>0 || instanciaEDOM.sclassesOnline.length>0 »  class="«getStyleClassesNames(instanciaEDOM.sclasses)» «getStyleClassesStrings(instanciaEDOM.sclassesOnline)»"«ENDIF»>
+			<«instanciaEDOM.instancia.name» «getClasses(instanciaEDOM)» «getClick(instanciaEDOM)»>
 				«FOR insfeature : instanciaEDOM.insfeatures»
 					«var insf = insfeature as InstanceEDOMFeature»
 					«IF insf.instanciaEDOM !== null»
@@ -80,6 +82,14 @@ class AngularComponent {
 		//			<«instanciaEDOM.instancia.name» «IF sclasses.length>0 || instanciaEDOM.sclassesOnline.length>0 »  class="«getStyleClassesNames(instanciaEDOM.sclasses)» «getStyleClassesStrings(instanciaEDOM.sclassesOnline)»"«ENDIF»>
 		
 	}
+	
+	protected def static getClick(InstanciaEDOM edom) {
+		'''«IF edom.goTo!==null »  (click)="routerService.goTo('«edom.goTo.page.name»Page')" «ENDIF»'''
+	}
+	
+	protected def static CharSequence getClasses(InstanciaEDOM instanciaEDOM)
+		'''«IF sclasses.length>0 || instanciaEDOM.sclassesOnline.length>0 »  class="«getStyleClassesNames(instanciaEDOM.sclasses)» «getStyleClassesStrings(instanciaEDOM.sclassesOnline)»"«ENDIF»'''
+	
 
 	private static def getStyleClassesNames(List<StyleClass> sclasses) {
 		

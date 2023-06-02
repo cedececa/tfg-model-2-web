@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uma.es.angular.t2a.t2A.InstanciaEDOM#getInstancia <em>Instancia</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.InstanciaEDOM#getSclasses <em>Sclasses</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.InstanciaEDOM#getSclassesOnline <em>Sclasses Online</em>}</li>
+ *   <li>{@link uma.es.angular.t2a.t2A.InstanciaEDOM#getGoTo <em>Go To</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.InstanciaEDOM#getInsfeatures <em>Insfeatures</em>}</li>
  * </ul>
  *
@@ -73,6 +74,28 @@ public interface InstanciaEDOM extends EObject
    * @generated
    */
   EList<String> getSclassesOnline();
+
+  /**
+   * Returns the value of the '<em><b>Go To</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Go To</em>' containment reference.
+   * @see #setGoTo(GoTo)
+   * @see uma.es.angular.t2a.t2A.T2APackage#getInstanciaEDOM_GoTo()
+   * @model containment="true"
+   * @generated
+   */
+  GoTo getGoTo();
+
+  /**
+   * Sets the value of the '{@link uma.es.angular.t2a.t2A.InstanciaEDOM#getGoTo <em>Go To</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Go To</em>' containment reference.
+   * @see #getGoTo()
+   * @generated
+   */
+  void setGoTo(GoTo value);
 
   /**
    * Returns the value of the '<em><b>Insfeatures</b></em>' containment reference list.

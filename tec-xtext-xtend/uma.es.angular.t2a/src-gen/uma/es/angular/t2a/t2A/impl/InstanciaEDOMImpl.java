@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uma.es.angular.t2a.t2A.EDOM;
+import uma.es.angular.t2a.t2A.GoTo;
 import uma.es.angular.t2a.t2A.InstanceEDOMFeature;
 import uma.es.angular.t2a.t2A.InstanciaEDOM;
 import uma.es.angular.t2a.t2A.StyleClass;
@@ -38,6 +39,7 @@ import uma.es.angular.t2a.t2A.T2APackage;
  *   <li>{@link uma.es.angular.t2a.t2A.impl.InstanciaEDOMImpl#getInstancia <em>Instancia</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.impl.InstanciaEDOMImpl#getSclasses <em>Sclasses</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.impl.InstanciaEDOMImpl#getSclassesOnline <em>Sclasses Online</em>}</li>
+ *   <li>{@link uma.es.angular.t2a.t2A.impl.InstanciaEDOMImpl#getGoTo <em>Go To</em>}</li>
  *   <li>{@link uma.es.angular.t2a.t2A.impl.InstanciaEDOMImpl#getInsfeatures <em>Insfeatures</em>}</li>
  * </ul>
  *
@@ -74,6 +76,16 @@ public class InstanciaEDOMImpl extends MinimalEObjectImpl.Container implements I
    * @ordered
    */
   protected EList<String> sclassesOnline;
+
+  /**
+   * The cached value of the '{@link #getGoTo() <em>Go To</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getGoTo()
+   * @generated
+   * @ordered
+   */
+  protected GoTo goTo;
 
   /**
    * The cached value of the '{@link #getInsfeatures() <em>Insfeatures</em>}' containment reference list.
@@ -187,6 +199,56 @@ public class InstanciaEDOMImpl extends MinimalEObjectImpl.Container implements I
    * @generated
    */
   @Override
+  public GoTo getGoTo()
+  {
+    return goTo;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetGoTo(GoTo newGoTo, NotificationChain msgs)
+  {
+    GoTo oldGoTo = goTo;
+    goTo = newGoTo;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, T2APackage.INSTANCIA_EDOM__GO_TO, oldGoTo, newGoTo);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setGoTo(GoTo newGoTo)
+  {
+    if (newGoTo != goTo)
+    {
+      NotificationChain msgs = null;
+      if (goTo != null)
+        msgs = ((InternalEObject)goTo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - T2APackage.INSTANCIA_EDOM__GO_TO, null, msgs);
+      if (newGoTo != null)
+        msgs = ((InternalEObject)newGoTo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - T2APackage.INSTANCIA_EDOM__GO_TO, null, msgs);
+      msgs = basicSetGoTo(newGoTo, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, T2APackage.INSTANCIA_EDOM__GO_TO, newGoTo, newGoTo));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<InstanceEDOMFeature> getInsfeatures()
   {
     if (insfeatures == null)
@@ -206,6 +268,8 @@ public class InstanciaEDOMImpl extends MinimalEObjectImpl.Container implements I
   {
     switch (featureID)
     {
+      case T2APackage.INSTANCIA_EDOM__GO_TO:
+        return basicSetGoTo(null, msgs);
       case T2APackage.INSTANCIA_EDOM__INSFEATURES:
         return ((InternalEList<?>)getInsfeatures()).basicRemove(otherEnd, msgs);
     }
@@ -229,6 +293,8 @@ public class InstanciaEDOMImpl extends MinimalEObjectImpl.Container implements I
         return getSclasses();
       case T2APackage.INSTANCIA_EDOM__SCLASSES_ONLINE:
         return getSclassesOnline();
+      case T2APackage.INSTANCIA_EDOM__GO_TO:
+        return getGoTo();
       case T2APackage.INSTANCIA_EDOM__INSFEATURES:
         return getInsfeatures();
     }
@@ -257,6 +323,9 @@ public class InstanciaEDOMImpl extends MinimalEObjectImpl.Container implements I
         getSclassesOnline().clear();
         getSclassesOnline().addAll((Collection<? extends String>)newValue);
         return;
+      case T2APackage.INSTANCIA_EDOM__GO_TO:
+        setGoTo((GoTo)newValue);
+        return;
       case T2APackage.INSTANCIA_EDOM__INSFEATURES:
         getInsfeatures().clear();
         getInsfeatures().addAll((Collection<? extends InstanceEDOMFeature>)newValue);
@@ -284,6 +353,9 @@ public class InstanciaEDOMImpl extends MinimalEObjectImpl.Container implements I
       case T2APackage.INSTANCIA_EDOM__SCLASSES_ONLINE:
         getSclassesOnline().clear();
         return;
+      case T2APackage.INSTANCIA_EDOM__GO_TO:
+        setGoTo((GoTo)null);
+        return;
       case T2APackage.INSTANCIA_EDOM__INSFEATURES:
         getInsfeatures().clear();
         return;
@@ -307,6 +379,8 @@ public class InstanciaEDOMImpl extends MinimalEObjectImpl.Container implements I
         return sclasses != null && !sclasses.isEmpty();
       case T2APackage.INSTANCIA_EDOM__SCLASSES_ONLINE:
         return sclassesOnline != null && !sclassesOnline.isEmpty();
+      case T2APackage.INSTANCIA_EDOM__GO_TO:
+        return goTo != null;
       case T2APackage.INSTANCIA_EDOM__INSFEATURES:
         return insfeatures != null && !insfeatures.isEmpty();
     }

@@ -58,10 +58,12 @@ public class T2AParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCompAccess().getGroup_2(), "rule__Comp__Group_2__0");
 			builder.put(grammarAccess.getCompAccess().getGroup_2_1(), "rule__Comp__Group_2_1__0");
 			builder.put(grammarAccess.getCompAccess().getGroup_2_2(), "rule__Comp__Group_2_2__0");
+			builder.put(grammarAccess.getGoToAccess().getGroup(), "rule__GoTo__Group__0");
 			builder.put(grammarAccess.getInstanciaEDOMAccess().getGroup(), "rule__InstanciaEDOM__Group__0");
 			builder.put(grammarAccess.getInstanciaEDOMAccess().getGroup_1(), "rule__InstanciaEDOM__Group_1__0");
 			builder.put(grammarAccess.getInstanciaEDOMAccess().getGroup_1_1(), "rule__InstanciaEDOM__Group_1_1__0");
 			builder.put(grammarAccess.getInstanciaEDOMAccess().getGroup_1_2(), "rule__InstanciaEDOM__Group_1_2__0");
+			builder.put(grammarAccess.getInstanciaEDOMAccess().getGroup_1_3(), "rule__InstanciaEDOM__Group_1_3__0");
 			builder.put(grammarAccess.getRootAccess().getAppNameAssignment_1(), "rule__Root__AppNameAssignment_1");
 			builder.put(grammarAccess.getRootAccess().getGlobalStyleAssignment_2(), "rule__Root__GlobalStyleAssignment_2");
 			builder.put(grammarAccess.getRootAccess().getStyleOnlineAssignment_3(), "rule__Root__StyleOnlineAssignment_3");
@@ -89,10 +91,12 @@ public class T2AParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCompAccess().getHostclassesAssignment_2_1_2(), "rule__Comp__HostclassesAssignment_2_1_2");
 			builder.put(grammarAccess.getCompAccess().getSclassesOnlineAssignment_2_2_2(), "rule__Comp__SclassesOnlineAssignment_2_2_2");
 			builder.put(grammarAccess.getCompAccess().getFeaturesAssignment_2_3(), "rule__Comp__FeaturesAssignment_2_3");
+			builder.put(grammarAccess.getGoToAccess().getPageAssignment_3(), "rule__GoTo__PageAssignment_3");
 			builder.put(grammarAccess.getInstanciaEDOMAccess().getInstanciaAssignment_0(), "rule__InstanciaEDOM__InstanciaAssignment_0");
 			builder.put(grammarAccess.getInstanciaEDOMAccess().getSclassesAssignment_1_1_2(), "rule__InstanciaEDOM__SclassesAssignment_1_1_2");
 			builder.put(grammarAccess.getInstanciaEDOMAccess().getSclassesOnlineAssignment_1_2_2(), "rule__InstanciaEDOM__SclassesOnlineAssignment_1_2_2");
-			builder.put(grammarAccess.getInstanciaEDOMAccess().getInsfeaturesAssignment_1_3(), "rule__InstanciaEDOM__InsfeaturesAssignment_1_3");
+			builder.put(grammarAccess.getInstanciaEDOMAccess().getGoToAssignment_1_3_1(), "rule__InstanciaEDOM__GoToAssignment_1_3_1");
+			builder.put(grammarAccess.getInstanciaEDOMAccess().getInsfeaturesAssignment_1_4(), "rule__InstanciaEDOM__InsfeaturesAssignment_1_4");
 			builder.put(grammarAccess.getInstanceEDOMFeatureAccess().getInstanciaEDOMAssignment_0(), "rule__InstanceEDOMFeature__InstanciaEDOMAssignment_0");
 			builder.put(grammarAccess.getInstanceEDOMFeatureAccess().getStringAssignment_1(), "rule__InstanceEDOMFeature__StringAssignment_1");
 			builder.put(grammarAccess.getPageFeatureAccess().getInstanciaEDOMAssignment_0(), "rule__PageFeature__InstanciaEDOMAssignment_0");

@@ -131,6 +131,11 @@ public class T2AAdapterFactory extends AdapterFactoryImpl
         return createCompAdapter();
       }
       @Override
+      public Adapter caseGoTo(GoTo object)
+      {
+        return createGoToAdapter();
+      }
+      @Override
       public Adapter caseInstanciaEDOM(InstanciaEDOM object)
       {
         return createInstanciaEDOMAdapter();
@@ -333,6 +338,21 @@ public class T2AAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCompAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uma.es.angular.t2a.t2A.GoTo <em>Go To</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uma.es.angular.t2a.t2A.GoTo
+   * @generated
+   */
+  public Adapter createGoToAdapter()
   {
     return null;
   }

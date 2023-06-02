@@ -1,4 +1,5 @@
 	import { Component } from '@angular/core';
+	import { RouterService } from '../../services/router.service';
 
 	@Component({
 		selector: 'Home',
@@ -7,5 +8,5 @@
 		
 	})
 	export class HomePage{
-		
+		constructor(public routerService:RouterService){}	
 	}

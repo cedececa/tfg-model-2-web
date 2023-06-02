@@ -76,6 +76,7 @@ public class T2AFactoryImpl extends EFactoryImpl implements T2AFactory
       case T2APackage.SATTRIBUTE_AND_VALUE: return createSAttributeAndValue();
       case T2APackage.DOM: return createDOM();
       case T2APackage.COMP: return createComp();
+      case T2APackage.GO_TO: return createGoTo();
       case T2APackage.INSTANCIA_EDOM: return createInstanciaEDOM();
       case T2APackage.INSTANCE_EDOM_FEATURE: return createInstanceEDOMFeature();
       case T2APackage.PAGE_FEATURE: return createPageFeature();
@@ -215,6 +216,18 @@ public class T2AFactoryImpl extends EFactoryImpl implements T2AFactory
   {
     CompImpl comp = new CompImpl();
     return comp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public GoTo createGoTo()
+  {
+    GoToImpl goTo = new GoToImpl();
+    return goTo;
   }
 
   /**

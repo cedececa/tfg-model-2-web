@@ -1,16 +1,16 @@
 package uma.es.angular.t2a.generator
 
-import uma.es.angular.t2a.t2A.Page
-import uma.es.angular.t2a.t2A.PageFeature
-import uma.es.angular.t2a.t2A.InstanciaEDOM
-import uma.es.angular.t2a.t2A.InstanceEDOMFeature
-import org.eclipse.xtext.generator.IFileSystemAccess2
-import uma.es.angular.t2a.t2A.StyleClass
-import java.util.List
 import java.util.ArrayList
+import java.util.HashSet
+import java.util.List
 import java.util.Set
 import java.util.TreeSet
-import java.util.HashSet
+import org.eclipse.xtext.generator.IFileSystemAccess2
+import uma.es.angular.t2a.t2A.InstanceEDOMFeature
+import uma.es.angular.t2a.t2A.InstanciaEDOM
+import uma.es.angular.t2a.t2A.Page
+import uma.es.angular.t2a.t2A.PageFeature
+import uma.es.angular.t2a.t2A.StyleClass
 
 class AngularPage {
 	private static Set<StyleClass> sclasses = new HashSet<StyleClass>();
@@ -30,6 +30,7 @@ class AngularPage {
 
 		'''
 				import { Component } from '@angular/core';
+				import { RouterService } from '../../services/router.service';
 			
 				@Component({
 					selector: '«page.name»',
@@ -38,7 +39,7 @@ class AngularPage {
 					
 				})
 				export class «page.name»Page{
-					
+					constructor(public routerService:RouterService){}	
 				}
 		'''
 	// styleUrls:['«page.name».page.scss']	
@@ -47,7 +48,7 @@ class AngularPage {
 
 	static def toHTMLCode(Page page) {
 		hostclasses.addAll(page.hostclasses);
-		
+
 		'''
 			«FOR pageFeature : page.pageFeatures»
 				«var pf = pageFeature as PageFeature»
@@ -63,9 +64,9 @@ class AngularPage {
 
 	static def toHTMLCodeForInstanciaEDOM(InstanciaEDOM instanciaEDOM) {
 		sclasses.addAll(instanciaEDOM.sclasses);
-		
+
 		''' 
-			<«instanciaEDOM.instancia.name» «IF sclasses.length>0 || instanciaEDOM.sclassesOnline.length>0 »  class="«getStyleClassesNames(instanciaEDOM.sclasses)» «getStyleClassesStrings(instanciaEDOM.sclassesOnline)»"«ENDIF»>
+			<«instanciaEDOM.instancia.name» «getClasses(instanciaEDOM)» «getClick(instanciaEDOM)»>
 				«FOR insfeature : instanciaEDOM.insfeatures»
 					«var insf = insfeature as InstanceEDOMFeature»
 					«IF insf.instanciaEDOM !== null»
@@ -79,17 +80,24 @@ class AngularPage {
 		'''
 	}
 
+	protected def static getClick(InstanciaEDOM edom) {
+		'''«IF edom.goTo!==null »  (click)="routerService.goTo('«edom.goTo.page.name»Page')" «ENDIF»'''
+	}
+
+	protected def static CharSequence getClasses(
+		InstanciaEDOM instanciaEDOM) '''«IF sclasses.length>0 || instanciaEDOM.sclassesOnline.length>0 »  class="«getStyleClassesNames(instanciaEDOM.sclasses)» «getStyleClassesStrings(instanciaEDOM.sclassesOnline)»"«ENDIF»'''
+
 	private static def getStyleClassesNames(List<StyleClass> sclasses) {
-		
-		'''«FOR sc:sclasses»«sc.name» «ENDFOR»'''
+
+		'''«FOR sc : sclasses»«sc.name» «ENDFOR»'''
 	}
-	
+
 	private static def getStyleClassesStrings(List<String> sclassesString) {
-		
-		'''«FOR scstring:sclassesString »«scstring» «ENDFOR»'''
+
+		'''«FOR scstring : sclassesString»«scstring» «ENDFOR»'''
 	}
-	
-	private static def toCSSCode(Set<StyleClass>  hostclasses,Set<StyleClass>  sclasses) {
+
+	private static def toCSSCode(Set<StyleClass> hostclasses, Set<StyleClass> sclasses) {
 		''' «toHostCSSCode(hostclasses)»
 			«FOR sclass : sclasses»
 				«var sc = sclass as StyleClass»
@@ -118,33 +126,33 @@ class AngularPage {
 
 	private static def toHostCSSCode(Set<StyleClass> hostclasses) {
 		'''
-		«IF hostclasses.length>0»
-		:host {
+			«IF hostclasses.length>0»
+				:host {
+					«FOR sclass : hostclasses»
+						«var sc = sclass as StyleClass»							
+						«FOR attri : sc.sattributes»
+							«attri.stname» «attri.value»;
+						«ENDFOR»
+					«ENDFOR»
+				}
+			«ENDIF»		
 			«FOR sclass : hostclasses»
-				«var sc = sclass as StyleClass»							
-				«FOR attri : sc.sattributes»
-					«attri.stname» «attri.value»;
-				«ENDFOR»
+				«var sc = sclass as StyleClass»
+				«IF sc.sattributesAfter.length>0»
+					:host::after{
+						«FOR aafter : sc.sattributesAfter»
+							«aafter.stname» «aafter.value»;
+						«ENDFOR»		   				
+					}
+				«ENDIF»
+				«IF sc.sattributesActive.length>0»
+					:host.active{
+						«FOR aactive : sc.sattributesActive»
+							«aactive.stname» «aactive.value»;
+						«ENDFOR»		   				
+					}
+				«ENDIF»				
 			«ENDFOR»
-		}
-		«ENDIF»		
-		«FOR sclass : hostclasses»
-			«var sc = sclass as StyleClass»
-			«IF sc.sattributesAfter.length>0»
-				:host::after{
-					«FOR aafter : sc.sattributesAfter»
-						«aafter.stname» «aafter.value»;
-					«ENDFOR»		   				
-				}
-			«ENDIF»
-			«IF sc.sattributesActive.length>0»
-				:host.active{
-					«FOR aactive : sc.sattributesActive»
-						«aactive.stname» «aactive.value»;
-					«ENDFOR»		   				
-				}
-			«ENDIF»				
-		«ENDFOR»
 		'''
 	}
 }
