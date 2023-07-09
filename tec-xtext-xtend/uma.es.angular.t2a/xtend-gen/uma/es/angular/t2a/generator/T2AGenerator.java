@@ -43,7 +43,7 @@ public class T2AGenerator extends AbstractGenerator {
       }
     }
   }
-  
+
   /**
    * For the absolute path of the generated files
    */
@@ -74,7 +74,7 @@ public class T2AGenerator extends AbstractGenerator {
     System.out.println((outputDir + relativePath));
     return (outputDir + relativePath);
   }
-  
+
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     String absoluteSrcGenDirectory = this.getSRCGenDirectoryAbsolutePath(fsa);
@@ -113,12 +113,12 @@ public class T2AGenerator extends AbstractGenerator {
     ComponentTestGenerator.generateAllTest(fsa, components);
     this.runAngularProject(absoluteSrcGenDirectory);
   }
-  
+
   public String className(final Resource res) {
     String name = res.getURI().lastSegment();
     return name.substring(0, name.indexOf("."));
   }
-  
+
   public void runAngularProject(final String srcGenDirectoryAbsolutePath) {
     AngularRunner.run(srcGenDirectoryAbsolutePath);
   }

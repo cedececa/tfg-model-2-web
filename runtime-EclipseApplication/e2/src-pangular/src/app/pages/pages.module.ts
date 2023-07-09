@@ -22,13 +22,13 @@ SegundaPage,
 TerceraPage,
 ],
 imports: [
- 		    BrowserModule,
- 		    SharedComponentsModule,
-    		RouterModule.forRoot([
+BrowserModule,
+SharedComponentsModule,
+RouterModule.forRoot([
 { path: '', component: HomePage },
 { path: 'segunda', component: SegundaPage },
 { path: 'tercera', component: TerceraPage },
-    		])
+])
 ]
 })
 export class PagesModule { }

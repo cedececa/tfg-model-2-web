@@ -19,12 +19,12 @@ HomePage,
 SegundaPage,
 ],
 imports: [
- 		    BrowserModule,
- 		    SharedComponentsModule,
-    		RouterModule.forRoot([
+BrowserModule,
+SharedComponentsModule,
+RouterModule.forRoot([
 { path: '', component: HomePage },
 { path: 'segunda', component: SegundaPage },
-    		])
+])
 ]
 })
 export class PagesModule { }

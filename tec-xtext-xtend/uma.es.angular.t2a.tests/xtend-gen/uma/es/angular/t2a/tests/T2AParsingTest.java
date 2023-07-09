@@ -22,7 +22,7 @@ import uma.es.angular.t2a.t2A.Root;
 public class T2AParsingTest {
   @Inject
   private ParseHelper<Root> parseHelper;
-  
+
   @Test
   public void loadModel() {
     try {

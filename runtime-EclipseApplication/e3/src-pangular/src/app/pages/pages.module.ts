@@ -28,15 +28,15 @@ CuartaPage,
 CincoPage,
 ],
 imports: [
- 		    BrowserModule,
- 		    SharedComponentsModule,
-    		RouterModule.forRoot([
+BrowserModule,
+SharedComponentsModule,
+RouterModule.forRoot([
 { path: '', component: PrimeraPage },
 { path: 'segunda', component: SegundaPage },
 { path: 'tercera', component: TerceraPage },
 { path: 'cuarta', component: CuartaPage },
 { path: 'cinco', component: CincoPage },
-    		])
+])
 ]
 })
 export class PagesModule { }

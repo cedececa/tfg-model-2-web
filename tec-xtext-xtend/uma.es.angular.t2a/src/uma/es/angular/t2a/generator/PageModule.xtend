@@ -39,18 +39,18 @@ class PageModule {
 			«ENDFOR»
 		],
 		imports: [
- 		    BrowserModule,
- 		    SharedComponentsModule,
-    		RouterModule.forRoot([
+		BrowserModule,
+		SharedComponentsModule,
+		RouterModule.forRoot([
 		   «FOR page : pages»
 		   		« val lowercase= page.name.toLowerCase »
 			   «IF page.home»
-    			{ path: '', component: «page.name»Page },
+			   { path: '', component: «page.name»Page },
 			   «ELSE»
-    			{ path: '«lowercase»', component: «page.name»Page },
+			   { path: '«lowercase»', component: «page.name»Page },
 			   «ENDIF»
 		   «ENDFOR»
-    		])
+		])
 		]
 		})
 		export class PagesModule { }
