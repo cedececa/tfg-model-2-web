@@ -11,6 +11,7 @@ class ComponentTestGenerator {
   		ComponentTestGenerator.generateTest(fsa,component)
   	}
   }
+  
   private def static generateTest(IFileSystemAccess2 fsa, Comp component) {
     val componentNameLower = component.name.toLowerCase
     val testCode = '''

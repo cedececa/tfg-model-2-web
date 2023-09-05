@@ -5,16 +5,16 @@ StyleGlobal {
 	    box-sizing: border-box;
 	} 
 }
- 
+  
 Comp Layout1{
 	AllowSlot
-}
+} 
 
 Comp Cabecera{
-	AllowSlot
-}
-
-Page Home{
+	AllowSlot 
+} 
+ 
+Page Home{ 
 	home
 	showInNav 
 	Layout1{

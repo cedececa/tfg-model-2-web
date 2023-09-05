@@ -11,7 +11,7 @@ StyleGlobal {
 	 
 	StyleClass h2 {
 	    display: inline-block;
-	}
+	} 
 	 
 	StyleClass h3 {
 	    display: inline-block;

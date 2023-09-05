@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="t2A" nsURI="http://www.es.uma/angular/t2a/T2A" nsPrefix="t2A">
+  <eClassifiers xsi:type="ecore:EClass" name="Root">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="appName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="globalStyle" eType="#//StyleGlobal"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="styleOnline" eType="#//StyleOnline"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jsOnline" eType="#//JSOnline"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//Element" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Page" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hostclasses" unique="false"
+        upperBound="-1" eType="#//StyleClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="home" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="showInNav" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pageFeatures" upperBound="-1"
+        eType="#//PageFeature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EDOM" eSuperTypes="#//Element"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StyleGlobal">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="styleclasses" upperBound="-1"
+        eType="#//StyleClass" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StyleOnline">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullTags" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JSOnline">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullTags" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StyleClass" eSuperTypes="#//EDOM">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sattributes" upperBound="-1"
+        eType="#//SAttributeAndValue" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sattributesAfter" upperBound="-1"
+        eType="#//SAttributeAndValue" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sattributesActive" upperBound="-1"
+        eType="#//SAttributeAndValue" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SAttributeAndValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DOM" eSuperTypes="#//EDOM">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sclasses" unique="false"
+        upperBound="-1" eType="#//StyleClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sclassesOnline" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+        eType="#//Feature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Comp" eSuperTypes="#//EDOM">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hostclasses" unique="false"
+        upperBound="-1" eType="#//StyleClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sclassesOnline" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+        eType="#//Feature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InstanciaEDOM">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instancia" eType="#//EDOM"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sclasses" unique="false"
+        upperBound="-1" eType="#//StyleClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sclassesOnline" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="insfeatures" upperBound="-1"
+        eType="#//InstanceEDOMFeature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InstanceEDOMFeature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instanciaEDOM" eType="#//InstanciaEDOM"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="string" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PageFeature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instanciaEDOM" eType="#//InstanciaEDOM"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="string" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Feature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instanciaEDOM" eType="#//InstanciaEDOM"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AllowSlot" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="string" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
